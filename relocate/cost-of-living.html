@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cost of Living in Saudi Arabia for Expats | NewToSaudi</title>
+  <meta name="description" content="Real cost of living data for expats in Saudi Arabia. Rents, groceries, transport, dining, and schools in Riyadh, Jeddah, and Dammam.">
+  <meta property="og:title" content="Cost of Living in Saudi Arabia for Expats | NewToSaudi">
+  <meta property="og:description" content="Real cost of living data for expats in Saudi Arabia. Rents, groceries, transport, dining, and schools in Riyadh, Jeddah, and Dammam.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
+  <link rel="canonical" href="https://newtosaudi.com/relocate/cost-of-living">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+  <style>
+    .page-hero { background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020); padding: calc(var(--nav-h,80px) + 4.5rem) 0 0; position: relative; overflow: hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; opacity:.055; background-image: repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
+    .page-hero .container { position:relative; z-index:2; }
+    .page-hero__text { padding-bottom:3.5rem; max-width:740px; }
+    .page-hero__eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem; }
+    .page-hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; border-radius:1px; }
+    .page-hero h1 { color:#fff; margin-bottom:1.2rem; }
+    .page-hero__subtitle { font-size:1.1rem; color:rgba(255,255,255,.65); max-width:600px; margin-bottom:1.8rem; line-height:1.75; }
+    .hero-stats { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .hero-stat { display:inline-flex; align-items:center; gap:.55rem; font-size:.78rem; font-weight:600; color:rgba(255,255,255,.8); background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:.45rem 1rem; }
+    .hero-stat svg { width:14px; height:14px; stroke:var(--gold); fill:none; stroke-width:2; flex-shrink:0; }
+    .s-cream { background:var(--cream,#F2EEE5); padding:5.5rem 0; }
+    .s-white { background:#fff; padding:5.5rem 0; }
+    .s-dark { background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33); padding:5.5rem 0; position:relative; overflow:hidden; }
+    .s-dark::before { content:''; position:absolute; inset:0; opacity:.04; background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
+    .s-dark .container { position:relative; z-index:2; }
+    .sec-eyebrow { font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; display:flex; align-items:center; gap:.5rem; }
+    .sec-eyebrow::before { content:''; width:22px; height:1.5px; background:var(--gold); border-radius:1px; }
+    .sec-title { font-size:2rem; color:var(--navy,#1B2A4A); margin-bottom:.85rem; }
+    .sec-title--white { color:#fff; }
+    .sec-lead { font-size:1.05rem; color:var(--text-gray,#666); line-height:1.75; max-width:620px; margin-bottom:2.5rem; }
+    .cost-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.87rem; }
+    .cost-table th { background:var(--navy); color:#fff; text-align:left; padding:.8rem 1rem; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .cost-table th:first-child { border-radius:10px 0 0 10px; }
+    .cost-table th:last-child { border-radius:0 10px 10px 0; }
+    .cost-table td { padding:.85rem 1rem; border-bottom:1px solid #EDE9E0; color:#444; }
+    .cost-table tr:last-child td { border:none; }
+    .cost-table tr:nth-child(even) td { background:#FAF8F4; }
+    .cost-table .low { color:#2A7A3B; font-weight:700; }
+    .cost-table .mid { color:#B87A20; font-weight:700; }
+    .cost-table .high { color:#C03020; font-weight:700; }
+    .budget-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+    .budget-card { border-radius:20px; padding:2rem; border:2px solid; }
+    .budget-card--basic { background:#FAF8F4; border-color:#D6D3CB; }
+    .budget-card--mid { background:rgba(27,42,74,.04); border-color:var(--navy); }
+    .budget-card--premium { background:rgba(212,168,83,.06); border-color:var(--gold); }
+    .budget-card__label { font-size:.65rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem; }
+    .budget-card__title { font-size:1.1rem; font-weight:800; color:var(--navy); margin-bottom:.4rem; }
+    .budget-card__amount { font-size:2rem; font-weight:800; color:var(--navy); line-height:1; margin-bottom:.3rem; }
+    .budget-card__per { font-size:.78rem; color:#888; margin-bottom:1rem; }
+    .budget-card ul { list-style:none; }
+    .budget-card ul li { font-size:.82rem; color:#555; padding:.28rem 0; display:flex; gap:.5rem; border-bottom:1px solid rgba(0,0,0,.07); }
+    .budget-card ul li:last-child { border:none; }
+    .budget-card ul li::before { content:'·'; color:var(--gold); font-weight:900; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+    .tip-box { background:rgba(212,168,83,.08); border:1.5px solid rgba(212,168,83,.22); border-radius:14px; padding:1.4rem 1.6rem; margin:1.5rem 0; }
+    .tip-box__label { font-size:.65rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem; }
+    .tip-box p { font-size:.84rem; color:var(--navy); line-height:1.65; margin:0; }
+    .breadcrumb { background:var(--cream); border-bottom:1px solid #E8E4DC; }
+    .breadcrumb__inner { padding:.85rem 0; font-size:.78rem; color:#888; }
+    .breadcrumb__inner a { color:#888; text-decoration:none; }
+    .breadcrumb__sep { margin:0 .5rem; opacity:.5; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .newsletter-form { display:flex; gap:.75rem; max-width:440px; margin:0 auto; }
+    .newsletter-form input { flex:1; padding:.95rem 1.3rem; border:1.5px solid rgba(255,255,255,.15); border-radius:100px; font-family:inherit; font-size:.9rem; background:rgba(255,255,255,.07); color:#fff; outline:none; }
+    .newsletter-form input::placeholder { color:rgba(255,255,255,.4); }
+    @media(max-width:1024px){ .budget-grid { grid-template-columns:1fr 1fr } }
+    @media(max-width:860px){ .two-col { grid-template-columns:1fr } .s-cream,.s-white,.s-dark { padding:3.5rem 0 } }
+    @media(max-width:640px){ .budget-grid { grid-template-columns:1fr } .sec-title { font-size:1.55rem } .cost-table { display:block; overflow-x:auto; } .newsletter-form { flex-direction:column } }
+  </style>
+</head>
+<body>
+
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Relocate <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/about">About</a></div></div>
+      <a href="/about" class="nav__link">About</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Relocate</span><div class="nav__mobile-section-links"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Work</span><div class="nav__mobile-section-links"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Life</span><div class="nav__mobile-section-links"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Business</span><div class="nav__mobile-section-links"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Cities</span><div class="nav__mobile-section-links"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Resources</span><div class="nav__mobile-section-links"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a></div></div>
+  <a href="/about">About</a>
+  <a href="/relocate/before-you-arrive" style="color:#D4A853">Start your journey →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__text">
+      <div class="page-hero__eyebrow">Relocate · Finances</div>
+      <h1>Cost of Living in Saudi Arabia</h1>
+      <p class="page-hero__subtitle">Real figures for expat budgets in Riyadh, Jeddah, and Dammam. Saudi Arabia offers tax-free salaries and subsidised fuel — but rent and international schooling add up fast.</p>
+      <div class="hero-stats">
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> No income tax</span>
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Housing often employer-provided</span>
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Updated 2025 figures</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container breadcrumb__inner">
+    <a href="/">Home</a><span class="breadcrumb__sep">›</span>
+    <a href="/relocate">Relocate</a><span class="breadcrumb__sep">›</span>
+    <span style="color:var(--navy);font-weight:600;">Cost of Living</span>
+  </div>
+</div>
+
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Monthly Budgets</div>
+      <h2 class="sec-title">What Does Life in Saudi Arabia Actually Cost?</h2>
+      <p class="sec-lead">The "right" budget depends heavily on whether your employer provides housing and schooling allowances — the two biggest variables. Below are realistic monthly budgets for three expat lifestyles in Riyadh (add ~10% for Jeddah, subtract ~15% for Dammam).</p>
+    </div>
+
+    <div class="budget-grid reveal">
+      <div class="budget-card budget-card--basic">
+        <div class="budget-card__label">Single Professional</div>
+        <div class="budget-card__title">Comfortable Single</div>
+        <div class="budget-card__amount">SAR 6,500</div>
+        <div class="budget-card__per">per month (excl. rent)</div>
+        <ul>
+          <li>1BR apartment: SAR 3,500–5,000/mo</li>
+          <li>Groceries (local mix): SAR 800–1,200</li>
+          <li>Dining out (2–3×/week): SAR 600–900</li>
+          <li>Transport (petrol/Uber): SAR 400–700</li>
+          <li>Utilities + internet: SAR 350–500</li>
+          <li>Entertainment + subscriptions: SAR 300–500</li>
+          <li>Gym: SAR 150–300</li>
+        </ul>
+      </div>
+      <div class="budget-card budget-card--mid">
+        <div class="budget-card__label">Family (2 adults, 2 children)</div>
+        <div class="budget-card__title">Mid-Range Family</div>
+        <div class="budget-card__amount">SAR 22,000</div>
+        <div class="budget-card__per">per month (incl. rent, excl. school fees)</div>
+        <ul>
+          <li>3BR villa/apt: SAR 7,000–12,000/mo</li>
+          <li>Groceries (Western mix): SAR 2,500–3,500</li>
+          <li>Dining out (regularly): SAR 1,500–2,500</li>
+          <li>Two cars (petrol): SAR 800–1,200</li>
+          <li>Utilities + internet: SAR 600–900</li>
+          <li>Domestic helper: SAR 1,200–2,000</li>
+          <li>School fees (2 children): SAR 3,000–6,000/mo</li>
+        </ul>
+      </div>
+      <div class="budget-card budget-card--premium">
+        <div class="budget-card__label">Family — Premium Lifestyle</div>
+        <div class="budget-card__title">Premium Compound Life</div>
+        <div class="budget-card__amount">SAR 45,000+</div>
+        <div class="budget-card__per">per month (all-in)</div>
+        <ul>
+          <li>Compound villa: SAR 15,000–25,000/mo</li>
+          <li>Groceries (fully Western): SAR 4,000–6,000</li>
+          <li>Regular restaurant dining: SAR 3,000–5,000</li>
+          <li>Two cars (lease or owned): SAR 2,000–4,000</li>
+          <li>International school (top tier): SAR 6,000–10,000/mo</li>
+          <li>Domestic staff (2): SAR 3,000–5,000</li>
+          <li>Travel, leisure, shopping: SAR 5,000–10,000</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box reveal" style="margin-top:2.5rem;">
+      <div class="tip-box__label"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Tax-Free Advantage</div>
+      <p>Saudi Arabia has no personal income tax and no tax on savings or investment income. A SAR 25,000/month salary in Saudi Arabia is equivalent to roughly £10,000–£12,000/month after tax in the UK, or $8,500–$9,500 after tax in the US — depending on your home country tax situation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s-white">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Category Breakdown</div>
+      <h2 class="sec-title">Detailed Cost Breakdown by Category</h2>
+    </div>
+
+    <div class="two-col reveal">
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem;">Housing</h3>
+        <table class="cost-table">
+          <thead><tr><th>Property Type</th><th>Riyadh</th><th>Jeddah</th><th>Dammam</th></tr></thead>
+          <tbody>
+            <tr><td>Studio apartment</td><td class="low">SAR 1,800–2,800</td><td>SAR 2,000–3,200</td><td class="low">SAR 1,500–2,500</td></tr>
+            <tr><td>1-bedroom apartment</td><td>SAR 2,800–5,000</td><td>SAR 3,000–5,500</td><td>SAR 2,200–4,000</td></tr>
+            <tr><td>2-bedroom apartment</td><td>SAR 4,500–8,000</td><td>SAR 5,000–9,000</td><td>SAR 3,500–6,500</td></tr>
+            <tr><td>3-bedroom apartment</td><td>SAR 7,000–12,000</td><td>SAR 7,500–13,000</td><td>SAR 5,500–9,000</td></tr>
+            <tr><td>3BR villa (standalone)</td><td>SAR 10,000–20,000</td><td>SAR 9,000–18,000</td><td>SAR 7,000–14,000</td></tr>
+            <tr><td>Compound villa (premium)</td><td class="high">SAR 15,000–30,000</td><td class="high">SAR 14,000–25,000</td><td class="mid">SAR 10,000–18,000</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.8rem;color:#888;margin-top:.5rem;">Monthly rental figures. Landlords often request 2–4 post-dated cheques upfront. Compounds include amenities (pool, gym, security) in the rent.</p>
+
+        <h3 style="color:var(--navy);margin:2rem 0 1rem;">Transport</h3>
+        <table class="cost-table">
+          <thead><tr><th>Item</th><th>Cost</th></tr></thead>
+          <tbody>
+            <tr><td>Petrol (95 octane, per litre)</td><td class="low">SAR 1.29</td></tr>
+            <tr><td>Petrol (91 octane, per litre)</td><td class="low">SAR 0.91</td></tr>
+            <tr><td>Monthly petrol cost (avg driver)</td><td>SAR 200–400</td></tr>
+            <tr><td>Uber/Careem (per km, approx)</td><td>SAR 1.2–1.8</td></tr>
+            <tr><td>Monthly Uber budget (no car)</td><td>SAR 600–1,200</td></tr>
+            <tr><td>New car (economy, e.g. Toyota Corolla)</td><td>SAR 65,000–85,000</td></tr>
+            <tr><td>Car insurance (annual)</td><td>SAR 1,200–3,500</td></tr>
+            <tr><td>Metro (Riyadh, single trip)</td><td class="low">SAR 4–8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem;">Groceries &amp; Dining</h3>
+        <table class="cost-table">
+          <thead><tr><th>Item</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>Milk (1 litre)</td><td>SAR 5–8</td></tr>
+            <tr><td>Eggs (12)</td><td>SAR 10–16</td></tr>
+            <tr><td>Chicken breast (1 kg)</td><td>SAR 18–28</td></tr>
+            <tr><td>Rice (1 kg, basmati)</td><td>SAR 7–15</td></tr>
+            <tr><td>Tomatoes (1 kg)</td><td>SAR 3–6</td></tr>
+            <tr><td>Coffee at café</td><td>SAR 15–25</td></tr>
+            <tr><td>Meal at local restaurant (1 person)</td><td>SAR 25–45</td></tr>
+            <tr><td>Meal at Western restaurant (1 person)</td><td>SAR 60–120</td></tr>
+            <tr><td>Family dinner (restaurant, 4 people)</td><td>SAR 200–500</td></tr>
+            <tr><td>Monthly groceries (local brands, 2 adults)</td><td class="low">SAR 1,200–1,800</td></tr>
+            <tr><td>Monthly groceries (Western brands, 2 adults)</td><td class="mid">SAR 2,500–3,500</td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="color:var(--navy);margin:2rem 0 1rem;">Education</h3>
+        <table class="cost-table">
+          <thead><tr><th>School Type</th><th>Annual Fees</th></tr></thead>
+          <tbody>
+            <tr><td>Government school (Saudi nationals only)</td><td class="low">Free</td></tr>
+            <tr><td>Low-cost private (Arabic curriculum)</td><td>SAR 12,000–30,000</td></tr>
+            <tr><td>Mid-range international school</td><td>SAR 40,000–70,000</td></tr>
+            <tr><td>British/American curriculum (mid-tier)</td><td>SAR 60,000–95,000</td></tr>
+            <tr><td>Top international schools (IB, BSB, AISK)</td><td class="high">SAR 90,000–150,000</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.8rem;color:#888;margin-top:.5rem;">Many senior expat packages include a schooling allowance — always negotiate this before accepting an offer. Per-child, per-year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;">
+      <div class="sec-eyebrow">Utilities &amp; Services</div>
+      <h2 class="sec-title sec-title--white">Monthly Utilities &amp; Services</h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.68);">Saudi Arabia subsidises electricity and water — utilities are cheap by international standards. Internet is fast and affordable.</p>
+    </div>
+    <div class="two-col reveal">
+      <div>
+        <table class="cost-table">
+          <thead><tr><th>Utility</th><th>Monthly Cost</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td style="color:#fff;">Electricity (apartment)</td><td style="color:rgba(255,255,255,.8);">SAR 50–200</td><td style="color:rgba(255,255,255,.55);">Heavily subsidised. Villas with AC all day: SAR 300–600</td></tr>
+            <tr><td style="color:#fff;">Water</td><td style="color:rgba(255,255,255,.8);">SAR 15–50</td><td style="color:rgba(255,255,255,.55);">Most expats also buy bottled/filtered drinking water (SAR 30–80)</td></tr>
+            <tr><td style="color:#fff;">Internet (fibre, 200 Mbps)</td><td style="color:rgba(255,255,255,.8);">SAR 199–249</td><td style="color:rgba(255,255,255,.55);">STC, Zain, Mobily. 1 Gbps plans available from SAR 349</td></tr>
+            <tr><td style="color:#fff;">Mobile plan (50 GB data)</td><td style="color:rgba(255,255,255,.8);">SAR 100–180</td><td style="color:rgba(255,255,255,.55);">Unlimited data plans available from SAR 200</td></tr>
+            <tr><td style="color:#fff;">Streaming (Netflix, Shahid, OSN)</td><td style="color:rgba(255,255,255,.8);">SAR 50–150</td><td style="color:rgba(255,255,255,.55);">Netflix Standard: SAR 65/mo; Shahid Plus: SAR 35/mo</td></tr>
+            <tr><td style="color:#fff;">Gym membership</td><td style="color:rgba(255,255,255,.8);">SAR 150–400</td><td style="color:rgba(255,255,255,.55);">Leejam (Fitness Time) most widespread. Compound gyms often free</td></tr>
+            <tr><td style="color:#fff;">Domestic helper (full-time, live-in)</td><td style="color:rgba(255,255,255,.8);">SAR 1,200–2,500</td><td style="color:rgba(255,255,255,.55);">Common in expat families. Additional costs: visa, flights, food</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:2rem;">
+          <h3 style="color:var(--gold);font-size:1rem;margin-bottom:1.2rem;">What Employers Usually Cover</h3>
+          <ul style="list-style:none;">
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> Housing allowance or company accommodation</li>
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> Health insurance (mandatory by law)</li>
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> Annual return flights to home country</li>
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> School fees (senior packages)</li>
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> Transport allowance or company car</li>
+            <li style="color:rgba(255,255,255,.75);font-size:.85rem;padding:.4rem 0;display:flex;gap:.6rem;"><span style="color:var(--gold);">✓</span> End-of-service gratuity (after 2+ years)</li>
+          </ul>
+        </div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.4rem 1.6rem;margin-top:1rem;">
+          <p style="font-size:.84rem;color:rgba(255,255,255,.7);line-height:1.65;margin:0;"><strong style="color:var(--gold);">VAT Note:</strong> Saudi Arabia introduced VAT at 5% in 2018, raised to 15% in 2020. Most retail goods and services are subject to 15% VAT — prices displayed in stores typically include VAT. Restaurant bills show the breakdown.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">City Comparison</div>
+      <h2 class="sec-title">Riyadh vs Jeddah vs Dammam</h2>
+      <p class="sec-lead">Each major city has a distinct cost profile. Your employer's location will usually determine where you live, but knowing the differences helps with salary negotiation.</p>
+    </div>
+    <div class="two-col reveal">
+      <div>
+        <table class="cost-table">
+          <thead><tr><th>Category</th><th>Riyadh</th><th>Jeddah</th><th>Dammam</th></tr></thead>
+          <tbody>
+            <tr><td>Overall cost index</td><td class="mid">High</td><td class="mid">High</td><td class="low">Medium</td></tr>
+            <tr><td>Rent (2BR central)</td><td class="mid">SAR 5,000–8,000</td><td class="mid">SAR 5,500–9,000</td><td class="low">SAR 3,500–6,000</td></tr>
+            <tr><td>Dining out (avg meal)</td><td>SAR 40–80</td><td>SAR 45–90</td><td>SAR 35–70</td></tr>
+            <tr><td>Traffic congestion</td><td class="high">High</td><td class="mid">Medium</td><td class="low">Low-Medium</td></tr>
+            <tr><td>International schools</td><td class="high">Most choice</td><td class="mid">Good choice</td><td class="low">Limited choice</td></tr>
+            <tr><td>Western supermarkets</td><td>Excellent</td><td>Excellent</td><td>Good</td></tr>
+            <tr><td>Expat social scene</td><td class="mid">Large</td><td class="high">Very large</td><td class="low">Moderate</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div style="background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.22);border-radius:14px;padding:1.6rem;margin-bottom:1.25rem;">
+          <h4 style="color:var(--navy);margin-bottom:.6rem;">Riyadh: The Capital</h4>
+          <p style="font-size:.85rem;color:#555;line-height:1.65;margin:0;">Most job opportunities (especially government-adjacent roles), most Western amenities, but heaviest traffic and highest demand for premium real estate. Best compound options. Cold winters (5°C) and very hot summers (45°C+).</p>
+        </div>
+        <div style="background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.22);border-radius:14px;padding:1.6rem;margin-bottom:1.25rem;">
+          <h4 style="color:var(--navy);margin-bottom:.6rem;">Jeddah: The Cosmopolitan Port</h4>
+          <p style="font-size:.85rem;color:#555;line-height:1.65;margin:0;">More relaxed culture, coastal lifestyle, best weather (milder winters, breezy). Strong expat community from the business and trade hub. Popular for families. Slightly more expensive than Riyadh for Western groceries and dining.</p>
+        </div>
+        <div style="background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.22);border-radius:14px;padding:1.6rem;">
+          <h4 style="color:var(--navy);margin-bottom:.6rem;">Dammam / Al-Khobar: The Eastern Province</h4>
+          <p style="font-size:.85rem;color:#555;line-height:1.65;margin:0;">Most affordable of the three. Heavily influenced by the oil &amp; gas sector — many Aramco, SABIC, and petrochemical expats. Al-Khobar is the preferred expat residential area. Easy access to Bahrain (30 min drive). Smaller social scene but tight-knit community.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark" style="padding-top:0;">
+  <div class="container">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal">
+      <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Plan Your Move</div>
+      <h2 style="color:#fff;margin-bottom:.75rem;">Get Cost of Living Updates</h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;">We update our cost figures quarterly. Subscribe to get notified when we refresh the data.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address">
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream,#F2EEE5);padding:3rem 0;border-top:1px solid var(--border-gray,#D6D3CB)">
+  <div class="container" style="max-width:1380px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)">
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem"><span style="width:24px;height:1.5px;background:var(--gold,#D4A853);display:inline-block"></span>Related guides</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+      <a href="/life/housing" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🏠</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Housing Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Neighbourhoods, renting, and compounds</div></div>
+      </a>
+      <a href="/life/banking" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🏦</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Banking Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Best banks and how to open an account</div></div>
+      </a>
+      <a href="/cities/riyadh" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🏙️</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Riyadh Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Best neighbourhoods in the capital</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:42px;width:auto"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+        <div class="footer__nl">
+          <div class="footer__nl-label">Get weekly expat tips</div>
+          <div class="footer__nl-form">
+            <input type="email" class="footer__nl-input" placeholder="Your email">
+            <button class="footer__nl-btn">Subscribe</button>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="X/Twitter"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Explore</div>
+        <a href="../relocate/index.html" class="footer__link">Relocate</a>
+        <a href="../work/index.html" class="footer__link">Work</a>
+        <a href="../life/index.html" class="footer__link">Life in KSA</a>
+        <a href="../business/index.html" class="footer__link">Business</a>
+        <a href="../cities/index.html" class="footer__link">Cities</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="../resources/faq.html" class="footer__link">FAQ</a>
+        <a href="../about.html" class="footer__link">About</a>
+        <a href="../apps.html" class="footer__link">Apps guide</a>
+        <a href="../work/iqama-guide.html" class="footer__link">Iqama guide</a>
+        <a href="../life/banking.html" class="footer__link">Banking</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Connect</div>
+        <a href="../about.html" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+        <a href="/blog" class="footer__link">Blog</a>
+        <a href="/privacy" class="footer__link">Privacy policy</a>
+        <a href="/terms" class="footer__link">Terms of use</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025 NewToSaudi.com &nbsp;&middot;&nbsp; Built with &#10084;&#65039; for expats</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

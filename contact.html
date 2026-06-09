@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | NewToSaudi</title>
+  <meta name="description" content="Get in touch with NewToSaudi.com. Questions about relocating to Saudi Arabia, content suggestions, or partnership enquiries.">
+  <meta property="og:title" content="Contact Us | NewToSaudi">
+  <meta property="og:description" content="Get in touch with NewToSaudi.com. Questions about relocating to Saudi Arabia, content suggestions, or partnership enquiries.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
+  <link rel="canonical" href="https://newtosaudi.com/contact">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
+  <style>
+    .page-hero{background:linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);padding:calc(var(--nav-h,80px) + 4.5rem) 0 3.5rem;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;opacity:.055;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
+    .page-hero .container{position:relative;z-index:2}
+    .page-hero__eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
+    .page-hero__eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px}
+    .page-hero h1{color:#fff;margin-bottom:1rem}
+    .page-hero p{font-size:1.05rem;color:rgba(255,255,255,.65);max-width:580px;line-height:1.75}
+    .s-cream{background:var(--cream,#F2EEE5);padding:5.5rem 0}
+    .s-dark{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
+    .s-dark::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
+    .s-dark .container{position:relative;z-index:2}
+    .contact-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:3.5rem;align-items:start}
+    .contact-info h2{font-size:1.75rem;color:var(--navy);margin-bottom:1rem}
+    .contact-info p{font-size:.92rem;color:#555;line-height:1.75;margin-bottom:1.5rem}
+    .contact-method{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem 0;border-bottom:1px solid #E8E4DC}
+    .contact-method:last-child{border:none}
+    .contact-method__icon{width:40px;height:40px;background:var(--navy);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .contact-method__icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8}
+    .contact-method h3{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+    .contact-method p{font-size:.84rem;color:#666;margin:0;line-height:1.6}
+    .contact-form{background:#fff;border:1.5px solid #E8E4DC;border-radius:24px;padding:2.5rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;letter-spacing:.05em}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:.9rem 1.15rem;border:1.5px solid #DDD;border-radius:10px;font-family:inherit;font-size:.88rem;color:var(--navy);background:#FAFAF8;outline:none;transition:border-color .2s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+    .form-group textarea{height:130px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .newsletter-form{display:flex;gap:.75rem;max-width:440px;margin:0 auto}
+    .newsletter-form input{flex:1;padding:.95rem 1.3rem;border:1.5px solid rgba(255,255,255,.15);border-radius:100px;font-family:inherit;font-size:.9rem;background:rgba(255,255,255,.07);color:#fff;outline:none}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.4)}
+    @media(max-width:860px){.contact-layout{grid-template-columns:1fr}.s-cream,.s-dark{padding:3.5rem 0}}
+    @media(max-width:640px){.form-row{grid-template-columns:1fr}.newsletter-form{flex-direction:column}}
+  </style>
+</head>
+<body>
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Relocate <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/about">About</a></div></div>
+      <a href="/about" class="nav__link">About</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Relocate</span><div class="nav__mobile-section-links"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Work</span><div class="nav__mobile-section-links"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Life</span><div class="nav__mobile-section-links"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Business</span><div class="nav__mobile-section-links"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Cities</span><div class="nav__mobile-section-links"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Resources</span><div class="nav__mobile-section-links"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a></div></div>
+  <a href="/about">About</a>
+  <a href="/relocate/before-you-arrive" style="color:#D4A853">Start your journey →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__eyebrow">Contact</div>
+    <h1>Get in Touch</h1>
+    <p>Have a question, a content suggestion, or a relocation story to share? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="s-cream">
+  <div class="container">
+    <div class="contact-layout reveal">
+      <div class="contact-info">
+        <h2>How Can We Help?</h2>
+        <p>NewToSaudi.com is an independent, unsponsored resource built by expats who've navigated Saudi Arabia themselves. We aim to answer every query and update our content based on reader feedback.</p>
+        <div class="contact-method">
+          <div class="contact-method__icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <h3>Email</h3>
+            <p>hello@newtosaudi.com<br>We aim to reply within 2 working days.</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-method__icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div>
+            <h3>Content Suggestions</h3>
+            <p>Missing a page you need? Tell us what to write next. Reader suggestions drive our editorial priorities.</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-method__icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div>
+            <h3>Community</h3>
+            <p>Are you an expat in Saudi Arabia with knowledge to share? We occasionally feature guest contributions from the community.</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-method__icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h3>Corrections</h3>
+            <p>Saudi regulations change frequently. If you spot something outdated or inaccurate, please flag it — we'll update within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h2 style="font-size:1.4rem;color:var(--navy);margin-bottom:1.5rem">Send a Message</h2>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" placeholder="Ahmed">
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option value="">Select a subject…</option>
+              <option>General question about relocating</option>
+              <option>Content suggestion or request</option>
+              <option>Correction or outdated information</option>
+              <option>Partnership or advertising enquiry</option>
+              <option>Sharing my expat experience</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us what you need…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold" style="width:100%;justify-content:center;padding:1rem">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark">
+  <div class="container">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:.5rem">
+        <span style="width:22px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px"></span>Newsletter
+      </div>
+      <h2 style="color:#fff;margin-bottom:.75rem;">Stay Updated</h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">New guides, visa changes, and expat insights for Saudi Arabia — once or twice a month.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address">
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="Logos/logo-white.svg" alt="NewToSaudi" style="height:34px;width:auto"></div>
+        <p class="footer__tagline">Your complete guide to relocating and living in Saudi Arabia.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate" class="footer__link">Relocation Hub</a>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a Company</a>
+        <a href="/business/free-zones" class="footer__link">Free Zones</a>
+        <a href="/business/tax-guide" class="footer__link">Tax Guide</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Life in KSA</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/apps" class="footer__link">Essential Apps</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 NewToSaudi.com · Independent &amp; unsponsored · <a href="/about">About</a> · <a href="/resources/faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

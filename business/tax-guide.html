@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saudi Arabia Business Tax Guide | NewToSaudi</title>
+  <meta name="description" content="Complete tax guide for businesses and expats in Saudi Arabia. Corporate tax, VAT, zakat, withholding tax, and double tax treaties explained.">
+  <meta property="og:title" content="Saudi Arabia Business Tax Guide | NewToSaudi">
+  <meta property="og:description" content="Complete tax guide for businesses and expats in Saudi Arabia. Corporate tax, VAT, zakat, withholding tax, and double tax treaties explained.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
+  <link rel="canonical" href="https://newtosaudi.com/business/tax-guide">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+  <style>
+    .page-hero { background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020); padding: calc(var(--nav-h,80px) + 4.5rem) 0 0; position:relative; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; opacity:.055; background-image: repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
+    .page-hero .container { position:relative; z-index:2; }
+    .page-hero__text { padding-bottom:3.5rem; max-width:740px; }
+    .page-hero__eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem; }
+    .page-hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; border-radius:1px; }
+    .page-hero h1 { color:#fff; margin-bottom:1.2rem; }
+    .page-hero__subtitle { font-size:1.1rem; color:rgba(255,255,255,.65); max-width:600px; margin-bottom:1.8rem; line-height:1.75; }
+    .hero-stats { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .hero-stat { display:inline-flex; align-items:center; gap:.55rem; font-size:.78rem; font-weight:600; color:rgba(255,255,255,.8); background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:.45rem 1rem; }
+    .hero-stat svg { width:14px; height:14px; stroke:var(--gold); fill:none; stroke-width:2; flex-shrink:0; }
+    .s-cream { background:var(--cream,#F2EEE5); padding:5.5rem 0; }
+    .s-white { background:#fff; padding:5.5rem 0; }
+    .s-dark { background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33); padding:5.5rem 0; position:relative; overflow:hidden; }
+    .s-dark::before { content:''; position:absolute; inset:0; opacity:.04; background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
+    .s-dark .container { position:relative; z-index:2; }
+    .sec-eyebrow { font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; display:flex; align-items:center; gap:.5rem; }
+    .sec-eyebrow::before { content:''; width:22px; height:1.5px; background:var(--gold); border-radius:1px; }
+    .sec-title { font-size:2rem; color:var(--navy,#1B2A4A); margin-bottom:.85rem; }
+    .sec-title--white { color:#fff; }
+    .sec-lead { font-size:1.05rem; color:var(--text-gray,#666); line-height:1.75; max-width:620px; margin-bottom:2.5rem; }
+    .tax-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .tax-card { background:#fff; border:1.5px solid #E8E4DC; border-radius:20px; padding:1.75rem; }
+    .tax-card__rate { font-size:2.5rem; font-weight:800; color:var(--navy); line-height:1; margin-bottom:.3rem; }
+    .tax-card__name { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.5rem; }
+    .tax-card p { font-size:.83rem; color:#555; line-height:1.65; margin:0; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+    .tax-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.87rem; }
+    .tax-table th { background:var(--navy); color:#fff; text-align:left; padding:.8rem 1rem; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .tax-table th:first-child { border-radius:10px 0 0 10px; }
+    .tax-table th:last-child { border-radius:0 10px 10px 0; }
+    .tax-table td { padding:.85rem 1rem; border-bottom:1px solid #EDE9E0; color:#444; }
+    .tax-table tr:last-child td { border:none; }
+    .tax-table tr:nth-child(even) td { background:#FAF8F4; }
+    .tip-box { background:rgba(212,168,83,.08); border:1.5px solid rgba(212,168,83,.22); border-radius:14px; padding:1.4rem 1.6rem; margin:1.5rem 0; }
+    .tip-box__label { font-size:.65rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem; }
+    .tip-box p { font-size:.84rem; color:var(--navy); line-height:1.65; margin:0; }
+    .breadcrumb { background:var(--cream); border-bottom:1px solid #E8E4DC; }
+    .breadcrumb__inner { padding:.85rem 0; font-size:.78rem; color:#888; }
+    .breadcrumb__inner a { color:#888; text-decoration:none; }
+    .breadcrumb__sep { margin:0 .5rem; opacity:.5; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .newsletter-form { display:flex; gap:.75rem; max-width:440px; margin:0 auto; }
+    .newsletter-form input { flex:1; padding:.95rem 1.3rem; border:1.5px solid rgba(255,255,255,.15); border-radius:100px; font-family:inherit; font-size:.9rem; background:rgba(255,255,255,.07); color:#fff; outline:none; }
+    .newsletter-form input::placeholder { color:rgba(255,255,255,.4); }
+    @media(max-width:1024px){ .tax-grid { grid-template-columns:1fr 1fr } }
+    @media(max-width:860px){ .two-col { grid-template-columns:1fr } .s-cream,.s-white,.s-dark { padding:3.5rem 0 } }
+    @media(max-width:640px){ .tax-grid { grid-template-columns:1fr } .sec-title { font-size:1.55rem } .tax-table { display:block; overflow-x:auto; } .newsletter-form { flex-direction:column } }
+  </style>
+</head>
+<body>
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Relocate <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/about">About</a></div></div>
+      <a href="/about" class="nav__link">About</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Relocate</span><div class="nav__mobile-section-links"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Work</span><div class="nav__mobile-section-links"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Life</span><div class="nav__mobile-section-links"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Business</span><div class="nav__mobile-section-links"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Cities</span><div class="nav__mobile-section-links"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Resources</span><div class="nav__mobile-section-links"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a></div></div>
+  <a href="/about">About</a>
+  <a href="/relocate/before-you-arrive" style="color:#D4A853">Start your journey →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__text">
+      <div class="page-hero__eyebrow">Business · Taxation</div>
+      <h1>Saudi Arabia Business Tax Guide</h1>
+      <p class="page-hero__subtitle">Saudi Arabia has no personal income tax — but businesses face corporate income tax, VAT, zakat, and withholding taxes. Here's everything you need to know.</p>
+      <div class="hero-stats">
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg> 0% personal income tax</span>
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 15% VAT</span>
+        <span class="hero-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> 20% corporate tax (foreign entity)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="container breadcrumb__inner">
+    <a href="/">Home</a><span class="breadcrumb__sep">›</span>
+    <a href="/business">Business</a><span class="breadcrumb__sep">›</span>
+    <span style="color:var(--navy);font-weight:600;">Tax Guide</span>
+  </div>
+</div>
+
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Tax Overview</div>
+      <h2 class="sec-title">Saudi Arabia's Key Tax Rates at a Glance</h2>
+    </div>
+    <div class="tax-grid reveal">
+      <div class="tax-card">
+        <div class="tax-card__rate">0%</div>
+        <div class="tax-card__name">Personal Income Tax</div>
+        <p>Saudi Arabia has no personal income tax for individuals — neither Saudi nationals nor expats pay income tax on salary, investment income, or capital gains from personal assets. This is one of the Kingdom's most significant benefits for high earners.</p>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card__rate">20%</div>
+        <div class="tax-card__name">Corporate Income Tax (CIT)</div>
+        <p>Applies to foreign entity income and the foreign shareholder portion of mixed-ownership companies. Saudi-owned companies are not subject to CIT but pay Zakat instead. The effective rate for foreign investors in joint ventures depends on the ownership split.</p>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card__rate">2.5%</div>
+        <div class="tax-card__name">Zakat</div>
+        <p>The Islamic wealth tax applied to Saudi and GCC national-owned businesses at 2.5% of the Zakat base (broadly: net equity plus long-term liabilities). In a company with mixed Saudi/foreign ownership, zakat applies to the Saudi-owned portion and CIT applies to the foreign-owned portion.</p>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card__rate">15%</div>
+        <div class="tax-card__name">Value Added Tax (VAT)</div>
+        <p>Introduced in 2018 at 5%, raised to 15% in July 2020. Applies to most goods and services sold in Saudi Arabia. Businesses with annual taxable supplies exceeding SAR 375,000 must register for VAT. Monthly or quarterly filing depending on size.</p>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card__rate">5–20%</div>
+        <div class="tax-card__name">Withholding Tax (WHT)</div>
+        <p>Applied to payments made to non-resident entities for services performed in Saudi Arabia. Rates vary: 5% on most service fees, 15% on management fees and royalties, 20% on technical and consulting fees from unrelated parties. Treaty rates may reduce these.</p>
+      </div>
+      <div class="tax-card">
+        <div class="tax-card__rate">5%</div>
+        <div class="tax-card__name">Real Estate Transaction Tax</div>
+        <p>Applied at 5% on the value of real estate transactions (sale, transfer of ownership). Replaced VAT on real estate since 2020. Applies to both residential and commercial property transactions. The buyer typically bears this cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-white">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Withholding Tax Detail</div>
+      <h2 class="sec-title">Withholding Tax Rates by Payment Type</h2>
+      <p class="sec-lead">Withholding tax is deducted at source when a Saudi entity pays a non-resident entity. The Saudi company is responsible for withholding and remitting the tax to ZATCA within 10 days of the payment month-end.</p>
+    </div>
+    <div class="reveal">
+      <table class="tax-table">
+        <thead>
+          <tr><th>Payment Type</th><th>Standard Rate</th><th>Treaty Rate (varies)</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dividends</td><td>5%</td><td>0–5%</td><td>Reduced by many treaties</td></tr>
+          <tr><td>Interest / Finance charges</td><td>5%</td><td>0–5%</td><td>On loans from foreign entities</td></tr>
+          <tr><td>Royalties / IP licence fees</td><td>15%</td><td>5–15%</td><td>Common in tech and franchise arrangements</td></tr>
+          <tr><td>Management fees</td><td>20%</td><td>5–15%</td><td>Charged by foreign parent companies</td></tr>
+          <tr><td>Technical services</td><td>5%</td><td>0–5%</td><td>For services performed in/outside KSA</td></tr>
+          <tr><td>Insurance premiums</td><td>5%</td><td>0–5%</td><td>Paid to foreign insurers</td></tr>
+          <tr><td>Air/sea freight</td><td>5%</td><td>0–5%</td><td>International transport payments</td></tr>
+          <tr><td>Other payments to non-residents</td><td>15%</td><td>Varies</td><td>Catch-all for unlisted categories</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tip-box reveal">
+      <div class="tip-box__label"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg> Double Tax Treaties</div>
+      <p>Saudi Arabia has signed Double Taxation Avoidance Agreements (DTAAs) with 50+ countries including the UK, France, China, India, USA (limited), South Korea, and most GCC states. These treaties can significantly reduce withholding tax rates. Always check whether your home country has a treaty with Saudi Arabia before structuring cross-border payments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;margin-bottom:3rem;">
+      <div class="sec-eyebrow">For Expat Individuals</div>
+      <h2 class="sec-title sec-title--white">Tax Implications for Individual Expats</h2>
+    </div>
+    <div class="two-col reveal">
+      <div>
+        <h3 style="color:var(--gold);margin-bottom:1rem;">No Personal Income Tax — But Your Home Country May Tax You</h3>
+        <p style="color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Saudi Arabia imposes zero personal income tax on employment income, investment returns, and capital gains for individuals. This applies equally to Saudi nationals and expatriates — there is no distinction.</p>
+        <p style="color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">However, depending on your nationality and home country rules, you may still have tax obligations at home. Key examples:</p>
+        <ul style="list-style:none;">
+          <li style="color:rgba(255,255,255,.7);font-size:.85rem;padding:.4rem 0;display:flex;gap:.6rem;"><span style="color:var(--gold);">•</span><strong style="color:#fff;">US Citizens:</strong> The US taxes citizens on worldwide income regardless of where they live. US expats in Saudi Arabia must file annual US tax returns and may benefit from the Foreign Earned Income Exclusion (FEIE, up to ~$126,500 in 2024).</li>
+          <li style="color:rgba(255,255,255,.7);font-size:.85rem;padding:.4rem 0;display:flex;gap:.6rem;"><span style="color:var(--gold);">•</span><strong style="color:#fff;">UK Citizens:</strong> UK residents working abroad may be exempt from UK tax if they meet split-year or non-resident tests. Take specific advice — HMRC rules are complex.</li>
+          <li style="color:rgba(255,255,255,.7);font-size:.85rem;padding:.4rem 0;display:flex;gap:.6rem;"><span style="color:var(--gold);">•</span><strong style="color:#fff;">Most other nationals:</strong> Generally, if you are genuinely non-resident in your home country (no home, family, or significant ties there), your Saudi earnings are not taxable there. Confirm with a tax adviser.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:var(--gold);margin-bottom:1rem;">Remittance Tax for Non-Saudi Workers</h3>
+        <p style="color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Saudi Arabia applies a levy on international money transfers made by non-Saudi individuals (expatriates). The current rate is 6% of the transferred amount. This applies when you send money from your Saudi bank account to a foreign account.</p>
+        <p style="color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.75;margin-bottom:1rem;">Some employers gross up salaries to compensate for this tax. Check your contract — many senior expat packages include a remittance allowance or simply pay higher gross salaries to offset the cost.</p>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.4rem;margin-top:1rem;">
+          <p style="font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.65;margin:0;"><strong style="color:var(--gold);">Practical tip:</strong> You can reduce the remittance levy impact by spending more in-country (on rent, schooling, car) and remitting less, or by using salary in-country for large purchases rather than converting and sending home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-dark" style="padding-top:0;">
+  <div class="container">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal">
+      <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Tax &amp; Business Updates</div>
+      <h2 style="color:#fff;margin-bottom:.75rem;">Get Saudi Tax Regulation Updates</h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">ZATCA regulations and rates change regularly. Subscribe for updates.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address">
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:42px;width:auto"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+        <div class="footer__nl">
+          <div class="footer__nl-label">Get weekly expat tips</div>
+          <div class="footer__nl-form">
+            <input type="email" class="footer__nl-input" placeholder="Your email">
+            <button class="footer__nl-btn">Subscribe</button>
+          </div>
+        </div>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="X/Twitter"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Explore</div>
+        <a href="../relocate/index.html" class="footer__link">Relocate</a>
+        <a href="../work/index.html" class="footer__link">Work</a>
+        <a href="../life/index.html" class="footer__link">Life in KSA</a>
+        <a href="../business/index.html" class="footer__link">Business</a>
+        <a href="../cities/index.html" class="footer__link">Cities</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="../resources/faq.html" class="footer__link">FAQ</a>
+        <a href="../about.html" class="footer__link">About</a>
+        <a href="../apps.html" class="footer__link">Apps guide</a>
+        <a href="../work/iqama-guide.html" class="footer__link">Iqama guide</a>
+        <a href="../life/banking.html" class="footer__link">Banking</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Connect</div>
+        <a href="../about.html" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+        <a href="/blog" class="footer__link">Blog</a>
+        <a href="/privacy" class="footer__link">Privacy policy</a>
+        <a href="/terms" class="footer__link">Terms of use</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2025 NewToSaudi.com &nbsp;&middot;&nbsp; Built with &#10084;&#65039; for expats</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Saudi Arabia Expat Guides &amp; News | NewToSaudi</title>
+  <meta name="description" content="The NewToSaudi blog. Expat stories, Saudi Arabia news, regulation updates, and practical guides for people living and working in the Kingdom.">
+  <meta property="og:title" content="Blog — Saudi Arabia Expat Guides &amp; News | NewToSaudi">
+  <meta property="og:description" content="The NewToSaudi blog. Expat stories, Saudi Arabia news, regulation updates, and practical guides for people living and working in the Kingdom.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
+  <link rel="canonical" href="https://newtosaudi.com/blog">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+  <style>
+    .page-hero{background:linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);padding:calc(var(--nav-h,80px) + 4.5rem) 0 3.5rem;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;opacity:.055;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
+    .page-hero .container{position:relative;z-index:2}
+    .page-hero__eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
+    .page-hero__eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px}
+    .page-hero h1{color:#fff;margin-bottom:.9rem}
+    .page-hero p{color:rgba(255,255,255,.65);max-width:580px;line-height:1.75}
+    .s-cream{background:var(--cream,#F2EEE5);padding:5.5rem 0}
+    .s-dark{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
+    .s-dark::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
+    .s-dark .container{position:relative;z-index:2}
+    .sec-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+    .sec-eyebrow::before{content:'';width:22px;height:1.5px;background:var(--gold);border-radius:1px}
+    .sec-title{font-size:2rem;color:var(--navy,#1B2A4A);margin-bottom:.85rem}
+    .sec-lead{font-size:1.05rem;color:var(--text-gray,#666);line-height:1.75;max-width:620px;margin-bottom:2.5rem}
+    .blog-layout{display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start}
+    .post-list{display:grid;gap:2rem}
+    .post-card{background:#fff;border:1.5px solid #E8E4DC;border-radius:18px;padding:2rem;display:flex;gap:1.5rem;transition:all .3s}
+    .post-card:hover{border-color:var(--gold);box-shadow:0 8px 28px rgba(27,42,74,.09)}
+    .post-card__meta{display:flex;gap:.75rem;align-items:center;margin-bottom:.65rem}
+    .post-card__category{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--navy);color:var(--gold);padding:.25rem .65rem;border-radius:100px}
+    .post-card__date{font-size:.75rem;color:#999}
+    .post-card h2{font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:.6rem;line-height:1.4}
+    .post-card p{font-size:.86rem;color:#555;line-height:1.7;margin-bottom:1rem}
+    .post-card__read{font-size:.8rem;font-weight:700;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem}
+    .post-card__read::after{content:'→'}
+    .sidebar{position:sticky;top:100px}
+    .sidebar-block{background:#fff;border:1.5px solid #E8E4DC;border-radius:18px;padding:1.75rem;margin-bottom:1.5rem}
+    .sidebar-block h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid var(--gold)}
+    .sidebar-cat{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid #F0ECE4;font-size:.84rem;color:#444;text-decoration:none}
+    .sidebar-cat:last-child{border:none}
+    .sidebar-cat:hover{color:var(--gold)}
+    .sidebar-cat__count{font-size:.75rem;color:#999;font-weight:600}
+    .featured-article{background:linear-gradient(135deg,var(--navy),#0F1C33);border-radius:18px;padding:2rem;margin-bottom:2rem}
+    .featured-article__label{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:flex;align-items:center;gap:.35rem}
+    .featured-article h2{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:.65rem;line-height:1.35}
+    .featured-article p{font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:1.25rem}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .newsletter-form{display:flex;gap:.75rem;max-width:440px;margin:0 auto}
+    .newsletter-form input{flex:1;padding:.95rem 1.3rem;border:1.5px solid rgba(255,255,255,.15);border-radius:100px;font-family:inherit;font-size:.9rem;background:rgba(255,255,255,.07);color:#fff;outline:none}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.4)}
+    @media(max-width:900px){.blog-layout{grid-template-columns:1fr}.sidebar{position:static}}
+    @media(max-width:640px){.post-card{flex-direction:column}.sec-title{font-size:1.55rem}.newsletter-form{flex-direction:column}}
+  </style>
+</head>
+<body>
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <div class="nav__links">
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Relocate <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/about">About</a></div></div>
+      <a href="/about" class="nav__link">About</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu" id="mobileMenu">
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Relocate</span><div class="nav__mobile-section-links"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/cost-of-living">Cost of Living</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Work</span><div class="nav__mobile-section-links"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/salary-guide">Salary Guide</a><a href="/work/work-visa">Work Visa</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Life</span><div class="nav__mobile-section-links"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Business</span><div class="nav__mobile-section-links"><a href="/business/start-a-company">Start a Company</a><a href="/business/investment-guide">Investment Guide</a><a href="/business/free-zones">Free Zones</a><a href="/business/hiring-guide">Hiring Guide</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Cities</span><div class="nav__mobile-section-links"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
+  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Resources</span><div class="nav__mobile-section-links"><a href="/apps">Essential Apps</a><a href="/resources/faq">FAQ</a></div></div>
+  <a href="/about">About</a>
+  <a href="/relocate/before-you-arrive" style="color:#D4A853">Start your journey →</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__eyebrow">Blog</div>
+    <h1>Saudi Arabia Expat Insights</h1>
+    <p>News, guides, and honest perspectives on life, work, and business in the Kingdom.</p>
+  </div>
+</section>
+
+<section class="s-cream">
+  <div class="container">
+    <div class="featured-article reveal">
+      <div class="featured-article__label">Featured</div>
+      <h2>Saudi Arabia's Kafala Reforms: What Changed in 2021 and What Still Needs To</h2>
+      <p>Saudi Arabia's 2021 labour reforms were the most significant change to expat worker rights in decades. Exit visas no longer require employer consent, job transfers are possible after 12 months, and the Qiwa platform has made the process digital. But the system still has limitations — and not all workers know their new rights.</p>
+      <a href="/work/labour-law" class="btn btn--gold" style="text-decoration:none">Read the Labour Law Guide →</a>
+    </div>
+    <div class="blog-layout reveal">
+      <div class="post-list">
+        <article class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__category">Cost of Living</span>
+              <span class="post-card__date">June 2025</span>
+            </div>
+            <h2>What Does a Comfortable Expat Life in Riyadh Actually Cost in 2025?</h2>
+            <p>With inflation stabilising and the housing market shifting, we've updated our full cost of living breakdown. A mid-range family of four in Riyadh now needs between SAR 22,000–32,000/month all-in — here's how that breaks down across housing, transport, schools, food, and utilities.</p>
+            <a href="/relocate/cost-of-living" class="post-card__read">Read the Cost Guide</a>
+          </div>
+        </article>
+        <article class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__category">Visa</span>
+              <span class="post-card__date">May 2025</span>
+            </div>
+            <h2>Premium Residency vs Standard Iqama: When Does It Make Sense to Pay SAR 800,000?</h2>
+            <p>Saudi Arabia's Premium Residency offers freedom of employment, no sponsor, and the right to own property — for a one-time SAR 800,000 fee or SAR 100,000/year. We run the numbers: who should seriously consider it, and who shouldn't bother.</p>
+            <a href="/work/work-visa" class="post-card__read">Read the Visa Guide</a>
+          </div>
+        </article>
+        <article class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__category">Riyadh</span>
+              <span class="post-card__date">April 2025</span>
+            </div>
+            <h2>The Best Neighbourhoods in Riyadh for Expat Families in 2025</h2>
+            <p>Al Nakheel, Al Yasmin, Diplomatic Quarter, and Al Malqa all attract different expat profiles. We break down each neighbourhood's rent levels, school proximity, amenities, and community feel — so you can choose before arriving.</p>
+            <a href="/cities/riyadh" class="post-card__read">Read the Riyadh Guide</a>
+          </div>
+        </article>
+        <article class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__category">Banking</span>
+              <span class="post-card__date">March 2025</span>
+            </div>
+            <h2>How to Open a Saudi Bank Account Before Your Iqama Arrives</h2>
+            <p>Without a bank account, you can't receive salary, pay rent by bank transfer, or set up utilities. But Iqamas take 4–8 weeks. Here's how to get a temporary account open in week one using your employment offer letter — and which banks are most cooperative.</p>
+            <a href="/life/banking" class="post-card__read">Read the Banking Guide</a>
+          </div>
+        </article>
+        <article class="post-card">
+          <div>
+            <div class="post-card__meta">
+              <span class="post-card__category">Business</span>
+              <span class="post-card__date">February 2025</span>
+            </div>
+            <h2>Setting Up a Company in Saudi Arabia: What's Actually Changed Under Vision 2030</h2>
+            <p>Foreign company registration used to take months. MISA has digitised most of it. In theory, you can get a foreign investment licence in 24 hours. In practice, it takes 1–4 weeks. We walk through the current process, the real pain points, and what a realistic timeline looks like.</p>
+            <a href="/business/start-a-company" class="post-card__read">Read the Company Guide</a>
+          </div>
+        </article>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-block">
+          <h3>Categories</h3>
+          <a href="/relocate" class="sidebar-cat">Relocation <span class="sidebar-cat__count">12</span></a>
+          <a href="/work" class="sidebar-cat">Work &amp; Visa <span class="sidebar-cat__count">9</span></a>
+          <a href="/life" class="sidebar-cat">Life in KSA <span class="sidebar-cat__count">8</span></a>
+          <a href="/business" class="sidebar-cat">Business <span class="sidebar-cat__count">7</span></a>
+          <a href="/cities" class="sidebar-cat">Cities <span class="sidebar-cat__count">6</span></a>
+          <a href="/relocate/cost-of-living" class="sidebar-cat">Cost of Living <span class="sidebar-cat__count">4</span></a>
+        </div>
+        <div class="sidebar-block">
+          <h3>Popular Guides</h3>
+          <a href="/work/iqama-guide" class="sidebar-cat">Iqama Guide</a>
+          <a href="/relocate/first-30-days" class="sidebar-cat">First 30 Days</a>
+          <a href="/life/banking" class="sidebar-cat">Banking Guide</a>
+          <a href="/work/salary-guide" class="sidebar-cat">Salary Guide</a>
+          <a href="/life/schools-education" class="sidebar-cat">Schools Guide</a>
+          <a href="/cities/riyadh" class="sidebar-cat">Riyadh Guide</a>
+        </div>
+        <div style="background:var(--navy);border-radius:18px;padding:1.75rem;">
+          <h3 style="color:var(--gold);font-size:.95rem;margin-bottom:.6rem;border-bottom:none">Newsletter</h3>
+          <p style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:1.1rem;line-height:1.6">New articles and Saudi Arabia updates — twice a month.</p>
+          <form onsubmit="return false;">
+            <input type="email" placeholder="Your email" style="width:100%;padding:.8rem 1rem;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:rgba(255,255,255,.07);color:#fff;font-family:inherit;font-size:.85rem;margin-bottom:.75rem;outline:none">
+            <button type="submit" class="btn btn--gold" style="width:100%;justify-content:center">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px;width:auto"></div>
+        <p class="footer__tagline">Your complete guide to relocating and living in Saudi Arabia.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate" class="footer__link">Relocation Hub</a>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a Company</a>
+        <a href="/business/free-zones" class="footer__link">Free Zones</a>
+        <a href="/business/tax-guide" class="footer__link">Tax Guide</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Life in KSA</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/apps" class="footer__link">Essential Apps</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 NewToSaudi.com · Independent &amp; unsponsored · <a href="/about">About</a> · <a href="/resources/faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

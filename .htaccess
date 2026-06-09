@@ -1,0 +1,23 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect .html URLs to clean URLs (avoid duplicate content)
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Redirect www to non-www (adjust if you prefer www)
+RewriteCond %{HTTP_HOST} ^www\.newtosaudi\.com [NC]
+RewriteRule ^ https://newtosaudi.com%{REQUEST_URI} [L,R=301]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Custom error pages
+ErrorDocument 404 /404.html

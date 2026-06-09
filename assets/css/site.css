@@ -74,8 +74,8 @@ button { font-family:inherit; cursor:pointer }
 
 /* === TYPOGRAPHY === */
 h1,h2,h3,h4 { color:var(--navy); font-weight:700; line-height:1.18 }
-h1 { font-size:clamp(2.4rem,4.8vw,5rem); letter-spacing:-.03em }
-h2 { font-size:clamp(1.8rem,2.8vw,2.7rem); letter-spacing:-.02em }
+h1 { font-size:clamp(2rem,5vw,3.5rem); font-weight:800; letter-spacing:-.03em }
+h2 { font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:700; letter-spacing:-.02em }
 h3 { font-size:1.2rem; letter-spacing:-.01em }
 p  { line-height:1.75; color:var(--text-body) }
 
@@ -195,6 +195,43 @@ p  { line-height:1.75; color:var(--text-body) }
 }
 .nav__mobile-menu a:hover,.nav__mobile-menu a:active { color:var(--gold); background:rgba(255,255,255,.03) }
 
+/* Dropdown nav */
+.nav__dropdown { position:relative }
+.nav__dropdown-menu {
+  display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%);
+  background:#fff; border-radius:10px; padding:.5rem 0; min-width:200px;
+  box-shadow:0 8px 32px rgba(27,42,74,.12); border:1px solid rgba(27,42,74,.08);
+  z-index:100
+}
+.nav__dropdown:hover .nav__dropdown-menu,
+.nav__dropdown.open .nav__dropdown-menu { display:block }
+.nav__dropdown-menu a {
+  display:block; padding:.6rem 1.25rem; font-size:.88rem; font-weight:500;
+  color:var(--navy); text-decoration:none; transition:background .15s,color .15s;
+  white-space:nowrap
+}
+.nav__dropdown-menu a:hover { background:var(--cream); color:var(--navy) }
+.nav__link--dropdown { cursor:default }
+.nav__link--dropdown::after { display:none }
+.nav__caret {
+  display:inline-block; width:0; height:0; margin-left:.35rem; vertical-align:middle;
+  border-left:4px solid transparent; border-right:4px solid transparent;
+  border-top:4px solid currentColor; opacity:.6; transition:transform .2s
+}
+.nav__dropdown:hover .nav__caret { transform:rotate(180deg) }
+
+/* Mobile dropdown — show flat grouped list */
+.nav__mobile-section { width:100%; display:contents }
+.nav__mobile-section-title {
+  font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(255,255,255,.35); padding:.85rem 2rem .35rem; display:block;
+  border-bottom:none !important; min-height:unset !important; justify-content:flex-start !important
+}
+.nav__mobile-section-links a {
+  font-size:.97rem; padding:.65rem 2.5rem; min-height:42px; justify-content:flex-start !important;
+  font-weight:500; color:rgba(255,255,255,.6)
+}
+
 /* === BUTTONS === */
 .btn {
   display:inline-flex; align-items:center; gap:.5rem; font-weight:700; font-family:inherit;
@@ -255,11 +292,19 @@ p  { line-height:1.75; color:var(--text-body) }
 /* === SECTION HEADERS === */
 .section-eyebrow {
   display:inline-flex; align-items:center; gap:.55rem; font-size:.7rem; font-weight:700;
-  letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem
+  letter-spacing:.14em; text-transform:uppercase; color:var(--navy); margin-bottom:.85rem
 }
-.section-eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; border-radius:1px }
+.section-eyebrow::before { content:''; width:28px; height:1.5px; background:var(--navy); display:inline-block; border-radius:1px }
+/* On dark/navy sections, eyebrow reverts to gold */
+.section--navy .section-eyebrow,
+.page-hero .section-eyebrow,
+[style*="background:var(--navy"] .section-eyebrow,
+[style*="background:#0B1422"] .section-eyebrow,
+[style*="background:#1B2A4A"] .section-eyebrow { color:var(--gold) }
+.section--navy .section-eyebrow::before,
+.page-hero .section-eyebrow::before { background:var(--gold) }
 .section-heading   { margin-bottom:.6rem; letter-spacing:-.025em }
-.section-desc      { font-size:1.05rem; color:var(--text-gray); max-width:540px; line-height:1.75 }
+.section-desc      { font-size:1.05rem; color:var(--text-mid); max-width:540px; line-height:1.75 }
 .section-header    { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem; gap:2.5rem }
 .section-header-left { flex:1 }
 .view-all {
@@ -331,39 +376,79 @@ p  { line-height:1.75; color:var(--text-body) }
 .newsletter__note { font-size:.8rem; color:rgba(255,255,255,.62); margin-top:1.75rem }
 
 /* === FOOTER === */
-.footer,.site-footer { background:var(--navy-deeper); padding:5rem 0 2.5rem; color:rgba(255,255,255,.4) }
-.footer__top,.footer__grid {
-  display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr 1fr; gap:3rem;
-  padding-bottom:3.5rem; border-bottom:1px solid rgba(255,255,255,.06)
+.footer,.site-footer,.s-footer {
+  background:#0B1422;
+  border-top:1px solid rgba(212,168,83,.2);
+  padding:5rem 0 2.5rem;
+  color:rgba(255,255,255,.7)
 }
-.footer__brand { }
-.footer__tagline,.footer__brand p {
-  font-size:.88rem; line-height:1.75; margin-top:1rem; max-width:280px; color:rgba(255,255,255,.4)
+/* Use .container for inner layout — s-footer uses .wrap, normalise it */
+.s-footer .wrap { max-width:var(--max-w); margin:0 auto; padding:0 clamp(1.5rem,5vw,4rem) }
+
+.footer__top,.footer__grid,.s-footer__top {
+  display:grid;
+  grid-template-columns:1.8fr 1fr 1fr 1fr;
+  gap:3rem;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid rgba(255,255,255,.08)
 }
-.footer__col-title {
-  font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:1.25rem
+.footer__brand,.s-footer__brand { }
+
+.footer__tagline,.footer__brand p,.s-footer__brand p {
+  font-size:.88rem; line-height:1.75; margin-top:1rem; max-width:280px;
+  color:rgba(255,255,255,.7)
 }
-.footer__link { display:block; font-size:.85rem; padding:.32rem 0; color:rgba(255,255,255,.38); transition:all .25s }
-.footer__link:hover { color:#fff; transform:translateX(3px) }
-.footer__logo { margin-bottom:.75rem }
-.footer__logo img { height:34px; width:auto }
-.footer__social { display:flex; gap:.75rem; margin-top:1.5rem }
-.footer__social-link {
+.footer__col-title,.s-footer__col-title {
+  font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  color:#D4A853; margin-bottom:1.25rem
+}
+.footer__link,.s-footer__link {
+  display:block; font-size:.85rem; padding:.32rem 0;
+  color:rgba(255,255,255,.65); transition:all .25s
+}
+.footer__link:hover,.s-footer__link:hover { color:#fff; transform:translateX(3px) }
+
+.footer__logo,.s-footer__logo { margin-bottom:.75rem }
+.footer__logo img,.s-footer__logo img { height:38px; width:auto }
+
+/* Newsletter signup in footer brand column */
+.footer__nl { margin-top:1.75rem }
+.footer__nl-label { font-size:.75rem; font-weight:600; color:rgba(255,255,255,.55); margin-bottom:.6rem; letter-spacing:.04em }
+.footer__nl-form { display:flex; gap:.5rem }
+.footer__nl-input {
+  flex:1; min-width:0; padding:.6rem 1rem; border-radius:100px;
+  border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.07);
+  color:var(--white); font-family:inherit; font-size:.82rem; outline:none; transition:border-color .2s
+}
+.footer__nl-input::placeholder { color:rgba(255,255,255,.35) }
+.footer__nl-input:focus { border-color:#D4A853 }
+.footer__nl-btn {
+  padding:.6rem 1.1rem; border-radius:100px; border:none;
+  background:#D4A853; color:#1B2A4A; font-family:inherit;
+  font-size:.78rem; font-weight:800; cursor:pointer; white-space:nowrap; transition:all .25s
+}
+.footer__nl-btn:hover { background:#E8C97A }
+
+.footer__social,.s-footer__social { display:flex; gap:.75rem; margin-top:1.5rem }
+.footer__social-link,.s-footer__social-link {
   width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;
   transition:all .3s
 }
-.footer__social-link:hover { background:rgba(212,168,83,.2); border-color:rgba(212,168,83,.4) }
-.footer__social-link svg { width:15px; height:15px; stroke:rgba(255,255,255,.45); fill:none; stroke-width:1.8 }
-.footer__social-link:hover svg { stroke:var(--gold) }
-.footer__bottom {
+.footer__social-link:hover,.s-footer__social-link:hover { background:rgba(212,168,83,.2); border-color:rgba(212,168,83,.4) }
+.footer__social-link svg,.s-footer__social-link svg { width:15px; height:15px; stroke:rgba(255,255,255,.55); fill:none; stroke-width:1.8 }
+.footer__social-link:hover svg,.s-footer__social-link:hover svg { stroke:#D4A853 }
+
+.footer__bottom,.s-footer__bottom {
   display:flex; justify-content:space-between; align-items:center;
-  padding-top:2rem; font-size:.78rem; gap:1rem; flex-wrap:wrap
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:.8rem; gap:1rem; flex-wrap:wrap;
+  color:rgba(255,255,255,.45)
 }
-.footer__bottom a { transition:color .2s }
-.footer__bottom a:hover { color:#fff }
-.footer__bottom-links a { margin-left:1.5rem }
+.footer__bottom a,.s-footer__bottom a { transition:color .2s; color:rgba(255,255,255,.45) }
+.footer__bottom a:hover,.s-footer__bottom a:hover { color:#fff }
+.footer__bottom-links a,.s-footer__bottom-links a { margin-left:1.5rem }
 
 /* === COMPONENT: FAQ ACCORDION === */
 .faq-list { display:flex; flex-direction:column; gap:.75rem; margin:2rem 0 }
@@ -567,12 +652,12 @@ body { overflow-x:hidden }
 /* ── Tablet landscape (768–1024px) ── */
 @media(max-width:1024px) {
   :root { --nav-h:70px }
-  h1 { font-size:clamp(2.2rem,4vw,3.8rem) }
+  h1 { font-size:clamp(2rem,4vw,3.5rem) }
   .section     { padding:clamp(4rem,7vw,6rem) 0 }
   .section-sm  { padding:clamp(2.5rem,5vw,4rem) 0 }
   .section-lg  { padding:clamp(5rem,8vw,7rem) 0 }
-  .footer__top,.footer__grid { grid-template-columns:1fr 1fr 1fr; gap:2rem }
-  .footer__brand { grid-column:1/-1 }
+  .footer__top,.footer__grid,.s-footer__top { grid-template-columns:1fr 1fr; gap:2rem }
+  .footer__brand,.s-footer__brand { grid-column:1/-1 }
   /* Data tables always scrollable at this size */
   .data-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch }
 }
@@ -601,10 +686,10 @@ body { overflow-x:hidden }
   .section-desc { font-size:.95rem; max-width:100% }
 
   /* Footer */
-  .footer__top,.footer__grid { grid-template-columns:1fr 1fr; gap:1.75rem }
-  .footer__bottom { flex-direction:column; gap:1rem; text-align:center }
-  .footer__bottom-links { display:flex; flex-wrap:wrap; justify-content:center }
-  .footer__bottom-links a { margin:0 .5rem }
+  .footer__top,.footer__grid,.s-footer__top { grid-template-columns:1fr 1fr; gap:1.75rem }
+  .footer__bottom,.s-footer__bottom { flex-direction:column; gap:1rem; text-align:center }
+  .footer__bottom-links,.s-footer__bottom-links { display:flex; flex-wrap:wrap; justify-content:center }
+  .footer__bottom-links a,.s-footer__bottom-links a { margin:0 .5rem }
 
   /* Newsletter */
   .newsletter__form { flex-direction:column; align-items:stretch; max-width:440px; margin:0 auto }
@@ -661,9 +746,12 @@ body { overflow-x:hidden }
   .section-sm { padding:1.75rem 0 }
 
   /* Footer two-column on small phones */
-  .footer__top,.footer__grid { grid-template-columns:1fr 1fr }
-  .footer__brand { grid-column:1/-1 }
-  .footer,.site-footer { padding:3.5rem 0 1.75rem }
+  .footer__top,.footer__grid,.s-footer__top { grid-template-columns:1fr 1fr }
+  .footer__brand,.s-footer__brand { grid-column:1/-1 }
+  .footer,.site-footer,.s-footer { padding:3.5rem 0 1.75rem }
+  /* Hide newsletter form in footer at small sizes */
+  .footer__nl-form { flex-direction:column }
+  .footer__nl-btn { width:100% }
 
   /* Nav mobile menu bigger tappable rows on tiny screens */
   .nav__mobile-menu a { font-size:1rem; padding:.95rem 1.5rem; min-height:52px }
@@ -679,7 +767,7 @@ body { overflow-x:hidden }
 
 /* ── Very small phone (≤380px) ── */
 @media(max-width:380px) {
-  .footer__top,.footer__grid { grid-template-columns:1fr }
+  .footer__top,.footer__grid,.s-footer__top { grid-template-columns:1fr }
   h1 { font-size:1.65rem }
   h2 { font-size:1.3rem }
   .container { padding:0 .875rem }
