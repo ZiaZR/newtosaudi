@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relocating to Saudi Arabia — Complete Guide | NewToSaudi.com</title>
+  <meta name="description" content="Everything you need to relocate to Saudi Arabia — visa guides, checklists, housing, Iqama, schools, and more. Expert, up-to-date relocation resources.">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* ── Page Hero ── */
+    .page-hero {
+      background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);
+      padding: calc(var(--nav-h) + 5rem) 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; opacity: .055;
+      background-image:
+        repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),
+        repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);
+      background-size: 70px 70px;
+    }
+    .page-hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; }
+    .page-hero__eyebrow { display: inline-flex; align-items: center; gap: .55rem; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page-hero__eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); display: inline-block; border-radius: 1px; }
+    .page-hero h1 { color: var(--white); margin-bottom: 1.25rem; }
+    .page-hero__subtitle { font-size: 1.15rem; color: rgba(255,255,255,.65); max-width: 520px; margin-bottom: 2.25rem; line-height: 1.75; }
+    .page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .page-hero__arch { position: relative; display: flex; align-items: center; justify-content: center; opacity: .12; }
+    .page-hero__arch svg { width: 100%; max-width: 380px; }
+    .hero-stat-bar { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.1); }
+    .hero-stat { }
+    .hero-stat__num { font-size: 1.7rem; font-weight: 800; color: var(--gold); letter-spacing: -.02em; }
+    .hero-stat__label { font-size: .8rem; color: rgba(255,255,255,.5); font-weight: 500; margin-top: .1rem; }
+
+    /* ── Timeline ── */
+    .timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; top: 28px; left: 14%; right: 14%; height: 2px;
+      background: linear-gradient(90deg,var(--gold),rgba(212,168,83,.3)); z-index: 0;
+    }
+    .timeline-step { text-align: center; position: relative; padding: 0 1rem; }
+    .timeline-step__dot {
+      width: 56px; height: 56px; border-radius: 50%; background: var(--navy);
+      border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem; font-weight: 800; font-size: 1.1rem; color: var(--gold); position: relative; z-index: 1;
+    }
+    .timeline-step__phase { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+    .timeline-step__title { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: .5rem; }
+    .timeline-step__desc { font-size: .85rem; color: var(--text-gray); line-height: 1.65; }
+    .timeline-step__topics { list-style: none; margin-top: .75rem; }
+    .timeline-step__topics li { font-size: .78rem; color: var(--text-mid); padding: .2rem 0; }
+    .timeline-step__topics li::before { content: '→ '; color: var(--gold); font-weight: 700; }
+
+    /* ── Persona cards ── */
+    .personas-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.25rem; }
+    .persona-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 16px;
+      padding: 1.75rem 1.35rem; transition: all .35s var(--ease-out-expo);
+      box-shadow: 0 2px 12px rgba(27,42,74,.06);
+    }
+    .persona-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(27,42,74,.12); border-color: var(--gold); }
+    .persona-card__icon { width: 48px; height: 48px; background: var(--gold-muted); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .persona-card__icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+    .persona-card h3 { font-size: .95rem; color: var(--navy); margin-bottom: .85rem; }
+    .persona-card__topics { list-style: none; margin-bottom: 1.25rem; }
+    .persona-card__topics li { font-size: .78rem; color: var(--text-mid); padding: .22rem 0; border-bottom: 1px solid var(--light-gray); }
+    .persona-card__topics li:last-child { border: none; }
+    .persona-card__cta { font-size: .8rem; font-weight: 700; color: var(--gold); display: inline-flex; align-items: center; gap: .3rem; }
+    .persona-card__cta:hover { color: var(--gold-dark); }
+
+    /* ── Guide cards grid ── */
+    .guides-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .guide-card {
+      border-radius: 20px; overflow: hidden; position: relative; min-height: 260px;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      transition: transform .4s var(--ease-out-expo);
+    }
+    .guide-card:hover { transform: translateY(-5px); }
+    .guide-card:hover .guide-card__img { transform: scale(1.05); }
+    .guide-card__img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s var(--ease-out-expo);
+    }
+    .guide-card__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(6,14,30,.92) 0%, rgba(6,14,30,.5) 50%, transparent 100%);
+    }
+    .guide-card__content { position: relative; z-index: 1; padding: 1.75rem; }
+    .guide-card__tag { font-size: .64rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
+    .guide-card h3 { color: var(--white); font-size: 1.05rem; margin-bottom: .4rem; }
+    .guide-card p { font-size: .8rem; color: rgba(255,255,255,.65); line-height: 1.55; margin-bottom: 1rem; }
+    .guide-card__link { font-size: .8rem; font-weight: 700; color: var(--gold); display: inline-flex; align-items: center; gap: .3rem; }
+
+    /* ── Checklist section ── */
+    .checklist-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    .checklist-item {
+      display: flex; align-items: flex-start; gap: .85rem; padding: 1rem 1.25rem;
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 12px;
+    }
+    .checklist-item__box { width: 22px; height: 22px; border: 2px solid var(--gold); border-radius: 6px; flex-shrink: 0; margin-top: 1px; }
+    .checklist-item__text { font-size: .88rem; color: var(--text-body); font-weight: 500; }
+    .checklist-item__sub { font-size: .75rem; color: var(--text-gray); margin-top: .15rem; }
+    .checklist-cta-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #253A5E 100%);
+      border-radius: 20px; padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+    }
+    .checklist-cta-box h3 { color: var(--white); font-size: 1.2rem; margin-bottom: .4rem; }
+    .checklist-cta-box p { color: rgba(255,255,255,.6); font-size: .88rem; }
+
+    /* ── Trust bar ── */
+    .trust-bar { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+    .trust-stat { text-align: center; padding: 3rem 2rem; border-right: 1px solid rgba(255,255,255,.1); }
+    .trust-stat:last-child { border: none; }
+    .trust-stat__num { font-size: 3rem; font-weight: 800; color: var(--gold); letter-spacing: -.04em; line-height: 1; margin-bottom: .4rem; }
+    .trust-stat__label { font-size: .9rem; color: rgba(255,255,255,.65); }
+    .trust-stat__sub { font-size: .76rem; color: rgba(255,255,255,.4); margin-top: .2rem; }
+
+    /* ── Newsletter ── */
+    .newsletter-box { background: var(--cream); border-radius: 24px; padding: 4rem; text-align: center; }
+    .newsletter-box h2 { margin-bottom: .75rem; }
+    .newsletter-box p { color: var(--text-gray); margin-bottom: 2rem; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .newsletter-form { display: flex; gap: .75rem; max-width: 440px; margin: 0 auto; }
+    .newsletter-form input {
+      flex: 1; padding: .9rem 1.25rem; border: 1.5px solid var(--border-gray); border-radius: 100px;
+      font-family: inherit; font-size: .9rem; background: var(--white); color: var(--text-body); outline: none;
+    }
+    .newsletter-form input:focus { border-color: var(--gold); }
+
+    /* ── Responsive ── */
+    @media(max-width:1100px) {
+      .page-hero .container { grid-template-columns:1fr }
+      .page-hero__arch { display:none }
+      .personas-grid { grid-template-columns:repeat(3,1fr) }
+      .guides-grid   { grid-template-columns:repeat(2,1fr) }
+      .timeline { grid-template-columns:repeat(2,1fr); gap:3rem }
+      .timeline::before { display:none }
+    }
+    @media(max-width:768px) {
+      .page-hero { padding:calc(var(--nav-h,64px) + 3rem) 0 3.5rem }
+      .page-hero h1 { font-size:clamp(1.9rem,5.5vw,3rem) }
+      .page-hero__subtitle { font-size:1rem }
+      .page-hero__actions { flex-direction:column; align-items:flex-start }
+      .hero-stat-bar { gap:1.5rem; flex-wrap:wrap; margin-top:2rem; padding-top:1.75rem }
+      .hero-stat__num { font-size:1.45rem }
+      .personas-grid { grid-template-columns:1fr 1fr }
+      .checklist-preview { grid-template-columns:1fr }
+      .trust-bar { grid-template-columns:1fr }
+      .trust-stat { border-right:none; border-bottom:1px solid rgba(255,255,255,.1) }
+      .trust-stat__num { font-size:2.25rem }
+      .checklist-cta-box { flex-direction:column; text-align:center; padding:2rem 1.75rem }
+      .checklist-cta-box h3 { font-size:1.1rem }
+      .newsletter-form { flex-direction:column }
+      .newsletter-box { padding:2.5rem 1.5rem }
+      .newsletter-box h2 { font-size:1.5rem }
+    }
+    @media(max-width:480px) {
+      .page-hero { padding:calc(var(--nav-h,64px) + 2rem) 0 2.5rem }
+      .personas-grid { grid-template-columns:1fr }
+      .guides-grid   { grid-template-columns:1fr }
+      .timeline { grid-template-columns:1fr }
+      .persona-card { padding:1.5rem 1.25rem }
+      .trust-stat__num { font-size:2rem }
+      .checklist-cta-box { padding:1.75rem 1.25rem }
+      .newsletter-box { padding:2rem 1.25rem; border-radius:16px }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+    </a>
+    <div class="nav__links">
+      <a href="/relocate" class="nav__link active">Relocate</a>
+      <a href="/work" class="nav__link">Work &amp; Visa</a>
+      <a href="/business" class="nav__link">Business</a>
+      <a href="/life" class="nav__link">Life in KSA</a>
+      <a href="/cities" class="nav__link">Cities</a>
+      <a href="/apps" class="nav__link">Apps</a>
+      <a href="/resources/faq" class="nav__link">FAQ</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate" style="color:var(--gold)">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+  <a href="/relocate/before-you-arrive" style="color:var(--gold)">Start your journey →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__left">
+      <div class="page-hero__eyebrow">Relocation Hub</div>
+      <h1>Your Saudi Relocation Starts Here</h1>
+      <p class="page-hero__subtitle">Expert, up-to-date guidance for every stage of your move — from first research to fully settled expat life. Built by people who've done it.</p>
+      <div class="page-hero__actions">
+        <a href="/relocate/before-you-arrive" class="btn-primary">Before you arrive →</a>
+        <a href="#guides" class="btn-secondary">Browse all guides</a>
+      </div>
+      <div class="hero-stat-bar">
+        <div class="hero-stat">
+          <div class="hero-stat__num">50,000+</div>
+          <div class="hero-stat__label">New expats arrive annually</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__num">6</div>
+          <div class="hero-stat__label">Major expat cities covered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat__num">95%</div>
+          <div class="hero-stat__label">Visa success, when prepared</div>
+        </div>
+      </div>
+    </div>
+    <div class="page-hero__arch" aria-hidden="true">
+      <svg viewBox="0 0 380 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M190 480 C80 480 10 390 10 280 C10 170 80 40 190 20 C300 40 370 170 370 280 C370 390 300 480 190 480 Z" stroke="white" stroke-width="1.5" fill="none"/>
+        <path d="M190 440 C100 440 50 365 50 280 C50 195 100 75 190 60 C280 75 330 195 330 280 C330 365 280 440 190 440 Z" stroke="white" stroke-width="1" fill="none" opacity=".6"/>
+        <path d="M190 400 C120 400 90 340 90 280 C90 220 120 110 190 100 C260 110 310 220 310 280 C310 340 260 400 190 400 Z" stroke="white" stroke-width=".75" fill="none" opacity=".4"/>
+        <circle cx="190" cy="280" r="8" fill="white" opacity=".3"/>
+        <line x1="190" y1="20" x2="190" y2="272" stroke="white" stroke-width="1" opacity=".2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Your relocation journey</div>
+        <h2 class="section-heading">Four stages to a successful move</h2>
+        <p class="section-desc">Most relocation mistakes happen from skipping ahead. Follow the timeline and nothing gets left behind.</p>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-step__dot">1</div>
+        <div class="timeline-step__phase">90+ days out</div>
+        <div class="timeline-step__title">Plan & Prepare</div>
+        <div class="timeline-step__desc">Lay the legal and logistical groundwork before you do anything else.</div>
+        <ul class="timeline-step__topics">
+          <li>Confirm visa type for your role</li>
+          <li>Apostille all key documents</li>
+          <li>Research housing options</li>
+          <li>Start Absher account setup</li>
+        </ul>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-step__dot">2</div>
+        <div class="timeline-step__phase">30 days out</div>
+        <div class="timeline-step__title">Before You Arrive</div>
+        <div class="timeline-step__desc">Packing, customs rules, temp housing confirmed, and app downloads.</div>
+        <ul class="timeline-step__topics">
+          <li>Medical fitness test done</li>
+          <li>Vaccinations up to date</li>
+          <li>Temporary housing booked</li>
+          <li>Key Saudi apps downloaded</li>
+        </ul>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-step__dot">3</div>
+        <div class="timeline-step__phase">Day 1–7</div>
+        <div class="timeline-step__title">First Week</div>
+        <div class="timeline-step__desc">Immediate priorities that unlock everything else in Saudi Arabia.</div>
+        <ul class="timeline-step__topics">
+          <li>Buy STC or Mobily SIM</li>
+          <li>Register with your employer HR</li>
+          <li>Iqama application begins</li>
+          <li>Explore your neighborhood</li>
+        </ul>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-step__dot">4</div>
+        <div class="timeline-step__phase">Month 1–3</div>
+        <div class="timeline-step__title">Getting Settled</div>
+        <div class="timeline-step__desc">Build the foundations of everyday expat life in Saudi Arabia.</div>
+        <ul class="timeline-step__topics">
+          <li>Iqama collected and valid</li>
+          <li>Bank account opened</li>
+          <li>Permanent housing secured</li>
+          <li>Schools enrolled (if family)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Find your path</div>
+        <h2 class="section-heading">I'm relocating as a…</h2>
+        <p class="section-desc">Your situation shapes your relocation journey. Find the guides most relevant to you.</p>
+      </div>
+    </div>
+    <div class="personas-grid">
+
+      <!-- Employee -->
+      <div class="persona-card">
+        <div class="persona-card__icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+        </div>
+        <h3>Employed Professional</h3>
+        <ul class="persona-card__topics">
+          <li>Work visa & Iqama process</li>
+          <li>Employment contract review</li>
+          <li>Housing allowance negotiation</li>
+        </ul>
+        <a href="/work/iqama-guide" class="persona-card__cta">Explore guides →</a>
+      </div>
+
+      <!-- Investor -->
+      <div class="persona-card">
+        <div class="persona-card__icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3>Investor</h3>
+        <ul class="persona-card__topics">
+          <li>Investor visa requirements</li>
+          <li>MISA licensing & setup</li>
+          <li>Banking for investors</li>
+        </ul>
+        <a href="/business/investment-guide" class="persona-card__cta">Explore guides →</a>
+      </div>
+
+      <!-- Entrepreneur -->
+      <div class="persona-card">
+        <div class="persona-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Entrepreneur</h3>
+        <ul class="persona-card__topics">
+          <li>Company formation options</li>
+          <li>SAGIA / MISA licensing</li>
+          <li>Startup ecosystem access</li>
+        </ul>
+        <a href="/business/start-a-company" class="persona-card__cta">Explore guides →</a>
+      </div>
+
+      <!-- Family -->
+      <div class="persona-card">
+        <div class="persona-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Relocating Family</h3>
+        <ul class="persona-card__topics">
+          <li>Dependent visa sponsorship</li>
+          <li>International schools guide</li>
+          <li>Family-friendly compounds</li>
+        </ul>
+        <a href="/relocate/families" class="persona-card__cta">Explore guides →</a>
+      </div>
+
+      <!-- Student -->
+      <div class="persona-card">
+        <div class="persona-card__icon">
+          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3>Student</h3>
+        <ul class="persona-card__topics">
+          <li>Student visa requirements</li>
+          <li>University & campus life</li>
+          <li>Scholarships available</li>
+        </ul>
+        <a href="/work/job-seekers" class="persona-card__cta">Explore guides →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED GUIDES GRID -->
+<section class="section section--cream" id="guides">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Featured guides</div>
+        <h2 class="section-heading">Start with these essentials</h2>
+        <p class="section-desc">The four guides every new arrival needs — written by expats who've been through it.</p>
+      </div>
+      <a href="/relocate" class="view-all">View all guides →</a>
+    </div>
+    <div class="guides-grid">
+
+      <a href="/relocate/before-you-arrive" class="guide-card">
+        <img src="https://picsum.photos/seed/airport/600/400" alt="Before you arrive" class="guide-card__img">
+        <div class="guide-card__overlay"></div>
+        <div class="guide-card__content">
+          <div class="guide-card__tag">Pre-arrival</div>
+          <h3>Before You Arrive</h3>
+          <p>The 90-day preparation checklist that prevents costly mistakes.</p>
+          <div class="guide-card__link">Read guide →</div>
+        </div>
+      </a>
+
+      <a href="/relocate/first-30-days" class="guide-card">
+        <img src="https://picsum.photos/seed/riyadh/600/400" alt="First 30 days" class="guide-card__img">
+        <div class="guide-card__overlay"></div>
+        <div class="guide-card__content">
+          <div class="guide-card__tag">First month</div>
+          <h3>First 30 Days</h3>
+          <p>Everything to do in your first month: SIM, Iqama, bank, housing.</p>
+          <div class="guide-card__link">Read guide →</div>
+        </div>
+      </a>
+
+      <a href="/relocate/families" class="guide-card">
+        <img src="https://picsum.photos/seed/family/600/400" alt="Family relocation" class="guide-card__img">
+        <div class="guide-card__overlay"></div>
+        <div class="guide-card__content">
+          <div class="guide-card__tag">Families</div>
+          <h3>Family Relocation</h3>
+          <p>Dependent visas, schools, compounds, and family life in Saudi.</p>
+          <div class="guide-card__link">Read guide →</div>
+        </div>
+      </a>
+
+      <a href="/relocate/documents-checklist" class="guide-card">
+        <img src="https://picsum.photos/seed/documents/600/400" alt="Documents checklist" class="guide-card__img">
+        <div class="guide-card__overlay"></div>
+        <div class="guide-card__content">
+          <div class="guide-card__tag">Documents</div>
+          <h3>Documents Checklist</h3>
+          <p>Every document you need, apostilled, attested, and ready.</p>
+          <div class="guide-card__link">Read guide →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Master checklist</div>
+        <h2 class="section-heading">Don't leave without ticking these</h2>
+        <p class="section-desc">A preview of our complete relocation checklist — 50+ items across every category.</p>
+      </div>
+    </div>
+    <div class="checklist-preview">
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Visa confirmed and passport valid for 6+ months</div>
+          <div class="checklist-item__sub">Check expiry and any blank pages required</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Medical fitness certificate obtained</div>
+          <div class="checklist-item__sub">From a GAMCA-approved clinic in your country</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Degree certificates apostilled & attested</div>
+          <div class="checklist-item__sub">By home country authority + Saudi embassy</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Police clearance certificate (PCC) obtained</div>
+          <div class="checklist-item__sub">Can take 4–6 weeks — start early</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Temporary accommodation booked for first 2 weeks</div>
+          <div class="checklist-item__sub">Serviced apartment or company housing</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">SIM card plan researched (STC / Mobily / Zain)</div>
+          <div class="checklist-item__sub">Buy on Day 1 — essential for everything</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Customs rules reviewed — prohibited items removed</div>
+          <div class="checklist-item__sub">Alcohol, certain medications, etc.</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Marriage certificate apostilled (if bringing family)</div>
+          <div class="checklist-item__sub">Required for dependent visa sponsorship</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">Absher account created with Saudi phone number</div>
+          <div class="checklist-item__sub">The essential Saudi government portal</div>
+        </div>
+      </div>
+
+      <div class="checklist-item">
+        <div class="checklist-item__box"></div>
+        <div>
+          <div class="checklist-item__text">International health insurance arranged</div>
+          <div class="checklist-item__sub">Employer may provide — confirm coverage details</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="checklist-cta-box">
+      <div>
+        <h3>Download the complete 50-item checklist</h3>
+        <p>A print-ready PDF covering every document, task, and deadline — sorted by your timeline.</p>
+      </div>
+      <a href="/relocate/documents-checklist" class="btn-primary">Get full checklist →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST / STATS BAR -->
+<section class="section section--navy">
+  <div class="container">
+    <div class="trust-bar">
+      <div class="trust-stat">
+        <div class="trust-stat__num">50,000+</div>
+        <div class="trust-stat__label">Expats currently living in Saudi Arabia</div>
+        <div class="trust-stat__sub">From over 100 nationalities</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat__num">6</div>
+        <div class="trust-stat__label">Major expat cities with in-depth guides</div>
+        <div class="trust-stat__sub">Riyadh · Jeddah · NEOM · Dammam · Khobar · Medina</div>
+      </div>
+      <div class="trust-stat">
+        <div class="trust-stat__num">95%+</div>
+        <div class="trust-stat__label">Visa success rate for well-prepared applicants</div>
+        <div class="trust-stat__sub">Preparation is the single biggest factor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE RESOURCES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Also in relocate</div>
+        <h2 class="section-heading">More relocation resources</h2>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <a href="/relocate/cost-of-living" class="card" style="padding:2rem;display:block;text-decoration:none;">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;">Finance</div>
+        <h3 style="font-size:1.05rem;margin-bottom:.5rem;">Cost of Living in Saudi Arabia</h3>
+        <p style="font-size:.85rem;color:var(--text-gray);">Rent, groceries, transport, dining — honest monthly budgets for different lifestyle levels.</p>
+      </a>
+      <a href="/life/housing" class="card" style="padding:2rem;display:block;text-decoration:none;">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;">Housing</div>
+        <h3 style="font-size:1.05rem;margin-bottom:.5rem;">Finding Housing in Saudi Arabia</h3>
+        <p style="font-size:.85rem;color:var(--text-gray);">Compounds vs apartments, neighbourhood guides, rental contracts and what to watch for.</p>
+      </a>
+      <a href="/work/iqama-guide" class="card" style="padding:2rem;display:block;text-decoration:none;">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;">Legal status</div>
+        <h3 style="font-size:1.05rem;margin-bottom:.5rem;">The Complete Iqama Guide</h3>
+        <p style="font-size:.85rem;color:var(--text-gray);">How to get, renew, and use your Iqama — the residency permit that unlocks life in Saudi.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO SHOWCASE -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem;border-radius:20px;overflow:hidden;">
+      <img src="https://picsum.photos/seed/riyadh-skyline/800/500" alt="Riyadh skyline" style="width:100%;height:320px;object-fit:cover;border-radius:16px;">
+      <img src="https://picsum.photos/seed/saudi-mosque/400/240" alt="Saudi architecture" style="width:100%;height:150px;object-fit:cover;border-radius:16px;">
+      <img src="https://picsum.photos/seed/jeddah-corniche/400/240" alt="Jeddah Corniche" style="width:100%;height:150px;object-fit:cover;border-radius:16px;">
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section">
+  <div class="container">
+    <div class="newsletter-box">
+      <div class="section-eyebrow" style="justify-content:center;">Stay informed</div>
+      <h2>Relocation updates, direct to your inbox</h2>
+      <p>Visa regulation changes, new guides, city tips, and practical advice — weekly, never spammy.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="your@email.com" autocomplete="email">
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+      <p style="font-size:.75rem;color:var(--text-gray);margin-top:1rem;margin-bottom:0;">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div><div class="footer__col-title">Relocate</div>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before you arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 days</a>
+        <a href="/relocate/families" class="footer__link">Family relocation</a>
+        <a href="/relocate/documents-checklist" class="footer__link">Documents checklist</a>
+        <a href="/relocate/cost-of-living" class="footer__link">Cost of living</a>
+      </div>
+      <div><div class="footer__col-title">Work & Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama guide</a>
+        <a href="/work/job-seekers" class="footer__link">Finding work</a>
+        <a href="/work/salary-guide" class="footer__link">Salary guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a business</a>
+        <a href="/business/investment-guide" class="footer__link">Investment guide</a>
+      </div>
+      <div><div class="footer__col-title">Life in Saudi</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/schools-education" class="footer__link">Schools</a>
+        <a href="/life/culture-etiquette" class="footer__link">Culture & etiquette</a>
+      </div>
+      <div><div class="footer__col-title">Resources</div>
+        <a href="/resources/directory" class="footer__link">Service directory</a>
+        <a href="/resources/apps" class="footer__link">Essential apps</a>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+        <a href="/about" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NewToSaudi.com · All rights reserved</span>
+      <div class="footer__bottom-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

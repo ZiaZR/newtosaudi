@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Working in Saudi Arabia — Visas, Iqama & Employment | NewToSaudi</title>
+<meta name="description" content="Everything you need to know about working in Saudi Arabia. Work visas, Iqama process, labour law, salary guides, and finding a job in the Kingdom.">
+<link rel="icon" type="image/svg+xml" href="../Logos/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../Logos/favicon-32x32.png">
+<link rel="apple-touch-icon" href="../Logos/favicon-180x180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+/* ── HERO ── */
+.hero{min-height:72vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(140deg,#04090F 0%,#0A1628 40%,#0F1C33 70%,#09111E 100%)}
+.hero__geo{position:absolute;inset:0;opacity:.06}
+.hero__glow{position:absolute;top:-20%;left:-10%;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(212,168,83,.18) 0%,transparent 70%);pointer-events:none}
+.hero__glow-2{position:absolute;bottom:-10%;right:-5%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(27,42,74,.6) 0%,transparent 70%);pointer-events:none}
+.hero__arch{position:absolute;right:6%;top:50%;transform:translateY(-50%);opacity:.12}
+.hero__content{position:relative;z-index:2;max-width:680px;padding:clamp(4rem,8vw,6rem) 0}
+.hero__eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+.hero__eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px}
+.hero__title{font-size:clamp(2.4rem,4.5vw,4.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
+.hero__title em{font-style:normal;color:var(--gold)}
+.hero__desc{font-size:1.1rem;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:2.25rem;max-width:540px}
+.hero__badges{display:flex;gap:1rem;flex-wrap:wrap}
+.hero__badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:100px;padding:.45rem 1.1rem;font-size:.8rem;color:rgba(255,255,255,.7);
+  display:flex;align-items:center;gap:.4rem}
+.hero__badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── GUIDE GRID ── */
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.75rem}
+.guide-tile{background:#fff;border-radius:20px;overflow:hidden;border:1.5px solid rgba(27,42,74,.08);
+  box-shadow:0 2px 0 rgba(27,42,74,.04),0 6px 24px rgba(27,42,74,.07);
+  transition:transform .4s var(--ease-out-expo),box-shadow .4s,border-color .3s;cursor:pointer;display:block}
+.guide-tile:hover{transform:translateY(-8px);box-shadow:0 20px 48px rgba(27,42,74,.14),0 0 0 1.5px rgba(212,168,83,.25);border-color:rgba(212,168,83,.3)}
+.guide-tile__img{height:200px;overflow:hidden;position:relative}
+.guide-tile__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-out-expo)}
+.guide-tile:hover .guide-tile__img img{transform:scale(1.06)}
+.guide-tile__label{position:absolute;top:1rem;left:1rem;background:var(--navy);color:#fff;
+  font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .8rem;border-radius:100px}
+.guide-tile__body{padding:1.75rem 1.75rem 2rem}
+.guide-tile__tag{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.5rem}
+.guide-tile__title{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.3}
+.guide-tile__desc{font-size:.9rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.25rem}
+.guide-tile__cta{font-size:.85rem;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:.4rem}
+.guide-tile__cta::after{content:'→';transition:transform .25s var(--ease-spring)}
+.guide-tile:hover .guide-tile__cta::after{transform:translateX(4px)}
+
+/* ── QUICK FACTS ── */
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}
+.fact-card{background:#fff;border-radius:16px;padding:1.75rem;border:1.5px solid rgba(27,42,74,.07);
+  box-shadow:0 2px 12px rgba(27,42,74,.06)}
+.fact-card__icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--navy),#1B3A6A);
+  display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+.fact-card__icon svg{width:22px;height:22px;stroke:#fff;stroke-width:1.8;fill:none}
+.fact-card__label{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text-gray);margin-bottom:.25rem}
+.fact-card__value{font-size:1.05rem;font-weight:700;color:var(--navy)}
+
+/* ── DARK SECTION ── */
+.dark-section{background:linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%);
+  padding:clamp(5rem,9vw,8rem) 0;position:relative;overflow:hidden}
+.dark-section h2,.dark-section p{color:#fff}
+.dark-section .section-eyebrow{color:var(--gold)}
+.step-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;margin-top:3rem}
+.step-box{background:rgba(255,255,255,.04);border:1px solid rgba(212,168,83,.1);border-radius:16px;padding:1.75rem}
+.step-box__num{font-size:2.5rem;font-weight:900;color:rgba(212,168,83,.25);line-height:1;margin-bottom:.75rem}
+.step-box__title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+.step-box__desc{font-size:.85rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out-expo),transform .7s var(--ease-out-expo)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+@media(max-width:768px){
+  .step-row{grid-template-columns:1fr 1fr}
+  .facts-grid{grid-template-columns:1fr 1fr}
+  .guide-grid{grid-template-columns:1fr!important}
+  /* Section padding */
+  .hero__content{padding:clamp(3rem,6vw,5rem) 0 2.5rem}
+  .dark-section,.light-section{padding:3rem 0}
+}
+@media(max-width:480px){
+  .step-row,.facts-grid{grid-template-columns:1fr}
+  .dark-section,.light-section{padding:2.5rem 0}
+  div[style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/relocate" class="nav__link">Relocate</a></li>
+      <li><a href="/work" class="nav__link active">Work &amp; Visa</a></li>
+      <li><a href="/business" class="nav__link">Business</a></li>
+      <li><a href="/life" class="nav__link">Life in KSA</a></li>
+      <li><a href="/cities" class="nav__link">Cities</a></li>
+      <li><a href="/apps" class="nav__link">Apps</a></li>
+      <li><a href="/resources/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="nav__mobile-menu">
+  <a href="/relocate">Relocate</a>
+  <a href="/work" style="color:#D4A853">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__geo">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="geo" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M40 0L80 40L40 80L0 40Z" fill="none" stroke="white" stroke-width=".5"/>
+          <circle cx="40" cy="40" r="12" fill="none" stroke="white" stroke-width=".3"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#geo)"/>
+    </svg>
+  </div>
+  <div class="hero__glow"></div>
+  <div class="hero__glow-2"></div>
+  <div class="hero__arch" aria-hidden="true">
+    <svg viewBox="0 0 220 340" width="280" height="430" fill="none">
+      <path d="M20 330L20 100Q20 15 110 15Q200 15 200 100L200 330" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="110" y1="330" x2="110" y2="112" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="110" cy="100" r="8" fill="#D4A853"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero__content">
+      <p class="hero__eyebrow">Work &amp; Visa</p>
+      <h1 class="hero__title">Working in <em>Saudi Arabia</em></h1>
+      <p class="hero__desc">Complete guides for expats navigating the Saudi work visa system, Iqama residency permit, labour law, and career opportunities in the Kingdom.</p>
+      <div class="hero__badges">
+        <span class="hero__badge">Work visa types</span>
+        <span class="hero__badge">Iqama in 2–4 weeks</span>
+        <span class="hero__badge">2025 Labour Law updates</span>
+        <span class="hero__badge">Salary benchmarks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDE TILES -->
+<section class="section" style="background:var(--off-white)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <p class="section-eyebrow">All Guides</p>
+        <h2 class="section-heading">Work &amp; Visa Guides</h2>
+        <p class="section-desc">In-depth, regularly updated articles covering every aspect of working legally in Saudi Arabia.</p>
+      </div>
+    </div>
+    <div class="guide-grid">
+      <a href="/work/iqama-guide" class="guide-tile reveal">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/iqama-guide/600/400" alt="Iqama Guide" loading="lazy">
+          <span class="guide-tile__label">Essential</span>
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Residency</div>
+          <div class="guide-tile__title">The Complete Iqama Guide 2025</div>
+          <p class="guide-tile__desc">Everything about Saudi Arabia's residency permit — how to get it, renew it, transfer it, and what it costs. Includes the new Premium Residency option.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+      <a href="/work/work-visa" class="guide-tile reveal reveal-delay-1">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/work-visa/600/400" alt="Work Visa" loading="lazy">
+          <span class="guide-tile__label">Visa</span>
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Visa</div>
+          <div class="guide-tile__title">Saudi Work Visa: Types &amp; Requirements</div>
+          <p class="guide-tile__desc">Work Visa (WV), E-Visa, Seasonal Work Visa — which one applies to you, who can sponsor you, and the complete document checklist.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+      <a href="/work/salary-guide" class="guide-tile reveal reveal-delay-2">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/salary-ksa/600/400" alt="Salary Guide" loading="lazy">
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Salary</div>
+          <div class="guide-tile__title">Saudi Arabia Salary Guide by Sector</div>
+          <p class="guide-tile__desc">Benchmark salaries across technology, oil &amp; gas, healthcare, finance, construction, and education. Includes housing and transport allowances.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+      <a href="/work/labour-law" class="guide-tile reveal">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/labour-law/600/400" alt="Labour Law" loading="lazy">
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Rights</div>
+          <div class="guide-tile__title">Saudi Labour Law: Your Rights as an Expat</div>
+          <p class="guide-tile__desc">Working hours, annual leave entitlement, end-of-service benefits (EOSB), overtime pay, termination rules, and how to file a labour complaint.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+      <a href="/work/job-seekers" class="guide-tile reveal reveal-delay-1">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/job-search/600/400" alt="Finding Work" loading="lazy">
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Job Search</div>
+          <div class="guide-tile__title">Finding Work in Saudi Arabia</div>
+          <p class="guide-tile__desc">Best job boards (Bayt, LinkedIn, Naukrigulf), recruitment agencies, direct employer applications, and what to expect in a Saudi interview process.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+      <a href="/work/iqama-guide#transfer" class="guide-tile reveal reveal-delay-2">
+        <div class="guide-tile__img">
+          <img src="https://picsum.photos/seed/employer-transfer/600/400" alt="Employer Transfer" loading="lazy">
+        </div>
+        <div class="guide-tile__body">
+          <div class="guide-tile__tag">Iqama</div>
+          <div class="guide-tile__title">Changing Employers in Saudi Arabia</div>
+          <p class="guide-tile__desc">Since the 2021 labour reforms, changing sponsors is now more accessible. Learn the eligibility rules, process, and how to handle the transition smoothly.</p>
+          <span class="guide-tile__cta">Read guide</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- KEY FACTS -->
+<section class="section" style="background:var(--cream)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <p class="section-eyebrow">Quick Reference</p>
+        <h2 class="section-heading">Key Facts for Working Expats</h2>
+      </div>
+    </div>
+    <div class="facts-grid">
+      <div class="fact-card reveal">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Work Week</div>
+        <div class="fact-card__value">48 hours maximum</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-1">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Annual Leave</div>
+        <div class="fact-card__value">21 days (first 5 yrs) · 30 days after</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-2">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Income Tax</div>
+        <div class="fact-card__value">0% — Saudi Arabia is tax-free</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-3">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">EOSB (Gratuity)</div>
+        <div class="fact-card__value">½ month salary per year (first 5 yrs)</div>
+      </div>
+      <div class="fact-card reveal">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Saudisation (Nitaqat)</div>
+        <div class="fact-card__value">Required Saudi employee quota per sector</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-1">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Iqama Renewal</div>
+        <div class="fact-card__value">Annual · done via Absher app</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-2">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Iqama Expiry Fine</div>
+        <div class="fact-card__value">SAR 10,000 + potential deportation</div>
+      </div>
+      <div class="fact-card reveal reveal-delay-3">
+        <div class="fact-card__icon"><svg viewBox="0 0 24 24"><path d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fact-card__label">Exit/Re-Entry Visa</div>
+        <div class="fact-card__value">Now free — managed via Absher</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STEPS (dark) -->
+<section class="dark-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-eyebrow">The Process</p>
+      <h2 style="margin-bottom:.6rem">From Job Offer to Iqama in Hand</h2>
+      <p style="color:rgba(255,255,255,.6);max-width:520px">Once you have a job offer, the clock starts. Here's the typical timeline from offer to legal resident.</p>
+    </div>
+    <div class="step-row">
+      <div class="step-box reveal"><div class="step-box__num">01</div><div class="step-box__title">Job Offer &amp; Contract</div><div class="step-box__desc">Receive and sign your employment contract. Ensure your salary, allowances, and benefits are clearly stated. Timeline: Day 0</div></div>
+      <div class="step-box reveal reveal-delay-1"><div class="step-box__num">02</div><div class="step-box__title">Employer Applies for Work Visa</div><div class="step-box__desc">Your sponsor/employer submits the work visa application to the Ministry of Human Resources. Timeline: Week 1–3</div></div>
+      <div class="step-box reveal reveal-delay-2"><div class="step-box__num">03</div><div class="step-box__title">Visa Stamped, You Fly In</div><div class="step-box__desc">Work visa is stamped in your passport at the Saudi embassy. You enter the Kingdom on this visa. Timeline: Week 3–5</div></div>
+      <div class="step-box reveal"><div class="step-box__num">04</div><div class="step-box__title">Medical &amp; Biometrics</div><div class="step-box__desc">Within 90 days of arrival, complete the mandatory health check and biometric fingerprinting. Book via Absher. Timeline: Week 1–4 in KSA</div></div>
+      <div class="step-box reveal reveal-delay-1"><div class="step-box__num">05</div><div class="step-box__title">Iqama Issued</div><div class="step-box__desc">Your employer completes the Iqama application. The card is typically ready in 2–4 weeks after all steps are done. Timeline: Week 6–10</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section" style="background:linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%);padding:clamp(4rem,7vw,7rem) 0">
+  <div class="container" style="text-align:center;max-width:600px">
+    <p class="section-eyebrow" style="justify-content:center">Stay Updated</p>
+    <h2 style="color:#fff;margin-bottom:.8rem">Saudi work regulations change.<br>Stay ahead.</h2>
+    <p style="color:rgba(255,255,255,.55);margin-bottom:2rem">Get the monthly NewToSaudi work &amp; visa brief — regulatory changes, visa fee updates, and labour law news.</p>
+    <form style="display:flex;gap:.75rem;max-width:440px;margin:0 auto" onsubmit="return false">
+      <input type="email" placeholder="Your email address" style="flex:1;padding:.85rem 1.25rem;border-radius:12px;border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;font-size:.95rem;font-family:inherit;outline:none">
+      <button type="submit" style="padding:.85rem 1.75rem;background:var(--gold);color:#1a0e00;font-weight:700;font-size:.9rem;border:none;border-radius:12px;cursor:pointer;white-space:nowrap;font-family:inherit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Related guides -->
+<section style="background:#F2EEE5;padding:3rem 0;border-top:1px solid #D6D3CB">
+  <div class="container">
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#D4A853;margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem"><span style="width:24px;height:1.5px;background:#D4A853;display:inline-block"></span>Related guides</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem" id="work-related-grid">
+      <a href="/apps" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid #D6D3CB;border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s" class="rel-link">
+        <span style="font-size:1.4rem">📱</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:#1B2A4A">Essential Apps</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Absher, Tawakkalna, GOSI — set these up from day one</div></div>
+      </a>
+      <a href="/relocate/first-30-days" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid #D6D3CB;border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s" class="rel-link">
+        <span style="font-size:1.4rem">📋</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:#1B2A4A">Your First 30 Days</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Step-by-step arrival plan, including Iqama medical and SIM</div></div>
+      </a>
+      <a href="/life/banking" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid #D6D3CB;border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s" class="rel-link">
+        <span style="font-size:1.4rem">🏦</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:#1B2A4A">Banking Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Open a salary account once your Iqama medical is done</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+<style>.rel-link:hover{border-color:#D4A853!important;transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08)}@media(max-width:768px){#work-related-grid{grid-template-columns:1fr}}</style>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px;width:auto"></div>
+        <p class="footer__tagline">Your complete guide to relocating and living in Saudi Arabia.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate" class="footer__link">Relocation Hub</a>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a Company</a>
+        <a href="/business/free-zones" class="footer__link">Free Zones</a>
+        <a href="/work/salary-guide" class="footer__link">Salary Guide</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Life in KSA</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/apps" class="footer__link">Essential Apps</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 NewToSaudi.com · Independent &amp; unsponsored · <a href="/about">About</a> · <a href="/resources/faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+</body>
+</html>

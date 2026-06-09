@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding Housing in Saudi Arabia — Compounds, Apartments &amp; Villas Guide</title>
+  <meta name="description" content="Complete guide to housing in Saudi Arabia for expats. Compound vs apartment, rent by city, best neighbourhoods, lease process, and tenant rights.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 75vh;
+      background: linear-gradient(150deg,#060E1E 0%,#0D1830 45%,#111D33 75%,#0A1220 100%);
+      display: flex; align-items: flex-end; padding-bottom: 5rem; position: relative; overflow: hidden;
+    }
+    .hero__bg-img {
+      position: absolute; inset: 0;
+      background: url('https://picsum.photos/seed/housing/1200/500') center/cover no-repeat;
+      opacity: 0.2;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(6,14,30,.2) 0%, rgba(6,14,30,.9) 100%);
+    }
+    .hero__content { position: relative; z-index: 2; max-width: 760px; }
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem; font-size: .72rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; }
+    .hero__title { font-size: clamp(2.6rem,4.8vw,4.8rem); color: var(--white); margin-bottom: 1.25rem; }
+    .hero__sub { font-size: 1.15rem; color: rgba(255,255,255,.65); max-width: 560px; line-height: 1.8; }
+    .hero__meta {
+      display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .hero__meta-item { font-size: .82rem; color: rgba(255,255,255,.4); display: flex; align-items: center; gap: .4rem; }
+
+    /* ── HOUSING TYPES ── */
+    .housing-types-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+    .housing-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 24px;
+      overflow: hidden; transition: all .4s var(--ease-out-expo);
+      box-shadow: 0 2px 12px rgba(27,42,74,.06);
+    }
+    .housing-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27,42,74,.12); border-color: rgba(212,168,83,.3); }
+    .housing-card__img { height: 220px; overflow: hidden; }
+    .housing-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease-out-expo); }
+    .housing-card:hover .housing-card__img img { transform: scale(1.06); }
+    .housing-card__body { padding: 1.75rem; }
+    .housing-card__type {
+      display: inline-block; background: var(--gold-muted); color: var(--gold-dark);
+      border-radius: 100px; padding: .3rem .85rem; font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em; margin-bottom: 1rem;
+    }
+    .housing-card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: .75rem; }
+    .housing-card p { font-size: .88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
+    .housing-card__details { display: flex; flex-direction: column; gap: .5rem; }
+    .housing-card__detail { display: flex; align-items: flex-start; gap: .6rem; font-size: .83rem; color: var(--text-mid); }
+    .housing-card__detail strong { color: var(--navy); min-width: 80px; font-weight: 600; }
+    .housing-card__price {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.75rem; background: var(--off-white); border-top: 1px solid var(--mid-gray);
+    }
+    .housing-card__price-label { font-size: .75rem; color: var(--text-gray); font-weight: 500; }
+    .housing-card__price-val { font-size: 1.05rem; font-weight: 800; color: var(--gold-dark); }
+
+    /* ── COST TABLE WRAPPER ── */
+    .table-wrapper { overflow-x: auto; border-radius: 16px; border: 1.5px solid var(--mid-gray); }
+    .table-wrapper .data-table { margin: 0; }
+    .table-wrapper .data-table th:first-child { border-radius: 14px 0 0 0; }
+    .table-wrapper .data-table th:last-child { border-radius: 0 14px 0 0; }
+
+    /* ── NEIGHBOURHOOD SECTION ── */
+    .city-tabs { display: flex; gap: .75rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .city-tab {
+      padding: .6rem 1.4rem; border-radius: 100px; border: 1.5px solid var(--mid-gray);
+      font-size: .85rem; font-weight: 600; color: var(--text-mid); cursor: pointer;
+      background: var(--white); transition: all .3s; text-decoration: none;
+    }
+    .city-tab:hover, .city-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .neighbourhood-group { margin-bottom: 3rem; }
+    .neighbourhood-group h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 1.5rem; padding-bottom: .75rem; border-bottom: 2px solid var(--mid-gray); }
+    .neighbourhood-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .neighbourhood-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 16px;
+      padding: 1.5rem; transition: all .35s var(--ease-out-expo);
+      box-shadow: 0 2px 8px rgba(27,42,74,.04);
+    }
+    .neighbourhood-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(27,42,74,.1); border-color: rgba(212,168,83,.3); }
+    .neighbourhood-card__name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
+    .neighbourhood-card__for {
+      font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em;
+      color: var(--gold-dark); margin-bottom: .65rem;
+    }
+    .neighbourhood-card p { font-size: .83rem; color: var(--text-mid); line-height: 1.7; margin-bottom: .75rem; }
+    .neighbourhood-card__price { font-size: .8rem; font-weight: 700; color: var(--navy); }
+    .neighbourhood-card__price span { color: var(--text-gray); font-weight: 400; }
+
+    /* ── LEASE STEPS ── */
+    .lease-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .lease-steps-img { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(27,42,74,.15); }
+    .lease-steps-img img { width: 100%; display: block; }
+
+    /* ── CALLOUT GRID ── */
+    .callout-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; }
+    .callout-item {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 16px;
+      padding: 1.5rem 1.75rem; display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .callout-item__icon { font-size: 1.5rem; flex-shrink: 0; }
+    .callout-item h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .35rem; }
+    .callout-item p { font-size: .85rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── RESOURCES GRID ── */
+    .resources-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+    .resource-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 16px;
+      padding: 1.75rem; text-align: center; transition: all .35s var(--ease-out-expo);
+      box-shadow: 0 2px 8px rgba(27,42,74,.04); text-decoration: none;
+    }
+    .resource-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(27,42,74,.1); border-color: rgba(212,168,83,.3); }
+    .resource-card__icon { font-size: 2rem; margin-bottom: .75rem; }
+    .resource-card h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
+    .resource-card p { font-size: .8rem; color: var(--text-mid); line-height: 1.65; }
+
+    /* ── GALLERY ── */
+    .photo-gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .gallery-item { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease-out-expo); display: block; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item--tall { grid-row: span 2; aspect-ratio: auto; }
+
+    /* ── RELATED GUIDES ── */
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+    .related-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 20px;
+      overflow: hidden; transition: all .4s var(--ease-out-expo); text-decoration: none;
+      box-shadow: 0 2px 12px rgba(27,42,74,.06);
+    }
+    .related-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(27,42,74,.1); border-color: rgba(212,168,83,.3); }
+    .related-card__img { height: 180px; overflow: hidden; }
+    .related-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .related-card:hover .related-card__img img { transform: scale(1.06); }
+    .related-card__body { padding: 1.5rem; }
+    .related-card__cat { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: .5rem; }
+    .related-card__title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
+    .related-card p { font-size: .85rem; color: var(--text-mid); line-height: 1.7; }
+
+    @media(max-width:1200px) {
+      .neighbourhood-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media(max-width:1024px) {
+      .housing-types-grid { grid-template-columns: 1fr; }
+      .resources-grid { grid-template-columns: repeat(2,1fr); }
+      .photo-gallery { grid-template-columns: repeat(2,1fr); }
+      .neighbourhood-grid { grid-template-columns: repeat(2,1fr); }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .callout-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width:768px) {
+      .lease-steps-grid { grid-template-columns:1fr }
+      .related-grid     { grid-template-columns:1fr }
+      .resources-grid   { grid-template-columns:1fr 1fr }
+      /* Section padding reduction */
+      section[style*="padding:5rem"],section[style*="padding:6rem"],
+      section[style*="padding:7rem"],section[style*="padding:8rem"] { padding:3rem!important }
+    }
+    @media(max-width:480px) {
+      .photo-gallery      { grid-template-columns:1fr 1fr }
+      .neighbourhood-grid { grid-template-columns:1fr }
+      .resources-grid     { grid-template-columns:1fr }
+      section[style*="padding:5rem"],section[style*="padding:6rem"],
+      section[style*="padding:7rem"],section[style*="padding:8rem"] { padding:2.25rem!important }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+    </a>
+    <div class="nav__links">
+      <a href="/relocate" class="nav__link">Relocate</a>
+      <a href="/work" class="nav__link">Work &amp; Visa</a>
+      <a href="/business" class="nav__link">Business</a>
+      <a href="/life" class="nav__link active">Life in KSA</a>
+      <a href="/cities" class="nav__link">Cities</a>
+      <a href="/apps" class="nav__link">Apps</a>
+      <a href="/resources/faq" class="nav__link">FAQ</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life" style="color:var(--gold)">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+  <a href="/relocate/before-you-arrive" style="color:var(--gold)">Start your journey →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg-img"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/life">Life in Saudi</a><span>›</span>
+        <span>Housing</span>
+      </div>
+      <div class="hero__eyebrow">Life in Saudi Arabia</div>
+      <h1 class="hero__title" style="animation:heroFadeUp .9s var(--ease-out-expo) both">
+        Finding Housing in Saudi Arabia
+      </h1>
+      <p class="hero__sub" style="animation:heroFadeUp .9s .15s var(--ease-out-expo) both">
+        Your complete guide to compounds, apartments, and villas — with real rent data by city,
+        the best neighbourhoods for expats, and a clear walkthrough of the lease process.
+      </p>
+      <div class="hero__meta" style="animation:heroFadeUp .9s .3s var(--ease-out-expo) both">
+        <div class="hero__meta-item">📅 Last reviewed January 2026</div>
+        <div class="hero__meta-item">⏱ 12 min read</div>
+        <div class="hero__meta-item">🏠 Covers Riyadh, Jeddah &amp; Dammam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOUSING TYPES -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Your Options</div>
+        <h2 class="section-heading">The three main types of expat housing</h2>
+        <p class="section-desc">
+          Each housing type suits different lifestyles, budgets, and family situations. Understanding
+          the tradeoffs will help you make the right choice from day one.
+        </p>
+      </div>
+    </div>
+    <div class="housing-types-grid">
+
+      <!-- Compound -->
+      <div class="housing-card reveal">
+        <div class="housing-card__img">
+          <img src="https://picsum.photos/seed/compound/600/400" alt="Expat compound in Riyadh" loading="lazy">
+        </div>
+        <div class="housing-card__body">
+          <div class="housing-card__type">Most Popular for Families</div>
+          <h3>Compound Living</h3>
+          <p>
+            Gated communities with shared amenities — pools, gyms, supermarkets, restaurants, and playgrounds —
+            all within a safe, managed environment. Most compounds have a predominantly international resident
+            mix and operate under relaxed community rules within the compound walls.
+          </p>
+          <div class="housing-card__details">
+            <div class="housing-card__detail">
+              <strong>Best for:</strong> Families, first-time expats, those wanting a ready community
+            </div>
+            <div class="housing-card__detail">
+              <strong>Pros:</strong> Amenities included, international community, safe outdoor space, school bus stops
+            </div>
+            <div class="housing-card__detail">
+              <strong>Cons:</strong> Higher rent, can feel insular, waiting lists at top compounds
+            </div>
+          </div>
+        </div>
+        <div class="housing-card__price">
+          <span class="housing-card__price-label">Avg. compound villa / month</span>
+          <span class="housing-card__price-val">SAR 7,000 – 15,000</span>
+        </div>
+      </div>
+
+      <!-- Apartment -->
+      <div class="housing-card reveal reveal-delay-1">
+        <div class="housing-card__img">
+          <img src="https://picsum.photos/seed/apartment/600/400" alt="Modern apartment in Jeddah" loading="lazy">
+        </div>
+        <div class="housing-card__body">
+          <div class="housing-card__type">Best Value</div>
+          <h3>Apartment</h3>
+          <p>
+            City apartments offer the widest range of options and price points, from compact studios
+            to large 3-bedroom flats in premium residential towers. You're fully integrated into city
+            life — closer to restaurants, malls, and culture — with more independence and flexibility.
+          </p>
+          <div class="housing-card__details">
+            <div class="housing-card__detail">
+              <strong>Best for:</strong> Singles, couples, experienced expats, those wanting local experience
+            </div>
+            <div class="housing-card__detail">
+              <strong>Pros:</strong> Lower cost, more choice, central locations, no community politics
+            </div>
+            <div class="housing-card__detail">
+              <strong>Cons:</strong> No shared amenities, less expat community, variable building quality
+            </div>
+          </div>
+        </div>
+        <div class="housing-card__price">
+          <span class="housing-card__price-label">Avg. 2-bed apartment / month</span>
+          <span class="housing-card__price-val">SAR 4,000 – 8,000</span>
+        </div>
+      </div>
+
+      <!-- Villa -->
+      <div class="housing-card reveal reveal-delay-2">
+        <div class="housing-card__img">
+          <img src="https://picsum.photos/seed/villa/600/400" alt="Standalone villa in Saudi Arabia" loading="lazy">
+        </div>
+        <div class="housing-card__body">
+          <div class="housing-card__type">Maximum Space</div>
+          <h3>Standalone Villa</h3>
+          <p>
+            Freestanding villas in residential neighbourhoods offer maximum space and privacy.
+            Usually 3–5 bedrooms with a private garden, these are popular with large families and
+            senior executives. Many come unfurnished and typically require a longer-term commitment.
+          </p>
+          <div class="housing-card__details">
+            <div class="housing-card__detail">
+              <strong>Best for:</strong> Large families, long-term residents, those valuing privacy
+            </div>
+            <div class="housing-card__detail">
+              <strong>Pros:</strong> Space, privacy, garden, local neighbourhood feel
+            </div>
+            <div class="housing-card__detail">
+              <strong>Cons:</strong> High cost, often unfurnished, maintenance is your responsibility
+            </div>
+          </div>
+        </div>
+        <div class="housing-card__price">
+          <span class="housing-card__price-label">Avg. standalone villa / month</span>
+          <span class="housing-card__price-val">SAR 10,000 – 25,000</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COST COMPARISON TABLE -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Price Data</div>
+        <h2 class="section-heading">Monthly rent by city</h2>
+        <p class="section-desc">
+          All figures in SAR per month. Prices reflect mid-2025 market rates and vary
+          by neighbourhood, building quality, and furnishing. Use these as a planning guide.
+        </p>
+      </div>
+    </div>
+    <div class="reveal table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>1-Bed Apartment</th>
+            <th>2-Bed Apartment</th>
+            <th>Compound Villa</th>
+            <th>Standalone Villa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Riyadh</strong></td>
+            <td>SAR 2,500 – 4,500</td>
+            <td>SAR 4,000 – 8,000</td>
+            <td class="highlight">SAR 7,000 – 15,000</td>
+            <td>SAR 10,000 – 25,000</td>
+          </tr>
+          <tr>
+            <td><strong>Jeddah</strong></td>
+            <td>SAR 2,000 – 4,000</td>
+            <td>SAR 3,500 – 7,000</td>
+            <td class="highlight">SAR 6,000 – 13,000</td>
+            <td>SAR 8,000 – 20,000</td>
+          </tr>
+          <tr>
+            <td><strong>Dammam / Al-Khobar</strong></td>
+            <td>SAR 1,800 – 3,500</td>
+            <td>SAR 3,000 – 6,500</td>
+            <td class="highlight">SAR 5,500 – 12,000</td>
+            <td>SAR 7,000 – 18,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip-box reveal" style="margin-top:2rem">
+      <div class="tip-box__icon">💡</div>
+      <div>
+        <div class="tip-box__title">Always negotiate</div>
+        <div class="tip-box__body">
+          Rents in Saudi Arabia are negotiable, especially if you're offering a longer lease or paying more months upfront.
+          It's common to get 5–10% off the asking price, particularly in apartment buildings where the landlord has multiple
+          vacant units. Ask your company's PRO or colleagues for current market rates before making an offer.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEIGHBOURHOODS -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Location Guide</div>
+        <h2 class="section-heading">Best neighbourhoods for expats</h2>
+        <p class="section-desc">
+          The right neighbourhood makes a huge difference to your daily life. Here are the top expat-popular
+          areas in each of the three main cities.
+        </p>
+      </div>
+    </div>
+
+    <!-- Riyadh -->
+    <div class="neighbourhood-group reveal">
+      <h3>🏙 Riyadh</h3>
+      <div class="neighbourhood-grid">
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Diplomatic Quarter (DQ)</div>
+          <div class="neighbourhood-card__for">Best for: Diplomats, families</div>
+          <p>Saudi Arabia's most prestigious residential enclave. Home to embassies, high-end villas, parks, and Western supermarkets. Very safe, very leafy, but limited in restaurant/entertainment options and typically requires employer connection.</p>
+          <div class="neighbourhood-card__price">SAR 12,000–25,000/mo <span>(villa)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Olaya / Al Malqa</div>
+          <div class="neighbourhood-card__for">Best for: Young professionals, singles</div>
+          <p>The commercial heart of Riyadh. Packed with restaurants, cafes, Kingdom Tower, and office buildings. Excellent apartment choice, walkable by Saudi standards, buzzing atmosphere. Higher rent for the central convenience.</p>
+          <div class="neighbourhood-card__price">SAR 4,500–9,000/mo <span>(apt)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Nakheel / Al Yasmin</div>
+          <div class="neighbourhood-card__for">Best for: Families, compound seekers</div>
+          <p>Northern Riyadh suburbs popular with expat families. Several large compounds in this area (Desert Camp, Seder, Al Rehab). Good school access, quieter pace, close to Ring Road for commuting. Strong expat community.</p>
+          <div class="neighbourhood-card__price">SAR 7,000–14,000/mo <span>(compound)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Hittin / Al Qairawan</div>
+          <div class="neighbourhood-card__for">Best for: Mid-budget families</div>
+          <p>Growing residential areas in northwest Riyadh with newer apartment buildings and villas. More affordable than DQ or Olaya, good access to international schools and the airport. Mix of locals and expats.</p>
+          <div class="neighbourhood-card__price">SAR 3,500–7,000/mo <span>(apt)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jeddah -->
+    <div class="neighbourhood-group reveal">
+      <h3>🌊 Jeddah</h3>
+      <div class="neighbourhood-grid">
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Hamra / Al Rawdah</div>
+          <div class="neighbourhood-card__for">Best for: Established expats, families</div>
+          <p>Long-established expat heartland in north Jeddah. Home to several compounds (Saudia City, Housing & Hotels), close to the Corniche and the Red Sea. Relaxed vibe, excellent restaurants, international schools nearby.</p>
+          <div class="neighbourhood-card__price">SAR 6,000–13,000/mo <span>(compound)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Shati / Corniche</div>
+          <div class="neighbourhood-card__for">Best for: Lifestyle seekers, singles</div>
+          <p>Jeddah's most glamorous strip, running along the Red Sea. Premium high-rise apartments, the best restaurants and cafes, easy beach access. The highest rents in the city but the best location for those who prioritise lifestyle.</p>
+          <div class="neighbourhood-card__price">SAR 5,000–12,000/mo <span>(apt)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Salamah / Al Sharafeyah</div>
+          <div class="neighbourhood-card__for">Best for: Budget-conscious expats</div>
+          <p>Central Jeddah neighbourhoods with a range of affordable apartment options. Busy, urban, and local in character. Good value, reasonable commute times, and access to all major retail. Popular with mid-income expats and professionals.</p>
+          <div class="neighbourhood-card__price">SAR 2,500–5,500/mo <span>(apt)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Obhur / North Jeddah</div>
+          <div class="neighbourhood-card__for">Best for: New developments, value</div>
+          <p>Fast-growing area north of the main city. Newer buildings, sea views in some areas, lower rent than Al Hamra. The new KAEC road has improved connectivity. Popular with families looking for newer properties at reasonable prices.</p>
+          <div class="neighbourhood-card__price">SAR 3,500–8,000/mo <span>(apt/villa)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dammam -->
+    <div class="neighbourhood-group reveal">
+      <h3>🛢 Dammam / Al-Khobar / Dhahran</h3>
+      <div class="neighbourhood-grid">
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al-Khobar Corniche</div>
+          <div class="neighbourhood-card__for">Best for: Lifestyle, oil industry workers</div>
+          <p>Al-Khobar has the most developed expat scene in the Eastern Province. The Corniche waterfront is lined with restaurants and cafes. Close to Saudi Aramco offices and many international company HQs. Strong Western community.</p>
+          <div class="neighbourhood-card__price">SAR 4,000–9,000/mo <span>(apt)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Dhahran / Aramco Compound</div>
+          <div class="neighbourhood-card__for">Best for: Aramco employees</div>
+          <p>Dhahran is dominated by Saudi Aramco's massive, self-contained compound — an almost entirely self-sufficient American-style town with its own schools, hospitals, shops, and sports facilities. If you work for Aramco, this is likely your home.</p>
+          <div class="neighbourhood-card__price">Employer-provided</div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Al Aqrabiyah / Al Rakah</div>
+          <div class="neighbourhood-card__for">Best for: Mid-budget apartments</div>
+          <p>Popular central Al-Khobar districts with a good mix of apartment sizes and prices. Walking distance from the Corniche restaurants, decent supermarkets, and easy ring road access. Solid choice for most budget levels.</p>
+          <div class="neighbourhood-card__price">SAR 2,800–6,500/mo <span>(apt)</span></div>
+        </div>
+        <div class="neighbourhood-card">
+          <div class="neighbourhood-card__name">Half Moon Bay Area</div>
+          <div class="neighbourhood-card__for">Best for: Beach lifestyle, families</div>
+          <p>South of Al-Khobar, this coastal area has several residential compounds popular with expat families who want beach and water sports access. More of a weekend retreat feel than a city neighbourhood — longer commute to office areas.</p>
+          <div class="neighbourhood-card__price">SAR 5,000–12,000/mo <span>(villa)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEASE PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="lease-steps-grid">
+      <div class="reveal">
+        <div class="section-eyebrow">Step by Step</div>
+        <h2 class="section-heading">The lease process in Saudi Arabia</h2>
+        <p style="margin-bottom:2rem;color:var(--text-gray)">
+          Saudi Arabia has a well-established rental system — once you know the steps, it's straightforward.
+          The government's Ejar platform makes contracts legally binding and protects both parties.
+        </p>
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Find your property</h3>
+              <p>Search Bayut.sa or Property Finder Saudi, or ask your company's PRO for referrals. Viewing multiple properties is normal — don't rush. Many expats also find housing through Facebook groups (search "Riyadh Expats Housing" or equivalent for your city).</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Negotiate rent and terms</h3>
+              <p>Always negotiate — 5–10% below asking price is normal, especially for longer leases or upfront payment. Agree on: monthly rent, number of months payable upfront, furnishing status, utility inclusions, and any repair/maintenance conditions.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Sign the contract (Ejar)</h3>
+              <p>All rental contracts must be registered on the Ejar platform (ejar.sa) — this is a legal requirement. Both landlord and tenant sign digitally or in person. The contract specifies the term (usually 12 months), rent amount, and conditions. Keep a copy of the Ejar contract number.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Pay via bank transfer</h3>
+              <p>Rent is typically paid by bank transfer or manager's cheque — cash payments are not standard and not advisable. If paying multiple months upfront (2–4 is common), get a written receipt. Never pay a deposit without a signed Ejar-registered contract.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Register utilities</h3>
+              <p>Set up your KAHRABA (electricity) account in your name at the local SEC office or online. Water is usually handled through the municipality and may be included in the rent. Internet requires an Iqama — major providers are STC, Zain, and Mobily.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">6</div>
+            <div class="step-body">
+              <h3>Take a move-in inventory</h3>
+              <p>Walk through the property with the landlord and document any existing damage with photos and written notes. Having a signed move-in inventory protects your deposit and avoids disputes at the end of the lease. Many landlords require 1 month's deposit.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="lease-steps-img reveal reveal-delay-2">
+        <img src="https://picsum.photos/seed/lease/600/800" alt="Signing a lease in Saudi Arabia" loading="lazy">
+        <div class="tip-box" style="border-radius:0;border-left:none;border-right:none;border-bottom:none;border-radius:0 0 20px 20px">
+          <div class="tip-box__icon">📱</div>
+          <div>
+            <div class="tip-box__title">Ejar tip</div>
+            <div class="tip-box__body">Your Ejar contract number is your proof of legal tenancy. Keep it accessible on your phone — some government offices may ask for it as proof of address. You can access your Ejar contracts via the Absher app.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENANT RIGHTS & TIPS -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Know Your Rights</div>
+        <h2 class="section-heading">Tenant rights and essential tips</h2>
+        <p class="section-desc">
+          Saudi Arabia's rental law does protect tenants. Here's what you need to know before you sign.
+        </p>
+      </div>
+    </div>
+    <div class="callout-grid">
+      <div class="callout-item reveal">
+        <div class="callout-item__icon">📄</div>
+        <div>
+          <h4>Contracts must be registered on Ejar</h4>
+          <p>An unregistered contract has very limited legal standing. If your landlord refuses to register on Ejar, this is a red flag. The Ejar platform is free for both parties to use, and registration takes minutes. Never accept a verbal or paper-only agreement.</p>
+        </div>
+      </div>
+      <div class="callout-item reveal reveal-delay-1">
+        <div class="callout-item__icon">⚖️</div>
+        <div>
+          <h4>Landlords must give 3 months' notice to evict</h4>
+          <p>Under Saudi tenancy law, a landlord cannot evict you without at least 3 months' written notice, even if they want to sell the property or move a family member in. Evictions must follow the legal process — an unregistered landlord cannot call the police to remove you mid-lease.</p>
+        </div>
+      </div>
+      <div class="callout-item reveal reveal-delay-2">
+        <div class="callout-item__icon">💰</div>
+        <div>
+          <h4>Expect 2–4 months upfront</h4>
+          <p>Unlike Western markets where one month's deposit is standard, Saudi landlords routinely ask for 2–4 months' rent paid in advance. Some luxury properties or compounds may ask for 6 months or more upfront. Factor this into your relocation budget — your first rental payment will be a significant lump sum.</p>
+        </div>
+      </div>
+      <div class="callout-item reveal reveal-delay-3">
+        <div class="callout-item__icon">⚡</div>
+        <div>
+          <h4>Utilities are usually separate from rent</h4>
+          <p>Unless explicitly stated in your contract, electricity (KAHRABA via the Saudi Electricity Company), water, and district cooling are billed separately from rent. Electricity costs in Saudi Arabia are heavily subsidised and typically low for apartments. Air conditioning in summer can raise bills — check the cooling system (central vs. unit A/C) before signing.</p>
+        </div>
+      </div>
+    </div>
+    <div class="warning-box reveal" style="margin-top:2rem">
+      <div class="tip-box__icon">⚠️</div>
+      <div>
+        <div class="tip-box__title" style="color:#B91C1C">Never pay rent in cash without documentation</div>
+        <div class="tip-box__body">
+          Cash payments are very difficult to prove if a dispute arises. Always pay by bank transfer to the landlord's official account (matching the name on the Ejar contract), and keep screenshots of all transfers. If a landlord or agent insists on cash only, walk away.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINDING HOUSING RESOURCES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Where to Search</div>
+        <h2 class="section-heading">Housing search resources</h2>
+        <p class="section-desc">The best platforms and channels for finding expat-friendly housing in Saudi Arabia.</p>
+      </div>
+    </div>
+    <div class="resources-grid">
+      <a href="https://www.bayut.sa" target="_blank" rel="noopener" class="resource-card reveal">
+        <div class="resource-card__icon">🏠</div>
+        <h4>Bayut Saudi Arabia</h4>
+        <p>The largest property portal in Saudi Arabia. Extensive listings across all cities, with filters for compound housing, furnishing, and budget. Good for getting a market overview before contacting agents.</p>
+      </a>
+      <a href="https://www.propertyfinder.sa" target="_blank" rel="noopener" class="resource-card reveal reveal-delay-1">
+        <div class="resource-card__icon">🔍</div>
+        <h4>Property Finder Saudi</h4>
+        <p>Strong competitor to Bayut with detailed listings, neighbourhood guides, and verified agents. Often has newer listings and better coverage in emerging areas like North Riyadh.</p>
+      </a>
+      <a href="#" class="resource-card reveal reveal-delay-2">
+        <div class="resource-card__icon">👥</div>
+        <h4>Expat Facebook Groups</h4>
+        <p>Search "Riyadh Expats", "Jeddah Expats Housing", or "Al Khobar Expats" on Facebook. These community groups have real listings from landlords and fellow expats — often without agent fees.</p>
+      </a>
+      <a href="/work" class="resource-card reveal reveal-delay-3">
+        <div class="resource-card__icon">🏢</div>
+        <h4>Employer Housing Allowance</h4>
+        <p>Many Saudi employers — especially in oil, healthcare, and education sectors — provide a housing allowance or directly arrange accommodation. Check your contract's benefits package and ask HR for a recommended compound list.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Housing in Photos</div>
+        <h2 class="section-heading">What to expect</h2>
+      </div>
+    </div>
+    <div class="photo-gallery">
+      <div class="gallery-item reveal">
+        <img src="https://picsum.photos/seed/compound2/600/400" alt="Expat compound pool area" loading="lazy">
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <img src="https://picsum.photos/seed/riyadhapt/600/400" alt="Modern Riyadh apartment interior" loading="lazy">
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <img src="https://picsum.photos/seed/saudivilla/600/400" alt="Saudi villa with garden" loading="lazy">
+      </div>
+      <div class="gallery-item reveal reveal-delay-3">
+        <img src="https://picsum.photos/seed/jeddahview/600/400" alt="Jeddah Corniche apartment view" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED GUIDES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Keep Reading</div>
+        <h2 class="section-heading">Related guides</h2>
+      </div>
+    </div>
+    <div class="related-grid">
+      <a href="/life/banking" class="related-card reveal">
+        <div class="related-card__img">
+          <img src="https://picsum.photos/seed/banking/600/400" alt="Banking in Saudi Arabia" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <div class="related-card__cat">Life in Saudi</div>
+          <div class="related-card__title">Banking &amp; Opening an Account</div>
+          <p>Which banks do expats prefer, how to open an account, and how to send money home — everything you need for your finances.</p>
+        </div>
+      </a>
+      <a href="/life/healthcare" class="related-card reveal reveal-delay-1">
+        <div class="related-card__img">
+          <img src="https://picsum.photos/seed/healthcare/600/400" alt="Healthcare in Saudi Arabia" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <div class="related-card__cat">Life in Saudi</div>
+          <div class="related-card__title">Healthcare &amp; Health Insurance</div>
+          <p>How Saudi Arabia's healthcare system works for expats, mandatory health insurance, and the best private hospitals by city.</p>
+        </div>
+      </a>
+      <a href="/life/schools-education" class="related-card reveal reveal-delay-2">
+        <div class="related-card__img">
+          <img src="https://picsum.photos/seed/schools/600/400" alt="International schools in Saudi Arabia" loading="lazy">
+        </div>
+        <div class="related-card__body">
+          <div class="related-card__cat">Life in Saudi</div>
+          <div class="related-card__title">Schools &amp; Education for Expat Children</div>
+          <p>International schools by city, the admissions process, British vs American vs IB curricula, and typical fees.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter__bg">
+    <div class="newsletter__bg-pattern"></div>
+    <div class="newsletter__bg-glow"></div>
+  </div>
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__eyebrow">Stay Updated</div>
+      <h2 class="newsletter__title">Housing tips &amp; market updates<br>in your inbox</h2>
+      <p class="newsletter__sub">
+        Rental markets shift. New compounds open. Regulations change.
+        Join 12,000+ expats getting our fortnightly digest — practical and always current.
+      </p>
+      <form class="newsletter__form" onsubmit="return false">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" autocomplete="email">
+        <button type="submit" class="newsletter__submit">Subscribe free</button>
+      </form>
+      <p class="newsletter__note">No spam. Unsubscribe any time. We never share your email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before you arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 days</a>
+        <a href="/relocate/families" class="footer__link">Family relocation</a>
+        <a href="/relocate/cost-of-living" class="footer__link">Cost of living</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama guide</a>
+        <a href="/work/job-seekers" class="footer__link">Finding work</a>
+        <a href="/business/start-a-company" class="footer__link">Start a business</a>
+        <a href="/business/investment-guide" class="footer__link">Investment guide</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Life in Saudi</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/schools-education" class="footer__link">Schools</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+        <a href="/resources/apps" class="footer__link">Essential apps</a>
+        <a href="/about" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NewToSaudi.com &middot; All rights reserved</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

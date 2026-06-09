@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About NewToSaudi — Our Mission, Team & Editorial Standards</title>
+  <meta name="description" content="NewToSaudi was founded by expats who went through the relocation process with bad information. We built the definitive guide we wish existed.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <style>
+    /* ── PAGE-SPECIFIC STYLES ── */
+    .hero {
+      min-height: 70vh;
+      background: linear-gradient(150deg,#060E1E 0%,#0D1830 45%,#111D33 75%,#0A1220 100%);
+      display: flex; align-items: flex-end; padding-bottom: 5rem; position: relative; overflow: hidden;
+    }
+    .hero__bg-img {
+      position: absolute; inset: 0;
+      background: url('https://picsum.photos/seed/team/1200/500') center/cover no-repeat;
+      opacity: 0.18;
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(6,14,30,.35) 0%, rgba(6,14,30,.85) 100%);
+    }
+    .hero__content { position: relative; z-index: 2; max-width: 760px; }
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; }
+    .hero__title { font-size: clamp(2.8rem,5vw,5rem); color: var(--white); margin-bottom: 1.25rem; }
+    .hero__sub { font-size: 1.2rem; color: rgba(255,255,255,.65); max-width: 560px; line-height: 1.8; }
+
+    /* Mission */
+    .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .mission-img { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(27,42,74,.18); }
+    .mission-img img { width: 100%; height: 400px; object-fit: cover; display: block; }
+    .mission-text p + p { margin-top: 1.25rem; }
+
+    /* Standards */
+    .standards-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.75rem; }
+    .standard-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 20px;
+      padding: 2rem 1.75rem; transition: all .4s var(--ease-out-expo);
+      box-shadow: 0 2px 12px rgba(27,42,74,.06);
+    }
+    .standard-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27,42,74,.12); border-color: rgba(212,168,83,.3); }
+    .standard-card__icon {
+      width: 52px; height: 52px; background: var(--gold-muted); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+    .standard-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: .65rem; }
+    .standard-card p { font-size: .88rem; color: var(--text-mid); line-height: 1.75; }
+
+    /* Stats */
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+    .stat-block { text-align: center; padding: 2.5rem 1.5rem; }
+    .stat-block__num {
+      font-size: clamp(2.8rem,5vw,4.2rem); font-weight: 800; color: var(--gold);
+      line-height: 1; margin-bottom: .5rem; letter-spacing: -.03em;
+    }
+    .stat-block__label { font-size: .9rem; color: rgba(255,255,255,.55); font-weight: 500; }
+
+    /* Team */
+    .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+    .team-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 20px;
+      overflow: hidden; transition: all .4s var(--ease-out-expo);
+      box-shadow: 0 2px 12px rgba(27,42,74,.06); text-align: center;
+    }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(27,42,74,.12); border-color: rgba(212,168,83,.3); }
+    .team-card__photo { position: relative; }
+    .team-card__photo img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+    .team-card__body { padding: 1.5rem 1.25rem; }
+    .team-card__flag { font-size: 1.4rem; margin-bottom: .5rem; }
+    .team-card__name { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
+    .team-card__title { font-size: .8rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+    .team-card__bio { font-size: .85rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* CTA */
+    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .cta-card {
+      background: var(--white); border: 1.5px solid var(--mid-gray); border-radius: 20px;
+      padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;
+      transition: all .4s var(--ease-out-expo); box-shadow: 0 2px 12px rgba(27,42,74,.06);
+    }
+    .cta-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(27,42,74,.1); border-color: rgba(212,168,83,.3); }
+    .cta-card__icon { font-size: 2rem; }
+    .cta-card h3 { font-size: 1.25rem; color: var(--navy); }
+    .cta-card p { font-size: .92rem; color: var(--text-mid); line-height: 1.75; }
+
+    @media(max-width:1024px) {
+      .standards-grid { grid-template-columns:repeat(2,1fr) }
+      .stats-grid     { grid-template-columns:repeat(2,1fr) }
+      .team-grid      { grid-template-columns:repeat(2,1fr) }
+    }
+    @media(max-width:768px) {
+      .mission-grid { grid-template-columns:1fr; gap:2.5rem }
+      .cta-grid     { grid-template-columns:1fr }
+      .hero__title  { font-size:clamp(2rem,6vw,3.2rem) }
+      .hero__sub    { font-size:1rem }
+    }
+    @media(max-width:480px) {
+      .stats-grid     { grid-template-columns:1fr 1fr }
+      .team-grid      { grid-template-columns:1fr 1fr }
+      .standards-grid { grid-template-columns:1fr }
+      .hero__title    { font-size:clamp(1.8rem,8vw,2.5rem) }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+      <img src="Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+    </a>
+    <div class="nav__links">
+      <a href="/relocate" class="nav__link">Relocate</a>
+      <a href="/work" class="nav__link">Work &amp; Visa</a>
+      <a href="/business" class="nav__link">Business</a>
+      <a href="/life" class="nav__link">Life in KSA</a>
+      <a href="/cities" class="nav__link">Cities</a>
+      <a href="/apps" class="nav__link">Apps</a>
+      <a href="/resources/faq" class="nav__link">FAQ</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+  <a href="/relocate/before-you-arrive" style="color:var(--gold)">Start your journey →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg-img"></div>
+  <div class="hero__overlay"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>›</span>
+        <span>About</span>
+      </div>
+      <div class="hero__eyebrow">Our Story</div>
+      <h1 class="hero__title" style="animation:heroFadeUp .9s var(--ease-out-expo) both">About NewToSaudi</h1>
+      <p class="hero__sub" style="animation:heroFadeUp .9s .15s var(--ease-out-expo) both">
+        We're a team of expats, editors, and local experts building the most accurate, comprehensive
+        guide to living and working in Saudi Arabia — completely free, forever.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-text reveal">
+        <div class="section-eyebrow">Our Mission</div>
+        <h2 class="section-heading">We built the resource we wish existed</h2>
+        <p style="margin-top:1.5rem">
+          When our founders relocated to Riyadh in 2020 and 2021, they faced the same frustrating experience
+          as thousands of expats before them: conflicting forum posts, outdated government PDFs, and advice from
+          friends-of-friends that turned out to be completely wrong. The official processes were opaque.
+          The unofficial information was unreliable.
+        </p>
+        <p>
+          So they started documenting everything — every ministry form, every Iqama step, every lease contract quirk —
+          and sharing it with others in the same boat. What started as a shared Google Doc became a proper website
+          in 2022. Today, NewToSaudi.com helps more than 50,000 expats per year navigate the relocation process
+          with confidence.
+        </p>
+        <p>
+          We are 100% independent. We don't take sponsorships from relocation agencies, visa services, or housing
+          companies. Our only job is to give you accurate, honest information so you can make the best decisions
+          for yourself and your family.
+        </p>
+        <div style="display:flex;gap:1rem;margin-top:2.25rem;flex-wrap:wrap">
+          <a href="/relocate/before-you-arrive" class="btn-primary">Start your relocation guide</a>
+          <a href="/resources/faq" class="btn-navy">Browse the FAQ</a>
+        </div>
+      </div>
+      <div class="mission-img reveal reveal-delay-2">
+        <img src="https://picsum.photos/seed/mission/600/400" alt="The NewToSaudi team at work" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL STANDARDS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Editorial Integrity</div>
+        <h2 class="section-heading">How we keep information accurate</h2>
+        <p class="section-desc">
+          Saudi Arabia's regulations change frequently. Here's exactly how we make sure you're always reading
+          the most current, verified information.
+        </p>
+      </div>
+    </div>
+    <div class="standards-grid">
+      <div class="standard-card reveal">
+        <div class="standard-card__icon">👥</div>
+        <h3>Expert contributors who've lived it</h3>
+        <p>
+          Every guide is written or reviewed by someone who has personally completed the process in Saudi Arabia —
+          not a copywriter working from a template. Our contributors include former HR managers, immigration lawyers,
+          and long-term residents across Riyadh, Jeddah, and Dammam.
+        </p>
+      </div>
+      <div class="standard-card reveal reveal-delay-1">
+        <div class="standard-card__icon">📋</div>
+        <h3>Weekly regulatory reviews</h3>
+        <p>
+          Our editorial team reviews Ministry of Human Resources, MISA, and Absher platform updates every week.
+          When regulations change — and they do, often — we update affected pages within 48 hours and clearly
+          mark the date of last review at the top of each guide.
+        </p>
+      </div>
+      <div class="standard-card reveal reveal-delay-2">
+        <div class="standard-card__icon">🤝</div>
+        <h3>Community fact-checking</h3>
+        <p>
+          Our readers are our best fact-checkers. Every page has a "Was this helpful?" prompt and a direct
+          feedback link. When community members flag outdated information, it goes into our review queue
+          immediately. Thousands of corrections have come from readers in the field.
+        </p>
+      </div>
+      <div class="standard-card reveal reveal-delay-3">
+        <div class="standard-card__icon">🚫</div>
+        <h3>No sponsored content — ever</h3>
+        <p>
+          We do not accept payment to feature any company, service, or product in our guides. We don't run
+          affiliate links for visa agencies, relocation consultants, or property services. When we recommend
+          something, it's because it genuinely helps — not because we were paid.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section--navy">
+  <div class="container">
+    <div class="section-header reveal" style="justify-content:center;text-align:center">
+      <div class="section-header-left" style="max-width:600px;margin:0 auto">
+        <div class="section-eyebrow">By The Numbers</div>
+        <h2 class="section-heading">Growing every year</h2>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-block reveal">
+        <div class="stat-block__num">
+          <span data-count="50000" data-suffix="+">0</span>
+        </div>
+        <div class="stat-block__label">Annual readers</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-1">
+        <div class="stat-block__num">
+          <span data-count="24" data-suffix="+">0</span>
+        </div>
+        <div class="stat-block__label">In-depth guides</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-2">
+        <div class="stat-block__num">
+          <span data-count="6">0</span>
+        </div>
+        <div class="stat-block__label">City guides</div>
+      </div>
+      <div class="stat-block reveal reveal-delay-3">
+        <div class="stat-block__num" style="color:var(--gold)">100%</div>
+        <div class="stat-block__label">Free, forever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-header-left">
+        <div class="section-eyebrow">The Team</div>
+        <h2 class="section-heading">The people behind NewToSaudi</h2>
+        <p class="section-desc">
+          We're a small, dedicated team spread across Riyadh, Jeddah, and London —
+          all with personal experience navigating life as expats in Saudi Arabia.
+        </p>
+      </div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card__photo">
+          <img src="https://picsum.photos/seed/person1/300/300" alt="Sarah Al-Rashidi" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__flag">🇸🇦🇬🇧</div>
+          <div class="team-card__name">Sarah Al-Rashidi</div>
+          <div class="team-card__title">Head of Operations</div>
+          <p class="team-card__bio">
+            Saudi-British dual national who spent 7 years in London before returning to Riyadh.
+            Manages day-to-day operations and liaises with our contributor network.
+          </p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-card__photo">
+          <img src="https://picsum.photos/seed/person2/300/300" alt="Marcus Chen" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__flag">🇺🇸</div>
+          <div class="team-card__name">Marcus Chen</div>
+          <div class="team-card__title">Tech &amp; Digital</div>
+          <p class="team-card__bio">
+            American software engineer who moved to Riyadh in 2019 for a tech role at a Vision 2030 startup.
+            Manages the platform and keeps our content infrastructure running.
+          </p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-card__photo">
+          <img src="https://picsum.photos/seed/person3/300/300" alt="Layla Mahmoud" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__flag">🇪🇬🇬🇧</div>
+          <div class="team-card__name">Layla Mahmoud</div>
+          <div class="team-card__title">Content Lead</div>
+          <p class="team-card__bio">
+            Egyptian-British journalist based in Jeddah. Previously at the BBC Arabic service, Layla leads
+            our editorial team and ensures every guide meets our accuracy standards.
+          </p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-card__photo">
+          <img src="https://picsum.photos/seed/person4/300/300" alt="James O'Brien" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__flag">🇮🇪</div>
+          <div class="team-card__name">James O'Brien</div>
+          <div class="team-card__title">Business Editor</div>
+          <p class="team-card__bio">
+            Irish accountant who set up a business in Riyadh and went through the full MISA registration process.
+            Leads our business and investment guides, with a focus on accuracy and practicality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="section" style="background:var(--off-white)">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 3rem">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-heading">Have a question or want to contribute?</h2>
+      <p style="color:var(--text-gray);margin-top:.75rem">
+        We love hearing from readers — whether it's a correction, a question about your specific situation,
+        or a pitch to write for us.
+      </p>
+    </div>
+    <div class="cta-grid" style="max-width:860px;margin:0 auto">
+      <a href="/contact" class="cta-card reveal">
+        <div class="cta-card__icon">✉️</div>
+        <h3>Contact us</h3>
+        <p>
+          Have a question we haven't answered? Found something that's changed or out of date?
+          Send us a message and our team will get back to you within 48 hours.
+        </p>
+        <span class="btn-primary" style="align-self:flex-start">Send a message</span>
+      </a>
+      <a href="/contribute" class="cta-card reveal reveal-delay-1">
+        <div class="cta-card__icon">✍️</div>
+        <h3>Write for NewToSaudi</h3>
+        <p>
+          Are you an expat with expertise in a specific area — HR, law, healthcare, finance?
+          We're always looking for expert contributors who can bring real, first-hand knowledge to our guides.
+        </p>
+        <span class="btn-navy" style="align-self:flex-start">Contribute a guide</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter__bg">
+    <div class="newsletter__bg-pattern"></div>
+    <div class="newsletter__bg-glow"></div>
+  </div>
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__eyebrow">Stay Updated</div>
+      <h2 class="newsletter__title">Regulation changes.<br>New guides. Real advice.</h2>
+      <p class="newsletter__sub">
+        Saudi Arabia moves fast. Join 12,000+ expats getting our fortnightly digest —
+        regulatory updates, new guides, and practical tips delivered to your inbox.
+      </p>
+      <form class="newsletter__form" onsubmit="return false">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" autocomplete="email">
+        <button type="submit" class="newsletter__submit">Subscribe free</button>
+      </form>
+      <p class="newsletter__note">No spam. Unsubscribe any time. We never share your email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="Logos/logo-white.svg" alt="NewToSaudi" style="height:34px"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before you arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 days</a>
+        <a href="/relocate/families" class="footer__link">Family relocation</a>
+        <a href="/relocate/cost-of-living" class="footer__link">Cost of living</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama guide</a>
+        <a href="/work/job-seekers" class="footer__link">Finding work</a>
+        <a href="/business/start-a-company" class="footer__link">Start a business</a>
+        <a href="/business/investment-guide" class="footer__link">Investment guide</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Life in Saudi</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/schools-education" class="footer__link">Schools</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+        <a href="/resources/apps" class="footer__link">Essential apps</a>
+        <a href="/about" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NewToSaudi.com &middot; All rights reserved</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

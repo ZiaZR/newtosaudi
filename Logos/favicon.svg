@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#1B2A4A"/>
+  <!-- Gateway arch -->
+  <path d="M144 420 L144 200 Q144 100 256 100 Q368 100 368 200 L368 420" fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"/>
+  <!-- Location pin -->
+  <line x1="256" y1="420" x2="256" y2="220" stroke="#D4A853" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="256" cy="185" r="36" fill="#D4A853"/>
+</svg>

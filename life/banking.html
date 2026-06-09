@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking in Saudi Arabia for Expats | NewToSaudi</title>
+  <meta name="description" content="Complete guide to banking in Saudi Arabia for expats. Best banks, account opening steps, Islamic banking, international transfers, and digital wallets.">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js" defer></script>
+  <style>
+    /* ── Hero ── */
+    .page-hero {
+      background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);
+      padding: calc(var(--nav-h,80px) + 4.5rem) 0 0;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0; z-index:1; opacity:.055;
+      background-image:
+        repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),
+        repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);
+      background-size:70px 70px;
+    }
+    .page-hero .container { position:relative; z-index:2; }
+    .page-hero__text { padding-bottom:3.5rem; max-width:740px; }
+    .page-hero__eyebrow {
+      display:inline-flex; align-items:center; gap:.55rem; font-size:.7rem;
+      font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem;
+    }
+    .page-hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; border-radius:1px; }
+    .page-hero h1 { color:#fff; margin-bottom:1.2rem; }
+    .page-hero__subtitle { font-size:1.1rem; color:rgba(255,255,255,.65); max-width:600px; margin-bottom:1.8rem; line-height:1.75; }
+    .hero-stats { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .hero-stat {
+      display:inline-flex; align-items:center; gap:.55rem; font-size:.78rem; font-weight:600;
+      color:rgba(255,255,255,.8); background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:.45rem 1rem;
+    }
+    .hero-stat svg { width:14px; height:14px; stroke:var(--gold); fill:none; stroke-width:2; flex-shrink:0; }
+    .page-hero__img { width:100%; max-height:320px; object-fit:cover; display:block; border-radius:20px 20px 0 0; opacity:.4; }
+
+    /* ── Section rhythm ── */
+    .s-cream  { background:var(--cream,#F2EEE5); padding:5.5rem 0; }
+    .s-white  { background:#fff; padding:5.5rem 0; }
+    .s-dark   { background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33); padding:5.5rem 0; position:relative; overflow:hidden; }
+    .s-dark::before {
+      content:''; position:absolute; inset:0; opacity:.04;
+      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),
+        repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);
+      background-size:70px 70px;
+    }
+    .s-dark .container { position:relative; z-index:2; }
+
+    /* ── Section header ── */
+    .sec-eyebrow { font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; display:flex; align-items:center; gap:.5rem; }
+    .sec-eyebrow::before { content:''; width:22px; height:1.5px; background:var(--gold); border-radius:1px; }
+    .sec-title { font-size:2rem; color:var(--navy,#1B2A4A); margin-bottom:.85rem; }
+    .sec-title--white { color:#fff; }
+    .sec-lead { font-size:1.05rem; color:var(--text-gray,#666); line-height:1.75; max-width:620px; margin-bottom:2.5rem; }
+    .sec-lead--white { color:rgba(255,255,255,.68); }
+
+    /* ── Bank cards ── */
+    .bank-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    .bank-card {
+      background:#fff; border:1.5px solid #E8E4DC; border-radius:20px; padding:1.75rem;
+      transition:all .3s ease; display:flex; flex-direction:column;
+    }
+    .bank-card:hover { border-color:var(--gold); box-shadow:0 12px 36px rgba(27,42,74,.1); transform:translateY(-3px); }
+    .bank-card__header { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
+    .bank-icon { width:48px; height:48px; border-radius:14px; background:var(--navy,#1B2A4A); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .bank-icon svg { width:22px; height:22px; stroke:var(--gold,#D4A853); fill:none; stroke-width:1.8; }
+    .bank-card__name { font-size:1rem; font-weight:800; color:var(--navy,#1B2A4A); margin-bottom:.2rem; }
+    .bank-card__tag { font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
+    .bank-card p { font-size:.84rem; color:#555; line-height:1.65; margin-bottom:1rem; flex:1; }
+    .bank-meta { list-style:none; margin-top:auto; }
+    .bank-meta li { font-size:.78rem; color:#555; padding:.25rem 0; display:flex; align-items:baseline; gap:.5rem; border-bottom:1px solid #F0ECE4; }
+    .bank-meta li:last-child { border:none; }
+    .bank-meta li::before { content:'→'; color:var(--gold); font-weight:700; flex-shrink:0; }
+    .bank-rating { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-weight:700; color:var(--navy); background:rgba(212,168,83,.12); border-radius:6px; padding:.2rem .55rem; margin-top:.75rem; }
+
+    /* ── Step list ── */
+    .step-list { list-style:none; counter-reset:steps; }
+    .step-item {
+      counter-increment:steps; display:flex; align-items:flex-start; gap:1.25rem;
+      padding:1.5rem 0; border-bottom:1px solid #EDE9E0; position:relative;
+    }
+    .step-item:last-child { border:none; }
+    .step-item::before {
+      content:counter(steps); min-width:38px; height:38px; background:var(--navy,#1B2A4A);
+      color:var(--gold); font-size:.8rem; font-weight:800; border-radius:12px;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .step-item h4 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.35rem; }
+    .step-item p { font-size:.84rem; color:#555; line-height:1.65; margin:0; }
+    .step-tag { font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#888; margin-bottom:.3rem; }
+
+    /* ── Two-col layout ── */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+    .two-col--3-2 { grid-template-columns:3fr 2fr; }
+    .content-img { width:100%; border-radius:16px; object-fit:cover; height:300px; }
+
+    /* ── Requirement chips ── */
+    .req-chips { display:flex; flex-wrap:wrap; gap:.65rem; margin:1.5rem 0; }
+    .req-chip {
+      display:inline-flex; align-items:center; gap:.5rem; font-size:.78rem; font-weight:600;
+      background:rgba(212,168,83,.1); border:1px solid rgba(212,168,83,.25); border-radius:100px;
+      padding:.4rem 1rem; color:var(--navy);
+    }
+    .req-chip svg { width:13px; height:13px; stroke:var(--gold); fill:none; stroke-width:2.5; }
+
+    /* ── Dark section text helpers ── */
+    .s-dark h2, .s-dark h3 { color:#fff; }
+    .s-dark p { color:rgba(255,255,255,.7); }
+    .s-dark .sec-lead { color:rgba(255,255,255,.68); }
+
+    /* ── Islamic banking grid ── */
+    .sharia-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2rem; }
+    .sharia-card {
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+      border-radius:18px; padding:1.75rem;
+    }
+    .sharia-card h3 { font-size:1rem; color:var(--gold); margin-bottom:.6rem; }
+    .sharia-card p { font-size:.82rem; color:rgba(255,255,255,.68); line-height:1.65; margin:0; }
+    .sharia-card__tag { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:.5rem; }
+
+    /* ── Fintech / app cards ── */
+    .app-strip { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .app-card {
+      display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 1.35rem;
+      background:#fff; border:1.5px solid #E8E4DC; border-radius:16px;
+    }
+    .app-badge { width:46px; height:46px; border-radius:14px; background:var(--navy); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .app-badge svg { width:20px; height:20px; stroke:var(--gold); fill:none; stroke-width:1.8; }
+    .app-card__name { font-size:.92rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
+    .app-card p { font-size:.8rem; color:#666; line-height:1.6; margin-bottom:.6rem; }
+    .app-links { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .app-link { font-size:.68rem; font-weight:700; color:var(--gold); background:rgba(212,168,83,.1); border:1px solid rgba(212,168,83,.2); border-radius:6px; padding:.2rem .6rem; text-decoration:none; }
+
+    /* ── Transfer table ── */
+    .transfer-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.85rem; }
+    .transfer-table th { background:var(--navy); color:#fff; text-align:left; padding:.8rem 1rem; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .transfer-table th:first-child { border-radius:10px 0 0 10px; }
+    .transfer-table th:last-child { border-radius:0 10px 10px 0; }
+    .transfer-table td { padding:.85rem 1rem; border-bottom:1px solid #EDE9E0; color:#444; }
+    .transfer-table tr:last-child td { border:none; }
+    .transfer-table tr:nth-child(even) td { background:#FAF8F4; }
+
+    /* ── Credit card grid ── */
+    .cc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+    .cc-card { background:#fff; border:1.5px solid #E8E4DC; border-radius:18px; padding:1.5rem; }
+    .cc-card h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.4rem; }
+    .cc-card__bank { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); margin-bottom:.7rem; }
+    .cc-card ul { list-style:none; }
+    .cc-card ul li { font-size:.8rem; color:#555; padding:.22rem 0; display:flex; gap:.5rem; }
+    .cc-card ul li::before { content:'✓'; color:var(--gold); font-weight:800; flex-shrink:0; }
+
+    /* ── Info / tip box ── */
+    .tip-box {
+      background:rgba(212,168,83,.08); border:1.5px solid rgba(212,168,83,.22); border-radius:14px;
+      padding:1.4rem 1.6rem; margin:1.5rem 0;
+    }
+    .tip-box__label { font-size:.65rem; font-weight:800; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem; }
+    .tip-box__label svg { width:13px; height:13px; stroke:var(--gold); fill:none; stroke-width:2.5; }
+    .tip-box p { font-size:.84rem; color:var(--navy); line-height:1.65; margin:0; }
+
+    /* ── Warning box ── */
+    .warn-box {
+      background:#FFF6EE; border:1.5px solid #F0A060; border-radius:14px;
+      padding:1.4rem 1.6rem; margin:1.5rem 0; display:flex; gap:1rem; align-items:flex-start;
+    }
+    .warn-box svg { width:20px; height:20px; stroke:#E05A20; fill:none; stroke-width:2; flex-shrink:0; margin-top:.1rem; }
+    .warn-box p { font-size:.84rem; color:#6B3010; line-height:1.65; margin:0; }
+
+    /* ── ATM strip ── */
+    .atm-facts { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:2rem; }
+    .atm-fact { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1.5rem 1.25rem; text-align:center; }
+    .atm-fact__num { font-size:1.8rem; font-weight:800; color:var(--gold); line-height:1; margin-bottom:.4rem; }
+    .atm-fact__label { font-size:.76rem; color:rgba(255,255,255,.6); line-height:1.4; }
+
+    /* ── FAQ accordion ── */
+    .faq-list { list-style:none; }
+    .faq-item { border-bottom:1px solid rgba(255,255,255,.1); }
+    .faq-item:last-child { border:none; }
+    .faq-q {
+      width:100%; background:none; border:none; text-align:left; cursor:pointer;
+      padding:1.35rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      font-size:.95rem; font-weight:700; color:#fff; font-family:inherit;
+    }
+    .faq-q svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform .3s; }
+    .faq-a { font-size:.86rem; color:rgba(255,255,255,.68); line-height:1.75; padding-bottom:1.25rem; display:none; }
+    .faq-item.open .faq-q svg { transform:rotate(45deg); }
+    .faq-item.open .faq-a { display:block; }
+
+    /* ── Newsletter ── */
+    .newsletter-dark { text-align:center; }
+    .newsletter-dark h2 { color:#fff; margin-bottom:.75rem; }
+    .newsletter-dark p { color:rgba(255,255,255,.65); margin-bottom:2rem; max-width:480px; margin-left:auto; margin-right:auto; }
+    .newsletter-form { display:flex; gap:.75rem; max-width:440px; margin:0 auto; }
+    .newsletter-form input {
+      flex:1; padding:.95rem 1.3rem; border:1.5px solid rgba(255,255,255,.15);
+      border-radius:100px; font-family:inherit; font-size:.9rem;
+      background:rgba(255,255,255,.07); color:#fff; outline:none;
+    }
+    .newsletter-form input::placeholder { color:rgba(255,255,255,.4); }
+    .newsletter-form input:focus { border-color:var(--gold); }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb { background:var(--cream); border-bottom:1px solid #E8E4DC; }
+    .breadcrumb__inner { padding:.85rem 0; font-size:.78rem; color:#888; }
+    .breadcrumb__inner a { color:#888; text-decoration:none; }
+    .breadcrumb__inner a:hover { color:var(--gold); }
+    .breadcrumb__sep { margin:0 .5rem; opacity:.5; }
+
+    /* ── Reveal ── */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* ── Responsive ── */
+    @media(max-width:1024px){
+      .bank-grid   { grid-template-columns:repeat(2,1fr) }
+      .sharia-grid { grid-template-columns:repeat(2,1fr) }
+    }
+    @media(max-width:860px){
+      .two-col,.two-col--3-2 { grid-template-columns:1fr }
+      .cc-grid   { grid-template-columns:1fr }
+      .atm-facts { grid-template-columns:repeat(2,1fr) }
+      /* Reduce section padding on tablet */
+      .s-cream,.s-white,.s-dark { padding:3.5rem 0 }
+    }
+    @media(max-width:640px){
+      .bank-grid   { grid-template-columns:1fr }
+      .app-strip   { grid-template-columns:1fr }
+      .sharia-grid { grid-template-columns:1fr }
+      .atm-facts   { grid-template-columns:repeat(2,1fr) }
+      .newsletter-form { flex-direction:column }
+      .hero-stats  { flex-direction:column; align-items:flex-start }
+      .sec-title   { font-size:1.55rem }
+      .s-cream,.s-white,.s-dark { padding:2.75rem 0 }
+      /* Hero padding reduction */
+      .page-hero { padding-top:calc(var(--nav-h,64px) + 2.5rem); padding-bottom:2.5rem }
+      /* Transfer table: allow horizontal scroll */
+      .transfer-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; width:100% }
+      /* Bank card body font shrink */
+      .bank-card p { font-size:.82rem }
+      .bank-meta li { font-size:.76rem }
+    }
+    @media(max-width:480px){
+      .bank-grid   { grid-template-columns:1fr }
+      .atm-facts   { grid-template-columns:1fr }
+      .cc-grid     { grid-template-columns:1fr }
+      .sec-title   { font-size:1.4rem }
+      .sec-lead    { font-size:.95rem }
+      /* Step items more compact */
+      .step-item { padding:.85rem 0 }
+      .step-item::before { min-width:32px; height:32px; font-size:.75rem; border-radius:10px }
+      /* App cards */
+      .app-card { gap:.75rem; padding:1rem 1.1rem }
+      .app-badge { width:40px; height:40px }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/relocate" class="nav__link">Relocate</a></li>
+      <li><a href="/work" class="nav__link">Work & Visa</a></li>
+      <li><a href="/business" class="nav__link">Business</a></li>
+      <li><a href="/life" class="nav__link active">Life in KSA</a></li>
+      <li><a href="/cities" class="nav__link">Cities</a></li>
+      <li><a href="/apps" class="nav__link">Apps</a></li>
+      <li><a href="/resources/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__text">
+      <div class="page-hero__eyebrow">Life in KSA · Finance</div>
+      <h1>Banking in Saudi Arabia</h1>
+      <p class="page-hero__subtitle">Opening a bank account is one of your first tasks after landing. Saudi Arabia's modern banking sector — largely Sharia-compliant, fully digital, and increasingly expat-friendly — makes it easier than you'd expect.</p>
+      <div class="hero-stats">
+        <span class="hero-stat">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          Iqama required to open
+        </span>
+        <span class="hero-stat">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Account open in 24 hrs
+        </span>
+        <span class="hero-stat">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          Zero fees on many accounts
+        </span>
+      </div>
+    </div>
+    <img src="https://picsum.photos/seed/banking/900/400" alt="Banking in Saudi Arabia" class="page-hero__img">
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container breadcrumb__inner">
+    <a href="/">Home</a><span class="breadcrumb__sep">›</span>
+    <a href="/life">Life in KSA</a><span class="breadcrumb__sep">›</span>
+    <span style="color:var(--navy);font-weight:600;">Banking</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 1 — WHICH BANK TO CHOOSE
+     ══════════════════════════════════ -->
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Choosing a Bank</div>
+      <h2 class="sec-title">The 5 Best Banks for Expats in Saudi Arabia</h2>
+      <p class="sec-lead">All five banks below are SAMA-regulated, offer English-language apps and customer service, and accept Iqama holders. Your choice depends mostly on your employer, location, and whether you need international transfer facilities.</p>
+    </div>
+
+    <div class="bank-grid reveal">
+
+      <!-- Al Rajhi -->
+      <div class="bank-card">
+        <div class="bank-card__header">
+          <div class="bank-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <div class="bank-card__name">Al Rajhi Bank</div>
+            <div class="bank-card__tag">Most Expat-Friendly</div>
+          </div>
+        </div>
+        <p>Saudi Arabia's largest Islamic bank by assets and the go-to choice for most new expats. Al Rajhi has more ATMs than any other bank (over 5,000 across the Kingdom) and a widely praised mobile app. Fully Sharia-compliant — all products are interest-free by default.</p>
+        <ul class="bank-meta">
+          <li>Largest ATM network in KSA — 5,000+ machines</li>
+          <li>English app &amp; 24/7 English phone support</li>
+          <li>Current account opened online in under 30 minutes with Iqama</li>
+          <li>Best for: Most expats, especially those outside major cities</li>
+        </ul>
+        <div class="bank-rating">
+          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          App rating 4.6 / 5
+        </div>
+      </div>
+
+      <!-- SNB -->
+      <div class="bank-card">
+        <div class="bank-card__header">
+          <div class="bank-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div>
+            <div class="bank-card__name">Saudi National Bank (SNB)</div>
+            <div class="bank-card__tag">Largest Bank in KSA</div>
+          </div>
+        </div>
+        <p>Formed by the 2021 merger of NCB and Samba Financial Group, SNB is now the largest bank in the Middle East by assets. Excellent corporate and personal banking, strong international correspondent banking relationships, and a well-designed mobile app. Salary accounts are common here due to large employer relationships.</p>
+        <ul class="bank-meta">
+          <li>Preferred salary bank for many major employers</li>
+          <li>Strong international wire transfer capabilities</li>
+          <li>English app available; branch staff mostly bilingual</li>
+          <li>Best for: Corporate employees, those transferring large amounts internationally</li>
+        </ul>
+        <div class="bank-rating">
+          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          App rating 4.4 / 5
+        </div>
+      </div>
+
+      <!-- Riyad Bank -->
+      <div class="bank-card">
+        <div class="bank-card__header">
+          <div class="bank-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="bank-card__name">Riyad Bank</div>
+            <div class="bank-card__tag">Good English Support</div>
+          </div>
+        </div>
+        <p>Riyad Bank is a popular mid-tier choice for expats who prioritise English-language customer service. Their Riyad Online platform is clean and functional. They also offer solid investment products through Riyad Capital.</p>
+        <ul class="bank-meta">
+          <li>Strong English phone &amp; in-branch support</li>
+          <li>Dedicated expat service desk in major branches</li>
+          <li>Riyad Online rated highly for ease of use</li>
+          <li>Best for: Those prioritising English service quality</li>
+        </ul>
+        <div class="bank-rating">
+          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          App rating 4.3 / 5
+        </div>
+      </div>
+
+      <!-- SABB -->
+      <div class="bank-card">
+        <div class="bank-card__header">
+          <div class="bank-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div>
+            <div class="bank-card__name">SABB</div>
+            <div class="bank-card__tag">HSBC Affiliate</div>
+          </div>
+        </div>
+        <p>The Saudi British Bank is an HSBC affiliate, which means international-standard processes, excellent cross-border banking, and strong support for expats moving from HSBC-served countries. If you already bank with HSBC in your home country, the SABB relationship can simplify account verification and pre-qualification.</p>
+        <ul class="bank-meta">
+          <li>HSBC affiliate — familiar processes for international expats</li>
+          <li>Strong international wire transfers and FX products</li>
+          <li>Excellent English-language support throughout</li>
+          <li>Best for: Western expats, HSBC customers, frequent international transfers</li>
+        </ul>
+        <div class="bank-rating">
+          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          App rating 4.2 / 5
+        </div>
+      </div>
+
+      <!-- Al Inma -->
+      <div class="bank-card">
+        <div class="bank-card__header">
+          <div class="bank-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <div class="bank-card__name">Al Inma Bank</div>
+            <div class="bank-card__tag">Fully Digital</div>
+          </div>
+        </div>
+        <p>Al Inma is a fully Sharia-compliant bank with an emphasis on digital-first banking. It's often praised for having one of the most modern and intuitive mobile apps in the Saudi market. Fewer physical branches than the larger banks, but the app reduces the need for in-person visits significantly.</p>
+        <ul class="bank-meta">
+          <li>Award-winning mobile app — strongest digital experience</li>
+          <li>Fully Sharia-compliant across all products</li>
+          <li>Paperless account opening possible after Iqama linked to Absher</li>
+          <li>Best for: Tech-savvy expats who prefer managing everything digitally</li>
+        </ul>
+        <div class="bank-rating">
+          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          App rating 4.7 / 5
+        </div>
+      </div>
+
+    </div><!-- /bank-grid -->
+
+    <div class="tip-box reveal" style="margin-top:2.5rem;">
+      <div class="tip-box__label">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        Pro Tip
+      </div>
+      <p>If your employer has a payroll arrangement with a specific bank, strongly consider opening your primary account there — it simplifies salary receipt, HR processes, and any work-related benefits. You can always open a second account at another bank for savings or international transfers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 2 — OPENING AN ACCOUNT
+     ══════════════════════════════════ -->
+<section class="s-white">
+  <div class="container">
+    <div class="two-col reveal">
+      <div>
+        <div class="sec-eyebrow">Account Opening</div>
+        <h2 class="sec-title">How to Open a Bank Account</h2>
+        <p class="sec-lead" style="margin-bottom:1.5rem;">Most banks can open an account for you within 24 hours once you have your Iqama. The process has become significantly smoother since Saudi digital identity integration with Absher.</p>
+
+        <div class="req-chips">
+          <span class="req-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Iqama (Residence Permit)</span>
+          <span class="req-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Original Passport</span>
+          <span class="req-chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Employment Letter</span>
+          <span class="req-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Proof of Address</span>
+          <span class="req-chip"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> Saudi Phone Number</span>
+        </div>
+
+        <ul class="step-list">
+          <li class="step-item">
+            <div>
+              <div class="step-tag">Step 1 — Preparation</div>
+              <h4>Gather Your Documents</h4>
+              <p>Ensure your Iqama is physically in hand (not just in process). Your employer's HR department should provide a standard employment letter on company letterhead stating your salary and position. Bring originals and photocopies of everything.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-tag">Step 2 — Book Appointment or Walk In</div>
+              <h4>Visit the Branch or Start Online</h4>
+              <p>For Al Rajhi and Al Inma, you can start the application via their apps using your Iqama number — the app pulls your data from Absher/Nafath automatically. Other banks typically require an in-branch visit for first-time account opening. Most major branches in Riyadh, Jeddah, and Dammam have dedicated expat counters.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-tag">Step 3 — Identity Verification</div>
+              <h4>Biometrics &amp; Nafath Verification</h4>
+              <p>Saudi banks use the Nafath digital identity platform. You'll scan your fingerprint at the branch terminal or verify through the Nafath app on your phone (requires prior Absher registration). This replaces the older paper-based KYC process for most banks.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-tag">Step 4 — Account Type Selection</div>
+              <h4>Choose Current or Savings Account</h4>
+              <p>For day-to-day banking you want a <strong>Current Account</strong> (Hisab Jari). These are zero-fee at most banks and come with a debit card. Savings accounts (Murabaha savings) earn a Sharia-compliant profit rate instead of interest. Most expats open both.</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div>
+              <div class="step-tag">Step 5 — Card &amp; Online Banking Activation</div>
+              <h4>Debit Card Issued &amp; App Setup</h4>
+              <p>Your debit card is usually issued on the same day at the branch or mailed within 3 business days. Download the bank's app, complete activation with your OTP-linked Saudi phone number, and you're ready to transact. International transactions are enabled by default on most accounts.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://picsum.photos/seed/bank-branch/600/700" alt="Opening a bank account in Saudi Arabia" class="content-img" style="height:420px;margin-bottom:1.5rem;">
+
+        <div class="warn-box">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p><strong>Common Problem:</strong> Many expats try to open an account with a visa only — before their Iqama is issued. This will be refused. Wait until your Iqama is in hand. In the meantime, your employer may be able to advance cash or set up a salary advance arrangement.</p>
+        </div>
+
+        <div class="warn-box">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <p><strong>Address Proof:</strong> If you're staying in temporary accommodation, a hotel confirmation or a letter from your employer confirming your residence city is usually accepted. A formal lease agreement is preferred but not always required at the initial stage.</p>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-box__label">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Timeline
+          </div>
+          <p>In-branch visit: 30–90 minutes. Card delivery (if not same-day): 1–3 business days. For digital-only applications via app: account live within 24 hours, card within 5 days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3 — ISLAMIC BANKING
+     ══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="container">
+    <div class="reveal" style="max-width:720px;">
+      <div class="sec-eyebrow">Islamic Finance</div>
+      <h2 class="sec-title sec-title--white">How Islamic Banking Works — and Why It Matters</h2>
+      <p class="sec-lead sec-lead--white">All Saudi banks operate under SAMA (Saudi Arabian Monetary Authority) regulations and most are fully Sharia-compliant. This isn't just a formality — it changes how products are structured, often in ways that benefit expats.</p>
+    </div>
+
+    <div class="two-col reveal" style="margin-bottom:2.5rem;">
+      <div>
+        <p>Islamic finance prohibits Riba (usury — charging or paying interest). Instead, banks structure products using partnership and trade-based contracts that achieve similar economic outcomes without interest. The most common structures you'll encounter are:</p>
+        <p style="margin-top:1rem;">From a practical standpoint for everyday expats, this means your current account earns no interest — but you also pay no overdraft interest. Savings accounts earn a "profit rate" (functionally similar to interest, but structured as a profit-sharing arrangement). Car and home finance products are structured as Murabaha or Ijara contracts rather than loans.</p>
+        <p style="margin-top:1rem;">Many expats from non-Muslim countries actually prefer this system because it forces a cash-first approach and eliminates punishing interest on debt. Credit products are available but structured conservatively, which can limit over-extension.</p>
+      </div>
+      <div>
+        <img src="https://picsum.photos/seed/islamicfinance/600/400" alt="Islamic banking in Saudi Arabia" class="content-img">
+      </div>
+    </div>
+
+    <div class="sharia-grid reveal">
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Savings &amp; Deposits</div>
+        <h3>Mudaraba</h3>
+        <p>A profit-sharing investment contract where you provide the capital and the bank provides expertise. Your savings earn a profit rate based on the bank's performance — disclosed quarterly. No guaranteed return, but historically stable at 2–4% annually.</p>
+      </div>
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Property &amp; Car Finance</div>
+        <h3>Murabaha</h3>
+        <p>The bank purchases an asset you want (car, property, equipment) then sells it to you at a disclosed mark-up, paid in instalments. You know the total cost upfront. This replaces conventional loans and is the most common financing structure in KSA.</p>
+      </div>
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Leasing</div>
+        <h3>Ijara</h3>
+        <p>An Islamic leasing contract. The bank owns the asset and leases it to you. Commonly used for home finance (instead of a mortgage) and large equipment. Payments are structured as rent, not interest. At the end of the term you may take ownership.</p>
+      </div>
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Trade Finance</div>
+        <h3>Wakala</h3>
+        <p>An agency arrangement where the bank acts as your agent to invest funds on your behalf for a fixed fee. Commonly used in Islamic money market and trade finance products. Offers a more transparent fee structure than conventional investment products.</p>
+      </div>
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Overdraft Alternative</div>
+        <h3>Qard Hasan</h3>
+        <p>An interest-free benevolent loan sometimes offered by Islamic banks. If a bank offers this, they cannot charge interest — only a flat administration fee is permissible. Not widely available but offered by some banks to salary account holders.</p>
+      </div>
+      <div class="sharia-card">
+        <div class="sharia-card__tag">Investment</div>
+        <h3>Sukuk</h3>
+        <p>Islamic bonds — certificates that represent ownership in an asset rather than a debt obligation. Saudi Arabia is one of the world's largest Sukuk markets. Available through bank investment platforms as fixed-income alternatives for expat investors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 4 — DIGITAL BANKING & FINTECH
+     ══════════════════════════════════ -->
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Digital Finance</div>
+      <h2 class="sec-title">Digital Banking &amp; Fintech in Saudi Arabia</h2>
+      <p class="sec-lead">Saudi Arabia has one of the highest smartphone penetration rates in the world, and its fintech ecosystem reflects that. Alongside traditional bank apps, a rich ecosystem of digital wallets and payment platforms has emerged.</p>
+    </div>
+
+    <div class="app-strip reveal">
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">STC Pay</div>
+          <p>Saudi Arabia's most popular digital wallet, operated by STC (Saudi Telecom Company). Fully licensed by SAMA as a payment service provider. Send money, pay bills, shop online, and now also offers an international transfer service to 50+ countries at competitive rates. Non-STC subscribers can also use it.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">App Store</a>
+            <a href="#" class="app-link">Google Play</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">SADAD</div>
+          <p>The national bill payment platform used by virtually every utility, government department, and service provider in Saudi Arabia. Pay your DEWA bill, Zain mobile top-up, municipality fines, and hundreds of other services through SADAD integration in your bank app — no need to visit offices or use individual portals.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">Available in all bank apps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">Apple Pay &amp; Google Pay</div>
+          <p>Widely accepted across Saudi Arabia — contactless payments are the norm at supermarkets, restaurants, and petrol stations. All major Saudi banks support adding your debit or credit card to Apple Wallet or Google Pay. Tap-to-pay works reliably at virtually all POS terminals in modern retail environments.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">Supported by all major banks</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">Neoleap (Formerly Alrajhi Neo)</div>
+          <p>A standalone digital banking app spun out of Al Rajhi Bank for the digitally native generation. Offers instant account opening (with Iqama), a prepaid card, split payments, budgeting tools, and cashback programmes. Popular with younger expats and gig workers who want a lighter banking experience without visiting branches.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">App Store</a>
+            <a href="#" class="app-link">Google Play</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">IVA (Mada Pay)</div>
+          <p>Mada is the Saudi national debit card network (similar to Visa/Mastercard but domestic). IVA is the contactless payment solution built on Mada. Your Saudi debit card is almost certainly a Mada-branded card, which means IVA payments work even where international networks might not be available. Widely used for e-commerce.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">Integrated in bank apps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-card">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div>
+          <div class="app-card__name">Tabby &amp; Tamara (Buy Now, Pay Later)</div>
+          <p>Saudi Arabia's two leading BNPL platforms — both SAMA-regulated. Split purchases into 4 interest-free instalments at thousands of retailers including Noon, IKEA, H&M, and Sephora. Expats can sign up with their Iqama and a Saudi mobile number. No credit check required for standard purchases under SAR 2,000.</p>
+          <div class="app-links">
+            <a href="#" class="app-link">Tabby App</a>
+            <a href="#" class="app-link">Tamara App</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5 — INTERNATIONAL TRANSFERS
+     ══════════════════════════════════ -->
+<section class="s-white">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Sending Money Abroad</div>
+      <h2 class="sec-title">International Transfers &amp; Remittances</h2>
+      <p class="sec-lead">Sending money home is one of the most frequent financial tasks for expats in Saudi Arabia. The Kingdom is one of the world's top remittance-sending countries — infrastructure is well-developed and regulations are expat-friendly.</p>
+    </div>
+
+    <div class="two-col reveal" style="margin-bottom:3rem;">
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem;">Regulations on Sending Money Abroad</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;margin-bottom:1rem;">Saudi Arabia places <strong>no restriction on remitting your after-tax salary abroad</strong>. You are legally permitted to send money earned in the Kingdom to any bank account in any country at any time, provided the funds came from legitimate employment income. There are no annual limits for employed expats.</p>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;margin-bottom:1rem;">However, compliance requirements include: source of funds documentation for large transfers (typically above SAR 60,000 in a single transaction), and for SWIFT transfers your bank will require the recipient's IBAN/account number, BIC/SWIFT code, and recipient's full address.</p>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;">Transfers are subject to a 6% levy (the expat remittance tax) — this was a proposal that was implemented but rates have varied. Check the current rate with your bank. Many employers gross up salaries to compensate. Business transfers have different rules — consult your bank's corporate banking team.</p>
+
+        <div class="tip-box" style="margin-top:1.5rem;">
+          <div class="tip-box__label">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Best Rate Strategy
+          </div>
+          <p>Compare your bank's SWIFT rate against Wise or STC Pay International before transferring. For large amounts (SAR 10,000+), the exchange rate difference can be significant — often 1–2% better through specialist services.</p>
+        </div>
+      </div>
+      <div>
+        <img src="https://picsum.photos/seed/remittance/600/380" alt="International money transfer Saudi Arabia" class="content-img">
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 style="color:var(--navy);margin-bottom:1.25rem;">Transfer Method Comparison</h3>
+      <table class="transfer-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Typical Fee</th>
+            <th>Exchange Rate</th>
+            <th>Speed</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bank SWIFT Transfer</strong></td>
+            <td>SAR 30–80 flat</td>
+            <td>Bank rate (+1.5–2.5% spread)</td>
+            <td>1–3 business days</td>
+            <td>Large amounts, formal documentation</td>
+          </tr>
+          <tr>
+            <td><strong>Wise (TransferWise)</strong></td>
+            <td>0.4–1.5% of amount</td>
+            <td>Mid-market rate (best available)</td>
+            <td>Same day – 1 day</td>
+            <td>Best overall exchange rate, tech-savvy users</td>
+          </tr>
+          <tr>
+            <td><strong>STC Pay International</strong></td>
+            <td>Variable (often SAR 5–15)</td>
+            <td>Competitive, check in-app</td>
+            <td>Minutes – few hours</td>
+            <td>Quick transfers to 50+ countries</td>
+          </tr>
+          <tr>
+            <td><strong>Western Union</strong></td>
+            <td>SAR 15–50 depending on destination</td>
+            <td>Adds ~2–3% margin</td>
+            <td>Minutes (cash pickup)</td>
+            <td>Recipients without bank accounts</td>
+          </tr>
+          <tr>
+            <td><strong>Al Rajhi Money Transfer</strong></td>
+            <td>SAR 15–25 flat</td>
+            <td>Bank rate (~1.5–2% spread)</td>
+            <td>Same day to most countries</td>
+            <td>Al Rajhi customers, common expat destinations</td>
+          </tr>
+          <tr>
+            <td><strong>Exchange Houses (Al Mujahid etc.)</strong></td>
+            <td>Variable per corridor</td>
+            <td>Often competitive for South/Southeast Asia</td>
+            <td>Minutes – same day</td>
+            <td>Philippines, India, Pakistan, Egypt corridors</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 6 — CREDIT CARDS
+     ══════════════════════════════════ -->
+<section class="s-cream">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow">Credit &amp; Financing</div>
+      <h2 class="sec-title">Credit Cards for Expats</h2>
+      <p class="sec-lead">Getting a credit card as a new expat is possible but typically requires 3–6 months of salary history at a Saudi bank. Requirements are stricter than in many Western countries — but fees are low and cashback programmes are genuinely good.</p>
+    </div>
+
+    <div class="two-col--3-2 two-col reveal" style="margin-bottom:2.5rem;">
+      <div>
+        <h3 style="color:var(--navy);margin-bottom:1rem;">Eligibility Requirements</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;margin-bottom:1rem;">Standard requirements for a credit card in Saudi Arabia:</p>
+        <ul style="font-size:.88rem;color:#555;line-height:1.8;padding-left:1.25rem;margin-bottom:1.5rem;">
+          <li>Valid Iqama with at least 6 months remaining validity</li>
+          <li>Minimum monthly salary typically SAR 5,000 (varies by bank and card tier)</li>
+          <li>3–6 months of salary history with the issuing bank (some banks require 12 months)</li>
+          <li>Employment letter confirming position and salary</li>
+          <li>Saudi mobile number registered to your Iqama</li>
+        </ul>
+
+        <h3 style="color:var(--navy);margin-bottom:1rem;">Taqseet — Instalment Plans</h3>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;margin-bottom:1rem;">Taqseet (تقسيط) is the Arabic term for instalment/deferred payment plans. Almost all major retailers, appliance stores, and airlines offer Taqseet options on credit card purchases — typically 0% interest for 3–12 months. It's widely used for furniture, electronics, flights, and medical procedures.</p>
+        <p style="font-size:.9rem;color:#555;line-height:1.75;">Sharia-compliant credit cards structure repayments as Murabaha — you're paying for deferred delivery of value rather than borrowing money at interest. The practical experience is identical to a conventional credit card.</p>
+      </div>
+      <div>
+        <img src="https://picsum.photos/seed/creditcard/500/400" alt="Credit cards in Saudi Arabia" class="content-img">
+      </div>
+    </div>
+
+    <div class="cc-grid reveal">
+      <div class="cc-card">
+        <div class="cc-card__bank">Al Rajhi Bank</div>
+        <h3>Al Rajhi Cashback Credit Card</h3>
+        <ul>
+          <li>5% cashback on supermarkets, 3% on fuel</li>
+          <li>No annual fee for first year</li>
+          <li>Min. salary: SAR 5,000/month</li>
+          <li>Available to expats after 3 months banking history</li>
+        </ul>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card__bank">SNB</div>
+        <h3>SNB Elite World Mastercard</h3>
+        <ul>
+          <li>Lounge access via Priority Pass</li>
+          <li>Travel insurance included</li>
+          <li>Min. salary: SAR 15,000/month</li>
+          <li>Strong for international spenders</li>
+        </ul>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card__bank">SABB</div>
+        <h3>SABB Visa Infinite</h3>
+        <ul>
+          <li>HSBC affiliate — widely recognised internationally</li>
+          <li>Airport lounge access, travel insurance</li>
+          <li>Min. salary: SAR 20,000/month</li>
+          <li>Best for frequent international travellers</li>
+        </ul>
+      </div>
+      <div class="cc-card">
+        <div class="cc-card__bank">Riyad Bank</div>
+        <h3>Riyad Bank Rewards Visa</h3>
+        <ul>
+          <li>Points on every SAR spent — redeemable for flights/hotels</li>
+          <li>3x points on dining and travel</li>
+          <li>Min. salary: SAR 8,000/month</li>
+          <li>Good for everyday earning and redemption</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 7 — ATMs & CASH
+     ══════════════════════════════════ -->
+<section class="s-dark">
+  <div class="container">
+    <div class="reveal" style="max-width:700px;margin-bottom:3rem;">
+      <div class="sec-eyebrow">Cash &amp; ATMs</div>
+      <h2 class="sec-title sec-title--white">ATM Access &amp; Cash in Saudi Arabia</h2>
+      <p class="sec-lead sec-lead--white">Saudi Arabia is increasingly cashless, but cash is still used for smaller informal transactions, tipping, and some market purchases. ATM infrastructure is excellent — you'll rarely be more than a few minutes from a machine.</p>
+    </div>
+
+    <div class="atm-facts reveal">
+      <div class="atm-fact">
+        <div class="atm-fact__num">18,000+</div>
+        <div class="atm-fact__label">ATMs nationwide across all banks</div>
+      </div>
+      <div class="atm-fact">
+        <div class="atm-fact__num">SAR 5,000</div>
+        <div class="atm-fact__label">Typical daily ATM withdrawal limit</div>
+      </div>
+      <div class="atm-fact">
+        <div class="atm-fact__num">SAR 0</div>
+        <div class="atm-fact__label">Fee at your own bank's ATM</div>
+      </div>
+      <div class="atm-fact">
+        <div class="atm-fact__num">SAR 5–15</div>
+        <div class="atm-fact__label">Typical fee at another bank's ATM</div>
+      </div>
+    </div>
+
+    <div class="two-col reveal" style="margin-top:3rem;">
+      <div>
+        <p>International card users (Visa/Mastercard from your home country) will find their cards accepted at most ATMs and POS terminals in Saudi Arabia, though a foreign transaction fee of 2–3% typically applies. For regular use, always convert to a local Saudi debit card once your account is open.</p>
+        <p style="margin-top:1rem;">The Mada network (Saudi domestic debit) has zero fees at any Mada ATM regardless of your bank, making it the preferred network for everyday cash withdrawal. Look for the green Mada logo on ATM machines.</p>
+      </div>
+      <div>
+        <p>Cash is most commonly used for: Friday market (souk) purchases, tipping household staff and delivery drivers, smaller local restaurants and cafes that don't take cards, and paying handymen or contractors. Keeping SAR 200–500 in cash is a practical amount for daily life.</p>
+        <p style="margin-top:1rem;">Airport ATMs charge higher fees (SAR 25–40 per withdrawal). If arriving at a Saudi airport, minimise ATM use there and withdraw cash from your first city branch instead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 8 — FAQ
+     ══════════════════════════════════ -->
+<section class="s-dark" style="padding-top:0;padding-bottom:5.5rem;">
+  <div class="container">
+    <div class="reveal" style="max-width:700px;margin-bottom:2.5rem;">
+      <div class="sec-eyebrow">Common Questions</div>
+      <h2 class="sec-title sec-title--white">Banking FAQ</h2>
+    </div>
+
+    <div style="max-width:760px;">
+      <ul class="faq-list reveal">
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Can I open a bank account before my Iqama arrives?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">No — all Saudi banks require a valid Iqama to open a personal account. You cannot open an account on a visit visa, work visa alone, or with a pending Iqama. If you need cash before your Iqama arrives, ask your employer for a cash advance or carry enough from your home country to cover the first 2–4 weeks.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            How long does it take to get a bank account open?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">For in-branch visits: the account is typically activated within the same day. For digital applications (Al Rajhi, Al Inma): the account is live within 24 hours and a physical debit card arrives within 3–5 business days. Complex cases (self-employed, unusual visa types) may take 3–5 business days for additional verification.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Do Saudi banks charge monthly fees?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">Standard current accounts at most Saudi banks carry zero monthly maintenance fees. This is one of the notable benefits compared to many Western banking markets. Some premium accounts (Gold, Platinum tiers) have monthly fees in exchange for additional benefits like lounge access or higher transfer limits. Always confirm fee structure when opening your account.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Can I keep my account if I leave Saudi Arabia?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">In practice, most expats close or drain their Saudi bank accounts when leaving permanently. Saudi banks require an active Iqama to maintain an account — when your Iqama expires and is not renewed, the bank may freeze or close the account. Best practice: transfer remaining funds before your departure date and formally close the account to avoid any issues with dormancy fees or compliance flags.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Is there a limit on how much I can send abroad?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">There is no statutory annual limit on remittances for employed expats earning legitimate income. Large single transfers (above SAR 60,000) may trigger documentation requirements from your bank's compliance team — typically a salary certificate and source of funds letter. Banks will ask for this proactively; simply comply and the transfer proceeds. The 6% remittance levy applies to transfers by non-Saudi nationals to foreign accounts.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            What is Absher and do I need it for banking?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">Absher is the Saudi government's digital identity and services portal. While you don't technically need Absher to open a basic bank account, it dramatically speeds up the process. Banks use Nafath (the digital identity verification service) which is linked to Absher — with Absher registered, your identity can be verified in seconds during account opening. Absher is also needed for Iqama renewal and most government transactions, so register immediately after getting your Iqama.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Can I use Wise or Revolut as my main bank in Saudi Arabia?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">No — these cannot replace a Saudi local bank account. Your employer's payroll system requires a Saudi IBAN (bank account number) to process your salary. Wise does not have a Saudi banking license and cannot receive SAR salary payments. Use a Saudi bank for salary receipt and bill payments, and use Wise/Revolut as a supplementary tool for international transfers and travel spending.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Are there banks specifically designed for expats?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">There are no banks exclusively for expats in Saudi Arabia — all SAMA-licensed banks serve both nationals and expatriates. However, SABB (HSBC affiliate) and Riyad Bank have the strongest reputation for expat service specifically. Several banks also operate dedicated expat service desks at their major city branches — Al Rajhi and SNB in Riyadh's Olaya district are well-regarded for this.</div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+            Do I pay tax on bank account earnings in Saudi Arabia?
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">Saudi Arabia has no personal income tax and no withholding tax on savings account profit distributions for individuals. The profit you earn on a Mudaraba savings account is paid to you in full. However, depending on your home country's tax treaty with Saudi Arabia, you may still be required to declare foreign income on your home country tax return — this varies by nationality. Consult a tax advisor in your home country.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     NEWSLETTER
+     ══════════════════════════════════ -->
+<section class="s-dark" style="padding-top:0;">
+  <div class="container">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal newsletter-dark">
+      <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Stay Updated</div>
+      <h2 style="color:#fff;margin-bottom:.75rem;">Banking &amp; Finance Updates</h2>
+      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;">Saudi banking regulations change frequently. Get notified about new expat-friendly products, fee changes, and fintech launches.</p>
+      <form class="newsletter-form" onsubmit="return false;">
+        <input type="email" placeholder="Your email address">
+        <button type="submit" class="btn btn--gold">Subscribe</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Related guides -->
+<style>
+[style*="border-radius:14px"][href]:hover{border-color:var(--gold,#D4A853)!important;transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08)}
+</style>
+<section style="background:var(--cream,#F2EEE5);padding:3rem 0;border-top:1px solid var(--border-gray,#D6D3CB)">
+  <div class="container" style="max-width:1380px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)">
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem"><span style="width:24px;height:1.5px;background:var(--gold,#D4A853);display:inline-block"></span>Related guides</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+      <a href="/apps" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">📱</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Essential Apps Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">stc Bank, SNB, and the fastest accounts to open</div></div>
+      </a>
+      <a href="/life/housing" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🏠</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Housing in Saudi</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Rental costs by city and where to live</div></div>
+      </a>
+      <a href="/work/iqama-guide" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🪪</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Iqama Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Your bank requires a valid Iqama to open an account</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px;width:auto">
+        </div>
+        <p class="footer__tagline">Your complete guide to relocating and living in Saudi Arabia.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate" class="footer__link">Relocation Hub</a>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Work & Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a Company</a>
+        <a href="/business/free-zones" class="footer__link">Free Zones</a>
+        <a href="/business/tax-guide" class="footer__link">Tax Guide</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Life in KSA</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/apps" class="footer__link">Essential Apps</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 NewToSaudi.com · Independent &amp; unsponsored · <a href="/about">About</a> · <a href="/resources/faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

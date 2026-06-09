@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saudi Arabia City Guides — Find Your Perfect Home Base | NewToSaudi.com</title>
+  <meta name="description" content="Compare Riyadh, Jeddah, Dammam and more. Deep-dive city guides for expats — cost of living, neighbourhoods, job market, lifestyle, and expat communities.">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* ── Page Hero ── */
+    .page-hero{background:linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%);
+      padding:calc(var(--nav-h) + 4.5rem) 0 5.5rem;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;
+      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 0,transparent 70px),
+      repeating-linear-gradient(-60deg,rgba(255,255,255,.015) 0,rgba(255,255,255,.015) 1px,transparent 0,transparent 70px)}
+    .page-hero .container{position:relative;z-index:2;text-align:center}
+    .page-hero__arch{position:absolute;right:3%;top:50%;transform:translateY(-50%);opacity:.08;z-index:1}
+    .page-hero__arch-l{position:absolute;left:3%;top:50%;transform:translateY(-50%);opacity:.05;z-index:1}
+    .hero-label{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,168,83,.12);
+      border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.45rem 1.2rem;
+      font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:1.5rem}
+    .hero-title{font-size:clamp(2.2rem,4.5vw,4.2rem);font-weight:800;color:var(--white);
+      letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem;max-width:800px;margin-left:auto;margin-right:auto}
+    .hero-title span{background:linear-gradient(135deg,var(--gold),var(--gold-light));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:560px;margin:0 auto 2rem}
+    .hero-city-pills{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.5rem}
+    .hero-pill{padding:.45rem 1.1rem;border-radius:100px;background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);font-size:.82rem;font-weight:600;color:rgba(255,255,255,.6);
+      transition:all .25s}
+    .hero-pill:hover,.hero-pill.active{background:rgba(212,168,83,.12);border-color:rgba(212,168,83,.3);color:var(--gold)}
+
+    /* ── City Feature Cards ── */
+    .city-feature-card{border-radius:24px;overflow:hidden;position:relative;height:480px;display:block;text-decoration:none;margin-bottom:2rem}
+    .city-feature-card__bg{position:absolute;inset:0;transition:transform .8s ease}
+    .city-feature-card:hover .city-feature-card__bg{transform:scale(1.05)}
+    .city-feature-card__overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(6,10,18,.75) 60%,rgba(6,10,18,.96) 100%)}
+    .city-feature-card__content{position:absolute;bottom:0;left:0;right:0;padding:3rem;z-index:2}
+    .city-feature-card__label{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+    .city-feature-card__title{font-size:2.8rem;font-weight:800;color:white;line-height:1;margin-bottom:.5rem;letter-spacing:-.02em}
+    .city-feature-card__tagline{color:rgba(255,255,255,.55);font-size:1rem;margin-bottom:1.5rem}
+    .city-feature-card__tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+    .city-tag{font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:100px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.15)}
+    .city-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem;font-weight:700;
+      color:white;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.2);
+      padding:.6rem 1.35rem;border-radius:100px;transition:all .25s}
+    .city-feature-card:hover .city-cta{background:var(--gold);border-color:var(--gold);color:var(--navy-dark)}
+
+    .cities-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media(max-width:1024px){.cities-grid-3{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.cities-grid-3{grid-template-columns:1fr}}
+
+    /* ── Comparison Table ── */
+    .compare-table-wrap{overflow-x:auto;border-radius:20px;border:1.5px solid var(--light-gray)}
+    .compare-table{width:100%;border-collapse:collapse;font-size:.93rem;min-width:640px}
+    .compare-table th{background:var(--navy);color:white;padding:1rem 1.5rem;text-align:left;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .compare-table th:first-child{width:220px}
+    .compare-table td{padding:.9rem 1.5rem;border-bottom:1px solid var(--light-gray);vertical-align:middle;color:var(--text-body)}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table tr:nth-child(even) td{background:rgba(27,42,74,.02)}
+    .compare-table tr:hover td{background:rgba(212,168,83,.04)}
+    .compare-table td:first-child{font-weight:600;color:var(--navy);font-size:.92rem}
+    .stars{color:var(--gold);letter-spacing:.1em;white-space:nowrap}
+    .star-empty{opacity:.2}
+
+    /* ── Persona Cards ── */
+    .personas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem}
+    .persona-card{background:var(--white);border:1.5px solid var(--light-gray);border-radius:20px;padding:2rem;transition:all .3s}
+    .persona-card:hover{border-color:rgba(212,168,83,.4);box-shadow:0 12px 32px rgba(27,42,74,.08);transform:translateY(-3px)}
+    .persona-card__icon{width:52px;height:52px;border-radius:14px;background:rgba(27,42,74,.06);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
+    .persona-card__for{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text-gray);margin-bottom:.4rem}
+    .persona-card__title{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
+    .persona-card__desc{font-size:.9rem;color:var(--text-body);line-height:1.7;margin-bottom:1rem}
+    .persona-card__city{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:700;color:var(--gold);background:rgba(212,168,83,.1);padding:.3rem .8rem;border-radius:100px}
+
+    /* ── City Deep Dive ── */
+    .city-deepdive{display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:start}
+    @media(max-width:1024px){.city-deepdive{grid-template-columns:1fr}}
+    .city-deepdive__text h2{font-size:2.2rem;margin-bottom:.75rem}
+    .city-deepdive__text h3{font-size:1.15rem;color:var(--navy);margin-top:2rem;margin-bottom:.6rem}
+    .city-deepdive__text p{font-size:1rem;line-height:1.8;color:var(--text-body);margin-bottom:1.1rem}
+    .city-deepdive__text ul{margin:0 0 1.25rem 1.4rem;color:var(--text-body);line-height:1.9}
+    .city-deepdive__text li{margin-bottom:.3rem;font-size:.95rem}
+
+    .city-stats-card{background:var(--white);border:1.5px solid var(--light-gray);border-radius:20px;padding:2rem;position:sticky;top:calc(var(--nav-h) + 2rem)}
+    .city-stats-card h4{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-gray);margin-bottom:1.25rem}
+    .stat-row{display:flex;justify-content:space-between;align-items:center;padding:.65rem 0;border-bottom:1px solid var(--light-gray);font-size:.88rem}
+    .stat-row:last-child{border-bottom:none}
+    .stat-label{color:var(--text-gray)}
+    .stat-value{font-weight:700;color:var(--navy)}
+    .neighbourhood-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .nbr-tag{font-size:.78rem;font-weight:600;padding:.3rem .8rem;border-radius:8px;background:rgba(27,42,74,.06);color:var(--navy-light)}
+
+    /* ── Emerging Cities ── */
+    .emerging-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+    .emerging-card{background:var(--white);border:1.5px solid var(--light-gray);border-radius:20px;overflow:hidden;transition:all .3s}
+    .emerging-card:hover{box-shadow:0 16px 40px rgba(27,42,74,.1);transform:translateY(-3px);border-color:rgba(212,168,83,.3)}
+    .emerging-card__img{height:200px;overflow:hidden}
+    .emerging-card__img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+    .emerging-card:hover .emerging-card__img img{transform:scale(1.05)}
+    .emerging-card__body{padding:1.5rem}
+    .emerging-card__badge{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,83,.1);padding:.2rem .7rem;border-radius:100px;margin-bottom:.6rem}
+    .emerging-card__title{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+    .emerging-card__desc{font-size:.9rem;color:var(--text-body);line-height:1.65}
+
+    /* ── Callouts ── */
+    .callout{border-radius:16px;padding:1.75rem 2rem;margin:2rem 0}
+    .callout--gold{background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.25)}
+    .callout--navy{background:rgba(27,42,74,.06);border:1.5px solid rgba(27,42,74,.12)}
+    .callout__title{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+
+    /* ── Newsletter ── */
+    .newsletter{background:linear-gradient(140deg,#060E1E 0%,#0B1422 50%,#0F1C33 100%);border-radius:28px;padding:4rem;text-align:center;position:relative;overflow:hidden}
+    .newsletter h2{color:white;margin-bottom:.75rem}
+    .newsletter p{color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
+    .newsletter-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;flex-wrap:wrap}
+    .newsletter-form input{flex:1;min-width:220px;padding:.85rem 1.25rem;border-radius:12px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.08);color:white;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.3)}
+    .newsletter-form input:focus{border-color:rgba(212,168,83,.5)}
+    .newsletter-form button{padding:.85rem 1.75rem;background:var(--gold);color:var(--navy-dark);font-weight:700;font-size:.9rem;border-radius:12px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;font-family:inherit}
+    .newsletter-form button:hover{background:var(--gold-light)}
+
+    /* ── Section divider label ── */
+    .city-section-anchor{display:block;padding-top:calc(var(--nav-h) + 1rem);margin-top:calc(-1 * var(--nav-h) - 1rem)}
+
+    @media(max-width:768px){
+      .city-feature-card{height:320px}
+      .city-feature-card__title{font-size:1.85rem}
+      .city-feature-card__content{padding:1.75rem 1.5rem}
+      .city-deepdive{gap:2rem}
+      .newsletter{padding:2.5rem 1.5rem;border-radius:20px}
+      .newsletter-form{flex-direction:column;align-items:stretch}
+      .newsletter-form input{min-width:0;width:100%}
+      .newsletter-form button{width:100%}
+      .personas-grid{grid-template-columns:1fr 1fr!important}
+    }
+    @media(max-width:480px){
+      .city-feature-card{height:260px}
+      .city-feature-card__title{font-size:1.6rem}
+      .city-feature-card__content{padding:1.25rem}
+      .personas-grid{grid-template-columns:1fr!important}
+      .newsletter{padding:2rem 1.25rem;border-radius:16px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+    </a>
+    <div class="nav__links">
+      <a href="/relocate" class="nav__link">Relocate</a>
+      <a href="/work" class="nav__link">Work &amp; Visa</a>
+      <a href="/business" class="nav__link">Business</a>
+      <a href="/life" class="nav__link">Life in KSA</a>
+      <a href="/cities" class="nav__link active">Cities</a>
+      <a href="/apps" class="nav__link">Apps</a>
+      <a href="/resources/faq" class="nav__link">FAQ</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities" style="color:var(--gold)">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+  <a href="/relocate/before-you-arrive" style="color:var(--gold)">Start your journey →</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero__arch" aria-hidden="true">
+    <svg width="480" height="620" viewBox="0 0 480 620" fill="none">
+      <path d="M240 20C110 20 20 130 20 260L20 540C20 578 50 605 86 605L394 605C430 605 460 578 460 540L460 260C460 130 370 20 240 20Z" stroke="white" stroke-width="1.5" fill="none"/>
+      <path d="M240 75C145 75 68 158 68 253L68 520C68 548 90 568 114 568L366 568C390 568 412 548 412 520L412 253C412 158 335 75 240 75Z" stroke="white" stroke-width="1" fill="none" opacity=".6"/>
+    </svg>
+  </div>
+  <div class="page-hero__arch-l" aria-hidden="true">
+    <svg width="300" height="420" viewBox="0 0 300 420" fill="none">
+      <path d="M150 15C70 15 15 80 15 160L15 370C15 395 35 415 58 415L242 415C265 415 285 395 285 370L285 160C285 80 230 15 150 15Z" stroke="white" stroke-width="1" fill="none"/>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="hero-label">City Guides</div>
+    <h1 class="hero-title">Saudi Arabia by City — Find Your <span>Perfect Home Base</span></h1>
+    <p class="hero-sub">Comparing life in Riyadh, Jeddah, Dammam, and beyond — plus Abha, AlUla and the future city of NEOM. Real insights from expats who've lived it.</p>
+    <div class="hero-city-pills">
+      <a href="#riyadh" class="hero-pill active">Riyadh</a>
+      <a href="#jeddah" class="hero-pill">Jeddah</a>
+      <a href="#dammam" class="hero-pill">Dammam &amp; Eastern Province</a>
+      <a href="#abha" class="hero-pill">Abha</a>
+      <a href="#alula" class="hero-pill">AlUla</a>
+      <a href="#neom" class="hero-pill">NEOM</a>
+      <a href="#compare" class="hero-pill">City Comparison</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE CITY CARDS -->
+<section class="section" style="padding-top:5rem">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Top Expat Destinations</div>
+        <h2 class="section-heading">Six City Guides — From the Capital to the Future</h2>
+        <p class="section-desc">Whether you're heading to Riyadh's boardrooms, Jeddah's coastline, Dammam's energy sector, the cool mountains of Abha, the ancient wonders of AlUla, or the future city of NEOM — we've got the guide you need.</p>
+      </div>
+    </div>
+
+    <!-- RIYADH -->
+    <span class="city-section-anchor" id="riyadh"></span>
+    <a href="/cities/riyadh" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#060E1E,#1B3060)">
+        <img src="https://picsum.photos/seed/riyadh/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4" alt="Riyadh skyline">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">Capital &amp; Business Hub</div>
+        <div class="city-feature-card__title">Riyadh</div>
+        <div class="city-feature-card__tagline">Where ambition meets Vision 2030. Saudi Arabia's beating commercial heart.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">Finance &amp; Banking</span>
+          <span class="city-tag">Government Contracts</span>
+          <span class="city-tag">Diplomatic Quarter</span>
+          <span class="city-tag">NEOM Proximity</span>
+          <span class="city-tag">Top International Schools</span>
+        </div>
+        <span class="city-cta">Explore Riyadh Guide →</span>
+      </div>
+    </a>
+
+    <!-- JEDDAH -->
+    <span class="city-section-anchor" id="jeddah"></span>
+    <a href="/cities/jeddah" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#0A1F3A,#0F3050)">
+        <img src="https://picsum.photos/seed/jeddah/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4" alt="Jeddah corniche">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">Red Sea Gateway</div>
+        <div class="city-feature-card__title">Jeddah</div>
+        <div class="city-feature-card__tagline">Relaxed, coastal, cosmopolitan. The Kingdom's most socially liberal city.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">Corniche Lifestyle</span>
+          <span class="city-tag">UNESCO Al-Balad</span>
+          <span class="city-tag">Trade &amp; Logistics</span>
+          <span class="city-tag">International Dining</span>
+          <span class="city-tag">Lower Cost of Living</span>
+        </div>
+        <span class="city-cta">Explore Jeddah Guide →</span>
+      </div>
+    </a>
+
+    <!-- DAMMAM -->
+    <span class="city-section-anchor" id="dammam"></span>
+    <a href="/cities/dammam" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#0D1A2B,#1A2C3E)">
+        <img src="https://picsum.photos/seed/dammam/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4" alt="Dammam Eastern Province">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">Oil &amp; Gas Capital</div>
+        <div class="city-feature-card__title">Dammam &amp; Eastern Province</div>
+        <div class="city-feature-card__tagline">The energy sector heartland — ARAMCO country, weekend Bahrain escapes, and tight expat communities.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">ARAMCO Campus</span>
+          <span class="city-tag">Petrochemical Sector</span>
+          <span class="city-tag">Compound Living</span>
+          <span class="city-tag">Bahrain Bridge Weekend</span>
+          <span class="city-tag">Al Khobar</span>
+        </div>
+        <span class="city-cta">Explore Dammam Guide →</span>
+      </div>
+    </a>
+
+    <!-- ABHA -->
+    <span class="city-section-anchor" id="abha"></span>
+    <a href="/cities/abha" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#060C08,#163024)">
+        <img src="https://picsum.photos/seed/abha-mountains-asir/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42" alt="Abha Asir mountains green landscape">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">Asir Region · 2,200m Altitude</div>
+        <div class="city-feature-card__title">Abha</div>
+        <div class="city-feature-card__tagline">Saudi Arabia's green mountain escape. Cool air, terraced valleys, and a fast-growing tourism economy.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">Cool Climate</span>
+          <span class="city-tag">Mountain Tourism</span>
+          <span class="city-tag">Affordable Living</span>
+          <span class="city-tag">Asir National Park</span>
+          <span class="city-tag">Healthcare Sector</span>
+        </div>
+        <span class="city-cta">Explore Abha Guide →</span>
+      </div>
+    </a>
+
+    <!-- ALULA -->
+    <span class="city-section-anchor" id="alula"></span>
+    <a href="/cities/alula" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#140A02,#5A3010)">
+        <img src="https://picsum.photos/seed/alula-hegra-desert/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42" alt="AlUla Hegra ancient Nabataean rock tombs">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">UNESCO World Heritage · Medina Region</div>
+        <div class="city-feature-card__title">AlUla</div>
+        <div class="city-feature-card__tagline">The world's largest open-air museum. Ancient Nabataean tombs, rose-red canyons, and SAR 70bn in RCU investment.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">Hegra (Ancient Nabataean)</span>
+          <span class="city-tag">RCU Development</span>
+          <span class="city-tag">Tourism &amp; Hospitality Jobs</span>
+          <span class="city-tag">Desert Luxury</span>
+          <span class="city-tag">Archaeology</span>
+        </div>
+        <span class="city-cta">Explore AlUla Guide →</span>
+      </div>
+    </a>
+
+    <!-- NEOM -->
+    <span class="city-section-anchor" id="neom"></span>
+    <a href="/cities/neom" class="city-feature-card">
+      <div class="city-feature-card__bg" style="position:absolute;inset:0;background:linear-gradient(145deg,#020812,#0A3060)">
+        <img src="https://picsum.photos/seed/neom-futuristic-city/1200/480" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4" alt="NEOM The Line futuristic mega-city">
+      </div>
+      <div class="city-feature-card__overlay"></div>
+      <div class="city-feature-card__content">
+        <div class="city-feature-card__label">Vision 2030 Giga-Project · Tabuk Region</div>
+        <div class="city-feature-card__title">NEOM &amp; The Line</div>
+        <div class="city-feature-card__tagline">The $500bn city of the future. A 170km linear urban corridor, TROJENA ski resort, SINDALAH island, and OXAGON industrial port — all being built now.</div>
+        <div class="city-feature-card__tags">
+          <span class="city-tag">The Line (170km City)</span>
+          <span class="city-tag">TROJENA Ski Resort</span>
+          <span class="city-tag">Engineering &amp; Tech Jobs</span>
+          <span class="city-tag">SINDALAH Island</span>
+          <span class="city-tag">$500B Investment</span>
+        </div>
+        <span class="city-cta">Explore NEOM Guide →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CITY COMPARISON TABLE -->
+<section class="section section--cream" id="compare">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Side by Side</div>
+        <h2 class="section-heading">City Comparison at a Glance</h2>
+        <p class="section-desc">Ratings based on expat surveys, cost-of-living data, and our editorial research. ★ = poor, ★★★★★ = excellent.</p>
+      </div>
+    </div>
+
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>🏙 Riyadh</th>
+            <th>🌊 Jeddah</th>
+            <th>⛽ Dammam / Al Khobar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lifestyle &amp; Social Scene</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Rapidly improving</td>
+            <td><span class="stars">★★★★★</span> Best in KSA</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> Compound-centric</td>
+          </tr>
+          <tr>
+            <td>Cost of Living (Expat)</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> Highest overall</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> 10–15% cheaper</td>
+            <td><span class="stars">★★★★★</span> Most affordable</td>
+          </tr>
+          <tr>
+            <td>Expat Community Size</td>
+            <td><span class="stars">★★★★★</span> 2M+ expats</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> ~1.5M expats</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> ~500K expats</td>
+          </tr>
+          <tr>
+            <td>Weather</td>
+            <td><span class="stars">★★</span><span class="stars star-empty">★★★</span> Harsh desert; extreme summer</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> Humid Red Sea coast</td>
+            <td><span class="stars">★★</span><span class="stars star-empty">★★★</span> Hot &amp; humid; Gulf coast</td>
+          </tr>
+          <tr>
+            <td>Job Market (General)</td>
+            <td><span class="stars">★★★★★</span> All sectors; biggest market</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Strong in trade &amp; logistics</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Oil, gas, petrochemicals</td>
+          </tr>
+          <tr>
+            <td>Family Suitability</td>
+            <td><span class="stars">★★★★★</span> Best international schools</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Great lifestyle for families</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Compound safety is excellent</td>
+          </tr>
+          <tr>
+            <td>International Connectivity</td>
+            <td><span class="stars">★★★★★</span> King Khalid — 100+ routes</td>
+            <td><span class="stars">★★★★★</span> King Abdulaziz — major hub</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> King Fahd; or Bahrain</td>
+          </tr>
+          <tr>
+            <td>Entertainment &amp; Leisure</td>
+            <td><span class="stars">★★★★</span><span class="stars star-empty">★</span> Fastest-growing in KSA</td>
+            <td><span class="stars">★★★★★</span> Beaches, corniche, culture</td>
+            <td><span class="stars">★★★</span><span class="stars star-empty">★★</span> Bahrain just 30 min away</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Find Your Fit</div>
+        <h2 class="section-heading">Which City is Right for You?</h2>
+        <p class="section-desc">Your ideal Saudi base depends on your career, family setup, and lifestyle priorities. Here's a quick guide.</p>
+      </div>
+    </div>
+
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-card__icon">🏦</div>
+        <div class="persona-card__for">Best for</div>
+        <div class="persona-card__title">Corporate &amp; Finance Expats</div>
+        <div class="persona-card__desc">If you work in banking, consulting, government contracts, or multinationals, Riyadh is where the deals get done. The financial district (King Abdullah Financial District, or KAFD) is one of the most ambitious business hubs in the Middle East. Most FTSE 100 and Fortune 500 companies have their KSA headquarters here.</div>
+        <div class="persona-card__city">→ Choose Riyadh</div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-card__icon">🏖</div>
+        <div class="persona-card__for">Best for</div>
+        <div class="persona-card__title">Lifestyle &amp; Beach Seekers</div>
+        <div class="persona-card__desc">Jeddah's Red Sea coastline, vibrant dining scene, UNESCO-listed Al-Balad old city, and historically more relaxed social atmosphere make it the lifestyle capital of Saudi Arabia. If quality of off-work life matters as much as career, Jeddah pulls ahead. Expats from Lebanon, Egypt, and Europe particularly favour it.</div>
+        <div class="persona-card__city">→ Choose Jeddah</div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-card__icon">⛽</div>
+        <div class="persona-card__for">Best for</div>
+        <div class="persona-card__title">Oil, Gas &amp; Petrochemical Workers</div>
+        <div class="persona-card__desc">If ARAMCO, SABIC, or an affiliated contractor is your employer, you'll almost certainly be placed in the Eastern Province. The ARAMCO compound in Dhahran is legendary — a fully self-contained expat community with golf courses, swimming pools, cinemas, and Western-style amenities. Khobar and Dammam are just minutes away for weekend life.</div>
+        <div class="persona-card__city">→ Choose Dammam / Eastern Province</div>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-card__icon">👨‍👩‍👧‍👦</div>
+        <div class="persona-card__for">Best for</div>
+        <div class="persona-card__title">Families with Children</div>
+        <div class="persona-card__desc">All three major cities offer excellent international schools, but Riyadh has the widest selection including British Schools, American schools (AES), French lycées, and German schools. Jeddah offers a superb lifestyle outside school hours. Compound living in any city is a particularly safe, community-focused option for families with young children.</div>
+        <div class="persona-card__city">→ Riyadh, then Jeddah, then Dammam</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIYADH DEEP DIVE -->
+<section class="section section--cream" id="riyadh-deepdive">
+  <div class="container">
+    <div class="city-deepdive">
+      <div class="city-deepdive__text">
+        <div class="section-eyebrow">Deep Dive</div>
+        <h2>Living in Riyadh</h2>
+        <p>Riyadh is a city in the midst of a historic transformation. As recently as 2017, there were virtually no public entertainment venues, cinemas, or mixed-gender social spaces. Today, Riyadh Stage hosts international concerts, Boulevard City draws millions of visitors, and the King Abdullah Financial District (KAFD) has reshaped the skyline. For expats arriving now, Riyadh in 2026 is a very different proposition than it was even five years ago.</p>
+        <p>The city is vast — greater Riyadh has a population approaching 8 million — and its sheer scale can be overwhelming. A car is essentially mandatory; public transport (the Riyadh Metro, opened 2024) helps but does not yet cover enough of the city for full car-free living. Plan for a 30–60 minute commute if living away from your workplace district.</p>
+
+        <h3>Neighbourhoods for Expats</h3>
+        <ul>
+          <li><strong>Al Malqa &amp; Al Nakheel:</strong> Northern Riyadh's most popular upscale expat neighbourhood. Well-serviced, close to major international schools, modern villas and apartments. Rents are higher but the lifestyle is excellent.</li>
+          <li><strong>Diplomatic Quarter (DQ):</strong> The most prestigious address in Riyadh. Home to embassies, senior diplomats, and top-tier executives. Beautiful green belt walking paths, security, and top restaurants. Very limited rental availability and premium pricing.</li>
+          <li><strong>Al Olaya / Al Woroud:</strong> Central Riyadh's business and hotel district. Convenient for work but more urban and less residential in character. Good for single professionals; less ideal for families.</li>
+          <li><strong>Hittin &amp; Al Yasmin:</strong> Mid-range family-friendly districts in northern Riyadh. Good value for money, solid expat community, close to several international schools.</li>
+          <li><strong>Diriyah &amp; Western Edge:</strong> Near the UNESCO-listed Diriyah heritage site and the upcoming Diriyah Gate megaproject. Increasingly sought after as the area transforms into a cultural destination.</li>
+        </ul>
+
+        <h3>Cost of Living in Riyadh (2026)</h3>
+        <p>Riyadh is the most expensive city in Saudi Arabia for expats, though it remains significantly cheaper than Dubai, London, or Singapore. A comfortable expat lifestyle (decent apartment, car, dining out 3x weekly) typically costs SAR 15,000–22,000 per month for a single person, or SAR 22,000–35,000 for a family of four.</p>
+
+        <h3>What's New Under Vision 2030</h3>
+        <p>Riyadh is the focal point of Vision 2030's social transformation. Major new projects currently underway or recently completed include: <strong>New Murabba</strong> (a 19 sq km downtown including the Mukaab — a cubic megastructure), <strong>KAFD</strong> (King Abdullah Financial District, now the financial centre of choice for global banks), <strong>Diriyah Gate</strong> (SAR 100bn cultural heritage mega-development), and <strong>King Salman Park</strong> (the world's largest urban park). These projects are fundamentally reshaping what it means to live and work in Riyadh.</p>
+
+        <div class="callout callout--gold">
+          <div class="callout__title">Riyadh Expat Essentials</div>
+          <p style="margin:0;font-size:.93rem;color:var(--text-body)">The Riyadh Metro's Blue and Red lines now cover most major expat corridors. Download the Riyadh Metro app for journey planning. Mall of Arabia, Riyadh Park, and the Avenue Riyadh are the main shopping and dining hubs. For international groceries, Tamimi Markets (equivalent to Waitrose) and Carrefour are the go-to.</p>
+        </div>
+      </div>
+
+      <div class="city-stats-card">
+        <h4>Riyadh at a Glance</h4>
+        <div class="stat-row"><span class="stat-label">Population</span><span class="stat-value">~8 million</span></div>
+        <div class="stat-row"><span class="stat-label">Expat Population</span><span class="stat-value">~2.2 million</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 1BR Apartment Rent</span><span class="stat-value">SAR 4,500–7,500/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 3BR Villa Rent</span><span class="stat-value">SAR 12,000–20,000/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Summer Temp (July)</span><span class="stat-value">42–47°C</span></div>
+        <div class="stat-row"><span class="stat-label">Winter Temp (Jan)</span><span class="stat-value">10–22°C</span></div>
+        <div class="stat-row"><span class="stat-label">Airport</span><span class="stat-value">King Khalid (RUH)</span></div>
+        <div class="stat-row"><span class="stat-label">Drive to Jeddah</span><span class="stat-value">~10 hrs / 1 hr flight</span></div>
+        <div class="stat-row"><span class="stat-label">Intl. Schools</span><span class="stat-value">35+</span></div>
+        <h4 style="margin-top:1.5rem">Popular Neighbourhoods</h4>
+        <div class="neighbourhood-tags">
+          <span class="nbr-tag">Al Malqa</span>
+          <span class="nbr-tag">Diplomatic Quarter</span>
+          <span class="nbr-tag">Al Olaya</span>
+          <span class="nbr-tag">Hittin</span>
+          <span class="nbr-tag">Al Nakheel</span>
+          <span class="nbr-tag">Diriyah</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JEDDAH DEEP DIVE -->
+<section class="section" id="jeddah-deepdive">
+  <div class="container">
+    <div class="city-deepdive">
+      <div class="city-deepdive__text">
+        <div class="section-eyebrow">Deep Dive</div>
+        <h2>Living in Jeddah</h2>
+        <p>Jeddah is the Saudi city that surprises newcomers most. Where Riyadh can feel formal and businesslike, Jeddah — the historic gateway to Makkah and the Kingdom's main Red Sea port — has always had a more open, cosmopolitan character. Its inhabitants have traded with the world for centuries, and that worldliness is evident everywhere: in the architecture, the food, the conversation, and the pace of life.</p>
+        <p>Expats who settle in Jeddah frequently say they feel more at home here than anywhere else they've lived in the Gulf. The Red Sea coastline is stunning; the seafront Corniche stretches 30km from the famous King Fahd Fountain (the world's tallest at 312m) to the historic Al-Balad quarter. Diving and snorkelling the reefs just offshore rank among the world's best undiscovered dive destinations.</p>
+
+        <h3>Al-Balad — UNESCO World Heritage</h3>
+        <p>Old Jeddah (Al-Balad) was inscribed as a UNESCO World Heritage Site in 2014 and is currently undergoing an ambitious restoration programme. The ancient coral-stone buildings, intricate wooden mashrabiya screens, and narrow souks offer a glimpse of pre-oil Saudi Arabia that is simply extraordinary. Boutique hotels, art galleries, and cafés are now opening in restored traditional buildings — making Al-Balad one of the most exciting urban revival projects in the Middle East.</p>
+
+        <h3>Lifestyle &amp; Social Scene</h3>
+        <p>Jeddah has historically been more socially relaxed than Riyadh. International restaurants line the Corniche and Tahlia Street. The Red Sea Mall, Mall of Arabia, and Serafi Mega Mall cover all retail needs. Sports, water activities, and beach clubs are accessible year-round (weather permitting — summers are brutally humid). The city hosts the Jeddah Season festival, Formula E racing, and a growing calendar of international events under the Vision 2030 entertainment mandate.</p>
+
+        <h3>Key Expat Neighbourhoods</h3>
+        <ul>
+          <li><strong>Al Rawdah &amp; Al Zahraa:</strong> Established upscale residential areas popular with senior expats. Quiet, leafy, good schools nearby.</li>
+          <li><strong>Al Shati (North Corniche):</strong> Premium seafront living with direct beach access. Popular with diplomatic families and senior corporate expats.</li>
+          <li><strong>Al Hamra:</strong> Mid-range area with a strong expat community. Good value for money, close to the Corniche.</li>
+          <li><strong>Obhur:</strong> Northern coastal area beloved by weekend boat owners and water sports enthusiasts. Less urban; better for weekends.</li>
+        </ul>
+
+        <div class="callout callout--navy">
+          <div class="callout__title">Jeddah Cost Advantage</div>
+          <p style="margin:0;font-size:.93rem;color:var(--text-body)">Rents in Jeddah run approximately 10–20% below Riyadh equivalents. A comparable villa in Al Rawdah to one in Riyadh's Al Malqa will cost meaningfully less, while offering arguably superior lifestyle benefits (beach access, lower traffic, more relaxed atmosphere). Many expats in mixed-employer situations actively choose Jeddah over Riyadh when given the option.</p>
+        </div>
+      </div>
+
+      <div class="city-stats-card">
+        <h4>Jeddah at a Glance</h4>
+        <div class="stat-row"><span class="stat-label">Population</span><span class="stat-value">~5 million</span></div>
+        <div class="stat-row"><span class="stat-label">Expat Population</span><span class="stat-value">~1.5 million</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 1BR Apartment Rent</span><span class="stat-value">SAR 3,500–6,000/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 3BR Villa Rent</span><span class="stat-value">SAR 9,500–17,000/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Summer Temp (July)</span><span class="stat-value">38–42°C + humidity</span></div>
+        <div class="stat-row"><span class="stat-label">Winter Temp (Jan)</span><span class="stat-value">18–28°C</span></div>
+        <div class="stat-row"><span class="stat-label">Airport</span><span class="stat-value">King Abdulaziz (JED)</span></div>
+        <div class="stat-row"><span class="stat-label">Drive to Riyadh</span><span class="stat-value">~10 hrs / 1 hr flight</span></div>
+        <div class="stat-row"><span class="stat-label">Intl. Schools</span><span class="stat-value">20+</span></div>
+        <h4 style="margin-top:1.5rem">Popular Neighbourhoods</h4>
+        <div class="neighbourhood-tags">
+          <span class="nbr-tag">Al Rawdah</span>
+          <span class="nbr-tag">Al Shati</span>
+          <span class="nbr-tag">Al Hamra</span>
+          <span class="nbr-tag">Obhur</span>
+          <span class="nbr-tag">Al Zahraa</span>
+          <span class="nbr-tag">Al-Balad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAMMAM DEEP DIVE -->
+<section class="section section--cream" id="dammam-deepdive">
+  <div class="container">
+    <div class="city-deepdive">
+      <div class="city-deepdive__text">
+        <div class="section-eyebrow">Deep Dive</div>
+        <h2>Living in Dammam, Al Khobar &amp; Eastern Province</h2>
+        <p>The Eastern Province is Saudi Arabia's oil and gas heartland, home to the world's single largest oil company — Saudi Aramco — and a vast petrochemical and industrial ecosystem. For engineers, geologists, energy sector professionals, and the hundreds of contractors serving the sector, this is the place to be. The expat community here is unlike anywhere else in the Kingdom: tight-knit, experienced, and in many cases multi-generational families who have lived here for decades.</p>
+        <p>The urban area spans three connected cities: <strong>Dammam</strong> (the provincial capital and administrative centre), <strong>Al Khobar</strong> (the most expat-friendly commercial hub), and <strong>Dhahran</strong> (home to the iconic Aramco compound). Together they form a seamless metro area on the Gulf coast.</p>
+
+        <h3>The Aramco Compound Experience</h3>
+        <p>If you are employed by Saudi Aramco, you will likely be offered accommodation on the <strong>Dhahran compound</strong> — a 35 sq km walled city that is, in many ways, a slice of 1950s suburban America transplanted to the Arabian Gulf. The compound features its own golf course, swimming pools, cricket pitch, cinema, bowling alley, supermarkets, schools, and hospital. Life on compound is comfortable, safe, and community-oriented — though some expats find the bubble-like atmosphere limiting over time.</p>
+        <p>Non-Aramco expats in the Eastern Province typically live in Al Khobar or Dammam, where a wide selection of compounds and private apartments is available at some of the most affordable prices in the Kingdom.</p>
+
+        <h3>The Bahrain Bridge — Your Weekend Escape</h3>
+        <p>One of the underrated advantages of Eastern Province life is the <strong>King Fahd Causeway</strong> — a 25km bridge to the island of Bahrain, just 30 minutes by car. Bahrain offers a notably more liberal social environment, a wider restaurant and entertainment scene, and for many expats, a genuine weekend escape valve that makes the Eastern Province lifestyle far more sustainable. It's a genuine quality-of-life asset that Riyadh and Jeddah residents simply don't have.</p>
+
+        <h3>Al Khobar: The Expat Hub</h3>
+        <p>Al Khobar is the commercial and social heart of the expat experience in the Eastern Province. The Corniche along the Gulf coast offers pleasant evening walks, the shopping malls are well-stocked, and the restaurant scene — while not at Jeddah levels — is improving rapidly. LuLu Hypermarket, Rashid Mall, and the Boulevard are the main gathering points.</p>
+
+        <div class="callout callout--gold">
+          <div class="callout__title">Eastern Province Compound Living</div>
+          <p style="margin:0;font-size:.93rem;color:var(--text-body)">Compound living is more prevalent in the Eastern Province than anywhere else in Saudi Arabia. Compounds here typically offer private pools, gyms, tennis courts, and a strong community calendar. Al Khobar Compound, Arabian Homes, and various Aramco-affiliated compounds are popular choices. If your employer offers compound accommodation, evaluate it carefully — the community benefits are real and significant, especially for families.</p>
+        </div>
+      </div>
+
+      <div class="city-stats-card">
+        <h4>Eastern Province at a Glance</h4>
+        <div class="stat-row"><span class="stat-label">Key Cities</span><span class="stat-value">Dammam, Khobar, Dhahran</span></div>
+        <div class="stat-row"><span class="stat-label">Expat Population</span><span class="stat-value">~500,000</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 1BR Apartment Rent</span><span class="stat-value">SAR 2,500–4,500/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Avg. 3BR Villa Rent</span><span class="stat-value">SAR 7,000–13,000/mo</span></div>
+        <div class="stat-row"><span class="stat-label">Summer Temp (July)</span><span class="stat-value">40–45°C + Gulf humidity</span></div>
+        <div class="stat-row"><span class="stat-label">Winter Temp (Jan)</span><span class="stat-value">12–24°C</span></div>
+        <div class="stat-row"><span class="stat-label">Airport</span><span class="stat-value">King Fahd (DMM)</span></div>
+        <div class="stat-row"><span class="stat-label">Drive to Bahrain</span><span class="stat-value">30–45 min (causeway)</span></div>
+        <div class="stat-row"><span class="stat-label">Major Employer</span><span class="stat-value">Saudi Aramco, SABIC</span></div>
+        <h4 style="margin-top:1.5rem">Key Areas</h4>
+        <div class="neighbourhood-tags">
+          <span class="nbr-tag">Al Khobar North</span>
+          <span class="nbr-tag">Dhahran (Aramco)</span>
+          <span class="nbr-tag">Dammam Centre</span>
+          <span class="nbr-tag">Al Aqrabiyah</span>
+          <span class="nbr-tag">Compounds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGING CITIES -->
+<section class="section" id="emerging">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="section-eyebrow">Vision 2030</div>
+        <h2 class="section-heading">Emerging &amp; Future Cities</h2>
+        <p class="section-desc">Saudi Arabia's most ambitious urban projects are reshaping the map. These aren't just construction sites — they're the Kingdom's bet on a post-oil future.</p>
+      </div>
+    </div>
+
+    <div class="emerging-grid">
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/neom-tabuk/800/200" alt="NEOM Tabuk desert landscape">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Under Construction</div>
+          <div class="emerging-card__title">NEOM &amp; The Line (Tabuk Region)</div>
+          <div class="emerging-card__desc">The world's most ambitious urban project — a 170km linear city in the Tabuk desert, along with SINDALAH Island resort, TROJENA mountain ski resort, and OXAGON industrial port. Thousands of expat engineers, architects, and project managers are already based here working for NEOM's developer entity. A unique opportunity for those in construction, planning, and technology sectors.</div>
+        </div>
+      </div>
+
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/alula-saudi/800/200" alt="AlUla ancient rock landscape">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Cultural &amp; Tourism Hub</div>
+          <div class="emerging-card__title">AlUla</div>
+          <div class="emerging-card__desc">Saudi Arabia's crown jewel of heritage tourism. Home to Hegra (ancient Nabataean tombs), Dadan, and the extraordinary rose-red canyon landscape of Harrat Uwayrid. The Royal Commission for AlUla (RCU) is investing SAR 70bn+ to transform this remote region into a world-class cultural tourism destination. Hospitality, archaeology, and tourism professionals are increasingly in demand here.</div>
+        </div>
+      </div>
+
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/madinah-city/800/200" alt="Madinah city urban development">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Non-Muslim Restricted</div>
+          <div class="emerging-card__title">Madinah</div>
+          <div class="emerging-card__desc">The second holiest city in Islam, Madinah is expanding rapidly to accommodate the growing hajj and umrah pilgrim economy. Non-Muslim expats may not enter the city centre, but the wider Madinah Region is open. Major infrastructure, hospitality, and logistics projects are underway. Muslim expats may find opportunities here in healthcare, hospitality, and transport sectors.</div>
+        </div>
+      </div>
+
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/diriyah/800/200" alt="Diriyah heritage development">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Heritage &amp; Culture</div>
+          <div class="emerging-card__title">Diriyah Gate, Riyadh</div>
+          <div class="emerging-card__desc">Adjacent to Riyadh, the SAR 100bn Diriyah Gate project is transforming the birthplace of the Saudi state into a world-class heritage and lifestyle destination. Luxury hotels, restaurants, museums, and cultural venues are opening through 2026–2030. A growing number of expats in the hospitality, culture, and tourism sectors are relocating to western Riyadh to be near this project.</div>
+        </div>
+      </div>
+
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/abha-asir/800/200" alt="Abha Asir mountains green landscape">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Nature &amp; Cool Climate</div>
+          <div class="emerging-card__title">Abha &amp; Asir Region</div>
+          <div class="emerging-card__desc">Saudi Arabia's surprising green heartland, Abha sits at 2,200m altitude in the Asir mountains, offering a cooler climate, terraced green hillsides, and a distinct cultural character different from any other Saudi city. A growing eco-tourism sector and major government investment in mountain resorts is drawing a new wave of tourism and hospitality professionals to this underrated gem.</div>
+        </div>
+      </div>
+
+      <div class="emerging-card">
+        <div class="emerging-card__img">
+          <img src="https://picsum.photos/seed/qiddiya/800/200" alt="Qiddiya entertainment city concept">
+        </div>
+        <div class="emerging-card__body">
+          <div class="emerging-card__badge">Entertainment City</div>
+          <div class="emerging-card__title">Qiddiya, Riyadh</div>
+          <div class="emerging-card__desc">A 367 sq km entertainment, sports, and cultural mega-project west of Riyadh. Set to include a Six Flags theme park, Formula 1 race track, water parks, and vast live entertainment venues. Qiddiya is creating a new demand for expat professionals in hospitality, entertainment, facilities management, and event production. Expected to be a major employer from 2026 onwards.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section section--cream">
+  <div class="container">
+    <div class="newsletter">
+      <div class="section-eyebrow" style="justify-content:center;color:rgba(212,168,83,.8)">City Updates</div>
+      <h2 style="font-size:2rem">The Saudi city landscape is changing fast.</h2>
+      <p>New neighbourhoods, developments, school openings, and expat community updates — delivered monthly.</p>
+      <form class="newsletter-form" onsubmit="return false">
+        <input type="email" placeholder="your@email.com">
+        <button type="submit">Get City Updates</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:48px;width:auto"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Twitter/X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before you arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 days</a>
+        <a href="/relocate/families" class="footer__link">Family relocation</a>
+        <a href="/relocate/documents-checklist" class="footer__link">Documents checklist</a>
+        <a href="/relocate/cost-of-living" class="footer__link">Cost of living</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama guide</a>
+        <a href="/work/job-seekers" class="footer__link">Finding work</a>
+        <a href="/work/salary-guide" class="footer__link">Salary guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a business</a>
+        <a href="/business/investment-guide" class="footer__link">Investment guide</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Life in Saudi</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/schools-education" class="footer__link">Schools</a>
+        <a href="/life/culture-etiquette" class="footer__link">Culture &amp; etiquette</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="/resources/directory" class="footer__link">Service directory</a>
+        <a href="/resources/apps" class="footer__link">Essential apps</a>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+        <a href="/about" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NewToSaudi.com &middot; All rights reserved</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+<script>
+  // Smooth scroll for hero pills
+  document.querySelectorAll('.hero-pill').forEach(pill => {
+    pill.addEventListener('click', function(e) {
+      document.querySelectorAll('.hero-pill').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

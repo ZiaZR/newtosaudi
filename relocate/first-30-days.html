@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your First 30 Days in Saudi Arabia — Action Plan | NewToSaudi</title>
+  <meta name="description" content="A day-by-day action plan for your first month in Saudi Arabia. Iqama, Absher, bank accounts, SIM cards — everything you need to settle in with confidence.">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    .page-hero{background:linear-gradient(140deg,#04090F 0%,#0A1628 40%,#0F1C33 70%,#09111E 100%);
+      padding:calc(var(--nav-h,80px) + 4.5rem) 0 4rem;position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;
+      background-image:repeating-linear-gradient(58deg,rgba(255,255,255,.022) 0,rgba(255,255,255,.022) 1px,transparent 0,transparent 72px),
+      repeating-linear-gradient(-58deg,rgba(255,255,255,.014) 0,rgba(255,255,255,.014) 1px,transparent 0,transparent 72px)}
+    .page-hero .container{position:relative;z-index:2}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;
+      letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block}
+    .hero-title{font-size:clamp(2.2rem,4vw,4rem);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:1.25rem}
+    .hero-title em{font-style:normal;color:var(--gold)}
+    .hero-desc{font-size:1.05rem;color:rgba(255,255,255,.55);max-width:600px;line-height:1.8;margin-bottom:2rem}
+    .hero-badges{display:flex;gap:.75rem;flex-wrap:wrap}
+    .hero-badge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;
+      padding:.4rem 1rem;font-size:.78rem;color:rgba(255,255,255,.7)}
+
+    .content-layout{display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start;padding:clamp(4rem,7vw,6rem) 0}
+    .content-sidebar{position:sticky;top:calc(var(--nav-h,80px) + 2rem)}
+    @media(max-width:960px){.content-layout{grid-template-columns:1fr}.content-sidebar{display:none}}
+
+    .steps-list{display:flex;flex-direction:column;gap:2rem;margin:2.5rem 0}
+    .step-item{display:grid;grid-template-columns:52px 1fr;gap:1.5rem;align-items:start}
+    .step-num{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,var(--navy),#1B3A6A);
+      display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;color:var(--gold);flex-shrink:0}
+    .step-body h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+    .step-body p{font-size:.9rem;color:var(--text-mid,#6B6860);line-height:1.7}
+
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin:2.5rem 0}
+    .info-card{background:#fff;border-radius:18px;padding:1.75rem;border:1.5px solid rgba(27,42,74,.08);
+      box-shadow:0 2px 12px rgba(27,42,74,.06)}
+    .info-card__icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),#1B3A6A);
+      display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .info-card__icon svg{width:20px;height:20px;stroke:#fff;stroke-width:1.8;fill:none}
+    .info-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+    .info-card p{font-size:.88rem;color:var(--text-mid,#6B6860);line-height:1.65}
+
+    .dark-sec{background:linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%);
+      padding:clamp(5rem,9vw,8rem) 0;position:relative;overflow:hidden}
+    .dark-sec h2,.dark-sec p{color:#fff}
+    .dark-sec .section-eyebrow{color:var(--gold)}
+
+    .checklist{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.85rem;margin:2rem 0}
+    .check-item{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.25rem;background:#fff;
+      border-radius:12px;border:1.5px solid rgba(27,42,74,.07);font-size:.88rem;color:var(--navy)}
+    .check-item::before{content:'✓';width:20px;height:20px;border-radius:50%;background:rgba(212,168,83,.15);
+      color:var(--gold);font-size:.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.05rem}
+
+    .callout{border-radius:16px;padding:1.5rem 1.75rem;margin:1.5rem 0;font-size:.9rem;line-height:1.65}
+    .callout--gold{background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.2);color:var(--navy)}
+    .callout--warning{background:#FFF7ED;border:1.5px solid rgba(251,146,60,.3);color:#92400E}
+    .callout--info{background:#EFF6FF;border:1.5px solid rgba(59,130,246,.2);color:#1e40af}
+
+    .img-ph{border-radius:16px;overflow:hidden;position:relative}
+    .img-ph img{width:100%;display:block;border-radius:16px}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(0.16,1,0.3,1),transform .7s cubic-bezier(0.16,1,0.3,1)}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-delay-1{transition-delay:.1s}
+    .reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}
+
+    /* Sidebar nav */
+    .sidebar-nav{background:#fff;border-radius:18px;padding:1.5rem;border:1.5px solid rgba(27,42,74,.08);box-shadow:0 2px 12px rgba(27,42,74,.06)}
+    .sidebar-nav__title{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .sidebar-nav a{display:block;padding:.55rem .75rem;font-size:.875rem;color:var(--navy);text-decoration:none;border-radius:8px;transition:background .2s}
+    .sidebar-nav a:hover{background:rgba(27,42,74,.05)}
+    .sidebar-nav a.active{background:rgba(212,168,83,.1);color:var(--gold);font-weight:600}
+    .sidebar-cta{background:linear-gradient(135deg,var(--navy),#1B3A6A);border-radius:16px;padding:1.5rem;margin-top:1.25rem;text-align:center}
+    .sidebar-cta p{font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:1rem;line-height:1.5}
+
+    /* Section headings */
+    .section-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;
+      letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+    .section-eyebrow::before{content:'';width:20px;height:1.5px;background:currentColor;display:inline-block}
+    .section-title{font-size:clamp(1.7rem,2.5vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-.025em;line-height:1.2;margin-bottom:1rem}
+    .section-title em{font-style:normal;color:var(--gold)}
+    .section-lead{font-size:1rem;color:var(--text-mid,#6B6860);line-height:1.8;max-width:640px;margin-bottom:2rem}
+
+    /* Week headers */
+    .week-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;margin-top:3rem}
+    .week-header:first-child{margin-top:0}
+    .week-badge{background:linear-gradient(135deg,var(--navy),#1B3A6A);color:var(--gold);font-size:.72rem;font-weight:800;
+      letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;white-space:nowrap}
+    .week-header h3{font-size:1.2rem;font-weight:800;color:var(--navy);margin:0}
+
+    /* Apps grid */
+    .apps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin:2.5rem 0}
+    .app-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.35rem 1.5rem;display:flex;align-items:flex-start;gap:1rem}
+    .app-card__icon{width:44px;height:44px;border-radius:12px;background:rgba(212,168,83,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem}
+    .app-card__name{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+    .app-card__desc{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.55}
+    .app-card__tag{display:inline-block;margin-top:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(212,168,83,.15);color:var(--gold);padding:.2rem .6rem;border-radius:100px}
+
+    /* FAQ */
+    .faq-list{margin:2rem 0;display:flex;flex-direction:column;gap:.75rem}
+    .faq-item{border-radius:14px;border:1.5px solid rgba(27,42,74,.08);overflow:hidden;background:#fff}
+    .faq-q{width:100%;background:none;border:none;text-align:left;padding:1.25rem 1.5rem;font-size:.95rem;font-weight:700;
+      color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .faq-q .faq-icon{width:28px;height:28px;border-radius:8px;background:rgba(27,42,74,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .3s}
+    .faq-q .faq-icon svg{width:14px;height:14px;stroke:var(--navy);stroke-width:2.5;fill:none;transition:transform .3s}
+    .faq-item.open .faq-icon{background:rgba(212,168,83,.12)}
+    .faq-item.open .faq-icon svg{transform:rotate(180deg);stroke:var(--gold)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(0.16,1,0.3,1)}
+    .faq-a-inner{padding:0 1.5rem 1.25rem;font-size:.9rem;color:var(--text-mid,#6B6860);line-height:1.75}
+    .faq-item.open .faq-a{max-height:500px}
+
+    /* Newsletter */
+    .newsletter-wrap{max-width:560px;margin:0 auto;text-align:center}
+    .newsletter-form{display:flex;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap;justify-content:center}
+    .newsletter-form input{flex:1;min-width:220px;padding:.8rem 1.25rem;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.07);color:#fff;font-size:.95rem;outline:none}
+    .newsletter-form input::placeholder{color:rgba(255,255,255,.35)}
+    .newsletter-form input:focus{border-color:var(--gold)}
+
+    /* Cultural tips */
+    .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin:2rem 0}
+    .tip-card{background:#fff;border-radius:16px;padding:1.5rem;border:1.5px solid rgba(27,42,74,.07);display:flex;align-items:flex-start;gap:1rem}
+    .tip-icon{font-size:1.5rem;flex-shrink:0;margin-top:.1rem}
+    .tip-card h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+    .tip-card p{font-size:.86rem;color:var(--text-mid,#6B6860);line-height:1.65;margin:0}
+
+    @media(max-width:768px){
+      .content-layout{padding:2.5rem 0}
+      div[style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}
+    }
+    @media(max-width:640px){
+      .hero-badges{gap:.5rem}
+      .steps-list{gap:1.5rem}
+      .checklist{grid-template-columns:1fr 1fr}
+      .apps-grid{grid-template-columns:1fr}
+      .card-grid{grid-template-columns:1fr!important}
+    }
+    @media(max-width:480px){
+      .checklist{grid-template-columns:1fr}
+      .step-item{grid-template-columns:42px 1fr;gap:.85rem}
+      .step-item .step-num{width:42px;height:42px;font-size:.85rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/relocate" class="nav__link active">Relocate</a></li>
+      <li><a href="/work" class="nav__link">Work &amp; Visa</a></li>
+      <li><a href="/business" class="nav__link">Business</a></li>
+      <li><a href="/life" class="nav__link">Life in KSA</a></li>
+      <li><a href="/cities" class="nav__link">Cities</a></li>
+      <li><a href="/apps" class="nav__link">Apps</a></li>
+      <li><a href="/resources/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate" style="color:#D4A853">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq">FAQ</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-eyebrow">Relocation Guide</div>
+    <h1 class="hero-title">Your <em>First 30 Days</em><br>in Saudi Arabia</h1>
+    <p class="hero-desc">The actions you take in your first month define your entire Saudi experience. Miss a deadline and face fines. Do it right and settle in with confidence.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">Iqama process starts now</span>
+      <span class="hero-badge">Bank account within week 2</span>
+      <span class="hero-badge">Absher registration</span>
+      <span class="hero-badge">SIM card day 1</span>
+    </div>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div style="background:var(--cream,#F2EEE5);border-bottom:1px solid rgba(27,42,74,.07)">
+  <div class="container" style="padding-top:.75rem;padding-bottom:.75rem">
+    <nav style="font-size:.82rem;color:var(--text-mid,#6B6860)">
+      <a href="/" style="color:var(--navy);text-decoration:none">Home</a>
+      <span style="margin:0 .5rem;opacity:.4">/</span>
+      <a href="/relocate" style="color:var(--navy);text-decoration:none">Relocate</a>
+      <span style="margin:0 .5rem;opacity:.4">/</span>
+      <span>First 30 Days</span>
+    </nav>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div style="background:var(--off-white,#FAF8F4)">
+  <div class="container">
+    <div class="content-layout">
+
+      <!-- MAIN COLUMN -->
+      <main>
+
+        <!-- URGENCY CALLOUT -->
+        <div class="callout callout--gold reveal" style="margin-top:0">
+          <strong style="display:block;margin-bottom:.4rem;font-size:.95rem">The 90-Day Iqama Clock Starts at Entry</strong>
+          Your work visa is valid for 90 days from your entry date. Your employer must complete all Iqama steps within this window — failing to do so results in fines and overstay penalties. The process typically takes 4–8 weeks once started. Start immediately upon arrival. Do not assume your employer is handling it — confirm in writing.
+        </div>
+
+        <!-- PRIORITY ORDER CALLOUT -->
+        <div class="callout callout--info reveal" style="margin-top:1.5rem">
+          <strong style="display:block;margin-bottom:.4rem;font-size:.95rem">Priority Order for Your First Two Weeks</strong>
+          Do things in this sequence: <strong>1) Iqama medical check</strong> (cannot start without you physically present) → <strong>2) SIM card</strong> (needed for Absher OTP) → <strong>3) Absher registration</strong> (do this on a visitor account before Iqama) → <strong>4) Bank account</strong> (needs Iqama or employment letter). Do NOT wait — the Iqama clock starts on Day 1 from your entry date stamp. Every week of delay narrows your margin.
+        </div>
+
+        <!-- WEEK 1 -->
+        <section id="week1" style="padding:3rem 0 2rem">
+          <div class="section-eyebrow reveal">Days 1–7</div>
+          <h2 class="section-title reveal">First Week <em>Priorities</em></h2>
+          <p class="section-lead reveal">These seven actions form the foundation of your Saudi life. Some have time limits. Do them in order.</p>
+
+          <div class="steps-list">
+
+            <div class="step-item reveal">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h3>Get a Saudi SIM Card</h3>
+                <p>STC (Saudi Telecom Company) is the largest network in the Kingdom, with the best English-language customer support and the widest coverage including rural areas. Airport kiosks are available at all major international airports — look for STC, Mobily, or Zain stands before you leave the arrivals hall. You only need your passport and visa stamp. Monthly plans start from SAR 75 for basic data. You will upgrade to an Iqama-registered SIM once your residency permit is issued — the visitor SIM holds you over in the meantime.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h3>Set Up WhatsApp and Local Contacts</h3>
+                <p>WhatsApp is the primary communication channel in Saudi Arabia — for business, government liaisons, building managers, and social arrangements. Save your employer's HR contact, your company PRO (Public Relations Officer), your building manager or housing contact, the nearest hospital's emergency number, and your country's embassy or consulate. Saudi unified emergency number: <strong>911</strong> (all services — police, ambulance, fire). Direct lines: Police 999, Ambulance 997, Civil Defence/Fire 998.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-2">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h3>Register for Absher — Do This Today</h3>
+                <p>Absher is the Saudi government's all-in-one digital services platform. It is how you will track your Iqama, renew your residency, issue exit re-entry visas, manage your dependents, and access dozens of government services. Registration: download the Absher app (iOS/Android) → select "Create Account" → enter your passport number and border crossing date → verify with the OTP sent to your Saudi SIM → complete your profile. If you experience issues, visit an Absher self-service kiosk at most government buildings and malls.</p>
+                <p style="font-size:.88rem;color:var(--text-mid,#6B6860);margin-top:.5rem"><strong>Important:</strong> You can and should register on Absher with your visa and passport <em>before</em> your Iqama is issued — select "Visitor" registration type. Your account automatically upgrades to a resident account once your employer's PRO links your Iqama to your national file. Do not wait for your Iqama to register.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h3>Open a Temporary Bank Account or Get a Prepaid Card</h3>
+                <p>Opening a full bank account requires your Iqama. In the meantime, some banks offer visitor or non-resident accounts — Al Rajhi and Riyad Bank are worth asking. Alternatively, get an STC Pay prepaid card (available at STC stores) which can be loaded with cash and used for payments, Careem rides, and online shopping. This bridges the gap until your Iqama is issued and your full account can be opened.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h3>Confirm Your Accommodation Arrangement</h3>
+                <p>If your employer provides housing, confirm the exact dates and location in writing. If you are arranging your own accommodation, ensure your current booking covers your entire search period. Short-term furnished apartments are widely available via Dubizzle, Bayut, and Airbnb. Do not rush into a long-term rental before you know the city — spend at least two weeks experiencing your area before signing a 12-month lease.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-2">
+              <div class="step-num">6</div>
+              <div class="step-body">
+                <h3>Get Your Bearings and Download Transport Apps</h3>
+                <p>Download Careem and Uber before you need them — both operate in all major Saudi cities. Careem is locally founded and often has better coverage in less central areas. Google Maps works well for navigation. Note that many Saudi addresses use GPS coordinates or what3words rather than street numbers — this is normal. Locate your nearest supermarket (Danube, Panda, Tamimi Markets), pharmacy (Al-Dawaa, Nahdi), petrol station, and mall in your first day or two.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal">
+              <div class="step-num">7</div>
+              <div class="step-body">
+                <h3>Contact HR and Start the Iqama Process — In Writing</h3>
+                <p>This is the most important action of your first week. Contact your employer's HR or PRO officer and ask: (a) what step are they on in the Iqama process, (b) what documents do they need from you, and (c) what is the expected timeline. Request written confirmation. The Iqama process involves your employer's PRO submitting documents to the Ministry of Human Resources. You cannot do this yourself — it must go through your sponsor. Follow up every three to four days.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- WEEK 2 -->
+        <section id="week2" style="background:var(--cream,#F2EEE5);border-radius:24px;padding:3rem;margin:1rem 0">
+          <div class="section-eyebrow reveal">Days 8–14</div>
+          <h2 class="section-title reveal">Week 2: <em>Essential Bureaucracy</em></h2>
+          <p class="section-lead reveal">This week is about completing the formal requirements that unlock the rest of your Saudi life — medical exam, biometrics, and your permanent bank account.</p>
+
+          <div class="steps-list">
+
+            <div class="step-item reveal">
+              <div class="step-num">8</div>
+              <div class="step-body">
+                <h3>Book and Complete Your Medical Examination</h3>
+                <p>Saudi Arabia requires all expats to complete a medical examination at an approved GAMCA (Gulf Cooperation Council Approved Medical Centres Association) centre. Your employer should direct you to the approved centre they use. The examination checks for communicable diseases including tuberculosis and HIV. Typical cost is SAR 200–400 and results are available within 1–2 business days. Bring your passport, a copy of your visa, and passport-sized photos. A failed medical can result in cancellation of your work visa — speak to your doctor before travelling if you have any concerns.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">9</div>
+              <div class="step-body">
+                <h3>Biometric Appointment via Absher</h3>
+                <p>Biometric fingerprinting and photo capture are required as part of the Iqama process. Your employer's PRO creates this appointment on your behalf via the Absher employer portal. Confirm with HR that the appointment has been booked and note the date and location. Biometric centres operate in major cities at Ministry of Interior offices. Bring your original passport and any documents HR specifies. Treat the appointment date as firm — rescheduling is difficult.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-2">
+              <div class="step-num">10</div>
+              <div class="step-body">
+                <h3>Open Your Permanent Bank Account</h3>
+                <p>With your Iqama (or a formal employment letter stamped with company details), head to Al Rajhi Bank or Saudi National Bank (SNB) — both have English-speaking staff and extensive ATM networks. Required documents: original passport, Iqama or visa (if Iqama not yet issued), employer letter on company letterhead, and proof of address (a hotel booking confirmation or housing contract is acceptable). Once set up, link to Apple Pay or Google Pay for daily transactions. Read our full <a href="/life/banking" style="color:var(--gold)">banking guide here</a>.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal">
+              <div class="step-num">11</div>
+              <div class="step-body">
+                <h3>Sort Local Transport for the Long Term</h3>
+                <p>Your foreign driving licence is valid in Saudi Arabia while your Iqama is being processed, and then continues to be valid for up to 1 year from your entry date for licence holders from most eligible countries. However, once your Iqama is issued, the practical rule is that you should begin the conversion process promptly — most expats convert within 90 days of receiving their Iqama. The conversion is straightforward for licences from most Western and Arab countries: bring your original licence, Iqama, passport photos, and pass a basic eye test. No full driving test is typically required for eligible nationalities. An International Driving Permit (IDP) issued in your home country is advisable as a supplement for the initial period. If renting a car, major rental companies (Budget, Hertz, SIXT, and local brands Lumi and Theeb) operate across all cities. Many expats rely on Careem and Uber long-term — both are widely available and competitively priced.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- WEEK 3-4 -->
+        <section id="week34" style="padding:3rem 0 2rem">
+          <div class="section-eyebrow reveal">Days 15–30</div>
+          <h2 class="section-title reveal">Weeks 3–4: <em>Settling In</em></h2>
+          <p class="section-lead reveal">With critical bureaucracy underway, focus on building the foundations of daily life — housing, schools, healthcare, and community.</p>
+
+          <div class="steps-list">
+
+            <div class="step-item reveal">
+              <div class="step-num">12</div>
+              <div class="step-body">
+                <h3>Find Your Permanent Housing</h3>
+                <p>If housing is not employer-provided, begin your serious search in week 3 once you understand the city and your commute. Use Bayut and Propertyfinder for listings, and join city-specific Facebook groups ("Expats in Riyadh", "Jeddah Expat Community") for real-world recommendations and off-market listings. Compounds offer security, community, and facilities but come at a premium. Standalone villas and apartments in local neighbourhoods are cheaper with more space. See our full <a href="/life/housing" style="color:var(--gold)">housing guide</a> for neighbourhood breakdowns by city.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">13</div>
+              <div class="step-body">
+                <h3>International School Applications</h3>
+                <p>If relocating with school-age children, start applications immediately — even before your Iqama arrives. Top international schools in Riyadh, Jeddah, and Dammam have waiting lists stretching 6–12 months for popular year groups. Contact schools the moment you know your city and intended start date. Required documents typically include: previous school reports, passport copies, immunisation records, and a parent interview. See our <a href="/relocate/families" style="color:var(--gold)">Families guide</a> for school listings by city.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-2">
+              <div class="step-num">14</div>
+              <div class="step-body">
+                <h3>Activate and Test Your Health Insurance</h3>
+                <p>All employers are legally required to provide health insurance for expat employees. Ensure you have received your physical insurance card or digital policy details from HR by the end of week 2. In week 3, test it: visit a pharmacy (Al-Dawaa or Nahdi) and attempt to use your insurance card for a prescription. Confirm which hospital network is covered. Major networks include Dallah Hospital, Dr. Sulaiman Al-Habib Group (HMG), Saudi German Hospitals, and King Faisal Specialist Hospital.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal">
+              <div class="step-num">15</div>
+              <div class="step-body">
+                <h3>Collect Your Iqama Card</h3>
+                <p>Once the Iqama is ready (4–8 weeks typically), your employer's PRO will notify you. Collect it and check all details immediately — name spelling, date of birth, profession, and expiry date. Any errors must be corrected while you are still with the PRO. Once collected, go into Absher and link the Iqama to your account. This unlocks exit re-entry visas, dependent visas, and the full suite of government services. Do not leave Saudi Arabia without an exit re-entry visa once your Iqama is active.</p>
+              </div>
+            </div>
+
+            <div class="step-item reveal reveal-delay-1">
+              <div class="step-num">16</div>
+              <div class="step-body">
+                <h3>Explore Your Neighbourhood and Build Routine</h3>
+                <p>Find your nearest supermarket (Danube for produce and international items, Panda for everyday groceries, Tamimi Markets for Western products), pharmacy chain (Al-Dawaa or Nahdi), petrol station, coffee shop (Tim Hortons, Starbucks, and many excellent local specialty coffee brands), and note Friday prayer timing in your area — shops and restaurants close for midday Friday prayers, typically for 1–2 hours. Knowing this rhythm makes weekly planning significantly easier.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CHECKLIST -->
+        <section id="checklist" style="background:var(--cream,#F2EEE5);border-radius:24px;padding:3rem;margin:1rem 0">
+          <div class="section-eyebrow reveal">Complete Action Plan</div>
+          <h2 class="section-title reveal">Your 30-Day <em>Checklist</em></h2>
+          <p class="section-lead reveal">Grouped by week so you never lose track of where you are. Print it. Screenshot it. Tick it off.</p>
+
+          <div class="week-header reveal">
+            <span class="week-badge">Week 1 &middot; Days 1–7</span>
+            <h3>Arrive and Get Connected</h3>
+          </div>
+          <div class="checklist">
+            <div class="check-item reveal">Get a Saudi SIM card (STC recommended)</div>
+            <div class="check-item reveal reveal-delay-1">Register for Absher app</div>
+            <div class="check-item reveal reveal-delay-2">Download Careem and Uber</div>
+            <div class="check-item reveal">Confirm accommodation dates in writing</div>
+            <div class="check-item reveal reveal-delay-1">Contact HR about Iqama — get timeline in writing</div>
+            <div class="check-item reveal reveal-delay-2">Save emergency numbers (999, 911, 998)</div>
+            <div class="check-item reveal">Download Tawakkalna app</div>
+            <div class="check-item reveal reveal-delay-1">Get Saudi Riyal cash from airport ATM</div>
+          </div>
+
+          <div class="week-header reveal" style="margin-top:2.5rem">
+            <span class="week-badge">Week 2 &middot; Days 8–14</span>
+            <h3>Documents and Banking</h3>
+          </div>
+          <div class="checklist">
+            <div class="check-item reveal">Book and complete GAMCA medical exam</div>
+            <div class="check-item reveal reveal-delay-1">Confirm biometrics appointment with HR</div>
+            <div class="check-item reveal reveal-delay-2">Open bank account (Al Rajhi or SNB)</div>
+            <div class="check-item reveal">Set up STC Pay or Apple Pay</div>
+            <div class="check-item reveal reveal-delay-1">Download Jahez, HungerStation, Noon Food</div>
+            <div class="check-item reveal reveal-delay-2">Confirm insurance card with employer</div>
+            <div class="check-item reveal">Download Al-Dawaa or Nahdi app</div>
+            <div class="check-item reveal reveal-delay-1">Locate the nearest hospital to your home</div>
+          </div>
+
+          <div class="week-header reveal" style="margin-top:2.5rem">
+            <span class="week-badge">Weeks 3–4 &middot; Days 15–30</span>
+            <h3>Settle, Register, and Explore</h3>
+          </div>
+          <div class="checklist">
+            <div class="check-item reveal">Begin permanent housing search</div>
+            <div class="check-item reveal reveal-delay-1">Apply to international schools (if applicable)</div>
+            <div class="check-item reveal reveal-delay-2">Collect Iqama card and verify all details</div>
+            <div class="check-item reveal">Link Iqama to Absher account</div>
+            <div class="check-item reveal reveal-delay-1">Start Saudi driving licence conversion</div>
+            <div class="check-item reveal reveal-delay-2">Upgrade to full SIM plan with Iqama</div>
+            <div class="check-item reveal">Set up SADAD for bill payments</div>
+            <div class="check-item reveal reveal-delay-1">Celebrate — you made it through month one</div>
+          </div>
+        </section>
+
+        <!-- ESSENTIAL APPS -->
+        <section id="apps" class="dark-sec" style="border-radius:24px;margin:1rem 0;padding:3rem">
+          <div class="section-eyebrow reveal">Must-Have</div>
+          <h2 class="section-title reveal" style="color:#fff">Essential <em>Apps</em></h2>
+          <p class="section-lead reveal" style="color:rgba(255,255,255,.6)">Download these before you land or within day one. They cover government, transport, food, shopping, and housing — the full layer of digital Saudi life.</p>
+
+          <div class="apps-grid">
+            <div class="app-card reveal">
+              <div class="app-card__icon">&#127963;</div>
+              <div>
+                <div class="app-card__name">Absher</div>
+                <div class="app-card__desc">Saudi Arabia's government services portal. Iqama tracking, exit visas, dependent management, and 50+ government services. Absolutely non-negotiable.</div>
+                <span class="app-card__tag">Essential</span>
+              </div>
+            </div>
+            <div class="app-card reveal reveal-delay-1">
+              <div class="app-card__icon">&#128737;</div>
+              <div>
+                <div class="app-card__name">Tawakkalna</div>
+                <div class="app-card__desc">Originally a health app, now a general digital ID and health status platform. Required at many venues and for some government interactions.</div>
+                <span class="app-card__tag">Essential</span>
+              </div>
+            </div>
+            <div class="app-card reveal reveal-delay-2">
+              <div class="app-card__icon">&#128241;</div>
+              <div>
+                <div class="app-card__name">MySTC / My Mobily / My Zain</div>
+                <div class="app-card__desc">Manage your mobile account, top up data, pay bills, and upgrade your plan. Download whichever matches your carrier.</div>
+                <span class="app-card__tag">Day 1</span>
+              </div>
+            </div>
+            <div class="app-card reveal">
+              <div class="app-card__icon">&#128663;</div>
+              <div>
+                <div class="app-card__name">Careem / Uber</div>
+                <div class="app-card__desc">Both operate in all major Saudi cities. Careem (locally founded) often has better driver coverage in residential neighbourhoods and smaller cities.</div>
+                <span class="app-card__tag">Day 1</span>
+              </div>
+            </div>
+            <div class="app-card reveal reveal-delay-1">
+              <div class="app-card__icon">&#127828;</div>
+              <div>
+                <div class="app-card__name">Jahez / HungerStation / Noon Food</div>
+                <div class="app-card__desc">Saudi-first food delivery apps with the widest restaurant coverage in the Kingdom. Jahez is dominant in many cities; HungerStation has the broadest restaurant selection.</div>
+                <span class="app-card__tag">Week 1</span>
+              </div>
+            </div>
+            <div class="app-card reveal reveal-delay-2">
+              <div class="app-card__icon">&#127968;</div>
+              <div>
+                <div class="app-card__name">Bayut / Dubizzle</div>
+                <div class="app-card__desc">The leading property platforms for Saudi Arabia. Search for apartments, villas, and compound housing. Also useful for cars and classifieds.</div>
+                <span class="app-card__tag">Week 3</span>
+              </div>
+            </div>
+            <div class="app-card reveal">
+              <div class="app-card__icon">&#128717;</div>
+              <div>
+                <div class="app-card__name">Noon / Amazon.sa</div>
+                <div class="app-card__desc">The two dominant e-commerce platforms. Noon is Middle East-first with same-day delivery in major cities. Amazon.sa has wider international product selection.</div>
+                <span class="app-card__tag">Week 1</span>
+              </div>
+            </div>
+            <div class="app-card reveal reveal-delay-1">
+              <div class="app-card__icon">&#128138;</div>
+              <div>
+                <div class="app-card__name">Al-Dawaa / Nahdi</div>
+                <div class="app-card__desc">Saudi Arabia's two largest pharmacy chains. Order prescriptions, schedule refills, and find the nearest branch. Most medicines available over the counter.</div>
+                <span class="app-card__tag">Week 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout--gold reveal" style="background:rgba(212,168,83,.08);border-color:rgba(212,168,83,.25);margin-top:2rem">
+            <strong>See the full app directory</strong> — Our <a href="/apps" style="color:var(--gold)">Essential Apps page</a> covers 40+ Saudi apps across banking, government, lifestyle, and business — including lesser-known ones that make daily life significantly easier.
+          </div>
+        </section>
+
+        <!-- CULTURAL TIPS -->
+        <section id="culture" style="padding:3rem 0 2rem">
+          <div class="section-eyebrow reveal">Know Before You Go</div>
+          <h2 class="section-title reveal">Cultural <em>Quick Guide</em></h2>
+          <p class="section-lead reveal">Saudi Arabia in 2025 is significantly more open than a decade ago. Vision 2030 has transformed public life. But some fundamentals remain constant — knowing them makes daily life smoother and more respectful.</p>
+
+          <div class="tips-grid">
+            <div class="tip-card reveal">
+              <div class="tip-icon">&#128197;</div>
+              <div>
+                <h4>Weekend is Friday–Saturday</h4>
+                <p>The Saudi working week is Sunday to Thursday for most government departments and many private companies. Some international-facing firms have shifted to Monday–Friday. Friday is the holy day — malls and shops partially close for Friday prayer around midday for 1–2 hours.</p>
+              </div>
+            </div>
+            <div class="tip-card reveal reveal-delay-1">
+              <div class="tip-icon">&#128332;</div>
+              <div>
+                <h4>Prayer Times Affect Shop Hours</h4>
+                <p>Five daily prayers mean most shops and restaurants close for 15–30 minutes, five times a day. This is less strictly enforced than in previous years — many mall outlets and supermarkets stay open — but be prepared for it, especially in traditional areas and smaller cities.</p>
+              </div>
+            </div>
+            <div class="tip-card reveal reveal-delay-2">
+              <div class="tip-icon">&#128247;</div>
+              <div>
+                <h4>Dress Modestly in Public</h4>
+                <p>Since 2019, foreign women are not required to wear an abaya in public. Smart casual dress is fine for malls, restaurants, and tourist areas. At mosques and religious sites, cover shoulders and knees. Men should avoid sleeveless tops in formal settings.</p>
+              </div>
+            </div>
+            <div class="tip-card reveal">
+              <div class="tip-icon">&#128683;</div>
+              <div>
+                <h4>No Alcohol — Ever in Public</h4>
+                <p>Alcohol is prohibited throughout Saudi Arabia. This is a firm legal line, not a social norm. There is no legal grey area in public. Penalties include deportation. Alcohol is not available in restaurants or any public venue.</p>
+              </div>
+            </div>
+            <div class="tip-card reveal reveal-delay-1">
+              <div class="tip-icon">&#9728;</div>
+              <div>
+                <h4>Ramadan: Respect Public Restrictions</h4>
+                <p>During Ramadan, eating, drinking, and smoking in public during daylight hours is not permitted. Restaurants operate with covered windows or close until sunset. Working hours are reduced (typically 6 hours/day). Nights become very social and lively.</p>
+              </div>
+            </div>
+            <div class="tip-card reveal reveal-delay-2">
+              <div class="tip-icon">&#129309;</div>
+              <div>
+                <h4>Hospitality is Genuine and Important</h4>
+                <p>Accepting Arabic coffee (qahwa) and dates when offered is respectful. Do not refuse food in a Saudi home. Use your right hand for handshakes, passing items, and eating. Punctuality expectations differ between social and business settings.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" style="background:var(--cream,#F2EEE5);border-radius:24px;padding:3rem;margin:1rem 0 2rem">
+          <div class="section-eyebrow reveal">Common Questions</div>
+          <h2 class="section-title reveal">Frequently Asked <em>Questions</em></h2>
+
+          <div class="faq-list">
+
+            <div class="faq-item reveal">
+              <button class="faq-q">
+                Do I need to do anything on arrival at the airport?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">At the immigration counter, your biometric data (fingerprints) will be taken and your entry stamp issued. Take a photo of your entry stamp — the date is critical for your 90-day Iqama timeline. Pick up a SIM card at the airport kiosk before leaving the terminal. You do not need to do anything else formally at the airport beyond standard immigration and customs clearance.</div>
+              </div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-1">
+              <button class="faq-q">
+                What happens if my employer does not start the Iqama process in time?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">If your visa expires before the Iqama is issued, you are technically in overstay. Your employer bears legal responsibility and faces fines. If the process is underway and you can demonstrate good-faith progress, most cases are resolved with a fine rather than deportation. Do not let it get to this point — push HR every week. If your employer is unresponsive, document everything in writing. Contact the Ministry of Human Resources (MHRSD) helpline if you believe your employer is failing their legal obligations.</div>
+              </div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-2">
+              <button class="faq-q">
+                Can I drive with my foreign driving licence?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Yes — a valid foreign driving licence allows you to drive in Saudi Arabia from the day you arrive. Your licence remains valid during the Iqama processing period and for up to 1 year from your entry date for holders of licences from most eligible countries. Once your Iqama is issued, begin the conversion process promptly — most expats convert within 90 days of Iqama receipt. The conversion requires: your original foreign licence, your Iqama, passport-sized photos, and a basic eye test. Most Western and Arab country licences convert without requiring a full driving test. An International Driving Permit (IDP) from your home country is a sensible supplement for the initial period before conversion.</div>
+              </div>
+            </div>
+
+            <div class="faq-item reveal">
+              <button class="faq-q">
+                How do I register for Absher if I do not have an Iqama yet?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">You can register on Absher as a visitor using your passport number and border crossing date. Select "Visitor" rather than "Resident" during registration. You will need a Saudi mobile number to receive the OTP — this is why getting a SIM card on day one is essential. Your Absher account upgrades automatically to a resident account once your Iqama is issued and your employer's PRO links it to your national ID number.</div>
+              </div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-1">
+              <button class="faq-q">
+                What are the Iqama processing fees and who pays them?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">The employer is legally responsible for paying the initial Iqama issuance fee, which varies by job category but is typically SAR 650–2,000 for the first year. A work permit levy is also paid by the employer. Some employers informally deduct fees from salaries — if this is written in your contract, it is technically legal but negotiable before signing. Annual Iqama renewal costs the employer SAR 650 for most occupations. Dependent Iqamas cost the sponsor SAR 100–400 per person per year.</div>
+              </div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-2">
+              <button class="faq-q">
+                What should I do if there is a medical emergency?
+                <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+              </button>
+              <div class="faq-a">
+                <div class="faq-a-inner">Call 911 for an ambulance (Saudi Red Crescent). Emergency care is available at all government hospitals regardless of insurance status. For non-life-threatening situations, call the insurance helpline number on your card before going to a private hospital to confirm coverage. Keep a photo of your insurance card and policy number on your phone. The Dr. Sulaiman Al-Habib (HMG) group and Saudi German Hospital network are the most commonly covered private hospital groups across major cities.</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="content-sidebar">
+        <div class="sidebar-nav">
+          <div class="sidebar-nav__title">On This Page</div>
+          <a href="#week1" class="active">Week 1: First Priorities</a>
+          <a href="#week2">Week 2: Bureaucracy</a>
+          <a href="#week34">Weeks 3–4: Settling In</a>
+          <a href="#checklist">30-Day Checklist</a>
+          <a href="#apps">Essential Apps</a>
+          <a href="#culture">Cultural Guide</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Heading to Saudi Arabia soon? Get our free relocation checklist PDF delivered to your inbox.</p>
+          <a href="#newsletter" class="btn btn--gold btn--sm" style="display:inline-block;padding:.65rem 1.25rem;font-size:.85rem;border-radius:10px;background:var(--gold);color:#000;font-weight:700;text-decoration:none">Get Free Checklist</a>
+        </div>
+
+        <div style="margin-top:1.25rem;background:#fff;border-radius:16px;padding:1.25rem;border:1.5px solid rgba(27,42,74,.08)">
+          <div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem">Related Guides</div>
+          <a href="/work/iqama-guide" style="display:flex;gap:.75rem;align-items:flex-start;text-decoration:none;margin-bottom:.85rem;padding-bottom:.85rem;border-bottom:1px solid rgba(27,42,74,.06)">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#1B3A6A);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.85rem;font-weight:700;color:var(--navy);line-height:1.3">Complete Iqama Guide</div>
+              <div style="font-size:.78rem;color:var(--text-mid,#6B6860);margin-top:.15rem">Step-by-step process</div>
+            </div>
+          </a>
+          <a href="/life/banking" style="display:flex;gap:.75rem;align-items:flex-start;text-decoration:none;margin-bottom:.85rem;padding-bottom:.85rem;border-bottom:1px solid rgba(27,42,74,.06)">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#1B3A6A);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.85rem;font-weight:700;color:var(--navy);line-height:1.3">Banking in Saudi Arabia</div>
+              <div style="font-size:.78rem;color:var(--text-mid,#6B6860);margin-top:.15rem">Accounts, transfers, apps</div>
+            </div>
+          </a>
+          <a href="/life/housing" style="display:flex;gap:.75rem;align-items:flex-start;text-decoration:none">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--navy),#1B3A6A);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <div style="font-size:.85rem;font-weight:700;color:var(--navy);line-height:1.3">Housing Guide</div>
+              <div style="font-size:.78rem;color:var(--text-mid,#6B6860);margin-top:.15rem">Compounds, villas, areas</div>
+            </div>
+          </a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="dark-sec">
+  <div class="container">
+    <div class="newsletter-wrap">
+      <div class="section-eyebrow reveal" style="justify-content:center">Stay Updated</div>
+      <h2 class="section-title reveal" style="color:#fff;text-align:center">The Saudi Relocation <em>Briefing</em></h2>
+      <p style="color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.75;text-align:center" class="reveal">Monthly updates on Iqama rules, visa changes, housing, and life in KSA. Trusted by 12,000+ expats and relocating professionals.</p>
+      <form class="newsletter-form reveal">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn--gold">Subscribe Free</button>
+      </form>
+      <p style="font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;margin-top:1rem" class="reveal">No spam. Unsubscribe anytime. Independent and unsponsored.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Related guides -->
+<style>
+[style*="border-radius:14px"][href]:hover{border-color:var(--gold,#D4A853)!important;transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08)}
+</style>
+<section style="background:var(--cream,#F2EEE5);padding:3rem 0;border-top:1px solid var(--border-gray,#D6D3CB)">
+  <div class="container" style="max-width:1380px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)">
+    <p style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem"><span style="width:24px;height:1.5px;background:var(--gold,#D4A853);display:inline-block"></span>Related guides</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+      <a href="/work/iqama-guide" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🪪</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Complete Iqama Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">Everything about the residency permit process</div></div>
+      </a>
+      <a href="/apps" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">📱</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Essential Apps</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">The complete list of apps for new arrivals</div></div>
+      </a>
+      <a href="/life/banking" style="display:flex;align-items:center;gap:1rem;background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s">
+        <span style="font-size:1.4rem">🏦</span>
+        <div><div style="font-size:.88rem;font-weight:700;color:var(--navy,#1B2A4A)">Banking Guide</div><div style="font-size:.74rem;color:#8A8780;margin-top:.15rem">How to open your first account in KSA</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px;width:auto"></div>
+        <p class="footer__tagline">Your complete guide to relocating and living in Saudi Arabia.</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate" class="footer__link">Relocation Hub</a>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
+        <a href="/business/start-a-company" class="footer__link">Start a Company</a>
+        <a href="/work/salary-guide" class="footer__link">Salary Guide</a>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col-title">Life in KSA</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/apps" class="footer__link">Essential Apps</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 NewToSaudi.com · Independent &amp; unsponsored · <a href="/about">About</a> · <a href="/resources/faq">FAQ</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js" defer></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+</script>
+</body>
+</html>

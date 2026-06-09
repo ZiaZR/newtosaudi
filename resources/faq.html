@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saudi Arabia Expat FAQ — Visas, Iqama, Housing, Banking &amp; More</title>
+  <meta name="description" content="Answers to the most common questions about moving to Saudi Arabia — visas, Iqama, housing, banking, culture, and daily life.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 55vh;
+      background: linear-gradient(150deg,#060E1E 0%,#0D1830 45%,#111D33 75%,#0A1220 100%);
+      display: flex; align-items: flex-end; padding-bottom: 5rem; position: relative; overflow: hidden;
+    }
+    .hero__pattern {
+      position: absolute; inset: 0; opacity: .035;
+      background-image:
+        repeating-linear-gradient(60deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 80px),
+        repeating-linear-gradient(-60deg, var(--gold) 0, var(--gold) 1px, transparent 1px, transparent 80px);
+    }
+    .hero__content { position: relative; z-index: 2; max-width: 760px; }
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem; font-size: .72rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .hero__eyebrow::before { content:''; width:28px; height:1.5px; background:var(--gold); display:inline-block; }
+    .hero__title { font-size: clamp(2.6rem,4.8vw,4.6rem); color: var(--white); margin-bottom: 1.25rem; }
+    .hero__sub { font-size: 1.1rem; color: rgba(255,255,255,.6); max-width: 540px; line-height: 1.8; }
+
+    /* ── SEARCH HINT ── */
+    .search-hint {
+      display: inline-flex; align-items: center; gap: .65rem; margin-top: 2rem;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 100px; padding: .65rem 1.5rem; color: rgba(255,255,255,.4);
+      font-size: .85rem;
+    }
+    .search-hint span { color: rgba(255,255,255,.25); }
+
+    /* ── CATEGORY SECTIONS ── */
+    .faq-category { padding: 4rem 0; border-bottom: 1px solid var(--mid-gray); }
+    .faq-category:last-of-type { border-bottom: none; }
+    .category-header { margin-bottom: 2.5rem; }
+    .category-count {
+      display: inline-block; background: var(--gold-muted); color: var(--gold-dark);
+      border-radius: 100px; padding: .3rem .85rem; font-size: .75rem; font-weight: 700;
+      margin-left: .75rem; vertical-align: middle;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 24px; padding: 3.5rem; text-align: center; margin: 3rem 0;
+    }
+    .bottom-cta h2 { color: var(--white); margin-bottom: .75rem; font-size: 1.8rem; }
+    .bottom-cta p { color: rgba(255,255,255,.6); margin-bottom: 2rem; }
+    .bottom-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    @media(max-width:768px) {
+      .faq-category { padding:2.25rem 0 }
+      .bottom-cta { padding:3rem 1.5rem }
+      .bottom-cta h2 { font-size:clamp(1.6rem,5vw,2.2rem) }
+    }
+    @media(max-width:480px) {
+      .faq-category { padding:1.75rem 0 }
+      .bottom-cta { padding:2.25rem 1.25rem }
+      .bottom-cta-btns { flex-direction:column; align-items:center }
+      .bottom-cta-btns a { width:100%; text-align:center; justify-content:center }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav nav--transparent" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="../Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+      <img src="../Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+    </a>
+    <div class="nav__links">
+      <a href="/relocate" class="nav__link">Relocate</a>
+      <a href="/work" class="nav__link">Work &amp; Visa</a>
+      <a href="/business" class="nav__link">Business</a>
+      <a href="/life" class="nav__link">Life in KSA</a>
+      <a href="/cities" class="nav__link">Cities</a>
+      <a href="/apps" class="nav__link">Apps</a>
+      <a href="/resources/faq" class="nav__link active">FAQ</a>
+      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="nav__mobile-menu">
+  <a href="/relocate">Relocate</a>
+  <a href="/work">Work &amp; Visa</a>
+  <a href="/business">Business</a>
+  <a href="/life">Life in KSA</a>
+  <a href="/cities">Cities</a>
+  <a href="/apps">Apps</a>
+  <a href="/resources/faq" style="color:var(--gold)">FAQ</a>
+  <a href="/relocate/before-you-arrive" style="color:var(--gold)">Start your journey →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__pattern"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/resources">Resources</a><span>›</span>
+        <span>FAQ</span>
+      </div>
+      <div class="hero__eyebrow">Frequently Asked Questions</div>
+      <h1 class="hero__title" style="animation:heroFadeUp .9s var(--ease-out-expo) both">
+        Everything you want to know about moving to Saudi Arabia
+      </h1>
+      <p class="hero__sub" style="animation:heroFadeUp .9s .15s var(--ease-out-expo) both">
+        45+ questions answered by people who've been through it. Visas, Iqama, housing, banking, culture, and more.
+      </p>
+      <div class="search-hint" style="animation:heroFadeUp .9s .3s var(--ease-out-expo) both">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Use <span>Ctrl+F</span> / <span>Cmd+F</span> to search this page for your specific question
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ CONTENT -->
+<section class="section" style="background:var(--off-white);padding-top:3rem;padding-bottom:3rem">
+  <div class="container">
+
+    <!-- VISAS & ENTRY -->
+    <div class="faq-category reveal" id="visas">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 1</div>
+        <h2 class="section-heading">Visas &amp; Entry <span class="category-count">8 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What visa do I need to work in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            To work in Saudi Arabia, you need a work visa — officially called an Employment Visa (D5). This visa is issued by the Saudi embassy in your home country once your employer has obtained a work permit (tasrih) for you through the Ministry of Human Resources and Social Development. You cannot arrange a work visa yourself; it must be sponsored by your Saudi employer. After entering the country, your employer is responsible for converting your entry visa into an Iqama (residency permit) within 90 days. See our full <a href="/work/iqama-guide">Iqama guide</a> for the step-by-step process.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How long does a Saudi work visa take to process?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Processing times vary but typically range from 2 to 6 weeks once your employer has submitted all required documentation. The employer-side process — obtaining the work permit from the Ministry of Human Resources — often takes longer and can add another 2–4 weeks. In practice, the full journey from job offer to visa in hand is commonly 4–8 weeks, though some employers with pre-approved quota can move faster. Large multinational companies with established HR processes tend to complete the process more quickly than smaller local companies.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I visit Saudi on a tourist visa and then convert to a work visa?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            No — you cannot legally convert a tourist visa into a work visa while inside Saudi Arabia. Working on a tourist visa is a serious violation of Saudi immigration law and can result in fines, deportation, and a ban from re-entering the country. If you're in Saudi Arabia on a tourist visa and receive a job offer, you must exit the country and apply for a work visa through the proper channels with your employer's sponsorship. There is no in-country conversion pathway for tourist visa holders.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is the difference between a work visa and an Iqama?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            A work visa is what you use to enter Saudi Arabia for the first time on an employment basis — it's issued by the Saudi embassy in your home country and is a one-time entry document. An Iqama is your Saudi residency permit — a physical card (and digital ID on the Absher app) that confirms your legal right to live and work in the Kingdom. Once you arrive on a work visa, your employer applies for your Iqama, which must be issued within 90 days. The Iqama is what you use for day-to-day life: opening a bank account, signing a lease, and re-entering the country after travel. Read more in our <a href="/work/iqama-guide">complete Iqama guide</a>.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Do I need a sponsor (kafeel) to work in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Historically, yes — the kafala (sponsorship) system tied foreign workers exclusively to a single employer who acted as their legal sponsor. Saudi Arabia has been reforming this system since 2021. Workers in many sectors now have the right to change jobs, exit the country, and transfer their sponsorship without employer permission, under the Labour Reform Initiative (LRI). However, your employer is still your formal sponsor for Iqama purposes, and the kafala framework still applies in many practical ways. The reforms are significant but do not entirely eliminate the sponsorship relationship. Check our <a href="/work/iqama-guide">Iqama guide</a> for the latest on your rights as a foreign worker.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can my spouse work in Saudi Arabia on a dependent visa?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            A dependent visa does not automatically grant work rights. If your spouse wants to work, they typically need their own work visa issued by a Saudi employer, or they can apply for a work permit to transfer their dependent Iqama to an employment Iqama once they have a job offer. Since 2021, it has become somewhat easier to transfer sponsorship within Saudi Arabia, but your spouse's employer still needs to initiate the process. Many expat families have one working spouse and one on a dependent visa — and the dependent visa does allow the holder to study, volunteer, and run a business under certain structures.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What are the requirements for a Saudi tourist visa?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia opened tourist visas to citizens of 49 countries in 2019. Requirements are straightforward: a valid passport (at least 6 months remaining), an online application at the official VisitSaudi.com website, a completed application form, a passport-sized photo, and the visa fee (approximately USD 120, which includes mandatory health insurance). Citizens of eligible countries can also obtain a visa on arrival at most major ports of entry. The tourist e-visa is valid for 1 year from the date of issue and allows multiple entries, with a maximum stay of 90 days total per year.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How long can I stay in Saudi Arabia on a tourist visa?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            The Saudi tourist e-visa allows a maximum cumulative stay of 90 days per year within its 1-year validity period. There is no single-entry time limit specified (unlike some visas), so in theory you could enter for 90 consecutive days or spread multiple shorter visits across the year. Overstaying is taken seriously in Saudi Arabia and can result in fines and future entry bans. Extensions are generally not available for tourist visas — if you need to stay longer, you would need to leave and re-enter (subject to remaining days on your visa), or explore other visa categories.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- IQAMA & RESIDENCY -->
+    <div class="faq-category reveal" id="iqama">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 2</div>
+        <h2 class="section-heading">Iqama &amp; Residency <span class="category-count">7 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How long does it take to get my Iqama after arrival?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Legally, your employer must apply for your Iqama within 90 days of your arrival. In practice, many employers initiate the process within the first few weeks, and once the application is submitted, a digital Iqama typically appears in the Absher app within 2–4 weeks. The physical card used to take longer but the digital version is now considered valid for all official purposes. Delays are common and are usually caused by incomplete documentation — especially if your medical examination, fingerprinting, or attestated documents aren't ready. Proactively chase your HR department if you haven't heard anything by week 6. See our <a href="/work/iqama-guide">full Iqama timeline</a>.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What documents do I need for my first Iqama?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            For your first Iqama, you will typically need: your original passport, your work visa stamp, 4 passport-sized photos, a completed medical examination at a Ministry-approved health centre (checking for certain communicable diseases), fingerprinting at a Jawazat (passports) office, your employment contract, and your educational certificate attested by your home country's foreign ministry and the Saudi embassy. Depending on your nationality and profession, additional documents may be required. Your employer's PRO (Public Relations Officer) will usually guide you through this process — but it helps to arrive prepared. Full document checklist in our <a href="/work/iqama-guide">Iqama guide</a>.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How much does an Iqama cost?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            The base Iqama issuance fee is SAR 650 per year for a standard residency permit. However, employers also pay a "expat levy" to the government on top of this — the amount depends on the ratio of Saudi to non-Saudi employees in the company. By law, your employer is responsible for the cost of your Iqama; deducting it from your salary is illegal. Dependent Iqamas for family members cost around SAR 400 per person per year. Annual renewal fees are the same as the initial issuance fee. Late renewal penalties can add up quickly, so ensure your employer renews before expiry.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I change jobs while on an Iqama?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — since the 2021 Labour Reform Initiative, most private sector workers with at least 12 months of employment can transfer their sponsorship to a new employer without requiring the current employer's permission. You can initiate a transfer via the Musaned or Qiwa platforms. However, there are conditions: you must be in good standing, your Iqama must be valid, and you must have no outstanding labour disputes. Government sector workers and domestic workers are subject to different rules. While the reforms are significant, some employers include contractual penalties for early departure, so review your contract before switching jobs.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What happens if my Iqama expires?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            If your Iqama expires, you are technically in violation of residency law. Fines of SAR 10,000 or more can be applied, and repeated violations can lead to deportation and a re-entry ban. The responsibility for renewal lies with your employer, but it's in your interest to track the expiry date yourself (visible on the Absher app) and remind your HR/PRO team at least 4–6 weeks before expiry. While you remain in Saudi Arabia, an expired Iqama prevents you from opening bank accounts, renewing your driving licence, and other official processes. The Absher app sends notifications before expiry.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I apply for permanent residency (Premium Residency) in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia introduced the Premium Residency (Al-Iqama Al-Mumayaza) programme in 2019, which offers a form of permanent residency to qualifying foreigners. There are two tiers: a permanent Premium Residency (one-time fee of SAR 800,000) and an annual Premium Residency (approximately SAR 100,000 per year). Holders can live, work, and own property without a Saudi sponsor, sponsor family members, and exit/re-enter freely. The programme targets investors, executives, and high-skill professionals. It is not the same as citizenship. Applications are submitted through the Premium Residency Centre (PRC) website.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I sponsor my family on my Iqama?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — once you have your own Iqama, you can sponsor your spouse and children (under 18 for sons, unmarried daughters of any age). To do so, your salary must meet a minimum threshold set by the government (this changes periodically — check the Absher platform for current requirements). Family members enter on a dependent (Family) visa and receive dependent Iqamas. Adult sons over 18 must have their own employment-based Iqama. The process is managed through Absher and typically takes 4–8 weeks once documentation is complete. Each dependent Iqama must be renewed annually.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HOUSING -->
+    <div class="faq-category reveal" id="housing">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 3</div>
+        <h2 class="section-heading">Housing <span class="category-count">5 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is the average rent in Riyadh and Jeddah?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Rents vary significantly by area and property type. In Riyadh, a one-bedroom apartment in a decent area costs SAR 2,500–4,500 per month; a two-bedroom apartment SAR 4,000–8,000; and a compound villa SAR 7,000–15,000. Jeddah is slightly cheaper: one-beds at SAR 2,000–4,000, two-beds at SAR 3,500–7,000, compound villas at SAR 6,000–13,000. Note that rents in premium compounds and new developments can exceed these figures substantially. Many landlords ask for 2–4 months' rent upfront, and annual leases are the norm. See our <a href="/life/housing">complete housing guide</a> for a full breakdown by neighbourhood.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is a compound in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            A compound is a gated residential community, typically catering primarily to expats. Compounds offer a range of shared amenities that aren't common in regular Saudi residential areas — swimming pools, gyms, tennis courts, Western-style supermarkets, restaurants, and community centres. They operate under their own management and are generally more relaxed in terms of social customs within the compound walls. Compounds typically charge higher rents than equivalent standalone apartments or villas but offer a community environment that many families find valuable, especially when first arriving. Many multinational employers provide compound housing or a housing allowance that covers compound rents. Read more in our <a href="/life/housing">housing guide</a>.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is it better to live in a compound or an apartment?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            It depends entirely on your priorities and lifestyle. Compounds are ideal for families with children (built-in playmates, safe outdoor spaces, international school buses often stop at the gate), those who value a ready-made social network, and people arriving for the first time who want a gentler transition. Apartments in the city offer a more local, authentic experience, are usually cheaper, give you more independence, and put you closer to restaurants, malls, and culture. Single professionals often prefer city apartments; families with young children often prefer compounds. Many long-term expats start in a compound and move to a city apartment after a year or two once they're more comfortable.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can foreigners own property in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Property ownership rules for foreigners have been evolving. As of 2024, non-Saudi residents (Iqama holders) can own residential property for personal use in most areas outside Mecca and Medina (which are restricted to Muslims and Saudi nationals respectively). Premium Residency holders have the broadest property rights. Standard Iqama holders face some restrictions depending on the property type and location. Ownership requires Ministry of Interior approval in some cases. Foreigners are not currently permitted to own land in border zones or strategic areas. Always consult a local legal advisor before purchasing property — regulations in this area continue to change.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is a typical lease process in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Leases in Saudi Arabia are typically for 12 months and must be registered on the government's Ejar platform — this is a legal requirement that protects both tenants and landlords. The process: find a property (via Bayut.sa, Property Finder, or an agent), negotiate the rent and terms, sign the contract (bilingual Arabic/English is common for expats), pay the agreed upfront amount (usually 2–4 months' rent by bank transfer or certified cheque), register the lease on Ejar, connect utilities (KAHRABA for electricity, water is usually included or billed separately by the municipality), and take a move-in inventory. Brokers typically charge one month's rent commission. Full step-by-step in our <a href="/life/housing">housing guide</a>.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BANKING & MONEY -->
+    <div class="faq-category reveal" id="banking">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 4</div>
+        <h2 class="section-heading">Banking &amp; Money <span class="category-count">4 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How do I open a bank account in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            To open a bank account, visit a branch of your chosen bank with your Iqama, passport, and proof of employment (employment letter from your company). Most major banks allow you to complete the initial application digitally and just verify your identity in-branch. The account is usually active within 1–3 business days, and your debit card arrives in 7–10 days. Some banks — particularly Al Rajhi and SNB — have streamlined processes for expats. If your Iqama isn't ready yet, some banks allow account opening with your work visa and employer letter, but this varies. See our <a href="/life/banking">banking guide</a> for a bank comparison.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Do I need an Iqama to open a bank account?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            In most cases, yes — an Iqama is the standard required ID for opening a full bank account. However, some banks will open a temporary or limited account using your passport and work visa while your Iqama is being processed, though this account will have lower transfer limits and fewer features. It's worth asking your employer which bank they use for payroll, as many companies have corporate arrangements that simplify account opening for new employees, sometimes before the Iqama is issued. Digital banks like STC Pay allow some services without a full bank account if you're waiting for your Iqama.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What banks do expats prefer in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            The most popular banks among expats are Al Rajhi Bank (largest bank in Saudi Arabia, excellent mobile app, huge ATM network), Saudi National Bank — SNB (formerly NCB, good English service, wide presence), and SABB (Saudi British Bank — a HSBC affiliate, popular with British expats and Western companies). Riyad Bank and Banque Saudi Fransi are also well-regarded. For digital banking, STC Pay is widely used for day-to-day transfers. Most expats recommend having your salary in a major local bank for easy bill payments and transfers, while using a service like Wise or Western Union for international remittances. See our full comparison at <a href="/life/banking">life/banking</a>.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            How do I send money home from Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia has no restrictions on sending money abroad — you can remit any amount of your legitimately earned salary. The most popular methods are: Wise (competitive exchange rates, transparent fees — excellent for UK, US, and European recipients), local bank international wire transfers (reliable but often expensive — check your bank's SWIFT fees), Al Rajhi Exchange (popular with South Asian workers, extensive network), and Western Union / MoneyGram branches (available in most malls). STC Pay also supports international transfers. For large amounts, using your bank's online international transfer is simplest. Always compare the total cost including the exchange rate spread, not just the stated fee.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CULTURE & DAILY LIFE -->
+    <div class="faq-category reveal" id="culture">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 5</div>
+        <h2 class="section-heading">Culture &amp; Daily Life <span class="category-count">6 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is alcohol illegal in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — the production, sale, and public consumption of alcohol is illegal in Saudi Arabia, and this applies to all residents including expats. Importing alcohol is also prohibited. Penalties range from fines and deportation to imprisonment depending on the circumstances. Saudi Arabia does not have any licensed bars, pubs, or liquor stores. In 2024, Saudi Arabia opened licensed alcohol shops serving non-Muslim diplomats within specific designated zones — but this does not extend to the general expat population. The law is strictly enforced and your employer's code of conduct will almost certainly include prohibition on alcohol consumption. This is a non-negotiable aspect of life in Saudi Arabia.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is the dress code for expats in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia has significantly relaxed its dress code requirements in recent years. Non-Muslim expat women are no longer legally required to wear the abaya in public (this changed in 2018), though modest dress is expected — covering shoulders and knees in most public settings. In shopping malls, restaurants, and tourist areas, Western-style modest clothing is widely accepted. Men should avoid sleeveless tops and shorts in formal or conservative settings. At the workplace, smart casual to formal dress is normal depending on the industry. At beach resorts and entertainment venues, swimwear is now accepted at the designated areas. Use common sense — dressing respectfully is appreciated and avoids any unwanted attention.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is it safe to live in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia is generally considered very safe for expats, with low rates of petty crime, theft, and violent crime compared to most Western countries. The strict legal system is a significant deterrent. Cities like Riyadh, Jeddah, and Dammam have large expat communities who live comfortably and safely. Road traffic is the most commonly cited safety concern — Saudi Arabia has a high road accident rate, and driving requires extra caution. Most Western governments rate Saudi Arabia as "exercise normal precautions" for the main cities, with higher caution advisories for areas near the Yemeni border in the southwest. Check your government's travel advisory for the most current assessment.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What are Saudi public holidays?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia's official public holidays are: Saudi National Day (23 September, 1 day), Founding Day (22 February, 1 day), Eid Al-Fitr (3–5 days, date varies by Islamic calendar), and Eid Al-Adha (3–5 days, date varies). Ramadan is not a public holiday but significantly impacts working hours — most companies shift to reduced working hours (typically 6 hours per day) for the full month. The Islamic New Year and Prophet's Birthday (Mawlid) are sometimes observed but are not consistently official holidays. The weekend in Saudi Arabia is Friday and Saturday; Sunday is a regular working day.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can women drive in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Yes — Saudi Arabia lifted the ban on women driving in June 2018. Women can now obtain a Saudi driving licence, drive independently, and own vehicles. Foreign women with a valid international driving licence or licence from many countries (including the UK, US, EU, Australia) can drive on their foreign licence for a limited period and then convert it to a Saudi licence without taking a full driving test. The process is handled through the traffic authority (Morour). Ride-hailing apps like Uber and Careem are also widely available and extremely popular across all major cities.
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is the cost of living like compared to the UK or US?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Saudi Arabia can be surprisingly affordable compared to Western cities, particularly for food, household help, and fuel (petrol is heavily subsidised). Groceries at local markets are cheaper; imported Western brands at premium supermarkets are comparable to UK/US prices. Eating out ranges from very cheap (SAR 15–25 for a local meal) to comparable to London prices at upscale Western restaurants. Rent is the biggest variable — compound housing can be expensive but includes utilities and amenities. There is no income tax in Saudi Arabia, which significantly boosts take-home pay. Many expats find they save substantially more in Saudi Arabia than they would at equivalent salaries in the UK or US. See our detailed <a href="/relocate/cost-of-living">cost of living guide</a> with real figures.
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LEGAL & WORKER RIGHTS -->
+    <div class="faq-category reveal" id="rights">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 6</div>
+        <h2 class="section-heading">Legal &amp; Worker Rights <span class="category-count">4 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can my employer legally hold my passport in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>No. Saudi Labour Law Article 40 explicitly prohibits employers from confiscating or retaining a worker's passport without the worker's written consent. Passport confiscation is illegal and a reportable offence. Employers may temporarily hold your passport during the initial Iqama application process — typically 2–4 weeks — but once the Iqama is issued, your passport must be returned to you immediately. If your employer refuses to return your passport, file a complaint with the Ministry of Human Resources and Social Development (MHRSD) via their hotline <strong>19911</strong> or through the Musaned platform (for domestic workers). You can also report in person at any MHRSD office.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What happens if I overstay my visa in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Overstaying a Saudi visa is a serious violation. Penalties include fines of up to <strong>SAR 10,000</strong>, potential detention, and a future ban on re-entering Saudi Arabia. If you are waiting for your Iqama to be processed, ensure your employer has formally filed the application within your original work visa validity window — the Iqama application itself provides legal cover during processing. If your visa is about to expire and the Iqama process has not begun, escalate immediately to HR and, if necessary, the MHRSD (hotline 19911). Do not wait and hope — the fines accrue daily and border bans can be difficult to overturn.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is Nitaqat (Saudisation) and does it affect me as an expat employee?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Nitaqat is Saudi Arabia's workforce nationalisation programme that requires private sector companies to employ a minimum percentage of Saudi nationals. The required percentage varies by industry and company size. Companies are rated Platinum, Green, Yellow, or Red based on their compliance level. As an expat employee, Nitaqat does not directly affect your personal status — but it significantly affects your employer's ability to sponsor you. Companies rated Red (non-compliant) face restrictions on issuing new work visas and renewing existing Iqamas. Before accepting a job, check your prospective employer's Nitaqat compliance at mol.gov.sa. Working for a Red-rated employer creates real Iqama renewal risk.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is the dress code for expats in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Saudi Arabia's dress code requirements have been significantly relaxed since 2019. Women — including non-Muslim expats — are <strong>no longer legally required to wear an abaya in public</strong>. Modest Western dress is widely accepted in shopping malls, restaurants, tourist sites, and business environments. That said, covering shoulders and knees in conservative areas, government offices, and mosques remains respectful and expected. Men should wear appropriate clothing and avoid sleeveless tops in formal or conservative settings. Swimwear is acceptable at hotel pools, beach resorts, and designated entertainment venues. Apply common sense: dress a little more conservatively in traditional areas, and you will have no issues whatsoever.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LIFE & CULTURE (EXPANDED) -->
+    <div class="faq-category reveal" id="life-extra">
+      <div class="category-header">
+        <div class="section-eyebrow">Category 7</div>
+        <h2 class="section-heading">Practical Life <span class="category-count">4 questions</span></h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q">
+            What is Tawakkalna and do I need it?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Yes — Tawakkalna is Saudi Arabia's official government services app for health and digital identity verification. Originally launched as a COVID-19 health passport, it has evolved into a multi-purpose platform used for digital ID verification, health records, vaccination certificates, and accessing certain government venues and services. You will be asked to show Tawakkalna when entering some government offices, healthcare facilities, and events. Download it on iOS or Android, register using your Iqama number and a Saudi mobile number, and you can also register as a visitor with your passport before your Iqama is issued. Both Absher and Tawakkalna are available in English.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Can I bring my pets to Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Yes — dogs and cats can be brought to Saudi Arabia with the correct documentation. Required items include: a veterinary health certificate issued within 10 days of travel, valid rabies vaccination records (vaccination must be at least 30 days old and within 12 months), a microchip (ISO 11784/11785 standard), and import approval through the Ministry of Environment, Water and Agriculture (MEWA). Certain dog breeds — including pit bulls, rottweilers, and other breeds classified as dangerous — may face import restrictions. Budget approximately SAR 500–1,500 for documentation, vetting, and import fees. It is strongly recommended to use a specialist pet relocation service for the process, as requirements can be complex. Airlines have their own regulations for pet transport, so check early.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Do I need to speak Arabic to live in Saudi Arabia?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>No — the vast majority of expat daily life can be managed in English in Riyadh, Jeddah, and Dammam. Major malls, international restaurants, private hospitals, banks, and most business environments have English-speaking staff. Government apps like Absher and Tawakkalna are available in English. Ride-hailing apps (Careem, Uber) and food delivery apps (Jahez, HungerStation) operate in English. That said, learning basic Arabic phrases — greetings, polite requests, numbers — is genuinely appreciated by Saudis and makes day-to-day interactions warmer and more authentic. Deeper Arabic proficiency opens doors to local culture, friendships, and career opportunities that English alone cannot.</p></div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">
+            Is Saudi Arabia safe for expats?
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner"><p>Saudi Arabia consistently ranks among the safest countries in the Middle East and North Africa for expatriates. Violent crime and petty theft rates are extremely low compared to most Western cities. The Kingdom has invested heavily in security infrastructure, and the legal deterrents are significant. Women can now drive independently, travel alone, live without a male guardian, and work across all sectors — a transformation that has made daily life substantially freer since 2018. The Vision 2030 social reforms have opened up entertainment, tourism, and public life in ways that would have been unimaginable a decade ago. The primary safety concern for expats is road traffic — Saudi Arabia has high accident rates, so defensive driving is essential. Western governments generally rate major Saudi cities (Riyadh, Jeddah, Dammam) as safe for travel, with higher caution advisories for border regions near Yemen. Check your government's current travel advisory before departure.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="bottom-cta reveal">
+      <h2>Can't find your answer?</h2>
+      <p>Our team monitors the FAQ regularly. If your question isn't here, send it to us and we'll answer it — and add it to the list.</p>
+      <div class="bottom-cta-btns">
+        <a href="/contact" class="btn-primary">Ask us a question</a>
+        <a href="/relocate/before-you-arrive" class="btn-secondary">Read the relocation guide</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter__bg">
+    <div class="newsletter__bg-pattern"></div>
+    <div class="newsletter__bg-glow"></div>
+  </div>
+  <div class="container">
+    <div class="newsletter__inner">
+      <div class="newsletter__eyebrow">Stay Updated</div>
+      <h2 class="newsletter__title">Regulations change.<br>We'll keep you current.</h2>
+      <p class="newsletter__sub">
+        Saudi Arabia's rules evolve constantly. Join 12,000+ expats getting our fortnightly
+        digest of changes, new guides, and practical tips.
+      </p>
+      <form class="newsletter__form" onsubmit="return false">
+        <input type="email" class="newsletter__input" placeholder="your@email.com" autocomplete="email">
+        <button type="submit" class="newsletter__submit">Subscribe free</button>
+      </form>
+      <p class="newsletter__note">No spam. Unsubscribe any time. We never share your email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo"><img src="../Logos/logo-white.svg" alt="NewToSaudi" style="height:34px"></div>
+        <p>Your complete guide to living, working, and thriving in Saudi Arabia. Independent, trustworthy, and always up to date.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Relocate</div>
+        <a href="/relocate/before-you-arrive" class="footer__link">Before you arrive</a>
+        <a href="/relocate/first-30-days" class="footer__link">First 30 days</a>
+        <a href="/relocate/families" class="footer__link">Family relocation</a>
+        <a href="/relocate/cost-of-living" class="footer__link">Cost of living</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Work &amp; Business</div>
+        <a href="/work/iqama-guide" class="footer__link">Iqama guide</a>
+        <a href="/work/job-seekers" class="footer__link">Finding work</a>
+        <a href="/business/start-a-company" class="footer__link">Start a business</a>
+        <a href="/business/investment-guide" class="footer__link">Investment guide</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Life in Saudi</div>
+        <a href="/life/housing" class="footer__link">Housing</a>
+        <a href="/life/healthcare" class="footer__link">Healthcare</a>
+        <a href="/life/banking" class="footer__link">Banking</a>
+        <a href="/life/schools-education" class="footer__link">Schools</a>
+      </div>
+      <div>
+        <div class="footer__col-title">Resources</div>
+        <a href="/resources/faq" class="footer__link">FAQ</a>
+        <a href="/resources/apps" class="footer__link">Essential apps</a>
+        <a href="/about" class="footer__link">About us</a>
+        <a href="/contact" class="footer__link">Contact</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 NewToSaudi.com &middot; All rights reserved</span>
+      <div class="footer__bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
