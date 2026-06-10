@@ -5,7 +5,8 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(python -m http.server 5501 --directory \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\")",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "Bash(dir /b \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\*.html.html\" \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\relocate\\\\*.html\" \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\work\\\\*.html\")"
+      "Bash(dir /b \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\*.html.html\" \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\relocate\\\\*.html\" \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\\\\work\\\\*.html\")",
+      "Bash(python -c ' *)"
     ]
   }
 }

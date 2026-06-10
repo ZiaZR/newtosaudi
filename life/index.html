@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- Google Analytics GA4 — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Life in Saudi Arabia — Housing, Healthcare, Banking &amp; More | NewToSaudi</title>
   <meta name="description" content="Practical expat life guides for Saudi Arabia. Housing, healthcare, banking, schools, culture, and cost of living — everything you need to settle in.">
@@ -12,7 +20,7 @@
   <meta property="og:url" content="https://newtosaudi.com/life">
   <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
   <link rel="canonical" href="https://newtosaudi.com/life">
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <style>
     .hero{min-height:70vh;display:flex;align-items:center;position:relative;overflow:hidden;
       background:linear-gradient(140deg,#04090F 0%,#0A1628 40%,#0F1C33 70%,#09111E 100%)}

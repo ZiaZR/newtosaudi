@@ -80,6 +80,20 @@
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
     }
 
+    /* ── DESKTOP DROPDOWN (click/touch-safe) ── */
+    document.querySelectorAll('.nav__dropdown').forEach(dd => {
+      dd.addEventListener('click', e => {
+        if (e.target.closest('.nav__dropdown-menu')) return; // let link clicks through
+        e.stopPropagation();
+        const isOpen = dd.classList.contains('open');
+        document.querySelectorAll('.nav__dropdown.open').forEach(d => d.classList.remove('open'));
+        if (!isOpen) dd.classList.add('open');
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.nav__dropdown.open').forEach(d => d.classList.remove('open'));
+    });
+
     /* ── COUNT-UP ANIMATION ── */
     const counters = document.querySelectorAll('[data-count]');
     if (counters.length) {
