@@ -1359,3 +1359,23 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* ==========================================================================
    END OF CONTACT PAGE STYLES
    ========================================================================== */
+
+
+/* ==========================================================================
+   NEWSLETTER HUB — asymmetric two-column block (used on directory + similar)
+   ========================================================================== */
+.nl-hub {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .nl-hub {
+    grid-template-columns: 1fr 420px;
+    gap: 5rem;
+  }
+}
+/* ==========================================================================
+   END OF NEWSLETTER HUB
+   ========================================================================== */

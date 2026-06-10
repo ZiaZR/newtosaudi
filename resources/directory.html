@@ -431,16 +431,54 @@
 
 <section class="s-dark">
   <div class="container">
-    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal">
-      <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Resources</div>
-      <h2 style="color:#fff;margin-bottom:.75rem;">Get New Guides in Your Inbox</h2>
-      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;">New resources, updated guides, and expat news for Saudi Arabia.</p>
-      <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
-        <button type="submit" class="btn btn--gold">Subscribe</button>
-              <p class="newsletter__consent" style="font-size:.78rem;opacity:.7;margin:.6rem 0 0;text-align:center">By subscribing you agree to our <a href="/privacy" style="color:inherit;text-decoration:underline">Privacy Policy</a>. We never sell your data.</p>
-      </form>
-      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    <div class="nl-hub reveal">
+
+      <div class="nl-hub__left">
+        <div class="sec-eyebrow" style="color:var(--gold)">Saudi Expat Briefing</div>
+        <h2 style="color:#fff;font-size:clamp(1.7rem,2.8vw,2.3rem);margin-bottom:.85rem;letter-spacing:-.025em">The Weekly Newsletter<br>Every Expat in KSA Reads</h2>
+        <p style="color:rgba(255,255,255,.58);font-size:.95rem;line-height:1.75;margin-bottom:1.75rem;max-width:420px">Visa updates, salary insights, housing tips, and practical expat news — delivered free every Thursday.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.65rem">
+          <li style="display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:rgba(255,255,255,.72)">
+            <span style="width:20px;height:20px;border-radius:6px;background:rgba(212,168,83,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>Iqama &amp; visa regulation updates
+          </li>
+          <li style="display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:rgba(255,255,255,.72)">
+            <span style="width:20px;height:20px;border-radius:6px;background:rgba(212,168,83,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>Housing &amp; cost of living intelligence
+          </li>
+          <li style="display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:rgba(255,255,255,.72)">
+            <span style="width:20px;height:20px;border-radius:6px;background:rgba(212,168,83,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>Salary &amp; job market insights
+          </li>
+          <li style="display:flex;align-items:center;gap:.65rem;font-size:.88rem;color:rgba(255,255,255,.72)">
+            <span style="width:20px;height:20px;border-radius:6px;background:rgba(212,168,83,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>Culture, events &amp; community life
+          </li>
+        </ul>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.28);margin-top:1.5rem">Trusted by 12,000+ expats. No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <div class="nl-hub__right">
+        <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2.5rem">
+          <div style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Free &middot; Weekly &middot; Independent</div>
+          <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.02em">Join the Briefing</h3>
+          <p style="color:rgba(255,255,255,.5);font-size:.84rem;line-height:1.6;margin-bottom:1.5rem">Enter your email below and get your first issue this Thursday.</p>
+          <form action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:.85rem">
+            <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required
+              style="width:100%;padding:.9rem 1.1rem;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);border-radius:10px;font-family:inherit;font-size:.9rem;color:#fff;outline:none;transition:border-color .2s;box-sizing:border-box">
+            <button type="submit"
+              style="width:100%;padding:1rem;background:var(--gold);color:#1B2A4A;font-family:inherit;font-size:.95rem;font-weight:800;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .15s;letter-spacing:.01em">
+              Subscribe Free &rarr;
+            </button>
+          </form>
+          <p style="font-size:.72rem;color:rgba(255,255,255,.3);margin-top:1rem;line-height:1.55">By subscribing you agree to our <a href="/privacy" style="color:rgba(255,255,255,.45);text-decoration:underline">Privacy Policy</a>. We never sell your data.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
