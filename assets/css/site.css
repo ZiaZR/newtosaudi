@@ -215,6 +215,15 @@ p  { line-height:1.75; color:var(--text-body) }
   white-space:nowrap
 }
 .nav__dropdown-menu a:hover { background:var(--cream); color:var(--navy) }
+.nav__dropdown-all {
+  color:#D4A853 !important; font-weight:600 !important; font-size:.82rem !important;
+  border-top:1px solid rgba(27,42,74,.07); margin-top:.25rem; padding-top:.6rem !important
+}
+.nav__dropdown-all:hover { background:rgba(212,168,83,.08) !important; color:#B8903F !important }
+.nav__mobile-all {
+  color:#D4A853 !important; font-weight:600 !important; font-style:italic;
+  border-top:1px solid rgba(255,255,255,.06); margin-top:.25rem; padding-top:.6rem !important
+}
 .nav__link--dropdown { cursor:pointer }
 .nav__link--dropdown::after { display:none }
 .nav__caret {

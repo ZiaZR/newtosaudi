@@ -66,33 +66,166 @@
 <body>
 
 <nav class="nav nav--transparent" id="mainNav">
-  <div class="nav__inner">
-    <a href="/" class="nav__logo">
-      <img src="/Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px;width:auto">
-      <img src="/Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;width:auto;display:none">
-    </a>
-    <div class="nav__links">
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown active">Relocate <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/visa-types">Visa Types</a></div></div>
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/freelance-business">Freelance &amp; Business</a></div></div>
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a><a href="/life/schools-education">Schools</a><a href="/life/transport">Transport</a><a href="/life/food-dining">Food &amp; Dining</a></div></div>
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/business/start-a-company">Start a Company</a><a href="/business">Business Setup Guide</a></div></div>
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
-      <div class="nav__dropdown"><span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span><div class="nav__dropdown-menu"><a href="/resources/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/resources/glossary">Glossary</a></div></div>
-      <a href="/about" class="nav__link">About</a>
-      <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+  <div class="container">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="/Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
+        <img src="/Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+      </a>
+      <div class="nav__links">
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Relocate <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/relocate/before-you-arrive">Before You Arrive</a>
+            <a href="/relocate/first-30-days">First 30 Days</a>
+            <a href="/relocate/families">Relocating Families</a>
+            <a href="/relocate/visa-types">Visa Types</a>
+            <a href="/relocate/cost-of-living">Cost of Living</a>
+            <a href="/relocate/documents-checklist">Documents Checklist</a>
+            <a href="/relocate" class="nav__dropdown-all">All Relocate guides &rarr;</a>
+          </div>
+        </div>
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Work <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/work/iqama-guide">Iqama Guide</a>
+            <a href="/work/work-visa">Work Visas</a>
+            <a href="/work/salary-guide">Salary Guide</a>
+            <a href="/work/labour-law">Labour Law</a>
+            <a href="/work/freelance-business">Freelancing</a>
+            <a href="/work/job-seekers">Job Seekers</a>
+            <a href="/work" class="nav__dropdown-all">All Work topics &rarr;</a>
+          </div>
+        </div>
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Life <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/life/housing">Housing</a>
+            <a href="/life/healthcare">Healthcare</a>
+            <a href="/life/banking">Banking</a>
+            <a href="/life/schools-education">Schools</a>
+            <a href="/life/transport">Transport</a>
+            <a href="/life/food-dining">Food &amp; Dining</a>
+            <a href="/life/culture-etiquette">Culture &amp; Etiquette</a>
+            <a href="/life" class="nav__dropdown-all">All Life topics &rarr;</a>
+          </div>
+        </div>
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Business <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/business/start-a-company">Start a Company</a>
+            <a href="/business/free-zones">Free Zones</a>
+            <a href="/business/investment-guide">Investment Guide</a>
+            <a href="/business/tax-guide">Tax Guide</a>
+            <a href="/business/hiring-guide">Hiring Guide</a>
+            <a href="/business" class="nav__dropdown-all">All Business topics &rarr;</a>
+          </div>
+        </div>
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Cities <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/cities/riyadh">Riyadh</a>
+            <a href="/cities/jeddah">Jeddah</a>
+            <a href="/cities/dammam">Dammam</a>
+            <a href="/cities/abha">Abha</a>
+            <a href="/cities/alula">AlUla</a>
+            <a href="/cities/neom">NEOM</a>
+            <a href="/cities" class="nav__dropdown-all">All Cities &rarr;</a>
+          </div>
+        </div>
+        <div class="nav__dropdown">
+          <span class="nav__link nav__link--dropdown">Resources <span class="nav__caret"></span></span>
+          <div class="nav__dropdown-menu">
+            <a href="/resources/apps">Essential Apps</a>
+            <a href="/resources/faq">FAQ</a>
+            <a href="/resources/glossary">Glossary</a>
+            <a href="/resources/directory">Service Directory</a>
+            <a href="/resources/guides">Guides &amp; Downloads</a>
+          </div>
+        </div>
+        <a href="/services" class="nav__link">Hire a Pro</a>
+        <a href="/about" class="nav__link">About</a>
+        <a href="/relocate/before-you-arrive" class="nav__cta">Start your journey</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-    <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav__mobile-menu" id="mobileMenu">
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Relocate</span><div class="nav__mobile-section-links"><a href="/relocate/before-you-arrive">Before You Arrive</a><a href="/relocate/first-30-days">First 30 Days</a><a href="/relocate/families">Families</a><a href="/relocate/documents-checklist">Documents Checklist</a><a href="/relocate/visa-types">Visa Types</a></div></div>
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Work</span><div class="nav__mobile-section-links"><a href="/work">Job Market</a><a href="/work/iqama-guide">Iqama Guide</a><a href="/work/freelance-business">Freelance &amp; Business</a></div></div>
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Life</span><div class="nav__mobile-section-links"><a href="/life/banking">Banking</a><a href="/life/healthcare">Healthcare</a><a href="/life/housing">Housing</a><a href="/life/schools-education">Schools</a><a href="/life/transport">Transport</a><a href="/life/food-dining">Food &amp; Dining</a></div></div>
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Business</span><div class="nav__mobile-section-links"><a href="/business/start-a-company">Start a Company</a><a href="/business">Business Setup Guide</a></div></div>
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Cities</span><div class="nav__mobile-section-links"><a href="/cities">All Cities</a><a href="/cities/riyadh">Riyadh</a><a href="/cities/jeddah">Jeddah</a><a href="/cities/dammam">Dammam</a><a href="/cities/abha">Abha</a><a href="/cities/alula">AlUla</a><a href="/cities/neom">NEOM</a></div></div>
-  <div class="nav__mobile-section"><span class="nav__mobile-section-title">Resources</span><div class="nav__mobile-section-links"><a href="/resources/apps">Essential Apps</a><a href="/resources/faq">FAQ</a><a href="/resources/glossary">Glossary</a></div></div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Relocate</span>
+    <div class="nav__mobile-section-links">
+      <a href="/relocate/before-you-arrive">Before You Arrive</a>
+      <a href="/relocate/first-30-days">First 30 Days</a>
+      <a href="/relocate/families">Relocating Families</a>
+      <a href="/relocate/visa-types">Visa Types</a>
+      <a href="/relocate/cost-of-living">Cost of Living</a>
+      <a href="/relocate/documents-checklist">Documents Checklist</a>
+      <a href="/relocate" class="nav__mobile-all">All Relocate guides &rarr;</a>
+    </div>
+  </div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Work</span>
+    <div class="nav__mobile-section-links">
+      <a href="/work/iqama-guide">Iqama Guide</a>
+      <a href="/work/work-visa">Work Visas</a>
+      <a href="/work/salary-guide">Salary Guide</a>
+      <a href="/work/labour-law">Labour Law</a>
+      <a href="/work/freelance-business">Freelancing</a>
+      <a href="/work/job-seekers">Job Seekers</a>
+      <a href="/work" class="nav__mobile-all">All Work topics &rarr;</a>
+    </div>
+  </div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Life in KSA</span>
+    <div class="nav__mobile-section-links">
+      <a href="/life/housing">Housing</a>
+      <a href="/life/healthcare">Healthcare</a>
+      <a href="/life/banking">Banking</a>
+      <a href="/life/schools-education">Schools</a>
+      <a href="/life/transport">Transport</a>
+      <a href="/life/food-dining">Food &amp; Dining</a>
+      <a href="/life/culture-etiquette">Culture &amp; Etiquette</a>
+      <a href="/life/driving-transport">Driving in KSA</a>
+      <a href="/life" class="nav__mobile-all">All Life topics &rarr;</a>
+    </div>
+  </div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Business</span>
+    <div class="nav__mobile-section-links">
+      <a href="/business/start-a-company">Start a Company</a>
+      <a href="/business/free-zones">Free Zones</a>
+      <a href="/business/investment-guide">Investment Guide</a>
+      <a href="/business/tax-guide">Tax Guide</a>
+      <a href="/business/hiring-guide">Hiring Guide</a>
+      <a href="/business" class="nav__mobile-all">All Business topics &rarr;</a>
+    </div>
+  </div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Cities</span>
+    <div class="nav__mobile-section-links">
+      <a href="/cities/riyadh">Riyadh</a>
+      <a href="/cities/jeddah">Jeddah</a>
+      <a href="/cities/dammam">Dammam</a>
+      <a href="/cities/abha">Abha</a>
+      <a href="/cities/alula">AlUla</a>
+      <a href="/cities/neom">NEOM</a>
+      <a href="/cities" class="nav__mobile-all">All Cities &rarr;</a>
+    </div>
+  </div>
+  <div class="nav__mobile-section">
+    <span class="nav__mobile-section-title">Resources</span>
+    <div class="nav__mobile-section-links">
+      <a href="/resources/apps">Essential Apps</a>
+      <a href="/resources/faq">FAQ</a>
+      <a href="/resources/glossary">Glossary</a>
+      <a href="/resources/directory">Service Directory</a>
+      <a href="/resources/guides">Guides &amp; Downloads</a>
+    </div>
+  </div>
+  <a href="/services">Hire a Pro</a>
   <a href="/about">About</a>
-  <a href="/relocate/before-you-arrive" style="color:#D4A853">Start your journey →</a>
+  <a href="/relocate/before-you-arrive" style="color:#D4A853;font-weight:700">Start your journey &rarr;</a>
 </div>
 
 <nav class="breadcrumb">
