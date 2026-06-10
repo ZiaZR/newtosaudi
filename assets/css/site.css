@@ -424,7 +424,7 @@ p  { line-height:1.75; color:var(--text-body) }
 /* ── Header row: wordmark + tagline aligned to the 4-column grid below ── */
 .footer__header {
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
+  grid-template-columns:2.8fr 1fr 1fr 1fr;
   gap:3rem;
   align-items:center;
   padding:2.25rem 0 1.75rem;
@@ -445,7 +445,7 @@ p  { line-height:1.75; color:var(--text-body) }
 /* ── 4-column grid ── */
 .footer__top,.footer__grid,.s-footer__top {
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
+  grid-template-columns:2.8fr 1fr 1fr 1fr;
   gap:3rem;
   padding:2.5rem 0 3rem;
   border-bottom:1px solid rgba(255,255,255,.08)
