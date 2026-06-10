@@ -393,8 +393,51 @@ p{line-height:1.75;color:var(--text-body)}
 .kam-feat__icon{width:35px;height:35px;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.18);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.05rem}
 .kam-feat__title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.15rem}
 .kam-feat__desc{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.6}
-.kam-countries2{display:flex;flex-wrap:wrap;gap:.4rem}
-.kam-country2{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.22rem .65rem}
+/* Countries flag grid */
+.kam-countries2{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.55rem}
+.kam-country2{display:flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.5rem .75rem;transition:all .25s}
+.kam-country2:hover{background:rgba(255,255,255,.11);border-color:rgba(212,168,83,.3);color:#fff}
+.kam-country2 .flag{font-size:1.25rem;line-height:1;flex-shrink:0}
+.kam-country2 .cname{font-size:.72rem;line-height:1.2}
+.kam-country2--more{justify-content:center;color:var(--gold);border-color:rgba(212,168,83,.2);font-weight:700;font-size:.72rem;letter-spacing:.04em}
+/* Pricing tiers */
+.kam-pricing-grid{display:flex;flex-direction:column;gap:1rem}
+.kam-tier{border-radius:16px;padding:1.5rem;position:relative;overflow:hidden}
+.kam-tier--market{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+.kam-tier--standard{background:rgba(212,168,83,.07);border:1.5px solid rgba(212,168,83,.25)}
+.kam-tier--premium{background:linear-gradient(135deg,rgba(27,42,74,.6),rgba(15,24,42,.8));border:1.5px solid rgba(212,168,83,.45);box-shadow:0 0 32px rgba(212,168,83,.08)}
+.kam-tier__badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-radius:100px;padding:.28rem .75rem;margin-bottom:.75rem}
+.kam-tier--market .kam-tier__badge{color:rgba(255,255,255,.35);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.kam-tier--standard .kam-tier__badge{color:var(--gold);background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.2)}
+.kam-tier--premium .kam-tier__badge{color:#fff;background:linear-gradient(135deg,rgba(212,168,83,.3),rgba(212,168,83,.15));border:1px solid rgba(212,168,83,.45)}
+.kam-tier__price{font-size:1.5rem;font-weight:800;color:#fff;margin:.2rem 0 .15rem;line-height:1}
+.kam-tier--market .kam-tier__price{color:rgba(255,255,255,.35);font-size:1.1rem}
+.kam-tier__desc{font-size:.75rem;color:rgba(255,255,255,.38);margin-bottom:1rem;line-height:1.5}
+.kam-tier--standard .kam-tier__desc,.kam-tier--premium .kam-tier__desc{color:rgba(255,255,255,.55)}
+.kam-tier__features{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.25rem}
+.kam-tier__features li{display:flex;gap:.55rem;align-items:flex-start;font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.4}
+.kam-tier--market .kam-tier__features li{color:rgba(255,255,255,.28)}
+.kam-tier__check{width:14px;height:14px;border-radius:50%;flex-shrink:0;margin-top:.1rem}
+.kam-tier--market .kam-tier__check{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.kam-tier--standard .kam-tier__check{background:rgba(45,139,95,.2);border:1px solid rgba(45,139,95,.35);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12' stroke='%232D8B5F' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-size:9px;background-repeat:no-repeat;background-position:center}
+.kam-tier--premium .kam-tier__check{background:rgba(212,168,83,.2);border:1px solid rgba(212,168,83,.4);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12' stroke='%23D4A853' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-size:9px;background-repeat:no-repeat;background-position:center}
+/* Restricted sectors premium box */
+@keyframes restr-shimmer{0%{transform:translateX(-100%) skewX(-12deg)}100%{transform:translateX(200%) skewX(-12deg)}}
+@keyframes restr-glow{0%,100%{opacity:.5}50%{opacity:1}}
+.restr-box{position:relative;margin:1.5rem 0;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,rgba(180,50,50,.12),rgba(120,30,30,.08));border:1px solid rgba(220,80,80,.2);backdrop-filter:blur(8px)}
+.restr-shimmer{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;overflow:hidden;border-radius:16px}
+.restr-shimmer::before{content:'';position:absolute;top:0;left:0;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(220,100,100,.06),transparent);animation:restr-shimmer 4s ease-in-out infinite}
+.restr-inner{position:relative;z-index:1;padding:1.35rem 1.5rem}
+.restr-head{display:flex;align-items:flex-start;gap:.85rem;margin-bottom:.9rem}
+.restr-icon-wrap{width:38px;height:38px;background:rgba(220,80,80,.15);border:1px solid rgba(220,80,80,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:rgba(240,120,120,.9);animation:restr-glow 3s ease-in-out infinite}
+.restr-label{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,120,120,.7);margin-bottom:.2rem}
+.restr-title{font-size:.92rem;font-weight:700;color:rgba(255,255,255,.85);line-height:1.3}
+.restr-body{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:1rem}
+.restr-body strong{color:rgba(255,255,255,.75)}
+.restr-pills{display:flex;flex-wrap:wrap;gap:.45rem}
+.restr-pill{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:600;color:rgba(240,130,130,.8);background:rgba(220,80,80,.1);border:1px solid rgba(220,80,80,.2);border-radius:100px;padding:.28rem .75rem;transition:all .25s}
+.restr-pill--cta{color:rgba(212,168,83,.9);background:rgba(212,168,83,.1);border-color:rgba(212,168,83,.25);cursor:pointer}
+.restr-pill--cta:hover{background:rgba(212,168,83,.18);border-color:rgba(212,168,83,.45);color:var(--gold)}
 .kam-pricing-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:2.25rem}
 .kam-badge2{display:inline-flex;align-items:center;gap:.4rem;font-size:.63rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.32rem .85rem;margin-bottom:1.5rem}
 .kam-price{font-size:1.35rem;font-weight:800;color:#fff;margin:.4rem 0 .2rem}
@@ -600,12 +643,26 @@ p{line-height:1.75;color:var(--text-body)}
       <h1>Starting a Business in <em>Saudi Arabia</em></h1>
       <p class="article-byline" style="font-size:.76rem;color:rgba(255,255,255,.45);margin:.55rem 0 0;letter-spacing:.02em;font-weight:500">By <strong style="color:rgba(255,255,255,.65)">NewToSaudi Editorial Team</strong></p>
       <p class="hero__sub">Saudi Arabia has undergone one of the fastest regulatory transformations in history. Under Vision 2030, the Kingdom now allows 100% foreign ownership in most sectors, with a 20% corporate income tax rate for foreign-owned companies (Saudi/GCC entities pay 2.5% Zakat instead), and ranks as the top business destination in MENA. Here is everything you need to know.</p>
-      <div class="info-box info-box--warning" style="margin:1.5rem 0;text-align:left;">
-        <div class="info-box__title">
-          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Restricted Sectors — Foreign Ownership Not Permitted
+      <div class="restr-box">
+        <div class="restr-shimmer"></div>
+        <div class="restr-inner">
+          <div class="restr-head">
+            <div class="restr-icon-wrap">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div>
+              <div class="restr-label">Ownership Restrictions</div>
+              <div class="restr-title">Restricted Sectors — Foreign Ownership Not Permitted</div>
+            </div>
+          </div>
+          <p class="restr-body">While most sectors are now open under Vision 2030, 100% foreign ownership is <strong>not permitted</strong> in a small number of sensitive activities. Check the current <em>Negative List</em> on MISA before filing.</p>
+          <div class="restr-pills">
+            <span class="restr-pill"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Military &amp; Defence</span>
+            <span class="restr-pill"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>Upstream Media</span>
+            <span class="restr-pill"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Makkah &amp; Madinah Real Estate</span>
+            <span class="restr-pill restr-pill--cta" onclick="window.open('https://misa.gov.sa/en/investment/invest-in-ksa/negative-list/','_blank')">View Full MISA Negative List ↗</span>
+          </div>
         </div>
-        <p style="margin:0">While most sectors are open, 100% foreign ownership is <strong>not permitted</strong> in: <strong>military &amp; defence</strong> industries, certain <strong>upstream media</strong> activities, and <strong>real estate investment and internal trade in the holy cities</strong> of Makkah and Madinah. Verify your specific activity code against the current <em>Negative List</em> on the MISA investor portal before registering.</p>
       </div>
       <div class="hero__ctas">
         <a href="#structures" class="btn btn-primary">Choose Your Structure →</a>
@@ -1167,46 +1224,81 @@ p{line-height:1.75;color:var(--text-body)}
               </div>
             </div>
           </div>
-          <div style="margin-bottom:.7rem;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;">We serve clients entering from</div>
+          <div style="margin-bottom:.85rem;font-size:.62rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;">We serve clients entering from</div>
           <div class="kam-countries2">
-            <span class="kam-country2">🇬🇧 United Kingdom</span>
-            <span class="kam-country2">🇺🇸 United States</span>
-            <span class="kam-country2">🇫🇷 France</span>
-            <span class="kam-country2">🇩🇪 Germany</span>
-            <span class="kam-country2">🇮🇳 India</span>
-            <span class="kam-country2">🇵🇰 Pakistan</span>
-            <span class="kam-country2">🇸🇬 Singapore</span>
-            <span class="kam-country2">🇦🇪 UAE</span>
-            <span class="kam-country2">🇨🇳 China</span>
-            <span class="kam-country2">🇯🇵 Japan</span>
-            <span class="kam-country2">🇰🇷 South Korea</span>
-            <span class="kam-country2">🇳🇱 Netherlands</span>
-            <span class="kam-country2">🇨🇦 Canada</span>
-            <span class="kam-country2">🇦🇺 Australia</span>
-            <span class="kam-country2">+ 18 more</span>
+            <span class="kam-country2"><span class="flag">🇬🇧</span><span class="cname">United Kingdom</span></span>
+            <span class="kam-country2"><span class="flag">🇺🇸</span><span class="cname">United States</span></span>
+            <span class="kam-country2"><span class="flag">🇫🇷</span><span class="cname">France</span></span>
+            <span class="kam-country2"><span class="flag">🇩🇪</span><span class="cname">Germany</span></span>
+            <span class="kam-country2"><span class="flag">🇮🇳</span><span class="cname">India</span></span>
+            <span class="kam-country2"><span class="flag">🇵🇰</span><span class="cname">Pakistan</span></span>
+            <span class="kam-country2"><span class="flag">🇸🇬</span><span class="cname">Singapore</span></span>
+            <span class="kam-country2"><span class="flag">🇦🇪</span><span class="cname">UAE</span></span>
+            <span class="kam-country2"><span class="flag">🇨🇳</span><span class="cname">China</span></span>
+            <span class="kam-country2"><span class="flag">🇯🇵</span><span class="cname">Japan</span></span>
+            <span class="kam-country2"><span class="flag">🇰🇷</span><span class="cname">South Korea</span></span>
+            <span class="kam-country2"><span class="flag">🇳🇱</span><span class="cname">Netherlands</span></span>
+            <span class="kam-country2"><span class="flag">🇨🇦</span><span class="cname">Canada</span></span>
+            <span class="kam-country2"><span class="flag">🇦🇺</span><span class="cname">Australia</span></span>
+            <span class="kam-country2 kam-country2--more">+ 18 more countries</span>
           </div>
         </div>
         <div>
-          <div class="kam-pricing-card">
-            <div class="kam-badge2"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Full Setup Package</div>
-            <div style="font-size:.74rem;color:rgba(255,255,255,.38);margin-bottom:.2rem;">Starting from</div>
-            <div class="kam-price">SAR 18,000 <span>/ setup</span></div>
-            <div class="kam-price-note">All standard government fees included for a typical LLC setup. Sector-specific activity licenses quoted separately.</div>
-            <ul class="kam-includes">
-              <li><div class="kam-check"></div>MISA license application &amp; follow-up</li>
-              <li><div class="kam-check"></div>Commercial Registration (CR) filing</li>
-              <li><div class="kam-check"></div>National Address (SPL) registration</li>
-              <li><div class="kam-check"></div>Municipality license (Baladia)</li>
-              <li><div class="kam-check"></div>Chamber of Commerce enrollment</li>
-              <li><div class="kam-check"></div>GOSI, Qiwa, Muqeem &amp; Mudad setup</li>
-              <li><div class="kam-check"></div>ZATCA registration (VAT + CIT)</li>
-              <li><div class="kam-check"></div>Bank introduction &amp; account dossier</li>
-              <li><div class="kam-check"></div>Document translation &amp; attestation</li>
-              <li><div class="kam-check"></div>Dedicated KAM — direct WhatsApp</li>
-              <li><div class="kam-check"></div>12-month compliance &amp; renewal calendar</li>
-            </ul>
-            <a href="/contact" class="kam-cta2">Request a Free Consultation →</a>
-            <a href="/contact" class="kam-sec-cta">Ask a Question First</a>
+          <div class="kam-pricing-grid">
+
+            <!-- Market baseline — not our segment -->
+            <div class="kam-tier kam-tier--market">
+              <div class="kam-tier__badge">Market Baseline</div>
+              <div class="kam-tier__price">SAR 14,000 <span style="font-size:.72rem;color:rgba(255,255,255,.25);font-weight:500">+</span></div>
+              <div class="kam-tier__desc">100+ agents in the market serve at this tier — document runners, basic PRO services. We don't compete here, and this is not the level we operate at.</div>
+              <ul class="kam-tier__features">
+                <li><div class="kam-tier__check"></div>CR &amp; MISA filing (form completion only)</li>
+                <li><div class="kam-tier__check"></div>Basic document delivery</li>
+                <li><div class="kam-tier__check"></div>No dedicated account manager</li>
+              </ul>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.25);text-align:center;padding:.5rem;border-top:1px solid rgba(255,255,255,.06)">Not provided by NewToSaudi</div>
+            </div>
+
+            <!-- Standard — our main package -->
+            <div class="kam-tier kam-tier--standard">
+              <div class="kam-tier__badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Standard Package</div>
+              <div style="font-size:.68rem;color:rgba(255,255,255,.38);margin-bottom:.2rem">All-inclusive setup</div>
+              <div class="kam-tier__price">SAR 28,000 <span style="font-size:.72rem;color:var(--gold);font-weight:500">/ setup</span></div>
+              <div class="kam-tier__desc">Full 11-portal market entry with a dedicated KAM guiding you through every step. All government fees for a standard LLC included.</div>
+              <ul class="kam-tier__features">
+                <li><div class="kam-tier__check"></div>MISA license application &amp; follow-up</li>
+                <li><div class="kam-tier__check"></div>Commercial Registration (CR) filing</li>
+                <li><div class="kam-tier__check"></div>National Address (SPL) registration</li>
+                <li><div class="kam-tier__check"></div>Municipality license (Baladia)</li>
+                <li><div class="kam-tier__check"></div>Chamber of Commerce enrollment</li>
+                <li><div class="kam-tier__check"></div>GOSI, Qiwa, Muqeem &amp; Mudad setup</li>
+                <li><div class="kam-tier__check"></div>ZATCA registration (VAT + CIT)</li>
+                <li><div class="kam-tier__check"></div>Bank introduction &amp; account dossier</li>
+                <li><div class="kam-tier__check"></div>Document translation &amp; attestation</li>
+                <li><div class="kam-tier__check"></div>Dedicated KAM — direct WhatsApp</li>
+                <li><div class="kam-tier__check"></div>12-month compliance &amp; renewal calendar</li>
+              </ul>
+              <a href="/contact" class="kam-cta2">Request a Free Consultation →</a>
+            </div>
+
+            <!-- Premium — exclusive 1-client KAM -->
+            <div class="kam-tier kam-tier--premium">
+              <div class="kam-tier__badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M12 2l2.5 7.5H22l-6.5 4.75 2.5 7.5L12 17l-6 4.75 2.5-7.5L2 9.5h7.5z"/></svg>Premium — Exclusive</div>
+              <div style="font-size:.68rem;color:rgba(212,168,83,.6);margin-bottom:.2rem">1 client at a time · full concierge</div>
+              <div class="kam-tier__price">SAR 44,000 <span style="font-size:.72rem;color:var(--gold);font-weight:500">/ setup</span></div>
+              <div class="kam-tier__desc">Your KAM serves <strong style="color:rgba(255,255,255,.8)">you exclusively</strong> for the engagement period. Office setup, a dedicated driver, and accommodation arranged for a selected period — you focus on your business, we handle everything else.</div>
+              <ul class="kam-tier__features">
+                <li><div class="kam-tier__check"></div>Everything in Standard Package</li>
+                <li><div class="kam-tier__check"></div>Office setup &amp; business address provision</li>
+                <li><div class="kam-tier__check"></div>Dedicated driver for the engagement period</li>
+                <li><div class="kam-tier__check"></div>Accommodation arranged for selected period</li>
+                <li><div class="kam-tier__check"></div>KAM serves <em>1 client only</em> — fully exclusive</li>
+                <li><div class="kam-tier__check"></div>Priority response, 7-day availability</li>
+              </ul>
+              <a href="/contact" class="kam-cta2" style="background:linear-gradient(135deg,var(--gold),var(--gold-light))">Request Premium Engagement →</a>
+              <a href="/contact" class="kam-sec-cta">Ask a Question First</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -1484,11 +1576,12 @@ p{line-height:1.75;color:var(--text-body)}
         <h3 style="color:var(--white)">Education</h3>
         <p style="color:rgba(255,255,255,.45)">International schools, vocational training, EdTech. Foreign universities now allowed to open campuses.</p>
       </div>
-      <div class="sector-card reveal reveal-delay-4" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)">
-        <div class="sector-card__icon">🏗️</div>
-        <h3 style="color:var(--white)">Real Estate</h3>
-        <p style="color:rgba(255,255,255,.45)">Commercial and residential development. Foreign ownership now allowed in designated investment areas.</p>
-      </div>
+      <a href="/contact" class="sector-card reveal reveal-delay-4" style="background:linear-gradient(135deg,rgba(212,168,83,.12),rgba(212,168,83,.06));border-color:rgba(212,168,83,.3);text-decoration:none;cursor:pointer;transition:all .3s">
+        <div class="sector-card__icon">🧭</div>
+        <h3 style="color:var(--gold)">Business Consultation</h3>
+        <p style="color:rgba(255,255,255,.5)">Not sure which sector fits your background? We assess your expertise, experience, and goals to map the right entry path — personally tailored guidance.</p>
+        <div style="margin-top:1rem;font-size:.75rem;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:.4rem">Talk to us about your background <svg viewBox="0 0 16 16" fill="none" width="13" height="13"><path d="M3 8h10M9 4.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
     </div>
   </div>
 </section>
@@ -1574,7 +1667,7 @@ p{line-height:1.75;color:var(--text-body)}
       <p style="margin-bottom:1.5rem;color:var(--text-gray)">More questions about living and working in Saudi Arabia?</p>
       <div class="interlinks" style="justify-content:center">
         <a href="/work/iqama-guide" class="interlink">Iqama Guide</a>
-        <a href="/apps" class="interlink">Essential Apps</a>
+        <a href="/resources/apps" class="interlink">Essential Apps</a>
         <a href="/resources/faq" class="interlink">Full FAQ</a>
         <a href="/business/free-zones" class="interlink">Free Zones Deep Dive</a>
         <a href="/business/tax-guide" class="interlink">Tax Guide</a>
