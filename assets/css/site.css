@@ -438,8 +438,8 @@ p  { line-height:1.75; color:var(--text-body) }
 .footer__wordmark span { color:#D4A853 }
 .footer__wordmark small { color:rgba(212,168,83,.38); font-size:.95rem }
 .footer__tagline {
-  font-size:.88rem; color:rgba(255,255,255,.58); letter-spacing:.01em;
-  grid-column:4; text-align:left
+  font-size:.78rem; color:rgba(255,255,255,.58); letter-spacing:.01em;
+  grid-column:4; text-align:left; white-space:nowrap
 }
 
 /* ── 4-column grid ── */
