@@ -2106,26 +2106,26 @@ body{overflow-x:hidden}
       <div style="margin-top:2.5rem;text-align:center">
         <p style="font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1rem">Readers from around the world</p>
         <div style="display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;align-items:center">
-          <span class="flag-pill" title="United Kingdom">🇬🇧</span>
-          <span class="flag-pill" title="USA">🇺🇸</span>
-          <span class="flag-pill" title="India">🇮🇳</span>
-          <span class="flag-pill" title="Philippines">🇵🇭</span>
-          <span class="flag-pill" title="Pakistan">🇵🇰</span>
-          <span class="flag-pill" title="Egypt">🇪🇬</span>
-          <span class="flag-pill" title="Jordan">🇯🇴</span>
-          <span class="flag-pill" title="France">🇫🇷</span>
-          <span class="flag-pill" title="Germany">🇩🇪</span>
-          <span class="flag-pill" title="Australia">🇦🇺</span>
-          <span class="flag-pill" title="Canada">🇨🇦</span>
-          <span class="flag-pill" title="Lebanon">🇱🇧</span>
-          <span class="flag-pill" title="South Africa">🇿🇦</span>
-          <span class="flag-pill" title="Nigeria">🇳🇬</span>
-          <span class="flag-pill" title="Turkey">🇹🇷</span>
-          <span class="flag-pill" title="Bangladesh">🇧🇩</span>
-          <span class="flag-pill" title="Morocco">🇲🇦</span>
-          <span class="flag-pill" title="Italy">🇮🇹</span>
-          <span class="flag-pill" title="Spain">🇪🇸</span>
-          <span class="flag-pill" title="Netherlands">🇳🇱</span>
+          <span class="flag-pill" title="United Kingdom"><img src="https://flagcdn.com/w40/gb.png" alt="UK"></span>
+          <span class="flag-pill" title="USA"><img src="https://flagcdn.com/w40/us.png" alt="USA"></span>
+          <span class="flag-pill" title="India"><img src="https://flagcdn.com/w40/in.png" alt="India"></span>
+          <span class="flag-pill" title="Philippines"><img src="https://flagcdn.com/w40/ph.png" alt="Philippines"></span>
+          <span class="flag-pill" title="Pakistan"><img src="https://flagcdn.com/w40/pk.png" alt="Pakistan"></span>
+          <span class="flag-pill" title="Egypt"><img src="https://flagcdn.com/w40/eg.png" alt="Egypt"></span>
+          <span class="flag-pill" title="Jordan"><img src="https://flagcdn.com/w40/jo.png" alt="Jordan"></span>
+          <span class="flag-pill" title="France"><img src="https://flagcdn.com/w40/fr.png" alt="France"></span>
+          <span class="flag-pill" title="Germany"><img src="https://flagcdn.com/w40/de.png" alt="Germany"></span>
+          <span class="flag-pill" title="Australia"><img src="https://flagcdn.com/w40/au.png" alt="Australia"></span>
+          <span class="flag-pill" title="Canada"><img src="https://flagcdn.com/w40/ca.png" alt="Canada"></span>
+          <span class="flag-pill" title="Lebanon"><img src="https://flagcdn.com/w40/lb.png" alt="Lebanon"></span>
+          <span class="flag-pill" title="South Africa"><img src="https://flagcdn.com/w40/za.png" alt="South Africa"></span>
+          <span class="flag-pill" title="Nigeria"><img src="https://flagcdn.com/w40/ng.png" alt="Nigeria"></span>
+          <span class="flag-pill" title="Turkey"><img src="https://flagcdn.com/w40/tr.png" alt="Turkey"></span>
+          <span class="flag-pill" title="Bangladesh"><img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh"></span>
+          <span class="flag-pill" title="Morocco"><img src="https://flagcdn.com/w40/ma.png" alt="Morocco"></span>
+          <span class="flag-pill" title="Italy"><img src="https://flagcdn.com/w40/it.png" alt="Italy"></span>
+          <span class="flag-pill" title="Spain"><img src="https://flagcdn.com/w40/es.png" alt="Spain"></span>
+          <span class="flag-pill" title="Netherlands"><img src="https://flagcdn.com/w40/nl.png" alt="Netherlands"></span>
           <span style="background:rgba(212,168,83,.15);border:1px solid rgba(212,168,83,.3);color:rgba(212,168,83,.9);font-size:.75rem;font-weight:700;padding:.4rem .9rem;border-radius:100px;line-height:1">+ 60 more</span>
         </div>
       </div>
@@ -2135,11 +2135,11 @@ body{overflow-x:hidden}
         background:rgba(255,255,255,.08);
         border:1px solid rgba(255,255,255,.14);
         display:inline-flex;align-items:center;justify-content:center;
-        font-size:1.25rem;line-height:1;
-        cursor:default;
-        transition:transform .2s,background .2s
+        overflow:hidden;cursor:default;flex-shrink:0;
+        transition:transform .2s,box-shadow .2s
       }
-      .flag-pill:hover{transform:scale(1.2);background:rgba(255,255,255,.15)}
+      .flag-pill img{width:100%;height:100%;object-fit:cover;display:block}
+      .flag-pill:hover{transform:scale(1.18);box-shadow:0 4px 12px rgba(0,0,0,.35)}
       </style>
     </div>
   </div>
