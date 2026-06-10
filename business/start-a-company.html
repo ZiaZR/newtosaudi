@@ -146,33 +146,7 @@ p{line-height:1.75;color:var(--text-body)}
 .hero__stat-lbl{font-size:.75rem;color:rgba(255,255,255,.55);font-weight:500;margin-top:.2rem}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── STRUCTURE CARDS ── */
-.structures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.75rem;margin-top:3rem}
-.structure-card{background:var(--white);border:1px solid var(--mid-gray);border-radius:20px;padding:2rem;
-  transition:all .4s var(--ease-out-expo);position:relative;overflow:hidden}
-.structure-card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 24px 60px rgba(27,42,74,.1)}
-.structure-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);
-  transition:transform .4s var(--ease-out-expo);transform-origin:left}
-.structure-card:hover::after{transform:scaleX(1)}
-.structure-card__icon{width:48px;height:48px;background:var(--gold-muted);border-radius:12px;
-  display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;font-size:1.5rem}
-.structure-card h3{color:var(--navy);margin-bottom:.5rem}
-.structure-card__meta{display:flex;gap:.75rem;margin:1rem 0;flex-wrap:wrap}
-.meta-tag{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:.3rem .75rem;border-radius:100px;background:var(--cream)}
-.meta-tag--cost{color:var(--navy)}
-.meta-tag--time{color:var(--text-mid)}
-.pros-cons{margin-top:1.25rem}
-.pros-cons h4{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--text-gray);margin-bottom:.5rem}
-.pros-cons ul{list-style:none}
-.pros-cons ul li{font-size:.88rem;padding:.2rem 0;display:flex;gap:.5rem;align-items:flex-start;color:var(--text-body)}
-.pros-cons ul li::before{content:'✓';color:#2D8B5F;font-weight:700;flex-shrink:0;margin-top:.05rem}
-.pros-cons.cons ul li::before{content:'×';color:#c0392b}
-.structure-card__best{margin-top:1.25rem;padding:.75rem 1rem;background:var(--cream);border-radius:10px;
-  font-size:.83rem;color:var(--text-mid)}
-.structure-card__best strong{color:var(--navy)}
+/* ── STRUCTURE CARDS (legacy — replaced by struct-deck) ── */
 
 /* ── PROCESS STEPS ── */
 .process-steps{margin-top:3rem;display:flex;flex-direction:column;gap:0}
@@ -248,8 +222,29 @@ p{line-height:1.75;color:var(--text-body)}
 .docs-checklist li:last-child{border-bottom:none}
 .docs-checklist li::before{content:'✓';color:#2D8B5F;font-weight:700;flex-shrink:0;width:16px}
 
+/* ── STRUCTURE PICKER DECK ── */
+.struct-deck{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
+.struct-pick{background:var(--white);border:1.5px solid var(--mid-gray);border-radius:20px;padding:1.75rem 1.5rem;position:relative;transition:all .35s var(--ease-out-expo)}
+.struct-pick:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 20px 50px rgba(27,42,74,.1)}
+.struct-pick--featured{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 8px 32px rgba(212,168,83,.1)}
+.struct-pick__badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .85rem;border-radius:100px;white-space:nowrap}
+.struct-pick__icon{font-size:1.85rem;margin-bottom:.6rem}
+.struct-pick__name{font-size:1.05rem;font-weight:800;color:var(--navy);line-height:1.1}
+.struct-pick__sub{font-size:.73rem;color:var(--text-gray);margin:.2rem 0 0;line-height:1.3}
+.struct-pick__divider{height:1px;background:var(--mid-gray);margin:1.1rem 0}
+.struct-pick__row{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.3rem 0;border-bottom:1px solid rgba(27,42,74,.05)}
+.struct-pick__row:last-of-type{border-bottom:none}
+.sp-lbl{font-size:.72rem;color:var(--text-gray);flex-shrink:0}
+.sp-val{font-size:.72rem;font-weight:600;color:var(--navy);text-align:right}
+.sp-val--green{color:#2D8B5F}
+.sp-val--amber{color:#9A6E1A}
+.struct-pick__best{margin-top:1rem;padding:.65rem .85rem;background:var(--cream);border-radius:9px;font-size:.7rem;color:var(--text-gray);line-height:1.5}
+.struct-pick__best::before{content:'Best for: ';font-weight:700;color:var(--navy)}
+@media(max-width:960px){.struct-deck{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.struct-deck{grid-template-columns:1fr}}
+
 /* ── SECTORS GRID ── */
-.sectors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;margin-top:3rem}
+.sectors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
 .sector-card{background:var(--white);border:1px solid var(--mid-gray);border-radius:16px;padding:1.5rem;
   text-align:center;transition:all .35s var(--ease-out-expo)}
 .sector-card:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 16px 40px rgba(27,42,74,.07)}
@@ -697,116 +692,59 @@ p{line-height:1.75;color:var(--text-body)}
       <h2 class="section-heading">Choose the Right Business Structure</h2>
       <p class="section-desc">Each structure has distinct advantages depending on your industry, investment size, and long-term plans. Here is a detailed breakdown of the four main options available to foreign investors.</p>
     </div>
-    <div class="structures-grid">
-
-      <div class="structure-card reveal reveal-delay-1">
-        <div class="structure-card__icon">🏢</div>
-        <h3>LLC — Saudi Limited Liability Company</h3>
-        <p style="font-size:.88rem;color:var(--text-gray);margin:.5rem 0">The most popular structure for foreign investors. Offers full foreign ownership in most sectors and flexibility for any type of commercial activity.</p>
-        <div class="structure-card__meta">
-          <span class="meta-tag meta-tag--cost">Min. capital varies by sector (no universal requirement)</span>
-          <span class="meta-tag meta-tag--time">4–8 weeks</span>
-        </div>
-        <div class="pros-cons">
-          <h4>Advantages</h4>
-          <ul>
-            <li>100% foreign ownership permitted in most sectors</li>
-            <li>Limited liability — personal assets protected</li>
-            <li>Ability to sponsor employees for Iqama</li>
-            <li>Can open bank accounts, sign contracts, own property</li>
-          </ul>
-        </div>
-        <div class="pros-cons cons" style="margin-top:.75rem">
-          <h4>Considerations</h4>
-          <ul>
-            <li>Minimum capital requirement varies by sector</li>
-            <li>Annual audit and Zakat filing required</li>
-          </ul>
-        </div>
-        <div class="structure-card__best"><strong>Best for:</strong> Most businesses — tech, consulting, manufacturing, healthcare, retail.</div>
+    <!-- Structure picker cards — compact 4-up -->
+    <div class="struct-deck reveal">
+      <div class="struct-pick struct-pick--featured">
+        <div class="struct-pick__badge">Most popular</div>
+        <div class="struct-pick__icon">🏢</div>
+        <div class="struct-pick__name">LLC</div>
+        <div class="struct-pick__sub">Saudi Limited Liability Co.</div>
+        <div class="struct-pick__divider"></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Ownership</span><span class="sp-val sp-val--green">Up to 100% foreign</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Capital</span><span class="sp-val">Sector-dependent</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Timeline</span><span class="sp-val">4 – 8 weeks</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Liability</span><span class="sp-val sp-val--green">Limited</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Iqama sponsor</span><span class="sp-val sp-val--green">Yes</span></div>
+        <div class="struct-pick__best">Tech · Consulting · Healthcare · Retail · Manufacturing</div>
       </div>
-
-      <div class="structure-card reveal reveal-delay-2">
-        <div class="structure-card__icon">🌿</div>
-        <h3>Foreign Branch Office</h3>
-        <p style="font-size:.88rem;color:var(--text-gray);margin:.5rem 0">An extension of a foreign parent company operating in Saudi Arabia. The parent company bears full legal liability for branch activities.</p>
-        <div class="structure-card__meta">
-          <span class="meta-tag meta-tag--cost">No local capital needed</span>
-          <span class="meta-tag meta-tag--time">6–10 weeks</span>
-        </div>
-        <div class="pros-cons">
-          <h4>Advantages</h4>
-          <ul>
-            <li>No separate local capital requirement</li>
-            <li>Full profits can be repatriated</li>
-            <li>Ideal for government or large project contracts</li>
-          </ul>
-        </div>
-        <div class="pros-cons cons" style="margin-top:.75rem">
-          <h4>Considerations</h4>
-          <ul>
-            <li>Parent company liable for all obligations</li>
-            <li>Restricted to parent company's activity scope</li>
-            <li>Harder to obtain retail or consumer licenses</li>
-          </ul>
-        </div>
-        <div class="structure-card__best"><strong>Best for:</strong> Large multinational firms delivering a specific project or contract in KSA.</div>
+      <div class="struct-pick">
+        <div class="struct-pick__icon">🌿</div>
+        <div class="struct-pick__name">Branch Office</div>
+        <div class="struct-pick__sub">Extension of foreign parent</div>
+        <div class="struct-pick__divider"></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Ownership</span><span class="sp-val sp-val--green">100% parent co.</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Capital</span><span class="sp-val">None required</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Timeline</span><span class="sp-val">6 – 10 weeks</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Liability</span><span class="sp-val sp-val--amber">Parent bears all risk</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Iqama sponsor</span><span class="sp-val sp-val--green">Yes</span></div>
+        <div class="struct-pick__best">Multinationals · Project delivery · Gov. contracts</div>
       </div>
-
-      <div class="structure-card reveal reveal-delay-3">
-        <div class="structure-card__icon">🤝</div>
-        <h3>Joint Venture with Saudi Partner</h3>
-        <p style="font-size:.88rem;color:var(--text-gray);margin:.5rem 0">A business entity co-owned by a foreign investor and a Saudi partner. Required in certain restricted sectors; optional elsewhere for strategic advantage.</p>
-        <div class="structure-card__meta">
-          <span class="meta-tag meta-tag--cost">Negotiated capital split</span>
-          <span class="meta-tag meta-tag--time">8–16 weeks</span>
-        </div>
-        <div class="pros-cons">
-          <h4>Advantages</h4>
-          <ul>
-            <li>Access to restricted sectors (media, certain services)</li>
-            <li>Local partner provides market knowledge and networks</li>
-            <li>Government tender preferences for Saudi-majority JVs</li>
-          </ul>
-        </div>
-        <div class="pros-cons cons" style="margin-top:.75rem">
-          <h4>Considerations</h4>
-          <ul>
-            <li>Profit sharing with local partner</li>
-            <li>Governance and decision-making complexity</li>
-          </ul>
-        </div>
-        <div class="structure-card__best"><strong>Best for:</strong> Entering restricted sectors or pursuing Saudi government contracts.</div>
+      <div class="struct-pick">
+        <div class="struct-pick__icon">🤝</div>
+        <div class="struct-pick__name">Joint Venture</div>
+        <div class="struct-pick__sub">With Saudi partner</div>
+        <div class="struct-pick__divider"></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Ownership</span><span class="sp-val sp-val--amber">Negotiated split</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Capital</span><span class="sp-val">Agreed between parties</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Timeline</span><span class="sp-val">8 – 16 weeks</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Liability</span><span class="sp-val">Shared / negotiated</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Iqama sponsor</span><span class="sp-val sp-val--green">Yes</span></div>
+        <div class="struct-pick__best">Restricted sectors · Gov. tenders · Market access</div>
       </div>
-
-      <div class="structure-card reveal reveal-delay-4">
-        <div class="structure-card__icon">🏭</div>
-        <h3>Free Zone Company</h3>
-        <p style="font-size:.88rem;color:var(--text-gray);margin:.5rem 0">Established within one of Saudi Arabia's Special Economic Zones (SEZs). Offers unique incentives but with restrictions on direct domestic sales.</p>
-        <div class="structure-card__meta">
-          <span class="meta-tag meta-tag--cost">Zone-specific capital</span>
-          <span class="meta-tag meta-tag--time">4–12 weeks</span>
-        </div>
-        <div class="pros-cons">
-          <h4>Advantages</h4>
-          <ul>
-            <li>Custom duty exemptions on imports/exports</li>
-            <li>Reduced corporate tax rates in Special Economic Zones (5% CIT under SEZ framework conditions)</li>
-            <li>Streamlined one-stop-shop licensing</li>
-            <li>100% foreign ownership guaranteed</li>
-          </ul>
-        </div>
-        <div class="pros-cons cons" style="margin-top:.75rem">
-          <h4>Considerations</h4>
-          <ul>
-            <li>Selling into Saudi market may require additional license</li>
-            <li>Physical presence in zone usually required</li>
-          </ul>
-        </div>
-        <div class="structure-card__best"><strong>Best for:</strong> Logistics, manufacturing, technology, and export-oriented businesses.</div>
+      <div class="struct-pick">
+        <div class="struct-pick__icon">🏭</div>
+        <div class="struct-pick__name">Free Zone Co.</div>
+        <div class="struct-pick__sub">Inside an SEZ</div>
+        <div class="struct-pick__divider"></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Ownership</span><span class="sp-val sp-val--green">100% foreign</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Capital</span><span class="sp-val">Zone-specific</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Timeline</span><span class="sp-val">4 – 12 weeks</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">CIT rate</span><span class="sp-val sp-val--green">5% (SEZ conditions)</span></div>
+        <div class="struct-pick__row"><span class="sp-lbl">Domestic sales</span><span class="sp-val sp-val--amber">Extra license needed</span></div>
+        <div class="struct-pick__best">Logistics · Manufacturing · Export-oriented · Tech</div>
       </div>
-
     </div>
+    <p class="reveal" style="font-size:.82rem;color:var(--text-gray);text-align:center;margin-top:1.25rem">Not sure which fits your plans? <a href="/contact" style="color:var(--gold-dark);font-weight:600;text-decoration:none">Talk to our team →</a></p>
   </div>
 </section>
 
@@ -1241,6 +1179,45 @@ p{line-height:1.75;color:var(--text-body)}
             <span class="kam-country2"><span class="flag">🇨🇦</span><span class="cname">Canada</span></span>
             <span class="kam-country2"><span class="flag">🇦🇺</span><span class="cname">Australia</span></span>
             <span class="kam-country2 kam-country2--more">+ 18 more countries</span>
+          </div>
+
+          <!-- What to expect: onboarding timeline -->
+          <div style="margin-top:1.75rem;padding:1.25rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px">
+            <div style="font-size:.62rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem">What to expect</div>
+            <div style="display:flex;flex-direction:column;gap:.85rem">
+              <div style="display:flex;gap:.85rem;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.35);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:var(--gold);flex-shrink:0">1</div>
+                <div><div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:.15rem">Free consultation call — Day 1</div><div style="font-size:.74rem;color:rgba(255,255,255,.38);line-height:1.5">We assess your structure, sector, and nationality requirements. You receive a personalised action plan and timeline within 24 hours.</div></div>
+              </div>
+              <div style="display:flex;gap:.85rem;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.35);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:var(--gold);flex-shrink:0">2</div>
+                <div><div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:.15rem">Document collection &amp; portal setup — Week 1–2</div><div style="font-size:.74rem;color:rgba(255,255,255,.38);line-height:1.5">Your KAM collects apostilled documents, prepares Arabic translations, and opens your MISA application — you review and sign digitally.</div></div>
+              </div>
+              <div style="display:flex;gap:.85rem;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.35);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:var(--gold);flex-shrink:0">3</div>
+                <div><div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:.15rem">Company operational — Week 3–6</div><div style="font-size:.74rem;color:rgba(255,255,255,.38);line-height:1.5">CR, SPL, Baladia, Chamber, GOSI, Qiwa, Muqeem, Mudad, and ZATCA all registered. Bank account introduced. You are ready to trade.</div></div>
+              </div>
+              <div style="display:flex;gap:.85rem;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.35);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:var(--gold);flex-shrink:0">4</div>
+                <div><div style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.75);margin-bottom:.15rem">Ongoing compliance — Month 2+</div><div style="font-size:.74rem;color:rgba(255,255,255,.38);line-height:1.5">Monthly Nitaqat checks, Iqama renewals, ZATCA filings, and MISA/CR annual renewals managed proactively. Your KAM stays on as your in-market contact.</div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust signals row -->
+          <div style="margin-top:1rem;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem">
+            <div style="padding:.75rem;background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:var(--gold);line-height:1">30+</div>
+              <div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.2rem;line-height:1.3">countries served</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:var(--gold);line-height:1">~18 days</div>
+              <div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.2rem;line-height:1.3">avg. setup time</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(212,168,83,.06);border:1px solid rgba(212,168,83,.15);border-radius:10px;text-align:center">
+              <div style="font-size:1.1rem;font-weight:800;color:var(--gold);line-height:1">0</div>
+              <div style="font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.2rem;line-height:1.3">office visits needed</div>
+            </div>
           </div>
         </div>
         <div>
