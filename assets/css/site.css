@@ -417,33 +417,24 @@ p  { line-height:1.75; color:var(--text-body) }
   border-bottom:1px solid rgba(255,255,255,.08)
 }
 
-/* ── Brand column — Option C "Editorial" style ── */
+/* ── Brand column ── */
 .footer__brand { display:flex; flex-direction:column }
 .footer__wordmark {
-  font-size:1.55rem; font-weight:800; color:#fff; letter-spacing:-.03em; margin-bottom:1.1rem
+  font-size:1.45rem; font-weight:800; color:#fff; letter-spacing:-.03em; margin-bottom:1.25rem
 }
 .footer__wordmark span { color:#D4A853 }
-.footer__wordmark small { color:rgba(212,168,83,.38); font-size:1rem }
-.footer__desc {
-  font-size:.85rem; line-height:1.8; color:rgba(255,255,255,.45);
-  border-left:2px solid rgba(212,168,83,.3); padding-left:1rem; max-width:270px
-}
-.footer__stats {
-  display:flex; gap:1.75rem; margin-top:1.5rem
-}
-.footer__stat-num { font-size:1.25rem; font-weight:800; color:#D4A853; line-height:1 }
-.footer__stat-lbl { font-size:.68rem; color:rgba(255,255,255,.3); margin-top:3px; letter-spacing:.03em }
+.footer__wordmark small { color:rgba(212,168,83,.38); font-size:.95rem }
 
-/* Social icons */
-.footer__social,.s-footer__social { display:flex; gap:.6rem; margin-top:1.5rem }
+/* Social icons — used in bottom bar */
+.footer__bottom-social { display:flex; gap:.5rem; align-items:center }
 .footer__social-link,.s-footer__social-link {
-  width:32px; height:32px; border-radius:7px;
+  width:28px; height:28px; border-radius:6px;
   border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;
   transition:all .25s
 }
-.footer__social-link:hover,.s-footer__social-link:hover { border-color:rgba(212,168,83,.4); background:rgba(212,168,83,.1) }
-.footer__social-link svg,.s-footer__social-link svg { width:14px; height:14px; stroke:rgba(255,255,255,.45); fill:none; stroke-width:1.8 }
-.footer__social-link:hover svg,.s-footer__social-link:hover svg { stroke:#D4A853 }
+.footer__social-link:hover { border-color:rgba(212,168,83,.4); background:rgba(212,168,83,.1) }
+.footer__social-link svg { width:13px; height:13px; stroke:rgba(255,255,255,.45); fill:none; stroke-width:1.8 }
+.footer__social-link:hover svg { stroke:#D4A853 }
 
 /* Newsletter panel — gold-tinted card */
 .footer__nl {
