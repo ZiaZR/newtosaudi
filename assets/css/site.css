@@ -404,26 +404,35 @@ p  { line-height:1.75; color:var(--text-body) }
 .footer,.site-footer,.s-footer {
   background:#0B1422;
   border-top:1px solid rgba(212,168,83,.15);
-  padding:5rem 0 2.5rem;
+  padding:0 0 2.5rem;
   color:rgba(255,255,255,.65)
 }
 .s-footer .wrap { max-width:var(--max-w); margin:0 auto; padding:0 clamp(1.5rem,5vw,4rem) }
 
-.footer__top,.footer__grid,.s-footer__top {
-  display:grid;
-  grid-template-columns:1.8fr 1fr 1fr 1fr;
-  gap:3rem;
-  padding-bottom:3.5rem;
-  border-bottom:1px solid rgba(255,255,255,.08)
+/* ── Header row: wordmark + tagline ── */
+.footer__header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:2.25rem 0 1.75rem;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  margin-bottom:0
 }
-
-/* ── Brand column ── */
-.footer__brand { display:flex; flex-direction:column }
 .footer__wordmark {
-  font-size:1.45rem; font-weight:800; color:#fff; letter-spacing:-.03em; margin-bottom:1.25rem
+  font-size:1.5rem; font-weight:800; color:#fff; letter-spacing:-.03em
 }
 .footer__wordmark span { color:#D4A853 }
 .footer__wordmark small { color:rgba(212,168,83,.38); font-size:.95rem }
+.footer__tagline {
+  font-size:.88rem; color:rgba(255,255,255,.3); letter-spacing:.01em
+}
+
+/* ── 4-column grid ── */
+.footer__top,.footer__grid,.s-footer__top {
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:3rem;
+  padding:2.5rem 0 3rem;
+  border-bottom:1px solid rgba(255,255,255,.08)
+}
 
 /* Social icons — used in bottom bar */
 .footer__bottom-social { display:flex; gap:.5rem; align-items:center }
@@ -496,19 +505,18 @@ p  { line-height:1.75; color:var(--text-body) }
 /* Responsive */
 @media(max-width:1024px) {
   .footer__top,.footer__grid { grid-template-columns:1fr 1fr; gap:2.5rem }
-  .footer__brand { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start }
-  .footer__nl { margin-top:0 }
+  .footer__header { flex-direction:column; align-items:flex-start; gap:.5rem }
 }
 @media(max-width:640px) {
-  .footer__top,.footer__grid { grid-template-columns:1fr 1fr }
-  .footer__brand { grid-template-columns:1fr }
-  .footer__nl { margin-top:1.25rem }
-  .footer__stats { gap:1.25rem }
+  .footer__top,.footer__grid { grid-template-columns:1fr 1fr; gap:2rem }
 }
 @media(max-width:480px) {
-  .footer__top,.footer__grid { grid-template-columns:1fr 1fr }
+  .footer__top,.footer__grid { grid-template-columns:1fr 1fr; gap:1.5rem }
   .footer__bottom { flex-direction:column; text-align:center; gap:.75rem }
   .footer__bottom-links a { margin:0 .5rem }
+}
+@media(max-width:360px) {
+  .footer__top,.footer__grid { grid-template-columns:1fr }
 }
 
 /* === COMPONENT: FAQ ACCORDION === */
