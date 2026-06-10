@@ -317,9 +317,14 @@ body{overflow-x:hidden}
 .persona-card{
   border-radius:22px;padding:2.5rem 2.25rem 2.25rem;cursor:pointer;
   position:relative;overflow:hidden;
-  transition:transform .45s var(--ease-out-expo),box-shadow .45s var(--ease-out-expo),border-color .35s;
+  transition:transform .45s var(--ease-out-expo),box-shadow .45s var(--ease-out-expo),border-color .35s,background .35s;
   display:block;text-decoration:none;isolation:isolate;
   background:#FFFFFF;border:1.5px solid #EDE8DF}
+.persona-card::before{
+  content:'';position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,#0F1C33 0%,#1B2A4A 100%);
+  opacity:0;transition:opacity .35s var(--ease-out-expo)}
+.persona-card>*{position:relative;z-index:1}
 
 .persona-card:hover::before{opacity:1}
 
@@ -891,7 +896,7 @@ body{overflow-x:hidden}
     <div class="nav__inner">
       <a href="/" class="nav__logo">
         <img src="/Logos/logo-white.svg" alt="NewToSaudi" class="nav__logo-white" style="height:36px">
-        <img src="/Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px;display:none">
+        <img src="/Logos/logo-primary.svg" alt="NewToSaudi" class="nav__logo-primary" style="height:36px">
       </a>
       <div class="nav__links">
         <div class="nav__dropdown">
