@@ -664,7 +664,7 @@ body{overflow-x:hidden}
   margin-bottom:1rem;letter-spacing:-.025em;line-height:1.1}
 .newsletter__sub{font-size:clamp(1rem,1.5vw,1.2rem);color:rgba(255,255,255,.5);
   margin:0 auto 3rem;line-height:1.8;max-width:600px}
-.newsletter__form{display:flex;gap:.85rem;max-width:580px;margin:0 auto 0}
+.newsletter__form{display:flex;flex-wrap:wrap;gap:.85rem;max-width:580px;margin:0 auto 0}
 .newsletter__input{flex:1;padding:1.1rem 1.75rem;border-radius:100px;
   border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);
   color:var(--white);font-family:inherit;font-size:1rem;outline:none;transition:all .3s}
@@ -676,6 +676,9 @@ body{overflow-x:hidden}
   color:var(--navy);font-family:inherit;font-size:1rem;font-weight:800;cursor:pointer;
   transition:all .3s var(--ease-spring);white-space:nowrap;letter-spacing:.02em}
 .newsletter__submit:hover{transform:scale(1.06);box-shadow:0 10px 30px rgba(212,168,83,.4)}
+.newsletter__consent{width:100%;flex-basis:100%;text-align:center;font-size:.78rem;
+  color:rgba(255,255,255,.72);margin:.4rem 0 0!important;opacity:1!important}
+.newsletter__consent a{color:rgba(255,255,255,.85)!important;text-decoration:underline}
 .newsletter__note{font-size:.8rem;color:rgba(255,255,255,.65);margin-top:1.75rem;
   letter-spacing:.02em}
 
