@@ -632,7 +632,7 @@
             </div>
           </div>
 
-          <div class="callout callout--gold reveal" style="background:rgba(212,168,83,.08);border-color:rgba(212,168,83,.25);margin-top:2rem">
+          <div class="callout callout--gold reveal" style="background:rgba(212,168,83,.12);border-color:rgba(212,168,83,.35);margin-top:2rem;color:#fff">
             See our full <a href="/life/housing" style="color:var(--gold)">Housing Guide</a> for detailed neighbourhood breakdowns, typical rental prices by area, and a compound directory for each major city.
           </div>
 
@@ -980,14 +980,7 @@
 
 <script src="/assets/js/site.js" defer></script>
 <script>
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
+  /* FAQ accordion handled by site.js */
   const revealEls = document.querySelectorAll('.reveal');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
