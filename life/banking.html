@@ -72,7 +72,7 @@
     .sec-title { font-size:2rem; color:var(--navy,#1B2A4A); margin-bottom:.85rem; }
     .sec-title--white { color:#fff; }
     .sec-lead { font-size:1.05rem; color:var(--text-gray,#666); line-height:1.75; max-width:620px; margin-bottom:2.5rem; }
-    .sec-lead--white { color:rgba(255,255,255,.68); }
+    .sec-lead--white { color:rgba(255,255,255,.85); }
 
     /* ── Bank cards ── */
     .bank-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
@@ -126,7 +126,7 @@
     /* ── Dark section text helpers ── */
     .s-dark h2, .s-dark h3 { color:#fff; }
     .s-dark p { color:rgba(255,255,255,.7); }
-    .s-dark .sec-lead { color:rgba(255,255,255,.68); }
+    .s-dark .sec-lead { color:rgba(255,255,255,.85); }
 
     /* ── Islamic banking grid ── */
     .sharia-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2rem; }
@@ -135,7 +135,7 @@
       border-radius:18px; padding:1.75rem;
     }
     .sharia-card h3 { font-size:1rem; color:var(--gold); margin-bottom:.6rem; }
-    .sharia-card p { font-size:.82rem; color:rgba(255,255,255,.68); line-height:1.65; margin:0; }
+    .sharia-card p { font-size:.82rem; color:rgba(255,255,255,.85); line-height:1.65; margin:0; }
     .sharia-card__tag { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:.5rem; }
 
     /* ── Fintech / app cards ── */
@@ -202,7 +202,7 @@
       font-size:.95rem; font-weight:700; color:#fff; font-family:inherit;
     }
     .faq-q svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform .3s; }
-    .faq-a { font-size:.86rem; color:rgba(255,255,255,.68); line-height:1.75; padding-bottom:1.25rem; display:none; }
+    .faq-a { font-size:.86rem; color:rgba(255,255,255,.85); line-height:1.75; padding-bottom:1.25rem; display:none; }
     .faq-item.open .faq-q svg { transform:rotate(45deg); }
     .faq-item.open .faq-a { display:block; }
 
@@ -1084,7 +1084,7 @@
       <ul class="faq-list reveal">
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Can I open a bank account before my Iqama arrives?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1092,7 +1092,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             How long does it take to get a bank account open?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1100,7 +1100,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Do Saudi banks charge monthly fees?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1108,7 +1108,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Can I keep my account if I leave Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1116,7 +1116,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Is there a limit on how much I can send abroad?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1124,7 +1124,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             What is Absher and do I need it for banking?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1132,7 +1132,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Can I use Wise or Revolut as my main bank in Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1140,7 +1140,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Are there banks specifically designed for expats?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
@@ -1148,7 +1148,7 @@
         </li>
 
         <li class="faq-item">
-          <button class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">
+          <button class="faq-q">
             Do I pay tax on bank account earnings in Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
