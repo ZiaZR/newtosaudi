@@ -83,7 +83,7 @@
     /* ── DESKTOP DROPDOWN (click/touch-safe) ── */
     document.querySelectorAll('.nav__dropdown').forEach(dd => {
       dd.addEventListener('click', e => {
-        if (e.target.closest('.nav__dropdown-menu')) return; // let link clicks through
+        if (e.target.closest('.nav__dropdown-menu')) return;
         e.stopPropagation();
         const isOpen = dd.classList.contains('open');
         document.querySelectorAll('.nav__dropdown.open').forEach(d => d.classList.remove('open'));
@@ -92,6 +92,17 @@
     });
     document.addEventListener('click', () => {
       document.querySelectorAll('.nav__dropdown.open').forEach(d => d.classList.remove('open'));
+    });
+
+    /* ── MOBILE MENU ACCORDION ── */
+    document.querySelectorAll('.nav__mobile-section-title').forEach(title => {
+      title.addEventListener('click', () => {
+        const section = title.closest('.nav__mobile-section');
+        const isOpen = section.classList.contains('open');
+        // Close all other sections
+        document.querySelectorAll('.nav__mobile-section.open').forEach(s => s.classList.remove('open'));
+        if (!isOpen) section.classList.add('open');
+      });
     });
 
     /* ── COUNT-UP ANIMATION ── */
