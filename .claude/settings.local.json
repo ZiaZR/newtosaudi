@@ -14,7 +14,21 @@
       "mcp__visualize__show_widget",
       "Bash(python3)",
       "Bash(python3 -c ' *)",
-      "Bash(python fix_logo.py)"
+      "Bash(python fix_logo.py)",
+      "Bash(python phase1_security.py)",
+      "Bash(python phase1_noindex.py)",
+      "Bash(python phase1_forms.py)",
+      "Bash(python phase3_gdpr.py)",
+      "Bash(python phase3_a11y.py)",
+      "Bash(python phase4_social.py)",
+      "Bash(python phase4_bylines.py)",
+      "Bash(curl -s \"https://newtosaudi.com/\")",
+      "Bash(curl -s \"https://newtosaudi.com/robots.txt\")",
+      "Bash(curl -o /dev/null -s -w \"HTTP %{http_code}\" \"https://newtosaudi.com/sitemap.xml\")",
+      "Bash(curl -s --max-time 10 -w \"\\\\nHTTP_STATUS:%{http_code}\" \"https://newtosaudi.com/\")",
+      "Bash(curl -v --max-time 15 \"https://newtosaudi.com/\")",
+      "Bash(grep -rn '<section id=\"main-content\"$' --include=\"*.html\")",
+      "Bash(python fix_section_tags.py)"
     ]
   }
 }
