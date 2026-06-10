@@ -1171,57 +1171,160 @@ body{overflow-x:hidden}
 </section>
 
 <!-- ===== QUICK START STRIP ===== -->
-<section style="background:var(--cream);padding:2.75rem 0;border-top:1px solid var(--mid-gray);border-bottom:1px solid var(--mid-gray)">
+<section class="qs-section">
   <div class="container">
-    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
-      <span class="section-eyebrow" style="margin:0">Where to start</span>
+    <div class="qs-header">
+      <span class="section-eyebrow" style="color:var(--gold);opacity:1">First steps</span>
+      <h2 class="qs-title">Start here — four things every new arrival does first</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem" id="quickstart-grid">
-      <a href="/relocate/before-you-arrive" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1.5px solid var(--mid-gray);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s var(--ease-out-quart);position:relative;overflow:hidden" class="qs-item">
-        <span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#EEF3FA,#C8D9F0);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem">📋</span>
-        <div>
-          <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.3">Before You Arrive</div>
-          <div style="font-size:.74rem;color:var(--text-gray);margin-top:.15rem">Docs, prep &amp; what to bring</div>
+    <div class="qs-grid" id="quickstart-grid">
+
+      <a href="/relocate/before-you-arrive" class="qs-card">
+        <div class="qs-card__num">01</div>
+        <div class="qs-card__icon">📋</div>
+        <div class="qs-card__body">
+          <div class="qs-card__title">Before You Arrive</div>
+          <div class="qs-card__desc">Documents, prep checklist, and everything to sort before you land</div>
         </div>
+        <div class="qs-card__arrow">Read guide →</div>
       </a>
-      <a href="/work/iqama-guide" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1.5px solid var(--mid-gray);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s var(--ease-out-quart)" class="qs-item">
-        <span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#FBF7EE,#F0E4C0);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem">🪪</span>
-        <div>
-          <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.3">Get Your Iqama</div>
-          <div style="font-size:.74rem;color:var(--text-gray);margin-top:.15rem">Your most vital document</div>
+
+      <a href="/work/iqama-guide" class="qs-card">
+        <div class="qs-card__num">02</div>
+        <div class="qs-card__icon">🪪</div>
+        <div class="qs-card__body">
+          <div class="qs-card__title">Get Your Iqama</div>
+          <div class="qs-card__desc">Your residency permit — the document that unlocks everything else</div>
         </div>
+        <div class="qs-card__arrow">Read guide →</div>
       </a>
-      <a href="/life/banking" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1.5px solid var(--mid-gray);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s var(--ease-out-quart)" class="qs-item">
-        <span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#F7F2ED,#E8DECA);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem">🏦</span>
-        <div>
-          <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.3">Open a Bank Account</div>
-          <div style="font-size:.74rem;color:var(--text-gray);margin-top:.15rem">Best accounts for new arrivals</div>
+
+      <a href="/life/banking" class="qs-card">
+        <div class="qs-card__num">03</div>
+        <div class="qs-card__icon">🏦</div>
+        <div class="qs-card__body">
+          <div class="qs-card__title">Open a Bank Account</div>
+          <div class="qs-card__desc">Best banks for expats, what you need, and how to open fast</div>
         </div>
+        <div class="qs-card__arrow">Read guide →</div>
       </a>
-      <a href="/apps" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1.5px solid var(--mid-gray);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .3s var(--ease-out-quart)" class="qs-item">
-        <span style="width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#EDF1F9,#C2CFEA);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem">📱</span>
-        <div>
-          <div style="font-size:.88rem;font-weight:700;color:var(--navy);line-height:1.3">Essential Apps</div>
-          <div style="font-size:.74rem;color:var(--text-gray);margin-top:.15rem">Absher, Tawakkalna &amp; more</div>
+
+      <a href="/apps" class="qs-card">
+        <div class="qs-card__num">04</div>
+        <div class="qs-card__icon">📱</div>
+        <div class="qs-card__body">
+          <div class="qs-card__title">Essential Apps</div>
+          <div class="qs-card__desc">Absher, Tawakkalna, Najm — the apps you need from day one</div>
         </div>
+        <div class="qs-card__arrow">Read guide →</div>
       </a>
+
     </div>
   </div>
 </section>
 <style>
-.qs-item:hover{border-color:var(--gold)!important;transform:translateY(-3px);box-shadow:0 8px 24px rgba(27,42,74,.08)}
-@media(max-width:768px){
-  #quickstart-grid{grid-template-columns:1fr 1fr!important}
-  .qs-item{gap:.7rem!important;padding:.9rem 1rem!important}
-  .qs-item div div:first-child{font-size:.82rem}
-  .qs-item div div:last-child{font-size:.7rem}
+/* ── Where to start / First steps ── */
+.qs-section{
+  background:var(--navy-deeper);
+  padding:4rem 0 4.5rem;
+  position:relative;
+  overflow:hidden
+}
+.qs-section::before{
+  content:'';position:absolute;top:-120px;right:-80px;
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,83,.07) 0%,transparent 70%);
+  pointer-events:none
+}
+.qs-header{
+  text-align:center;
+  margin-bottom:2.75rem
+}
+.qs-title{
+  font-size:clamp(1.45rem,2.5vw,2rem);
+  font-weight:800;
+  color:#fff;
+  margin-top:.55rem;
+  letter-spacing:-.02em;
+  max-width:600px;
+  margin-left:auto;
+  margin-right:auto;
+  line-height:1.25
+}
+.qs-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem
+}
+.qs-card{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:2rem 1.75rem 1.75rem;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  transition:transform .35s var(--ease-out-expo),border-color .25s,box-shadow .35s,background .25s
+}
+.qs-card::after{
+  content:'';position:absolute;inset:0;border-radius:18px;
+  background:linear-gradient(135deg,rgba(212,168,83,.08) 0%,transparent 60%);
+  opacity:0;transition:opacity .3s
+}
+.qs-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(212,168,83,.5);
+  background:rgba(255,255,255,.07);
+  box-shadow:0 20px 48px rgba(0,0,0,.35),0 0 0 1px rgba(212,168,83,.2)
+}
+.qs-card:hover::after{opacity:1}
+.qs-card__num{
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  color:var(--gold);
+  opacity:.7
+}
+.qs-card__icon{
+  font-size:2rem;
+  line-height:1
+}
+.qs-card__body{flex:1}
+.qs-card__title{
+  font-size:1.05rem;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:.5rem;
+  line-height:1.3
+}
+.qs-card__desc{
+  font-size:.82rem;
+  color:rgba(255,255,255,.5);
+  line-height:1.65
+}
+.qs-card__arrow{
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--gold);
+  margin-top:.25rem;
+  opacity:.8;
+  transition:opacity .2s,transform .2s
+}
+.qs-card:hover .qs-card__arrow{opacity:1;transform:translateX(3px)}
+@media(max-width:900px){
+  .qs-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:480px){
-  #quickstart-grid{grid-template-columns:1fr 1fr!important}
-  .qs-item{gap:.6rem!important;padding:.85rem .9rem!important}
+  .qs-grid{grid-template-columns:1fr 1fr;gap:.9rem}
+  .qs-card{padding:1.5rem 1.25rem 1.25rem}
+  .qs-card__title{font-size:.95rem}
+  .qs-card__desc{font-size:.78rem}
 }
 @media(max-width:360px){
-  #quickstart-grid{grid-template-columns:1fr!important}
+  .qs-grid{grid-template-columns:1fr}
 }
 </style>
 
