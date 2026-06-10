@@ -322,6 +322,8 @@ p  { line-height:1.75; color:var(--text-body) }
   display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:rgba(255,255,255,.45);
   margin-bottom:2rem; flex-wrap:wrap
 }
+/* Standalone breadcrumb bar (before hero) — push below fixed nav */
+nav.breadcrumb { margin-top:var(--nav-h) }
 .breadcrumb a { color:rgba(255,255,255,.5); transition:color .2s }
 .breadcrumb a:hover { color:var(--gold) }
 .breadcrumb span { color:rgba(255,255,255,.25) }
