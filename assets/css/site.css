@@ -930,147 +930,29 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 
 /* ==========================================================================
-   ENHANCED REGULATORY REFERENCES - LEFT-ALIGNED FULL CONTAINER PATTERN
+   FINAL PRODUCTION RECONSTRUCTION - LEFT-ALIGNED GRID DIRECTORY
    ========================================================================== */
-.references-section {
-    background: transparent !important;
-    padding: 50px 0 40px 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    clear: both !important;
-}
 
-.references__inner {
-    max-width: 1200px !important;
-    margin: 0 auto 0 0 !important;
-    background: #FBFBFA !important;
-    border-left: 4px solid #C5A059 !important;
-    border-top: 1px solid #EDECE9 !important;
-    border-right: 1px solid #EDECE9 !important;
-    border-bottom: 1px solid #EDECE9 !important;
-    border-radius: 12px !important;
-    padding: 40px !important;
-    box-shadow: 0 15px 35px rgba(27, 42, 74, 0.035) !important;
-    box-sizing: border-box !important;
-}
-
-.references__heading {
-    font-family: 'Playfair Display', 'Georgia', serif !important;
-    font-size: 22px !important;
-    font-weight: 400 !important;
-    text-transform: none !important;
-    letter-spacing: 0px !important;
-    color: #1A1A1A !important;
-    margin: 0 0 12px 0 !important;
-    text-align: left !important;
-    line-height: 1.3 !important;
-}
-
-.references__intro {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 13.5px !important;
-    color: #666666 !important;
-    line-height: 1.65 !important;
-    margin: 0 0 28px 0 !important;
-    text-align: left !important;
-    max-width: 800px !important;
-}
-
-.references__list {
-    list-style: none !important;
+/* 1. BREAK THE CONTAINER SPELL (Option A - Safety First) */
+.references-section .container {
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0 !important;
-    max-width: 100% !important;
+    width: 100% !important;
 }
 
-.references__item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 14px 0 !important;
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px dashed #EDECE9 !important;
-    border-radius: 0 !important;
-    margin: 0 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 14px !important;
-    box-sizing: border-box !important;
-}
-
-.references__item:last-child {
-    border-bottom: none !important;
-}
-
-.references__body-name {
-    color: #1A1A1A !important;
-    font-weight: 700 !important;
-    text-align: left !important;
-}
-
-.references__link {
-    color: #C5A059 !important;
-    font-size: 13px;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    transition: color 0.2s ease !important;
-}
-
-.references__link:hover {
-    color: #1A1A1A !important;
-}
-
-.references__footer {
-    margin-top: 1.25rem;
-    font-size: .76rem;
-    color: #999;
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.references__footer a { color: #1A1A1A; text-decoration: underline; }
-
-@media (max-width: 1240px) {
-    .references__inner {
-        margin: 0 20px !important;
-    }
-}
-
-@media (max-width: 640px) {
-    .references-section {
-        padding: 40px 15px !important;
-    }
-    .references__inner {
-        padding: 24px !important;
-        margin: 0 !important;
-    }
-    .references__item {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 4px !important;
-        padding: 16px 0 !important;
-    }
-}
-
-/* ==========================================================================
-   ENHANCED REGULATORY REFERENCES - LEFT-ALIGNED GRID INTEGRATION PATTERN
-   ========================================================================== */
+/* 2. THE OUTER SECTION ANCHOR */
 .references-section {
     background: transparent !important;
-    padding: 60px 0 50px 0 !important;
+    padding: 60px 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
     clear: both !important;
 }
 
+/* 3. THE MAIN IVORY PANEL */
 .references__inner {
-    max-width: 1200px !important;
+    max-width: 1140px !important;
     margin: 0 auto 0 0 !important;
     background: #FBFBFA !important;
     border-left: 4px solid #C5A059 !important;
@@ -1079,13 +961,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     border-bottom: 1px solid #EDECE9 !important;
     border-radius: 12px !important;
     padding: 40px !important;
-    box-shadow: 0 15px 35px rgba(27, 42, 74, 0.03) !important;
+    box-shadow: 0 10px 30px rgba(27, 42, 74, 0.025) !important;
     box-sizing: border-box !important;
 }
 
 .references__heading {
     font-family: 'Playfair Display', 'Georgia', serif !important;
-    font-size: 22px !important;
+    font-size: 24px !important;
     font-weight: 400 !important;
     text-transform: none !important;
     letter-spacing: 0px !important;
@@ -1097,10 +979,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .references__intro {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 13.5px !important;
+    font-size: 14px !important;
     color: #666666 !important;
-    line-height: 1.65 !important;
-    margin: 0 0 28px 0 !important;
+    line-height: 1.6 !important;
+    margin: 0 0 32px 0 !important;
     text-align: left !important;
     max-width: 850px !important;
 }
@@ -1117,16 +999,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .references__item {
     display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    padding: 14px 0 !important;
+    padding: 16px 0 !important;
     background: transparent !important;
     border: none !important;
-    border-bottom: 1px dashed #EDECE9 !important;
+    border-bottom: 1px solid #EFEFEF !important;
     border-radius: 0 !important;
     margin: 0 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 14px !important;
+    font-size: 14.5px !important;
+    width: 100% !important;
     box-sizing: border-box !important;
 }
 
@@ -1138,15 +1022,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     color: #1A1A1A !important;
     font-weight: 700 !important;
     text-align: left !important;
+    flex-shrink: 0 !important;
+    margin-right: 15px !important;
+}
+
+.references__separator {
+    display: none !important;
+}
+
+.references__claim {
+    color: #555555 !important;
+    text-align: left !important;
+    font-weight: 400 !important;
+    margin-right: 20px !important;
+    border-bottom: 1px dotted #E5E5E2 !important;
+    padding-bottom: 2px !important;
+    width: 100% !important;
 }
 
 .references__link {
     color: #C5A059 !important;
-    font-size: 13px !important;
+    font-size: 13.5px !important;
     font-weight: 600 !important;
     text-decoration: none !important;
     display: inline-flex !important;
     align-items: center !important;
+    text-align: right !important;
+    flex-shrink: 0 !important;
     transition: color 0.2s ease !important;
 }
 
@@ -1154,24 +1056,47 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     color: #1A1A1A !important;
 }
 
-@media (max-width: 1240px) {
+.references__footer {
+    margin-top: 24px !important;
+    font-size: 12px !important;
+    color: #888888 !important;
+    text-align: left !important;
+    line-height: 1.5 !important;
+}
+
+.references__footer a {
+    color: #666666 !important;
+    text-decoration: underline !important;
+    margin-left: 8px !important;
+}
+
+.references__footer a:hover {
+    color: #1A1A1A !important;
+}
+
+@media (max-width: 1200px) {
     .references__inner {
-        margin: 0 20px !important;
+        margin: 0 24px !important;
     }
 }
 
-@media (max-width: 640px) {
-    .references-section {
-        padding: 40px 15px !important;
-    }
-    .references__inner {
-        padding: 24px !important;
-        margin: 0 !important;
-    }
+@media (max-width: 768px) {
     .references__item {
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 6px !important;
-        padding: 16px 0 !important;
+        gap: 8px !important;
+        padding: 18px 0 !important;
+    }
+    .references__claim {
+        border-bottom: none !important;
+        margin-right: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .references__link {
+        margin-top: 2px !important;
     }
 }
+
+/* ==========================================================================
+   END OF REFERENCES PATCH
+   ========================================================================== */
