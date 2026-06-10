@@ -199,6 +199,8 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 
 <!-- NAV -->
 <nav class="nav nav--transparent" id="mainNav">
@@ -365,7 +367,7 @@
 </div>
 
 <!-- HERO -->
-<section class="page-hero">
+<section id="main-content"
   <div class="page-hero__arch" aria-hidden="true">
     <svg width="520" height="680" viewBox="0 0 520 680" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M260 20 C120 20 20 140 20 280 L20 580 C20 620 52 650 90 650 L430 650 C468 650 500 620 500 580 L500 280 C500 140 400 20 260 20Z" stroke="white" stroke-width="1.5" fill="none"/>
@@ -380,6 +382,7 @@
     </div>
     <div class="hero-label">Work &amp; Residency</div>
     <h1 class="hero-title">The Complete <span>Iqama Guide</span> 2026</h1>
+      <p class="article-byline" style="font-size:.76rem;color:rgba(255,255,255,.45);margin:.55rem 0 0;letter-spacing:.02em;font-weight:500">By <strong style="color:rgba(255,255,255,.65)">NewToSaudi Editorial Team</strong></p>
     <p class="hero-sub">Everything you need to know about Saudi Arabia's residence permit — from first application to renewal, transfer, and the Premium Residency Green Card. Updated for 2026 regulations.</p>
     <div class="update-badge">Last updated June 2026 &nbsp;·&nbsp; 15 min read</div>
   </div>
@@ -879,7 +882,7 @@
                 <span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></span>
               </button>
               <div class="faq-answer"><div class="faq-answer-inner">
-                <p>No. Passport confiscation is illegal under Saudi Labour Law and international conventions. Employers may temporarily hold your passport during the initial Iqama application process (typically 2–4 weeks), which is standard practice. However, once the Iqama is issued, you are legally entitled to your passport at all times. If your employer refuses to return it, you can file a complaint with the Ministry of Human Resources and Social Development (MHRSD) or report through Musaned (for domestic workers).</p>
+                <p>No. Passport confiscation is illegal under Saudi Labour Law and international conventions. Employers may temporarily hold your passport during the initial Iqama application process (typically 3–8 weeks), which is standard practice. However, once the Iqama is issued, you are legally entitled to your passport at all times. If your employer refuses to return it, you can file a complaint with the Ministry of Human Resources and Social Development (MHRSD) or report through Musaned (for domestic workers).</p>
               </div></div>
             </div>
 
@@ -951,10 +954,11 @@
           <div class="section-eyebrow" style="justify-content:center;color:rgba(212,168,83,.8)">Stay Updated</div>
           <h2 style="font-size:2rem">Saudi regulations change. We track them so you don't have to.</h2>
           <p>Get notified when Iqama fees, processes, or labour law changes — straight to your inbox. No fluff.</p>
-          <form class="newsletter-form" onsubmit="return false">
+          <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST">
             <input type="email" placeholder="your@email.com">
             <button type="submit">Subscribe Free</button>
-          </form>
+                  <p class="newsletter__consent" style="font-size:.78rem;opacity:.7;margin:.6rem 0 0;text-align:center">By subscribing you agree to our <a href="/privacy" style="color:inherit;text-decoration:underline">Privacy Policy</a>. We never sell your data.</p>
+      </form>
         </div>
 
       </div><!-- /content-main -->
@@ -1099,10 +1103,10 @@
         <a href="/terms">Terms</a>
       </div>
       <div class="footer__bottom-social">
-        <a href="#" class="footer__social-link" aria-label="X / Twitter"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
-        <a href="#" class="footer__social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
-        <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#social-placeholder" class="footer__social-link" aria-disabled="true" tabindex="-1" rel="nofollow" aria-label="X / Twitter"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+        <a href="#social-placeholder" class="footer__social-link" aria-disabled="true" tabindex="-1" rel="nofollow" aria-label="Facebook"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="#social-placeholder" class="footer__social-link" aria-disabled="true" tabindex="-1" rel="nofollow" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
+        <a href="#social-placeholder" class="footer__social-link" aria-disabled="true" tabindex="-1" rel="nofollow" aria-label="Instagram"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
   </div>

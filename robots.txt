@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /services/consultant-profile.html
+Disallow: /blog/index.html
+
+Sitemap: https://newtosaudi.com/sitemap.xml
