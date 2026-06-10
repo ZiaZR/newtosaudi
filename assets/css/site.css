@@ -929,88 +929,121 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   }
 }
 
-/* ── References & Official Sources section ── */
+/* ==========================================================================
+   ENHANCED REGULATORY REFERENCES - FLOATING IVORY PASSPORT PATTERN
+   ========================================================================== */
 .references-section {
-  background:var(--cream);
-  border-top:1.5px solid var(--light-gray);
-  padding:3.5rem 0 4rem;
+    background: transparent !important;
+    padding: 60px 0 40px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    clear: both !important;
 }
-.references__inner { max-width:860px; }
+
+.references__inner {
+    max-width: 820px !important;
+    margin: 0 auto !important;
+    background: #FBFBFA !important;
+    border-left: 4px solid #C5A059 !important;
+    border-top: 1px solid #EDECE9 !important;
+    border-right: 1px solid #EDECE9 !important;
+    border-bottom: 1px solid #EDECE9 !important;
+    border-radius: 16px !important;
+    padding: 40px !important;
+    box-shadow: 0 20px 40px rgba(27, 42, 74, 0.045) !important;
+    box-sizing: border-box !important;
+}
+
 .references__heading {
-  font-size:.75rem;
-  font-weight:800;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-  color:var(--navy);
-  margin-bottom:.6rem;
+    font-family: 'Playfair Display', 'Georgia', serif !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: 0px !important;
+    color: #1A1A1A !important;
+    margin: 0 0 12px 0 !important;
+    text-align: left !important;
+    line-height: 1.3 !important;
 }
+
 .references__intro {
-  font-size:.82rem;
-  color:var(--text-gray);
-  line-height:1.7;
-  max-width:700px;
-  margin-bottom:1.75rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 13.5px !important;
+    color: #666666 !important;
+    line-height: 1.65 !important;
+    margin: 0 0 28px 0 !important;
+    text-align: left !important;
 }
+
 .references__list {
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:.6rem;
-  margin:0;
-  padding:0;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
 }
+
 .references__item {
-  display:flex;
-  align-items:baseline;
-  flex-wrap:wrap;
-  gap:.35rem .5rem;
-  font-size:.82rem;
-  padding:.7rem 1rem;
-  border:1px solid rgba(27,42,74,.1);
-  border-radius:10px;
-  background:var(--white);
-  transition:border-color .2s;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px dashed #EDECE9 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
 }
-.references__item:hover { border-color:rgba(212,168,83,.35); }
-.references__num {
-  font-size:.7rem;
-  font-weight:800;
-  color:var(--gold);
-  min-width:1.4rem;
-  flex-shrink:0;
+
+.references__item:last-child {
+    border-bottom: none !important;
 }
+
 .references__body-name {
-  color:var(--navy);
-  font-weight:700;
+    color: #1A1A1A !important;
+    font-weight: 700 !important;
 }
-.references__separator { color:var(--text-gray); }
-.references__claim {
-  color:var(--text-body);
-  flex:1;
-  min-width:180px;
-}
+
 .references__link {
-  margin-left:auto;
-  font-size:.77rem;
-  font-weight:600;
-  color:var(--gold);
-  white-space:nowrap;
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  transition:border-color .2s;
+    color: #C5A059 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: color 0.2s ease !important;
 }
-.references__link:hover { border-bottom-color:var(--gold); }
+
+.references__link:hover {
+    color: #1A1A1A !important;
+}
+
 .references__footer {
-  margin-top:1.25rem;
-  font-size:.76rem;
-  color:var(--text-gray);
-  display:flex;
-  gap:1.25rem;
-  flex-wrap:wrap;
-  align-items:center;
+    margin-top: 1.25rem;
+    font-size: .76rem;
+    color: #999;
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
-.references__footer a { color:var(--navy); text-decoration:underline; }
-@media(max-width:640px) {
-  .references__item { flex-direction:column; gap:.25rem; }
-  .references__link { margin-left:0; }
+.references__footer a { color: #1A1A1A; text-decoration: underline; }
+
+@media (max-width: 640px) {
+    .references-section {
+        padding: 40px 20px !important;
+    }
+    .references__inner {
+        padding: 24px !important;
+    }
+    .references__item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        padding: 16px 0 !important;
+    }
 }
