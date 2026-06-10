@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/assets/css/site.css?v=2">
 <script src="/assets/js/site.js" defer></script>
 <style>
-  .page-hero { background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020); padding: 4.5rem 0 0; position: relative; overflow: hidden; }
+  .page-hero { background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020); padding: calc(var(--nav-h,80px) + 4.5rem) 0 0; position: relative; overflow: hidden; }
   .page-hero::before { content:''; position:absolute; inset:0; z-index:1; opacity:.055; background-image: repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
   .page-hero .container { position:relative; z-index:2; }
   .page-hero__text { padding-bottom:3.5rem; max-width:740px; }

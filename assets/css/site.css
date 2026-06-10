@@ -149,7 +149,7 @@ p  { line-height:1.75; color:var(--text-body) }
   font-size:.87rem; font-weight:500; position:relative; padding:.25rem 0;
   transition:color .25s; text-decoration:none
 }
-.nav--transparent .nav__link { color:rgba(255,255,255,.75) }
+.nav--transparent .nav__link { color:rgba(255,255,255,.75); text-shadow:0 1px 6px rgba(0,0,0,.55) }
 .nav--transparent .nav__link:hover { color:var(--white) }
 .nav--solid .nav__link { color:var(--text-mid) }
 .nav--solid .nav__link:hover { color:var(--navy) }
@@ -322,8 +322,8 @@ p  { line-height:1.75; color:var(--text-body) }
   display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:rgba(255,255,255,.45);
   margin-bottom:2rem; flex-wrap:wrap
 }
-/* Standalone breadcrumb bar (before hero) — push below fixed nav */
-nav.breadcrumb { margin-top:var(--nav-h) }
+/* Breadcrumb bar sits behind the fixed nav — keep it hidden there */
+nav.breadcrumb { margin-top:0 }
 .breadcrumb a { color:rgba(255,255,255,.5); transition:color .2s }
 .breadcrumb a:hover { color:var(--gold) }
 .breadcrumb span { color:rgba(255,255,255,.25) }
