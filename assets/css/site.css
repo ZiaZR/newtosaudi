@@ -930,10 +930,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 
 /* ==========================================================================
-   FINAL PRODUCTION RECONSTRUCTION - LEFT-ALIGNED GRID DIRECTORY
+   FINAL PRODUCTION RECONSTRUCTION - FULL WIDTH INTEGRATED LEFTSIDE GRID
    ========================================================================== */
 
-/* 1. BREAK THE CONTAINER SPELL (Option A - Safety First) */
+/* 1. BREAK THE CONTAINER SPELL (Safety First) */
 .references-section .container {
     max-width: none !important;
     margin: 0 !important;
@@ -944,7 +944,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* 2. THE OUTER SECTION ANCHOR */
 .references-section {
     background: transparent !important;
-    padding: 60px 0 !important;
+    padding: 60px 0 40px 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
     clear: both !important;
@@ -952,8 +952,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 /* 3. THE MAIN IVORY PANEL */
 .references__inner {
-    max-width: 1140px !important;
-    margin: 0 auto 0 0 !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
     background: #FBFBFA !important;
     border-left: 4px solid #C5A059 !important;
     border-top: 1px solid #EDECE9 !important;
@@ -961,7 +961,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     border-bottom: 1px solid #EDECE9 !important;
     border-radius: 12px !important;
     padding: 40px !important;
-    box-shadow: 0 10px 30px rgba(27, 42, 74, 0.025) !important;
+    box-shadow: 0 10px 30px rgba(27, 42, 74, 0.02) !important;
     box-sizing: border-box !important;
 }
 
@@ -1058,7 +1058,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 
 .references__footer {
     margin-top: 24px !important;
-    font-size: 12px !important;
+    font-size: 12.5px !important;
     color: #888888 !important;
     text-align: left !important;
     line-height: 1.5 !important;
@@ -1074,7 +1074,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     color: #1A1A1A !important;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
     .references__inner {
         margin: 0 24px !important;
     }
