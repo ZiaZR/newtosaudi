@@ -663,113 +663,556 @@ p{line-height:1.75;color:var(--text-body)}
   </div>
 </section>
 
-<!-- ── STEP-BY-STEP PROCESS ── -->
+<!-- ── STEP-BY-STEP PROCESS (COMPREHENSIVE) ── -->
 <section class="section" id="process" style="background:var(--white)">
+<style>
+/* === PHASE REGISTRATION SYSTEM === */
+.reg-journey{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--navy);border-radius:20px;overflow:hidden;margin:2.5rem 0 3.5rem}
+.reg-journey-phase{padding:1.5rem 1.75rem;border-right:1px solid rgba(255,255,255,.08)}
+.reg-journey-phase:last-child{border-right:none}
+.reg-journey-phase__num{font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.25rem}
+.reg-journey-phase__name{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.reg-journey-phase__time{font-size:.75rem;color:var(--gold);font-weight:600}
+.reg-journey-phase__steps{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.35rem;line-height:1.5}
+.reg-phase{margin-bottom:3rem}
+.reg-phase-hdr{display:flex;align-items:center;gap:1.25rem;padding:1.1rem 1.5rem;background:var(--cream);border-radius:14px;border-left:4px solid var(--gold);margin-bottom:2rem}
+.reg-phase-hdr__num{width:34px;height:34px;background:var(--navy);color:var(--gold);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0}
+.reg-phase-hdr__label{font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--text-gray)}
+.reg-phase-hdr__name{font-size:.95rem;font-weight:700;color:var(--navy);margin-top:.05rem}
+.reg-phase-hdr__time{margin-left:auto;font-size:.77rem;font-weight:700;color:var(--gold-dark);background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.28rem .85rem;white-space:nowrap}
+.reg-steps{display:flex;flex-direction:column}
+.reg-step{display:grid;grid-template-columns:60px 1fr;gap:0 1.75rem}
+.reg-step-col{display:flex;flex-direction:column;align-items:center}
+.reg-step-num{width:44px;height:44px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:800;border:2.5px solid var(--gold);flex-shrink:0;z-index:1}
+.reg-step-line{flex:1;min-height:1.5rem;width:2px;background:linear-gradient(to bottom,rgba(212,168,83,.35),rgba(212,168,83,.08));margin-top:.3rem}
+.reg-step:last-child .reg-step-line{display:none}
+.reg-step-card{background:#fff;border:1.5px solid var(--mid-gray);border-radius:18px;padding:1.75rem 2rem;margin-bottom:1.5rem;transition:all .35s}
+.reg-step-card:hover{border-color:rgba(212,168,83,.5);box-shadow:0 10px 36px rgba(27,42,74,.08)}
+.reg-step-card__head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
+.reg-step-card__title{font-size:1rem;font-weight:700;color:var(--navy);margin:0;line-height:1.3}
+.reg-step-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.1rem}
+.rst{font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;white-space:nowrap}
+.rst--time{background:rgba(212,168,83,.1);color:var(--gold-dark);border:1px solid rgba(212,168,83,.2)}
+.rst--critical{background:rgba(192,70,50,.08);color:#A8321F;border:1px solid rgba(192,70,50,.18)}
+.rst--new{background:rgba(45,139,95,.08);color:#256644;border:1px solid rgba(45,139,95,.2)}
+.rst--portal{background:rgba(27,42,74,.07);color:var(--navy);border:1px solid rgba(27,42,74,.12)}
+.reg-step-card__desc{font-size:.9rem;color:var(--text-body);line-height:1.75;margin-bottom:1rem}
+.reg-portal-btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;color:var(--navy);background:var(--cream);border:1.5px solid var(--border-gray);border-radius:8px;padding:.4rem .9rem;text-decoration:none;transition:all .25s;margin-bottom:1rem}
+.reg-portal-btn:hover{border-color:var(--gold);color:var(--gold-dark);background:rgba(212,168,83,.06)}
+.reg-docs-label{font-size:.7rem;font-weight:700;color:var(--text-gray);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.1em}
+.reg-docs{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
+.reg-doc{font-size:.76rem;color:var(--text-mid);background:var(--cream);padding:.28rem .68rem;border-radius:6px;display:inline-flex;align-items:center;gap:.35rem}
+.reg-doc::before{content:'✓';color:#2D8B5F;font-weight:800;flex-shrink:0}
+.reg-tip{margin-top:1rem;padding:.9rem 1.1rem;background:rgba(212,168,83,.07);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;font-size:.85rem;color:var(--navy);line-height:1.65}
+.reg-tip strong{color:var(--gold-dark)}
+.stat-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin:.85rem 0}
+.stat-cell{border-radius:10px;padding:.85rem;text-align:center}
+.stat-cell__label{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.stat-cell__val{font-size:1.15rem;font-weight:800;margin-bottom:.2rem}
+.stat-cell__note{font-size:.72rem;line-height:1.4}
+.gosi-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:.75rem 0}
+.nitaqat-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;margin-top:1.1rem}
+.nit-cell{border-radius:10px;padding:1rem;text-align:center}
+.nit-cell__lbl{font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
+.nit-cell__tier{font-size:.95rem;font-weight:800;margin-bottom:.25rem}
+.nit-cell__note{font-size:.7rem;line-height:1.4}
+.nit-cell--plat{background:rgba(99,179,237,.1);border:1.5px solid rgba(99,179,237,.25)}
+.nit-cell--plat .nit-cell__lbl,.nit-cell--plat .nit-cell__tier{color:#2C6F9E}
+.nit-cell--green{background:rgba(45,139,95,.1);border:1.5px solid rgba(45,139,95,.2)}
+.nit-cell--green .nit-cell__lbl,.nit-cell--green .nit-cell__tier{color:#256644}
+.nit-cell--yellow{background:rgba(212,168,83,.1);border:1.5px solid rgba(212,168,83,.2)}
+.nit-cell--yellow .nit-cell__lbl,.nit-cell--yellow .nit-cell__tier{color:#9A6E1A}
+.nit-cell--red{background:rgba(192,70,50,.08);border:1.5px solid rgba(192,70,50,.15)}
+.nit-cell--red .nit-cell__lbl,.nit-cell--red .nit-cell__tier{color:#A8321F}
+/* KAM Service */
+.kam-wrap{background:linear-gradient(135deg,#040C1A 0%,#0A1422 55%,#0E1A30 100%);border-radius:28px;padding:clamp(3rem,6vw,5rem);position:relative;overflow:hidden;margin-top:3rem}
+.kam-glow2{position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,.13) 0%,transparent 60%);top:50%;right:-5%;transform:translateY(-50%);pointer-events:none}
+.kam-grid2{display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:start;position:relative;z-index:1}
+.kam-eyebrow2{font-size:.63rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
+.kam-eyebrow2::before{content:'';width:20px;height:1.5px;background:var(--gold)}
+.kam-h2{font-size:clamp(1.55rem,2.4vw,2.15rem);color:#fff;font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+.kam-h2 em{color:var(--gold);font-style:normal}
+.kam-lead{font-size:.93rem;color:rgba(255,255,255,.58);line-height:1.8;margin-bottom:2rem}
+.kam-features2{display:flex;flex-direction:column;gap:1.15rem;margin-bottom:2rem}
+.kam-feat{display:flex;gap:.95rem;align-items:flex-start}
+.kam-feat__icon{width:35px;height:35px;background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.18);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.05rem}
+.kam-feat__title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.15rem}
+.kam-feat__desc{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.6}
+.kam-countries2{display:flex;flex-wrap:wrap;gap:.4rem}
+.kam-country2{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.22rem .65rem}
+.kam-pricing-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:2.25rem}
+.kam-badge2{display:inline-flex;align-items:center;gap:.4rem;font-size:.63rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,83,.1);border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.32rem .85rem;margin-bottom:1.5rem}
+.kam-price{font-size:1.35rem;font-weight:800;color:#fff;margin:.4rem 0 .2rem}
+.kam-price span{font-size:.82rem;color:var(--gold);font-weight:600}
+.kam-price-note{font-size:.76rem;color:rgba(255,255,255,.38);margin-bottom:1.5rem;line-height:1.5}
+.kam-includes{list-style:none;display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.75rem}
+.kam-includes li{display:flex;gap:.65rem;align-items:flex-start;font-size:.83rem;color:rgba(255,255,255,.7);line-height:1.5}
+.kam-check{width:16px;height:16px;background:rgba(45,139,95,.2);border:1px solid rgba(45,139,95,.35);border-radius:50%;flex-shrink:0;margin-top:.15rem;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20 6 9 17 4 12' stroke='%232D8B5F' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-size:10px;background-repeat:no-repeat;background-position:center}
+.kam-cta2{display:block;width:100%;padding:.95rem;background:var(--gold);color:var(--navy);border:none;border-radius:12px;font-size:.9rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .3s;text-align:center;text-decoration:none}
+.kam-cta2:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,168,83,.3)}
+.kam-sec-cta{display:block;width:100%;padding:.78rem;background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.15);border-radius:12px;font-size:.83rem;font-weight:600;transition:all .3s;text-align:center;text-decoration:none;margin-top:.7rem}
+.kam-sec-cta:hover{border-color:rgba(255,255,255,.35);color:#fff}
+@media(max-width:960px){.kam-grid2{grid-template-columns:1fr}.reg-journey{grid-template-columns:repeat(2,1fr)}.stat-grid-3{grid-template-columns:1fr 1fr}.gosi-grid{grid-template-columns:1fr}.nitaqat-bar{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.reg-step{grid-template-columns:48px 1fr;gap:0 1rem}.reg-journey{grid-template-columns:1fr}.nitaqat-bar{grid-template-columns:1fr 1fr}}
+</style>
+
   <div class="container">
     <div class="reveal">
       <span class="section-eyebrow">Registration Process</span>
       <h2 class="section-heading">How to Register Your Company</h2>
-      <p class="section-desc">Saudi Arabia's business registration is now significantly streamlined through the Invest Saudi portal. Follow these five core steps to get your company operational.</p>
+      <p class="section-desc">Four phases. Eleven government portals. This is the most comprehensive setup guide available for foreign investors entering Saudi Arabia — from MISA to Mudad, nothing is left out.</p>
     </div>
-    <div class="process-steps" style="margin-top:3rem">
 
-      <div class="process-step reveal">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h3>MISA License — Ministry of Investment</h3>
-          <p style="font-size:.9rem;margin:.4rem 0">The first and most important step: obtain your foreign investment license from the Ministry of Investment of Saudi Arabia (MISA). This is done via the Invest Saudi platform (invest.gov.sa). You will need to select your legal entity type, business activities (ISIC codes), and ownership structure.</p>
-          <div class="step-meta">
-            <span class="step-tag step-tag--time">⏱ 3–10 business days (online)</span>
-            <span class="step-tag step-tag--docs">📄 Documents required</span>
-          </div>
-          <div class="docs-list">
-            <span class="doc-item">Certificate of Incorporation (home country)</span>
-            <span class="doc-item">Memorandum &amp; Articles of Association</span>
-            <span class="doc-item">Board Resolution to invest in KSA</span>
-            <span class="doc-item">Audited financials (last 2 years)</span>
-            <span class="doc-item">Passport copies of directors/shareholders</span>
-            <span class="doc-item">Power of Attorney (if using a representative)</span>
-          </div>
-        </div>
+    <!-- Journey Overview Bar -->
+    <div class="reg-journey reveal">
+      <div class="reg-journey-phase">
+        <div class="reg-journey-phase__num">Phase 1</div>
+        <div class="reg-journey-phase__name">Incorporation</div>
+        <div class="reg-journey-phase__time">3 – 6 weeks</div>
+        <div class="reg-journey-phase__steps">MISA · CR · SPL · Baladia · Chamber</div>
       </div>
-
-      <div class="process-step reveal reveal-delay-1">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <h3>Commercial Registration (CR) — Ministry of Commerce</h3>
-          <p style="font-size:.9rem;margin:.4rem 0">After your MISA license is issued, register your company with the Ministry of Commerce (MOC) to receive your Commercial Registration number. This is your official company ID used for all business transactions, banking, and government dealings.</p>
-          <div class="step-meta">
-            <span class="step-tag step-tag--time">⏱ 1–5 business days</span>
-            <span class="step-tag step-tag--docs">📄 Documents required</span>
-          </div>
-          <div class="docs-list">
-            <span class="doc-item">MISA License</span>
-            <span class="doc-item">Company Articles of Association (Saudi-formatted)</span>
-            <span class="doc-item">Lease Agreement for registered office address</span>
-            <span class="doc-item">Shareholder/director national IDs or passport copies</span>
-          </div>
-        </div>
+      <div class="reg-journey-phase">
+        <div class="reg-journey-phase__num">Phase 2</div>
+        <div class="reg-journey-phase__name">Workforce &amp; HR</div>
+        <div class="reg-journey-phase__time">1 – 2 weeks</div>
+        <div class="reg-journey-phase__steps">GOSI · Qiwa · Muqeem · Mudad</div>
       </div>
-
-      <div class="process-step reveal reveal-delay-2">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <h3>Municipality License (Baladia)</h3>
-          <p style="font-size:.9rem;margin:.4rem 0">Depending on your business activity and physical location, you will need a Municipal License from the local municipality (Baladia). This is a premises-based license confirming that your office or facility complies with zoning regulations.</p>
-          <div class="step-meta">
-            <span class="step-tag step-tag--time">⏱ 3–7 business days</span>
-            <span class="step-tag step-tag--docs">📄 Documents required</span>
-          </div>
-          <div class="docs-list">
-            <span class="doc-item">Commercial Registration</span>
-            <span class="doc-item">Lease Contract (notarized)</span>
-            <span class="doc-item">Floor plan / premises drawings</span>
-            <span class="doc-item">Civil Defense compliance certificate (if applicable)</span>
-          </div>
-        </div>
+      <div class="reg-journey-phase">
+        <div class="reg-journey-phase__num">Phase 3</div>
+        <div class="reg-journey-phase__name">Tax &amp; Finance</div>
+        <div class="reg-journey-phase__time">2 – 4 weeks</div>
+        <div class="reg-journey-phase__steps">ZATCA · Corporate Bank Account</div>
       </div>
-
-      <div class="process-step reveal reveal-delay-3">
-        <div class="step-num">4</div>
-        <div class="step-body">
-          <h3>Chamber of Commerce Membership</h3>
-          <p style="font-size:.9rem;margin:.4rem 0">Register with the local Chamber of Commerce (e.g., Riyadh Chamber, Jeddah Chamber). Membership is mandatory and enables you to obtain Certificates of Origin, attest documents, and access business support services. Register via the Saudi Chambers portal.</p>
-          <div class="step-meta">
-            <span class="step-tag step-tag--time">⏱ 1–3 business days</span>
-            <span class="step-tag step-tag--docs">📄 Documents required</span>
-          </div>
-          <div class="docs-list">
-            <span class="doc-item">Commercial Registration copy</span>
-            <span class="doc-item">MISA License</span>
-            <span class="doc-item">Manager's national ID / Iqama</span>
-          </div>
-          <p style="font-size:.82rem;color:var(--text-gray);margin-top:.75rem">Annual membership fee: SAR 400–2,000 depending on company size and city.</p>
-        </div>
+      <div class="reg-journey-phase">
+        <div class="reg-journey-phase__num">Ongoing</div>
+        <div class="reg-journey-phase__name">Compliance</div>
+        <div class="reg-journey-phase__time">Monthly / Annual</div>
+        <div class="reg-journey-phase__steps">Nitaqat · WPS · Iqama · Renewals</div>
       </div>
-
-      <div class="process-step reveal reveal-delay-4">
-        <div class="step-num">5</div>
-        <div class="step-body">
-          <h3>VAT Registration — ZATCA</h3>
-          <p style="font-size:.9rem;margin:.4rem 0">If your annual taxable supply exceeds SAR 375,000, VAT registration is mandatory. Voluntary registration is available from SAR 187,500 annual turnover. Register via the ZATCA (Zakat, Tax and Customs Authority) portal. Saudi Arabia's VAT rate is 15%.</p>
-          <div class="step-meta">
-            <span class="step-tag step-tag--time">⏱ 1–2 business days</span>
-            <span class="step-tag step-tag--docs">📄 Documents required</span>
-          </div>
-          <div class="docs-list">
-            <span class="doc-item">Commercial Registration</span>
-            <span class="doc-item">Bank account details</span>
-            <span class="doc-item">Projected annual revenue statement</span>
-          </div>
-          <p style="font-size:.82rem;color:var(--text-gray);margin-top:.75rem">Also register for Zakat (for Saudi/GCC-owned entities) or Income Tax (for foreign-owned entities) with ZATCA.</p>
-          <div style="margin-top:1rem;padding:1.25rem 1.5rem;background:rgba(212,168,83,.08);border:1.5px solid rgba(212,168,83,.25);border-radius:12px">
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem">Tax Note</div>
-            <p style="font-size:.88rem;color:var(--navy);margin:0;line-height:1.7"><strong>Foreign-owned companies</strong> pay 20% corporate income tax on net profit. <strong>Saudi/GCC nationals</strong> pay 2.5% Zakat on their zakatable base instead. Companies with <strong>mixed ownership</strong> pay proportional rates — the foreign ownership share is taxed at 20%, and the Saudi/GCC share is subject to Zakat. VAT (15%) is completely separate from corporate tax. Always consult a registered Saudi tax adviser for your specific ownership structure before setting up.</p>
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    <!-- ════ PHASE 1: INCORPORATION ════ -->
+    <div class="reg-phase reveal">
+      <div class="reg-phase-hdr">
+        <div class="reg-phase-hdr__num">P1</div>
+        <div>
+          <div class="reg-phase-hdr__label">Phase One · Steps 1–5</div>
+          <div class="reg-phase-hdr__name">Company Incorporation</div>
+        </div>
+        <div class="reg-phase-hdr__time">3 – 6 weeks total</div>
+      </div>
+      <div class="reg-steps">
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">1</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">MISA Foreign Investment License — Ministry of Investment</h3>
+              <div class="reg-step-tags"><span class="rst rst--critical">First &amp; Most Critical Step</span><span class="rst rst--time">3 – 10 business days</span></div>
+            </div>
+            <p class="reg-step-card__desc">Everything begins here. The Ministry of Investment of Saudi Arabia (MISA) issues your foreign investment license — without it, no other registration is possible. Apply through the Invest Saudi portal, where you select your legal entity type, up to three ISIC-coded business activities, ownership structure (100% foreign or JV), and target city. MISA will verify your parent company's legal standing, corporate history, and financial health before approving.</p>
+            <a href="https://invest.gov.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>invest.gov.sa — Invest Saudi Portal ↗</a>
+            <div class="reg-docs-label">Documents Required</div>
+            <div class="reg-docs">
+              <span class="reg-doc">Certificate of Incorporation (home country)</span>
+              <span class="reg-doc">Memorandum &amp; Articles of Association</span>
+              <span class="reg-doc">Board Resolution to invest in KSA</span>
+              <span class="reg-doc">Audited financial statements — last 2 years</span>
+              <span class="reg-doc">Passport copies of all directors &amp; shareholders</span>
+              <span class="reg-doc">Power of Attorney (if using a representative)</span>
+              <span class="reg-doc">Bank reference letter from home country</span>
+            </div>
+            <div class="reg-tip"><strong>Translation note:</strong> All documents must be translated into Arabic by a MISA-approved sworn translator and legally attested — via Apostille (Hague Convention countries) or embassy legalization. Allow 1–2 extra weeks for this step before submitting.</div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">2</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Commercial Registration (CR) — Ministry of Commerce</h3>
+              <div class="reg-step-tags"><span class="rst rst--critical">Required After MISA</span><span class="rst rst--time">1 – 5 business days</span></div>
+            </div>
+            <p class="reg-step-card__desc">Once your MISA license is issued, register with the Ministry of Commerce to receive your Commercial Registration number — a 10-digit company ID required for banking, hiring, leasing, and every government portal thereafter. Your Articles of Association are notarized through the MOC system at this stage.</p>
+            <a href="https://mc.gov.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>mc.gov.sa — Ministry of Commerce ↗</a>
+            <div class="reg-docs-label">Documents Required</div>
+            <div class="reg-docs">
+              <span class="reg-doc">MISA Investment License</span>
+              <span class="reg-doc">Saudi-formatted Articles of Association</span>
+              <span class="reg-doc">Registered office lease agreement</span>
+              <span class="reg-doc">Director passport copies or Iqama</span>
+              <span class="reg-doc">Manager appointment letter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">3</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">National Address Registration — Saudi Post (SPL)</h3>
+              <div class="reg-step-tags"><span class="rst rst--new">Frequently Missed — Don't Skip</span><span class="rst rst--time">1 – 2 business days</span></div>
+            </div>
+            <p class="reg-step-card__desc">Every company must register a standardised National Address through Saudi Post (SPL) — the official address used across all government portals, bank statements, customs clearance, legal correspondence, and deliveries. Without it, corporate bank account applications and government registrations will stall. Register as soon as your office lease is signed.</p>
+            <a href="https://splonline.com.sa/en/national-address-1/" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>splonline.com.sa — National Address Portal ↗</a>
+            <div class="reg-docs">
+              <span class="reg-doc">Commercial Registration</span>
+              <span class="reg-doc">Office lease agreement</span>
+              <span class="reg-doc">Manager's Iqama or passport</span>
+            </div>
+            <div class="reg-tip">Your National Address code must appear on all official letterheads, contracts, and government forms. Embed it from day one — every portal will ask for it.</div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">4</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Municipality License — Baladia</h3>
+              <div class="reg-step-tags"><span class="rst rst--time">3 – 7 business days</span><span class="rst rst--portal">Premises-Based</span></div>
+            </div>
+            <p class="reg-step-card__desc">The Municipal License (Rukhsa Baladiyya) confirms your premises comply with local zoning, health, and safety regulations. Required before operating or receiving clients at your location. Retail, F&amp;B, healthcare, and education businesses face additional inspections. Apply via Balady portal after confirming your office address.</p>
+            <a href="https://www.balady.gov.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>balady.gov.sa — Municipality Portal ↗</a>
+            <div class="reg-docs">
+              <span class="reg-doc">Commercial Registration</span>
+              <span class="reg-doc">National Address certificate</span>
+              <span class="reg-doc">Notarized lease contract</span>
+              <span class="reg-doc">Premises floor plan</span>
+              <span class="reg-doc">Civil Defense compliance cert (if applicable)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">5</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Chamber of Commerce Membership</h3>
+              <div class="reg-step-tags"><span class="rst rst--time">1 – 3 business days</span><span class="rst rst--portal">Mandatory</span></div>
+            </div>
+            <p class="reg-step-card__desc">All businesses must be members of the local Chamber of Commerce — Riyadh, Jeddah, or the relevant regional body. Membership enables Certificates of Origin, document attestation, and government-tender pre-qualification. Register via the Saudi Chambers platform after your CR is live.</p>
+            <a href="https://www.chamber.org.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>chamber.org.sa — Saudi Chambers ↗</a>
+            <div class="reg-docs">
+              <span class="reg-doc">Commercial Registration copy</span>
+              <span class="reg-doc">MISA Investment License</span>
+              <span class="reg-doc">Manager's national ID or Iqama</span>
+            </div>
+            <div class="reg-tip">Annual fee: <strong>SAR 400 – 2,000</strong> based on company size and paid-in capital. Riyadh and Jeddah Chambers have dedicated foreign investment desks — a useful early relationship to build.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════ PHASE 2: WORKFORCE & HR ════ -->
+    <div class="reg-phase reveal">
+      <div class="reg-phase-hdr" style="border-left-color:#2D8B5F;">
+        <div class="reg-phase-hdr__num" style="background:#2D8B5F;">P2</div>
+        <div>
+          <div class="reg-phase-hdr__label">Phase Two · Steps 6–9</div>
+          <div class="reg-phase-hdr__name">Workforce &amp; HR Compliance — 4 Portals</div>
+        </div>
+        <div class="reg-phase-hdr__time" style="color:#256644;background:rgba(45,139,95,.1);border-color:rgba(45,139,95,.2);">1 – 2 weeks</div>
+      </div>
+      <div class="reg-steps">
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">6</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">GOSI — General Organisation for Social Insurance</h3>
+              <div class="reg-step-tags"><span class="rst rst--critical">Register Before First Hire</span><span class="rst rst--time">Same day — online</span></div>
+            </div>
+            <p class="reg-step-card__desc">GOSI is Saudi Arabia's mandatory social insurance system. Registration must happen before your first employee joins. Contributions are due by the 15th of each month. Non-payment triggers automatic fines and blocks on Qiwa, Muqeem, and all government services. GOSI is fully integrated with Qiwa and Mudad — employee data must match across all three platforms.</p>
+            <a href="https://www.gosi.gov.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>gosi.gov.sa — GOSI Portal ↗</a>
+            <div class="gosi-grid">
+              <div style="background:rgba(45,139,95,.07);border:1px solid rgba(45,139,95,.2);border-radius:10px;padding:.9rem;">
+                <div style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#256644;margin-bottom:.35rem;">Saudi Nationals</div>
+                <div style="font-size:1.1rem;font-weight:800;color:#2D8B5F;">21.5% of salary</div>
+                <div style="font-size:.77rem;color:var(--text-gray);margin-top:.2rem;">11.5% employer + 10% employee<br>Covers annuity, disability &amp; hazard</div>
+              </div>
+              <div style="background:rgba(212,168,83,.07);border:1px solid rgba(212,168,83,.2);border-radius:10px;padding:.9rem;">
+                <div style="font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9A6E1A;margin-bottom:.35rem;">Expat Employees</div>
+                <div style="font-size:1.1rem;font-weight:800;color:var(--gold-dark);">2% of salary</div>
+                <div style="font-size:.77rem;color:var(--text-gray);margin-top:.2rem;">Employer only — no employee deduction<br>Occupational hazard insurance only</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">7</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Qiwa — Saudi Labor Market Platform</h3>
+              <div class="reg-step-tags"><span class="rst rst--new">Essential for All Employers</span><span class="rst rst--time">Immediate — online</span></div>
+            </div>
+            <p class="reg-step-card__desc">Qiwa is the Ministry of Human Resources' digital backbone for managing your entire workforce. Every employer must register before making any hires. Through Qiwa you apply for expat work permits, issue legally binding digital employment contracts, handle labor dispute resolution, process internal employee transfers, and monitor your Nitaqat (Saudization) compliance in real time.</p>
+            <a href="https://qiwa.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>qiwa.sa — Qiwa Platform ↗</a>
+            <div class="reg-docs-label">What You Manage on Qiwa</div>
+            <div class="reg-docs" style="margin-top:.4rem;">
+              <span class="reg-doc">Expat work permit applications &amp; renewals</span>
+              <span class="reg-doc">Digital employment contracts (legally binding)</span>
+              <span class="reg-doc">Employee internal transfer requests</span>
+              <span class="reg-doc">Real-time Nitaqat tier monitoring</span>
+              <span class="reg-doc">Labor dispute filing &amp; resolution</span>
+              <span class="reg-doc">Visa quota management per Saudization tier</span>
+            </div>
+            <div class="reg-tip"><strong>Expat quota:</strong> Your allowed number of expat employees is determined by your Nitaqat tier. New companies typically begin at Yellow — approximately 3 expats per Saudi employee. Improving your Saudization rate unlocks more expat slots and priority government service access.</div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">8</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Muqeem — Expat Residency Management</h3>
+              <div class="reg-step-tags"><span class="rst rst--new">Required to Sponsor Expats</span><span class="rst rst--time">Setup in 1 day</span></div>
+            </div>
+            <p class="reg-step-card__desc">Muqeem (Arabic for "resident") is the Ministry of Interior's portal for managing the full Iqama lifecycle of your expat employees. As the sponsoring employer (kafeel), your company uses Muqeem to issue entry work visas for new hires, track Iqama expiry, renew residence permits, manage exit-re-entry visas, final exit visas, and dependent visas for employees bringing family to the Kingdom.</p>
+            <a href="https://www.muqeem.com.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>muqeem.com.sa — Muqeem Portal ↗</a>
+            <div class="reg-docs-label">Key Muqeem Functions</div>
+            <div class="reg-docs" style="margin-top:.4rem;">
+              <span class="reg-doc">Issue work entry visas for new hires</span>
+              <span class="reg-doc">Iqama issuance &amp; renewal tracking</span>
+              <span class="reg-doc">Exit-re-entry visa management</span>
+              <span class="reg-doc">Final exit visas (end of service)</span>
+              <span class="reg-doc">Dependent family visa management</span>
+              <span class="reg-doc">Employee block / unblock status</span>
+            </div>
+            <div class="reg-tip"><strong>Annual cost per expat:</strong> Budget SAR 2,400 – 4,800 per year including Iqama fees, visa fees, and dependent levies. Factor this into employment packages when recruiting internationally.</div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">9</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Mudad — Wage Protection System (WPS)</h3>
+              <div class="reg-step-tags"><span class="rst rst--critical">Mandatory for All Employers</span><span class="rst rst--time">1 – 2 business days</span></div>
+            </div>
+            <p class="reg-step-card__desc">Mudad is the digital backbone of Saudi Arabia's Wage Protection System. All salaries must be paid through a WPS-registered channel, and Mudad records every disbursement, reporting it automatically to MHRSD. Late or missed payments trigger automatic Qiwa violations, Nitaqat tier downgrades, and suspension of all government services — including work permit and Iqama renewals.</p>
+            <a href="https://mudad.com.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>mudad.com.sa — Mudad Platform ↗</a>
+            <div class="stat-grid-3">
+              <div class="stat-cell" style="background:var(--cream);border:1px solid var(--mid-gray);">
+                <div class="stat-cell__label" style="color:var(--text-gray);">Payment Deadline</div>
+                <div class="stat-cell__val" style="color:var(--navy);">10th</div>
+                <div class="stat-cell__note" style="color:var(--text-gray);">of each month</div>
+              </div>
+              <div class="stat-cell" style="background:rgba(192,70,50,.07);border:1px solid rgba(192,70,50,.15);">
+                <div class="stat-cell__label" style="color:#A8321F;">Late Payment</div>
+                <div class="stat-cell__val" style="color:#A8321F;">Block</div>
+                <div class="stat-cell__note" style="color:#A8321F;">All govt services suspended</div>
+              </div>
+              <div class="stat-cell" style="background:rgba(27,42,74,.05);border:1px solid rgba(27,42,74,.1);">
+                <div class="stat-cell__label" style="color:var(--navy);">Connects to</div>
+                <div class="stat-cell__val" style="color:var(--navy);">Qiwa</div>
+                <div class="stat-cell__note" style="color:var(--text-gray);">Bank account + GOSI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════ PHASE 3: TAX & FINANCE ════ -->
+    <div class="reg-phase reveal">
+      <div class="reg-phase-hdr" style="border-left-color:var(--navy);">
+        <div class="reg-phase-hdr__num">P3</div>
+        <div>
+          <div class="reg-phase-hdr__label">Phase Three · Steps 10–11</div>
+          <div class="reg-phase-hdr__name">Tax Registration &amp; Corporate Banking</div>
+        </div>
+        <div class="reg-phase-hdr__time" style="color:var(--navy);background:rgba(27,42,74,.06);border-color:rgba(27,42,74,.14);">2 – 4 weeks</div>
+      </div>
+      <div class="reg-steps">
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">10</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">ZATCA — VAT &amp; Corporate Tax Registration</h3>
+              <div class="reg-step-tags"><span class="rst rst--critical">Mandatory Above SAR 375K Revenue</span><span class="rst rst--time">1 – 2 business days</span></div>
+            </div>
+            <p class="reg-step-card__desc">Register with the Zakat, Tax and Customs Authority (ZATCA) for VAT and corporate income tax. VAT is mandatory once annual taxable supplies exceed SAR 375,000 (voluntary from SAR 187,500). Register early — input VAT on your setup costs can be reclaimed. Foreign-owned companies pay 20% CIT; Saudi/GCC-owned companies pay 2.5% Zakat; mixed ownership pays proportionally.</p>
+            <a href="https://zatca.gov.sa" target="_blank" rel="noopener" class="reg-portal-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>zatca.gov.sa — ZATCA Portal ↗</a>
+            <div class="stat-grid-3">
+              <div class="stat-cell" style="background:rgba(212,168,83,.07);border:1px solid rgba(212,168,83,.18);">
+                <div class="stat-cell__label" style="color:var(--gold-dark);">VAT Rate</div>
+                <div class="stat-cell__val" style="color:var(--navy);">15%</div>
+                <div class="stat-cell__note" style="color:var(--text-gray);">Standard rate — all sectors</div>
+              </div>
+              <div class="stat-cell" style="background:rgba(27,42,74,.06);border:1px solid rgba(27,42,74,.12);">
+                <div class="stat-cell__label" style="color:var(--navy);">CIT — Foreign Co.</div>
+                <div class="stat-cell__val" style="color:var(--navy);">20%</div>
+                <div class="stat-cell__note" style="color:var(--text-gray);">On net profit annually</div>
+              </div>
+              <div class="stat-cell" style="background:rgba(45,139,95,.07);border:1px solid rgba(45,139,95,.18);">
+                <div class="stat-cell__label" style="color:#256644;">Zakat — Saudi Co.</div>
+                <div class="stat-cell__val" style="color:#2D8B5F;">2.5%</div>
+                <div class="stat-cell__note" style="color:var(--text-gray);">On zakatable base</div>
+              </div>
+            </div>
+            <div class="reg-tip">Always engage a ZATCA-registered Saudi tax adviser before finalising your ownership structure. Mixed-ownership structures require careful tax planning to optimise the proportion between CIT and Zakat obligations.</div>
+          </div>
+        </div>
+
+        <div class="reg-step">
+          <div class="reg-step-col"><div class="reg-step-num">11</div><div class="reg-step-line"></div></div>
+          <div class="reg-step-card">
+            <div class="reg-step-card__head">
+              <h3 class="reg-step-card__title">Corporate Bank Account</h3>
+              <div class="reg-step-tags"><span class="rst rst--time">2 – 4 weeks</span><span class="rst rst--portal">Required for WPS, GOSI &amp; Capital</span></div>
+            </div>
+            <p class="reg-step-card__desc">A Saudi corporate bank account connects to Mudad (WPS salary payments), GOSI contributions, ZATCA tax payments, and your company's capital deposit. Due to KYC/AML requirements, the process takes 2–4 weeks. A warm introduction through a local PRO or contact dramatically compresses bank due diligence. Recommended for foreign-owned companies: SNB, SABB (HSBC affiliate), Al Rajhi, and Riyad Bank.</p>
+            <div class="reg-docs-label">Documents Required</div>
+            <div class="reg-docs">
+              <span class="reg-doc">Commercial Registration (CR)</span>
+              <span class="reg-doc">MISA Investment License</span>
+              <span class="reg-doc">National Address certificate (SPL)</span>
+              <span class="reg-doc">Articles of Association — notarized</span>
+              <span class="reg-doc">Chamber of Commerce certificate</span>
+              <span class="reg-doc">Passport copies of all directors</span>
+              <span class="reg-doc">Board resolution — account opening + signatories</span>
+              <span class="reg-doc">Business plan or activity description</span>
+              <span class="reg-doc">Parent company bank statements (if applicable)</span>
+            </div>
+            <div class="reg-tip"><strong>Bank tip:</strong> SABB (Saudi British Bank — HSBC affiliate) is especially receptive to foreign-owned companies and expat directors from western countries. Both SABB and SNB have dedicated corporate banking teams with English-speaking relationship managers who understand international business structures.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ════ ONGOING: NITAQAT ════ -->
+    <div class="reg-phase reveal">
+      <div class="reg-phase-hdr" style="border-left-color:#C04632;">
+        <div class="reg-phase-hdr__num" style="background:#C04632;font-size:.9rem;">⚡</div>
+        <div>
+          <div class="reg-phase-hdr__label">Ongoing Compliance</div>
+          <div class="reg-phase-hdr__name">Nitaqat — Saudization &amp; Workforce Quotas</div>
+        </div>
+        <div class="reg-phase-hdr__time" style="color:#A8321F;background:rgba(192,70,50,.08);border-color:rgba(192,70,50,.18);">Monitored Monthly on Qiwa</div>
+      </div>
+      <div class="reg-step-card reveal">
+        <p style="font-size:.9rem;color:var(--text-body);line-height:1.75;margin-bottom:1.25rem;">Nitaqat is Saudi Arabia's Saudization compliance program — a color-coded tier system that assigns every business a ranking based on the percentage of Saudi nationals in your workforce relative to your industry benchmark. Your tier directly controls how many expats you can hire, whether work permits renew smoothly, and your overall access to government services. Understanding it from day one prevents costly disruptions.</p>
+        <div class="nitaqat-bar">
+          <div class="nit-cell nit-cell--plat">
+            <div class="nit-cell__lbl">Platinum</div>
+            <div class="nit-cell__tier">Top Tier</div>
+            <div class="nit-cell__note" style="color:#2C6F9E;">Maximum expat quota. Priority access to all government services.</div>
+          </div>
+          <div class="nit-cell nit-cell--green">
+            <div class="nit-cell__lbl">Green</div>
+            <div class="nit-cell__tier">Compliant</div>
+            <div class="nit-cell__note" style="color:#256644;">Standard expat quota. Full government service access.</div>
+          </div>
+          <div class="nit-cell nit-cell--yellow">
+            <div class="nit-cell__lbl">Yellow</div>
+            <div class="nit-cell__tier">At Risk</div>
+            <div class="nit-cell__note" style="color:#9A6E1A;">Reduced quota. Work permit renewals may be blocked.</div>
+          </div>
+          <div class="nit-cell nit-cell--red">
+            <div class="nit-cell__lbl">Red</div>
+            <div class="nit-cell__tier">Non-Compliant</div>
+            <div class="nit-cell__note" style="color:#A8321F;">All government services suspended. Urgent corrective action required.</div>
+          </div>
+        </div>
+        <div class="reg-tip" style="margin-top:1.25rem;">New companies start at <strong>Yellow tier</strong>. Move to Green within your first operating cycle by hiring Saudi nationals — even in entry-level or part-time roles. Check your tier monthly on Qiwa. Training programmes, Saudi interns, and part-time hires all count toward your score.</div>
+      </div>
+    </div>
+
+    <!-- ════ KAM SERVICE ════ -->
+    <div class="kam-wrap reveal" id="pro-service">
+      <div class="kam-glow2"></div>
+      <div class="kam-grid2">
+        <div>
+          <div class="kam-eyebrow2">White-Glove Market Entry Service</div>
+          <h2 class="kam-h2">You Shouldn't Navigate <em>11 Government Portals</em> Alone.</h2>
+          <p class="kam-lead">Setting up in Saudi Arabia is complex, multilingual, and time-sensitive. We've helped founders, executives, and investment teams from 30+ countries get fully operational companies in the Kingdom — without a single trip to a government office. From your MISA application to your team's Iqamas, your dedicated KAM handles everything.</p>
+          <div class="kam-features2">
+            <div class="kam-feat">
+              <div class="kam-feat__icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <div>
+                <div class="kam-feat__title">Dedicated Key Account Manager (KAM) — Your One Call</div>
+                <div class="kam-feat__desc">One expert assigned from day one who knows your company, your goals, and the Saudi system. Direct WhatsApp line, no support tickets, no queues.</div>
+              </div>
+            </div>
+            <div class="kam-feat">
+              <div class="kam-feat__icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+              <div>
+                <div class="kam-feat__title">End-to-End Portal Management — All 11 Platforms</div>
+                <div class="kam-feat__desc">MISA, CR, SPL, Baladia, Chamber, GOSI, Qiwa, Muqeem, Mudad, ZATCA, and your bank — your KAM registers and connects every platform on your behalf.</div>
+              </div>
+            </div>
+            <div class="kam-feat">
+              <div class="kam-feat__icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div>
+                <div class="kam-feat__title">Document Translation &amp; Attestation</div>
+                <div class="kam-feat__desc">Arabic translation by MISA-approved sworn translators. Apostille, embassy legalization, and MOC notarization handled in-country, end-to-end.</div>
+              </div>
+            </div>
+            <div class="kam-feat">
+              <div class="kam-feat__icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+              <div>
+                <div class="kam-feat__title">Bank Introduction &amp; Account Opening Support</div>
+                <div class="kam-feat__desc">Warm introductions to relationship managers at SNB, SABB, and Al Rajhi. Pre-vetted KYC dossier to compress the 4-week process down to 10 days.</div>
+              </div>
+            </div>
+            <div class="kam-feat">
+              <div class="kam-feat__icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="var(--gold)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div>
+                <div class="kam-feat__title">Nitaqat &amp; Ongoing Compliance Monitoring</div>
+                <div class="kam-feat__desc">Monthly Saudization tier reports, Iqama renewal alerts, Mudad payment reminders, and annual MISA/CR renewal management — proactively, not reactively.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:.7rem;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.14em;">We serve clients entering from</div>
+          <div class="kam-countries2">
+            <span class="kam-country2">🇬🇧 United Kingdom</span>
+            <span class="kam-country2">🇺🇸 United States</span>
+            <span class="kam-country2">🇫🇷 France</span>
+            <span class="kam-country2">🇩🇪 Germany</span>
+            <span class="kam-country2">🇮🇳 India</span>
+            <span class="kam-country2">🇵🇰 Pakistan</span>
+            <span class="kam-country2">🇸🇬 Singapore</span>
+            <span class="kam-country2">🇦🇪 UAE</span>
+            <span class="kam-country2">🇨🇳 China</span>
+            <span class="kam-country2">🇯🇵 Japan</span>
+            <span class="kam-country2">🇰🇷 South Korea</span>
+            <span class="kam-country2">🇳🇱 Netherlands</span>
+            <span class="kam-country2">🇨🇦 Canada</span>
+            <span class="kam-country2">🇦🇺 Australia</span>
+            <span class="kam-country2">+ 18 more</span>
+          </div>
+        </div>
+        <div>
+          <div class="kam-pricing-card">
+            <div class="kam-badge2"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Full Setup Package</div>
+            <div style="font-size:.74rem;color:rgba(255,255,255,.38);margin-bottom:.2rem;">Starting from</div>
+            <div class="kam-price">SAR 18,000 <span>/ setup</span></div>
+            <div class="kam-price-note">All standard government fees included for a typical LLC setup. Sector-specific activity licenses quoted separately.</div>
+            <ul class="kam-includes">
+              <li><div class="kam-check"></div>MISA license application &amp; follow-up</li>
+              <li><div class="kam-check"></div>Commercial Registration (CR) filing</li>
+              <li><div class="kam-check"></div>National Address (SPL) registration</li>
+              <li><div class="kam-check"></div>Municipality license (Baladia)</li>
+              <li><div class="kam-check"></div>Chamber of Commerce enrollment</li>
+              <li><div class="kam-check"></div>GOSI, Qiwa, Muqeem &amp; Mudad setup</li>
+              <li><div class="kam-check"></div>ZATCA registration (VAT + CIT)</li>
+              <li><div class="kam-check"></div>Bank introduction &amp; account dossier</li>
+              <li><div class="kam-check"></div>Document translation &amp; attestation</li>
+              <li><div class="kam-check"></div>Dedicated KAM — direct WhatsApp</li>
+              <li><div class="kam-check"></div>12-month compliance &amp; renewal calendar</li>
+            </ul>
+            <a href="/contact" class="kam-cta2">Request a Free Consultation →</a>
+            <a href="/contact" class="kam-sec-cta">Ask a Question First</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
