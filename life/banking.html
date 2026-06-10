@@ -74,24 +74,20 @@
     .sec-lead { font-size:1.05rem; color:var(--text-gray,#666); line-height:1.75; max-width:620px; margin-bottom:2.5rem; }
     .sec-lead--white { color:rgba(255,255,255,.85); }
 
-    /* ── Bank cards ── */
-    .bank-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-    .bank-card {
-      background:#fff; border:1.5px solid #E8E4DC; border-radius:20px; padding:1.75rem;
-      transition:all .3s ease; display:flex; flex-direction:column;
-    }
-    .bank-card:hover { border-color:var(--gold); box-shadow:0 12px 36px rgba(27,42,74,.1); transform:translateY(-3px); }
-    .bank-card__header { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
-    .bank-icon { width:48px; height:48px; border-radius:14px; background:var(--navy,#1B2A4A); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .bank-icon svg { width:22px; height:22px; stroke:var(--gold,#D4A853); fill:none; stroke-width:1.8; }
-    .bank-card__name { font-size:1rem; font-weight:800; color:var(--navy,#1B2A4A); margin-bottom:.2rem; }
-    .bank-card__tag { font-size:.64rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); }
-    .bank-card p { font-size:.84rem; color:#555; line-height:1.65; margin-bottom:1rem; flex:1; }
-    .bank-meta { list-style:none; margin-top:auto; }
-    .bank-meta li { font-size:.78rem; color:#555; padding:.25rem 0; display:flex; align-items:baseline; gap:.5rem; border-bottom:1px solid #F0ECE4; }
-    .bank-meta li:last-child { border:none; }
-    .bank-meta li::before { content:'→'; color:var(--gold); font-weight:700; flex-shrink:0; }
-    .bank-rating { display:inline-flex; align-items:center; gap:.3rem; font-size:.72rem; font-weight:700; color:var(--navy); background:rgba(212,168,83,.12); border-radius:6px; padding:.2rem .55rem; margin-top:.75rem; }
+    /* ── Bank checklist ── */
+    .bk-group-label { display:inline-flex; align-items:center; gap:.65rem; font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--navy); background:rgba(27,42,74,.07); border:1px solid rgba(27,42,74,.1); border-radius:100px; padding:.4rem 1.1rem; margin-bottom:1.1rem; }
+    .bk-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-bottom:2.5rem; }
+    .bk-card { background:#fff; border:1.5px solid #E8E4DC; border-radius:16px; padding:1.5rem; display:flex; flex-direction:column; gap:.6rem; transition:border-color .2s,box-shadow .2s; }
+    .bk-card:hover { border-color:var(--gold); box-shadow:0 8px 28px rgba(27,42,74,.08); }
+    .bk-card__name { font-size:.97rem; font-weight:800; color:var(--navy); }
+    .bk-card__desc { font-size:.82rem; color:#555; line-height:1.6; flex:1; }
+    .bk-card__url { font-size:.75rem; font-weight:700; color:var(--gold); text-decoration:none; }
+    .bk-card__url:hover { text-decoration:underline; }
+    @media(max-width:768px){ .bk-grid { grid-template-columns:1fr 1fr } }
+    @media(max-width:500px){ .bk-grid { grid-template-columns:1fr } }
+
+    /* ── FAQ contrast fix ── */
+    .s-dark .faq-a { color:rgba(255,255,255,.92) !important; }
 
     /* ── Step list ── */
     .step-list { list-style:none; counter-reset:steps; }
@@ -489,129 +485,63 @@
       <p class="sec-lead">All five banks below are SAMA-regulated, offer English-language apps and customer service, and accept Iqama holders. Your choice depends mostly on your employer, location, and whether you need international transfer facilities.</p>
     </div>
 
-    <div class="bank-grid reveal">
+    <div class="reveal">
 
-      <!-- Al Rajhi -->
-      <div class="bank-card">
-        <div class="bank-card__header">
-          <div class="bank-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div>
-            <div class="bank-card__name">Al Rajhi Bank</div>
-            <div class="bank-card__tag">Most Expat-Friendly</div>
-          </div>
+      <!-- Row 1: App-only, quick open -->
+      <div class="bk-group-label">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="13 2 13 9 20 9"/><path d="M20 14v5a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2h7"/></svg>
+        Open in minutes — app only
+      </div>
+      <div class="bk-grid">
+
+        <div class="bk-card">
+          <div class="bk-card__name">Saudi National Bank (SNB)</div>
+          <p class="bk-card__desc">The largest bank in the Middle East by assets. Download the SNB app, verify with Nafath — account open in minutes. Preferred salary bank for major employers; strong international transfer capabilities.</p>
+          <a href="https://www.snb.com.sa" target="_blank" rel="noopener" class="bk-card__url">snb.com.sa ↗</a>
         </div>
-        <p>Saudi Arabia's largest Islamic bank by assets and the go-to choice for most new expats. Al Rajhi has more ATMs than any other bank (over 5,000 across the Kingdom) and a widely praised mobile app. Fully Sharia-compliant — all products are interest-free by default.</p>
-        <ul class="bank-meta">
-          <li>Largest ATM network in KSA — 5,000+ machines</li>
-          <li>English app &amp; 24/7 English phone support</li>
-          <li>Current account opened online in under 30 minutes with Iqama</li>
-          <li>Best for: Most expats, especially those outside major cities</li>
-        </ul>
-        <div class="bank-rating">
-          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          App rating 4.6 / 5
+
+        <div class="bk-card">
+          <div class="bk-card__name">STC Bank</div>
+          <p class="bk-card__desc">SAMA-licensed digital bank by STC (Saudi Telecom). Full banking via app — no branch visit needed. Open your account with just your Iqama and Nafath verification. Great for everyday banking, payments, and remittances.</p>
+          <a href="https://www.stcbank.com.sa" target="_blank" rel="noopener" class="bk-card__url">stcbank.com.sa ↗</a>
         </div>
+
+        <div class="bk-card">
+          <div class="bk-card__name">d360 Bank</div>
+          <p class="bk-card__desc">Saudi Arabia's newest fully digital bank. 100% app-based with no branches. Instant account opening with Iqama and Nafath. Clean interface, competitive profit rates, and a straightforward debit card — ideal for the digitally native expat.</p>
+          <a href="https://www.d360bank.com" target="_blank" rel="noopener" class="bk-card__url">d360bank.com ↗</a>
+        </div>
+
       </div>
 
-      <!-- SNB -->
-      <div class="bank-card">
-        <div class="bank-card__header">
-          <div class="bank-icon">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          </div>
-          <div>
-            <div class="bank-card__name">Saudi National Bank (SNB)</div>
-            <div class="bank-card__tag">Largest Bank in KSA</div>
-          </div>
+      <!-- Row 2: Traditional banks -->
+      <div class="bk-group-label">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        Traditional banks — branch or app
+      </div>
+      <div class="bk-grid">
+
+        <div class="bk-card">
+          <div class="bk-card__name">Al Rajhi Bank</div>
+          <p class="bk-card__desc">Saudi Arabia's largest Islamic bank. 5,000+ ATMs nationwide — the most extensive network in the Kingdom. Widely praised mobile app, 24/7 English support, and the most commonly used salary bank for expats outside major cities. Fully Sharia-compliant.</p>
+          <a href="https://www.alrajhibank.com.sa" target="_blank" rel="noopener" class="bk-card__url">alrajhibank.com.sa ↗</a>
         </div>
-        <p>Formed by the 2021 merger of NCB and Samba Financial Group, SNB is now the largest bank in the Middle East by assets. Excellent corporate and personal banking, strong international correspondent banking relationships, and a well-designed mobile app. Salary accounts are common here due to large employer relationships.</p>
-        <ul class="bank-meta">
-          <li>Preferred salary bank for many major employers</li>
-          <li>Strong international wire transfer capabilities</li>
-          <li>English app available; branch staff mostly bilingual</li>
-          <li>Best for: Corporate employees, those transferring large amounts internationally</li>
-        </ul>
-        <div class="bank-rating">
-          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          App rating 4.4 / 5
+
+        <div class="bk-card">
+          <div class="bk-card__name">Riyad Bank</div>
+          <p class="bk-card__desc">A trusted traditional bank with strong English-language customer service and dedicated expat desks at major city branches. Clean Riyad Online platform and solid investment products through Riyad Capital. Good all-round choice for western expats.</p>
+          <a href="https://www.riyadbank.com" target="_blank" rel="noopener" class="bk-card__url">riyadbank.com ↗</a>
         </div>
+
+        <div class="bk-card">
+          <div class="bk-card__name">Alinma Bank</div>
+          <p class="bk-card__desc">Fully Sharia-compliant with one of the best mobile banking apps in the Saudi market. Paperless account opening available once your Iqama is linked to Absher. Fewer branches but the app removes the need for in-person visits for most transactions.</p>
+          <a href="https://www.alinma.com" target="_blank" rel="noopener" class="bk-card__url">alinma.com ↗</a>
+        </div>
+
       </div>
 
-      <!-- Riyad Bank -->
-      <div class="bank-card">
-        <div class="bank-card__header">
-          <div class="bank-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <div class="bank-card__name">Riyad Bank</div>
-            <div class="bank-card__tag">Good English Support</div>
-          </div>
-        </div>
-        <p>Riyad Bank is a popular mid-tier choice for expats who prioritise English-language customer service. Their Riyad Online platform is clean and functional. They also offer solid investment products through Riyad Capital.</p>
-        <ul class="bank-meta">
-          <li>Strong English phone &amp; in-branch support</li>
-          <li>Dedicated expat service desk in major branches</li>
-          <li>Riyad Online rated highly for ease of use</li>
-          <li>Best for: Those prioritising English service quality</li>
-        </ul>
-        <div class="bank-rating">
-          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          App rating 4.3 / 5
-        </div>
-      </div>
-
-      <!-- SABB -->
-      <div class="bank-card">
-        <div class="bank-card__header">
-          <div class="bank-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
-          </div>
-          <div>
-            <div class="bank-card__name">SABB</div>
-            <div class="bank-card__tag">HSBC Affiliate</div>
-          </div>
-        </div>
-        <p>The Saudi British Bank is an HSBC affiliate, which means international-standard processes, excellent cross-border banking, and strong support for expats moving from HSBC-served countries. If you already bank with HSBC in your home country, the SABB relationship can simplify account verification and pre-qualification.</p>
-        <ul class="bank-meta">
-          <li>HSBC affiliate — familiar processes for international expats</li>
-          <li>Strong international wire transfers and FX products</li>
-          <li>Excellent English-language support throughout</li>
-          <li>Best for: Western expats, HSBC customers, frequent international transfers</li>
-        </ul>
-        <div class="bank-rating">
-          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          App rating 4.2 / 5
-        </div>
-      </div>
-
-      <!-- Alinma -->
-      <div class="bank-card">
-        <div class="bank-card__header">
-          <div class="bank-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <div>
-            <div class="bank-card__name">Alinma Bank</div>
-            <div class="bank-card__tag">Fully Digital</div>
-          </div>
-        </div>
-        <p>Alinma is a fully Sharia-compliant bank with an emphasis on digital-first banking. It's often praised for having one of the most modern and intuitive mobile apps in the Saudi market. Fewer physical branches than the larger banks, but the app reduces the need for in-person visits significantly.</p>
-        <ul class="bank-meta">
-          <li>Award-winning mobile app — strongest digital experience</li>
-          <li>Fully Sharia-compliant across all products</li>
-          <li>Paperless account opening possible after Iqama linked to Absher</li>
-          <li>Best for: Tech-savvy expats who prefer managing everything digitally</li>
-        </ul>
-        <div class="bank-rating">
-          <svg viewBox="0 0 24 24" style="stroke:#D4A853;fill:#D4A853"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          App rating 4.7 / 5
-        </div>
-      </div>
-
-    </div><!-- /bank-grid -->
+    </div>
 
     <div class="tip-box reveal" style="margin-top:2.5rem;">
       <div class="tip-box__label">
@@ -640,6 +570,7 @@
           <span class="req-chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Employment Letter</span>
           <span class="req-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Proof of Address</span>
           <span class="req-chip"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg> Saudi Phone Number</span>
+          <a href="https://splonline.com.sa/en/national-address-1/" target="_blank" rel="noopener" class="req-chip" style="text-decoration:none;border-color:var(--gold);color:var(--navy);"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> National Address (required) ↗</a>
         </div>
 
         <ul class="step-list">
@@ -816,14 +747,13 @@
 
       <div class="app-card">
         <div class="app-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
         </div>
         <div>
-          <div class="app-card__name">Neoleap (Formerly Alrajhi Neo)</div>
-          <p>A standalone digital banking app spun out of Al Rajhi Bank for the digitally native generation. Offers instant account opening (with Iqama), a prepaid card, split payments, budgeting tools, and cashback programmes. Popular with younger expats and gig workers who want a lighter banking experience without visiting branches.</p>
+          <div class="app-card__name">Samsung Pay</div>
+          <p>Samsung's contactless payment service is widely used in Saudi Arabia and works with most Saudi bank debit and credit cards. Unique MST (Magnetic Secure Transmission) technology means it works on older card terminals that don't support NFC — useful at smaller shops and petrol stations. Add your Saudi bank card in minutes.</p>
           <div class="app-links">
-            <a href="#" class="app-link">App Store</a>
-            <a href="#" class="app-link">Google Play</a>
+            <a href="#" class="app-link">Supported by all major Saudi banks</a>
           </div>
         </div>
       </div>
@@ -1194,18 +1124,39 @@
 <!-- ══════════════════════════════════
      NEWSLETTER
      ══════════════════════════════════ -->
-<section class="s-dark" style="padding-top:0;">
+<section class="s-cream" style="border-top:1px solid var(--border-gray,#D6D3CB);">
   <div class="container">
-    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:28px;padding:4rem;max-width:680px;margin:0 auto;text-align:center;" class="reveal newsletter-dark">
-      <div class="sec-eyebrow" style="justify-content:center;margin-bottom:.75rem;">Stay Updated</div>
-      <h2 style="color:#fff;margin-bottom:.75rem;">Banking &amp; Finance Updates</h2>
-      <p style="color:rgba(255,255,255,.65);margin-bottom:2rem;max-width:460px;margin-left:auto;margin-right:auto;">Saudi banking regulations change frequently. Get notified about new expat-friendly products, fee changes, and fintech launches.</p>
-      <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST">
-        <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
-        <button type="submit" class="btn btn--gold">Subscribe</button>
-              <p class="newsletter__consent" style="font-size:.78rem;opacity:.7;margin:.6rem 0 0;text-align:center">By subscribing you agree to our <a href="/privacy" style="color:inherit;text-decoration:underline">Privacy Policy</a>. We never sell your data.</p>
-      </form>
-      <p style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+    <div class="nl-hub reveal">
+      <div>
+        <div class="sec-eyebrow">Stay Updated</div>
+        <h2 class="sec-title" style="margin-bottom:1rem;">Banking &amp; Finance Updates</h2>
+        <p style="color:#555;line-height:1.75;margin-bottom:1.5rem;max-width:420px;">Saudi banking regulations change frequently. Get notified about new expat-friendly products, fee changes, and fintech launches — straight to your inbox.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:.6rem;">
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:#333;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>New SAMA account-opening rules
+          </li>
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:#333;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Digital bank launches &amp; fee changes
+          </li>
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:#333;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Remittance rate updates &amp; fintech news
+          </li>
+          <li style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:#333;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Expat-specific product alerts
+          </li>
+        </ul>
+        <p style="font-size:.78rem;color:#888;">Joined by 4,200+ expats. No spam — unsubscribe anytime.</p>
+      </div>
+      <div>
+        <div style="background:#fff;border:1.5px solid var(--border-gray,#D6D3CB);border-radius:20px;padding:2.5rem;">
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;">Free weekly digest</p>
+          <form action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:1rem;">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required style="width:100%;padding:.85rem 1.1rem;border:1.5px solid #D6D3CB;border-radius:10px;font-size:.92rem;outline:none;font-family:inherit;box-sizing:border-box;">
+            <button type="submit" style="width:100%;padding:.9rem;background:var(--gold);color:#fff;border:none;border-radius:10px;font-size:.92rem;font-weight:700;cursor:pointer;letter-spacing:.02em;">Subscribe Free</button>
+            <p style="font-size:.74rem;color:#999;text-align:center;margin:0;">By subscribing you agree to our <a href="/privacy" style="color:inherit;text-decoration:underline">Privacy Policy</a>.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1252,17 +1203,45 @@
         </li>
         <li class="references__item">
           <span class="references__num">2.</span>
+          <strong class="references__body-name">Saudi National Bank (SNB)</strong>
+          <span class="references__separator">&mdash;</span>
+          <span class="references__claim">Personal banking, account opening requirements, and digital banking services for expats.</span>
+          <a class="references__link" href="https://www.snb.com.sa" target="_blank" rel="noopener noreferrer">snb.com.sa &#8599;</a>
+        </li>
+        <li class="references__item">
+          <span class="references__num">3.</span>
+          <strong class="references__body-name">Al Rajhi Bank</strong>
+          <span class="references__separator">&mdash;</span>
+          <span class="references__claim">Largest Islamic bank in Saudi Arabia — personal accounts, ATM network, and mobile banking for expats.</span>
+          <a class="references__link" href="https://www.alrajhibank.com.sa" target="_blank" rel="noopener noreferrer">alrajhibank.com.sa &#8599;</a>
+        </li>
+        <li class="references__item">
+          <span class="references__num">4.</span>
+          <strong class="references__body-name">d360 Bank</strong>
+          <span class="references__separator">&mdash;</span>
+          <span class="references__claim">SAMA-licensed fully digital bank — instant account opening via app for Iqama holders.</span>
+          <a class="references__link" href="https://www.d360bank.com" target="_blank" rel="noopener noreferrer">d360bank.com &#8599;</a>
+        </li>
+        <li class="references__item">
+          <span class="references__num">5.</span>
+          <strong class="references__body-name">STC Bank</strong>
+          <span class="references__separator">&mdash;</span>
+          <span class="references__claim">SAMA-licensed digital bank by Saudi Telecom — mobile-first banking and remittance services.</span>
+          <a class="references__link" href="https://www.stcbank.com.sa" target="_blank" rel="noopener noreferrer">stcbank.com.sa &#8599;</a>
+        </li>
+        <li class="references__item">
+          <span class="references__num">6.</span>
+          <strong class="references__body-name">Saudi Post — National Address (SPL)</strong>
+          <span class="references__separator">&mdash;</span>
+          <span class="references__claim">Official national address registration — required document for bank account opening and most government services.</span>
+          <a class="references__link" href="https://splonline.com.sa/en/national-address-1/" target="_blank" rel="noopener noreferrer">splonline.com.sa &#8599;</a>
+        </li>
+        <li class="references__item">
+          <span class="references__num">7.</span>
           <strong class="references__body-name">MHRSD — Ministry of Human Resources and Social Development</strong>
           <span class="references__separator">&mdash;</span>
           <span class="references__claim">Wage Protection System (WPS) — employer obligations for salary disbursement to bank accounts.</span>
           <a class="references__link" href="https://hrsd.gov.sa" target="_blank" rel="noopener noreferrer">hrsd.gov.sa &#8599;</a>
-        </li>
-        <li class="references__item">
-          <span class="references__num">3.</span>
-          <strong class="references__body-name">Qiwa Platform</strong>
-          <span class="references__separator">&mdash;</span>
-          <span class="references__claim">WPS compliance monitoring and employer salary disbursement verification.</span>
-          <a class="references__link" href="https://qiwa.sa" target="_blank" rel="noopener noreferrer">qiwa.sa &#8599;</a>
         </li>
       </ol>
       <p class="references__footer">
