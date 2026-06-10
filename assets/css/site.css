@@ -928,3 +928,89 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
     scroll-behavior:auto!important;
   }
 }
+
+/* ── References & Official Sources section ── */
+.references-section {
+  background:var(--cream);
+  border-top:1.5px solid var(--light-gray);
+  padding:3.5rem 0 4rem;
+}
+.references__inner { max-width:860px; }
+.references__heading {
+  font-size:.75rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--navy);
+  margin-bottom:.6rem;
+}
+.references__intro {
+  font-size:.82rem;
+  color:var(--text-gray);
+  line-height:1.7;
+  max-width:700px;
+  margin-bottom:1.75rem;
+}
+.references__list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  margin:0;
+  padding:0;
+}
+.references__item {
+  display:flex;
+  align-items:baseline;
+  flex-wrap:wrap;
+  gap:.35rem .5rem;
+  font-size:.82rem;
+  padding:.7rem 1rem;
+  border:1px solid rgba(27,42,74,.1);
+  border-radius:10px;
+  background:var(--white);
+  transition:border-color .2s;
+}
+.references__item:hover { border-color:rgba(212,168,83,.35); }
+.references__num {
+  font-size:.7rem;
+  font-weight:800;
+  color:var(--gold);
+  min-width:1.4rem;
+  flex-shrink:0;
+}
+.references__body-name {
+  color:var(--navy);
+  font-weight:700;
+}
+.references__separator { color:var(--text-gray); }
+.references__claim {
+  color:var(--text-body);
+  flex:1;
+  min-width:180px;
+}
+.references__link {
+  margin-left:auto;
+  font-size:.77rem;
+  font-weight:600;
+  color:var(--gold);
+  white-space:nowrap;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s;
+}
+.references__link:hover { border-bottom-color:var(--gold); }
+.references__footer {
+  margin-top:1.25rem;
+  font-size:.76rem;
+  color:var(--text-gray);
+  display:flex;
+  gap:1.25rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.references__footer a { color:var(--navy); text-decoration:underline; }
+@media(max-width:640px) {
+  .references__item { flex-direction:column; gap:.25rem; }
+  .references__link { margin-left:0; }
+}
