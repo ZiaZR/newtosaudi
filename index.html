@@ -27,8 +27,254 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
+<style>/* ============================================
+   NewToSaudi.com — Global Design System
+   ============================================ */
 
+/* --- RESET & BASE --- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#1B2A4A;
+  --navy-90:rgba(27,42,74,.9);
+  --navy-light:#253A5E;
+  --navy-dark:#111D33;
+  --navy-deeper:#0B1422;
+  --gold:#D4A853;
+  --gold-light:#E8C97A;
+  --gold-dark:#B8903F;
+  --gold-muted:rgba(212,168,83,.15);
+  --white:#FFFFFF;
+  --off-white:#FAF8F4;
+  --cream:#F2EEE5;
+  --light-gray:#EAE5DA;
+  --mid-gray:#E0DDD5;
+  --border-gray:#D6D3CB;
+  --text-gray:#8A8780;
+  --text-mid:#6B6860;
+  --text-dark:#2C2A25;
+  --text-body:#3D3B35;
+  --success:#2D8B5F;
+  --info:#3B7DD8;
+  --max-w:1380px;
+  --nav-h:80px;
+  --section-gap:8rem;
+  --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+  --ease-out-quart:cubic-bezier(0.25,1,0.5,1);
+  --ease-spring:cubic-bezier(0.34,1.56,0.64,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--text-body);background:var(--off-white);line-height:1.7;overflow-x:hidden;font-size:16px}
+a{color:inherit;text-decoration:none;transition:color .25s}
+img,svg{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--gold-muted);color:var(--navy)}
+
+/* --- TYPOGRAPHY --- */
+h1,h2,h3,h4{color:var(--navy);font-weight:700;line-height:1.18}
+h1{font-size:clamp(2.6rem,4.8vw,5rem);letter-spacing:-.03em}
+h2{font-size:clamp(1.8rem,2.8vw,2.7rem);letter-spacing:-.02em}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+p{line-height:1.75;color:var(--text-body)}
+
+/* --- LAYOUT --- */
+.container{max-width:var(--max-w);margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+.section{padding:clamp(5rem,9vw,var(--section-gap)) 0}
+
+/* Ultra-wide breathing room */
+@media(min-width:1600px){
+  :root{--max-w:1520px;--section-gap:9rem}
+  h1{font-size:5.4rem}
+}
+
+/* ── SITE-WIDE GEOMETRIC MOTIF ──
+   Carries the hero's visual language across light sections at ghost opacity.
+   The diagonal grid + arch shapes unify the page without competing with content. */
+
+/* Subtle diagonal grid on all light sections */
+.section,.personas,.topics{
+  position:relative;
+  background-image:
+    repeating-linear-gradient(
+      58deg,rgba(27,42,74,.022) 0,rgba(27,42,74,.022) 1px,
+      transparent 0,transparent 72px),
+    repeating-linear-gradient(
+      -58deg,rgba(27,42,74,.014) 0,rgba(27,42,74,.014) 1px,
+      transparent 0,transparent 72px)}
+
+/* Arch watermark element — placed in HTML, floats to section edge */
+.section-arch{position:absolute;pointer-events:none;z-index:0;opacity:.032;overflow:hidden}
+.section-arch svg{display:block}
+.section-arch--tr{top:-40px;right:-30px}  /* top-right */
+.section-arch--bl{bottom:-40px;left:-30px;transform:rotate(180deg)}  /* bottom-left */
+.section-arch--br{bottom:-20px;right:-20px;transform:scaleX(-1)}
+
+/* Ensure content inside sections sits above the pattern */
+.section>.container,.personas>.container,.topics>.container{position:relative;z-index:1}
+
+/* --- SECTION HEADERS --- */
+.section-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
+.section-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);
+  display:inline-block;border-radius:1px}
+.section-heading{margin-bottom:.6rem;letter-spacing:-.025em}
+.section-desc{font-size:1.05rem;color:var(--text-gray);max-width:540px;line-height:1.75}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:3.5rem;gap:2.5rem}
+.section-header-left{flex:1}
+.view-all{font-size:.88rem;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;
+  gap:.4rem;padding:.55rem 1.25rem;border-radius:100px;border:1.5px solid rgba(212,168,83,.25);
+  white-space:nowrap;transition:all .3s var(--ease-out-quart)}
+.view-all::after{content:'→';transition:transform .25s var(--ease-spring)}
+.view-all:hover{background:var(--gold-muted);border-color:var(--gold);color:var(--gold-dark)}
+.view-all:hover::after{transform:translateX(4px)}
+
+/* --- SCROLL REVEAL SYSTEM --- */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+.reveal-delay-5{transition-delay:.5s}
+.reveal-delay-6{transition-delay:.6s}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .8s var(--ease-out-expo),transform .8s var(--ease-out-expo)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.92);transition:opacity .7s var(--ease-out-expo),transform .7s var(--ease-out-expo)}
+.reveal-scale.visible{opacity:1;transform:scale(1)}
+
+/* --- BUTTONS --- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;padding:.8rem 1.8rem;border-radius:100px;border:none;transition:all .3s var(--ease-out-quart);position:relative;overflow:hidden}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,168,83,.3)}
+.btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.2)}
+.btn-secondary:hover{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.06);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--border-gray)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);box-shadow:0 4px 16px rgba(27,42,74,.06)}
+.btn-icon{width:18px;height:18px;transition:transform .3s var(--ease-spring)}
+.btn:hover .btn-icon{transform:translateX(3px)}
+
+/* --- CARDS --- */
+.card{background:var(--white);border:1px solid var(--mid-gray);border-radius:16px;transition:all .4s var(--ease-out-expo);position:relative;overflow:hidden}
+.card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 20px 50px rgba(27,42,74,.08)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transition:transform .4s var(--ease-out-expo);transform-origin:left}
+.card:hover::after{transform:scaleX(1)}
+
+/* --- NAVIGATION (shared across all pages) --- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s var(--ease-out-expo)}
+.nav--transparent{background:transparent}
+.nav--solid{background:rgba(255,255,255,.95);backdrop-filter:blur(20px) saturate(1.2);-webkit-backdrop-filter:blur(20px) saturate(1.2);box-shadow:0 1px 0 rgba(27,42,74,.06)}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
+.nav__logo{display:flex;align-items:center;gap:.65rem;z-index:10}
+/* Logo swap transparent ↔ solid */
+.nav__logo img{height:36px;width:auto;transition:transform .3s var(--ease-spring)}
+.nav__logo:hover img{transform:scale(1.04)}
+.nav--transparent .nav__logo-white{display:block}
+.nav--transparent .nav__logo-primary{display:none}
+.nav--solid .nav__logo-white{display:none}
+.nav--solid .nav__logo-primary{display:block}
+.nav__links{display:flex;align-items:center;gap:2.25rem}
+.nav__link{font-size:.87rem;font-weight:500;position:relative;padding:.25rem 0;transition:color .25s}
+.nav--transparent .nav__link{color:rgba(255,255,255,.75)}
+.nav--transparent .nav__link:hover{color:var(--white)}
+.nav--solid .nav__link{color:var(--text-mid)}
+.nav--solid .nav__link:hover{color:var(--navy)}
+.nav__link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);border-radius:1px;transition:width .35s var(--ease-out-expo)}
+.nav__link:hover::after{width:100%}
+.nav__cta{font-size:.84rem;font-weight:600;padding:.6rem 1.5rem;border-radius:100px;transition:all .3s var(--ease-out-quart)}
+.nav--transparent .nav__cta{background:rgba(255,255,255,.1);color:var(--white);border:1px solid rgba(255,255,255,.18)}
+.nav--transparent .nav__cta:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.nav--solid .nav__cta{background:var(--navy);color:var(--white);border:1px solid var(--navy)}
+.nav--solid .nav__cta:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:0 4px 12px rgba(27,42,74,.2)}
+
+/* Mobile menu toggle */
+.nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;z-index:10}
+.nav__toggle span{display:block;width:22px;height:2px;border-radius:2px;transition:all .35s var(--ease-out-expo)}
+.nav--transparent .nav__toggle span{background:var(--white)}
+.nav--solid .nav__toggle span{background:var(--navy)}
+.nav__toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav__toggle.active span:nth-child(2){opacity:0}
+.nav__toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* Mobile menu overlay */
+.nav__mobile-menu{display:none;position:fixed;inset:0;background:var(--navy-deeper);z-index:5;
+  flex-direction:column;justify-content:center;align-items:center;gap:0;
+  opacity:0;transition:opacity .35s;overflow-y:auto;padding:2rem 0}
+.nav__mobile-menu.open{display:flex;opacity:1}
+.nav__mobile-menu a{font-size:1.25rem;font-weight:600;color:rgba(255,255,255,.7);transition:color .25s;
+  padding:.85rem 2.5rem;width:100%;text-align:center;min-height:52px;
+  display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav__mobile-menu a:first-child{border-top:1px solid rgba(255,255,255,.04)}
+.nav__mobile-menu a:hover,.nav__mobile-menu a:active{color:var(--gold)}
+
+/* Dropdown nav */
+.nav__dropdown{position:relative;padding-bottom:8px}
+.nav__dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;padding:.5rem 0;min-width:210px;box-shadow:0 12px 40px rgba(27,42,74,.15);border:1px solid rgba(27,42,74,.08);z-index:100;margin-top:0}
+.nav__dropdown-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px}
+.nav__dropdown:hover .nav__dropdown-menu,.nav__dropdown.open .nav__dropdown-menu{display:block}
+.nav__dropdown-menu a{display:block;padding:.65rem 1.35rem;font-size:.88rem;font-weight:500;color:var(--navy);text-decoration:none;transition:background .15s,color .15s;white-space:nowrap}
+.nav__dropdown-menu a:hover{background:var(--cream);color:var(--navy)}
+.nav__link--dropdown{cursor:pointer}
+.nav__link--dropdown::after{display:none}
+.nav__caret{display:inline-block;width:0;height:0;margin-left:.35rem;vertical-align:middle;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;opacity:.6;transition:transform .2s}
+.nav__dropdown:hover .nav__caret,.nav__dropdown.open .nav__caret{transform:rotate(180deg)}
+/* Mobile accordion */
+.nav__mobile-section{width:100%;display:block;border-bottom:1px solid rgba(255,255,255,.06)}
+.nav__mobile-section-title{font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;min-height:52px}
+.nav__mobile-section-title::after{content:'';width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid rgba(255,255,255,.4);transition:transform .25s;flex-shrink:0}
+.nav__mobile-section.open .nav__mobile-section-title::after{transform:rotate(180deg)}
+.nav__mobile-section-links{display:none;flex-direction:column;background:rgba(0,0,0,.15);padding:.25rem 0}
+.nav__mobile-section.open .nav__mobile-section-links{display:flex}
+.nav__mobile-section-links a{font-size:.93rem;padding:.7rem 2.5rem;min-height:44px;display:flex;align-items:center;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;border:none!important}
+.nav__mobile-section-links a:hover,.nav__mobile-section-links a:active{color:var(--gold)}
+.nav__mobile-menu>a{font-size:.97rem;font-weight:600;padding:1rem 2rem;min-height:52px;display:flex;align-items:center;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none}
+.nav__mobile-menu>a:hover{color:var(--gold)}
+
+/* --- FOOTER (shared across all pages) --- */
+.footer{background:var(--navy-deeper);padding:5rem 0 2rem;color:rgba(255,255,255,.4)}
+.footer__top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.footer__brand p{font-size:.88rem;line-height:1.75;margin-top:1.25rem;max-width:300px}
+.footer__col-title{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.footer__link{display:block;font-size:.85rem;padding:.35rem 0;color:rgba(255,255,255,.4);transition:all .25s}
+.footer__link:hover{color:var(--white);transform:translateX(3px)}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;font-size:.78rem}
+.footer__bottom-links a{margin-left:1.5rem;transition:color .2s}
+.footer__bottom-links a:hover{color:var(--white)}
+.footer__logo{display:flex;align-items:center;gap:.55rem;margin-bottom:.65rem}
+.footer__logo svg{height:30px}
+.footer__logo-text{font-size:1.05rem;font-weight:700;color:var(--white)}
+.footer__logo-text span{color:var(--gold)}
+
+/* --- RESPONSIVE — shared (nav, footer, body) --- */
+
+/* Prevent any decorative overflow element from causing horizontal scroll */
+body{overflow-x:hidden}
+
+@media(max-width:1024px){
+  .footer__top{grid-template-columns:1fr 1fr 1fr;gap:2rem}
+}
+@media(max-width:768px){
+  :root{--section-gap:4.5rem;--nav-h:64px}
+  .nav__links{display:none}
+  .nav__toggle{display:flex}
+  .footer__top{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer__bottom{flex-direction:column;gap:1rem;text-align:center}
+  .footer__bottom-links a{margin:0 .65rem}
+}
+@media(max-width:480px){
+  .footer__top{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .footer__brand{grid-column:1/-1}
+  .footer{padding:3.5rem 0 1.75rem}
+  h1{font-size:clamp(1.9rem,8vw,2.6rem)}
+  h2{font-size:clamp(1.4rem,6vw,1.9rem)}
+}
+@media(max-width:360px){
+  .footer__top{grid-template-columns:1fr;gap:1.5rem}
+  .footer{padding:3rem 0 1.5rem}
+  .nav__toggle{padding:6px}
+}
+</style>
 <style>/* ============================================
    NewToSaudi.com — Homepage Styles
    ============================================ */
@@ -731,7 +977,6 @@
   .guide-card .card-body{padding:1rem}
 }
 </style>
-<script src="/assets/js/site.js" defer></script>
 </head>
 <body>
 
@@ -1889,17 +2134,12 @@
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
-    <!-- TOP: wordmark row -->
-    <div class="footer__header">
-      <div class="footer__wordmark">New<span>To</span>Saudi<small>.com</small></div>
-      <div class="footer__tagline">Your independent guide to expat life in the Kingdom</div>
-    </div>
-    <!-- COLUMNS -->
     <div class="footer__top">
-      <!-- Newsletter -->
-      <div class="footer__col">
-        <div class="footer__col-title">Weekly newsletter</div>
+      <!-- Brand + Newsletter -->
+                  <div class="footer__brand">
+        <div class="footer__wordmark">New<span>To</span>Saudi<small>.com</small></div>
         <div class="footer__nl">
+          <div class="footer__nl-eyebrow">Weekly newsletter</div>
           <div class="footer__nl-heading">Saudi expat briefing</div>
           <div class="footer__nl-sub">Every Thursday — free, always.</div>
           <ul class="footer__nl-bullets">
@@ -1916,18 +2156,18 @@
         </div>
       </div>
       <!-- Relocate -->
-      <div class="footer__col">
+      <div>
         <div class="footer__col-title">Relocate</div>
         <a href="/relocate" class="footer__link">Relocation Hub</a>
         <a href="/relocate/before-you-arrive" class="footer__link">Before You Arrive</a>
         <a href="/relocate/first-30-days" class="footer__link">First 30 Days</a>
-        <a href="/relocate/families" class="footer__link">Families</a>
+        <a href="/relocate/families" class="footer__link">Relocating Families</a>
         <a href="/relocate/documents-checklist" class="footer__link">Documents Checklist</a>
         <a href="/relocate/visa-types" class="footer__link">Visa Types</a>
         <a href="/relocate/cost-of-living" class="footer__link">Cost of Living</a>
       </div>
       <!-- Work & Business -->
-      <div class="footer__col">
+      <div>
         <div class="footer__col-title">Work &amp; Business</div>
         <a href="/work/iqama-guide" class="footer__link">Iqama Guide</a>
         <a href="/work/work-visa" class="footer__link">Work Visas</a>
@@ -1937,33 +2177,30 @@
         <a href="/business/start-a-company" class="footer__link">Start a Company</a>
         <a href="/business/free-zones" class="footer__link">Free Zones</a>
       </div>
-      <!-- Life & Resources -->
-      <div class="footer__col">
-        <div class="footer__col-title">Life &amp; Resources</div>
+      <!-- Life in KSA -->
+      <div>
+        <div class="footer__col-title">Life in KSA</div>
         <a href="/life/housing" class="footer__link">Housing</a>
         <a href="/life/banking" class="footer__link">Banking</a>
         <a href="/life/healthcare" class="footer__link">Healthcare</a>
         <a href="/life/transport" class="footer__link">Transport</a>
         <a href="/life/schools-education" class="footer__link">Schools</a>
+        <a href="/life/food-dining" class="footer__link">Food &amp; Dining</a>
         <a href="/resources/apps" class="footer__link">Essential Apps</a>
-        <a href="/cities" class="footer__link">City Guides</a>
       </div>
     </div>
-    <!-- BOTTOM BAR -->
     <div class="footer__bottom">
-      <span>&copy; 2025 NewToSaudi.com &nbsp;&middot;&nbsp; Independent &amp; unsponsored</span>
+      <span>&copy; 2025 NewToSaudi.com &nbsp;&middot;&nbsp; Built with &#10084;&#65039; for expats</span>
       <div class="footer__bottom-links">
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
-      </div>
-      <div class="footer__bottom-social">
-          <a href="#" class="footer__social-link" aria-label="X/Twitter"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
-          <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="/contact">Contact</a>
+        <div class="footer__bottom-social">
+          <a href="#" class="footer__social-link" aria-label="X/Twitter"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M4 20L20 4" stroke-linecap="round"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke-linecap="round"/><circle cx="4" cy="4" r="2"/><path d="M2 9h4v12H2z"/></svg></a>
+          <a href="#" class="footer__social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         </div>
+    </div>
     </div>
   </div>
 </footer>
