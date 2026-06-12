@@ -567,7 +567,7 @@ function cityChip(city) {
   return `<span class="fam-city-chip">${map[city] || city}</span>`;
 }
 
-// ─── CARD RENDERERS ─────────────────────────────────────────────────────────
+// ─── UPGRADED CARD RENDERERS ─────────────────────────────────────────────────
 function renderSchool(d) {
   return `
   <div class="fam-card">
@@ -576,29 +576,29 @@ function renderSchool(d) {
       <div class="fam-card__title-wrap">
         <div class="fam-card__name">${d.name}</div>
         <div class="fam-card__badges">
-          <span class="fam-badge fam-badge--curr">${d.curriculum}</span>
+          <span class="fam-badge fam-badge--curr">📚 ${d.curriculum}</span>
           ${waitBadge(d.waitStatus, d.waitLabel)}
-          ${d.iqama ? '<span class="fam-badge fam-badge--iqama">⚠ Iqama required</span>' : ''}
+          ${d.iqama ? '<span class="fam-badge fam-badge--iqama">⚠ Iqama Required</span>' : ''}
         </div>
       </div>
       ${d.score ? `<div class="fam-score">${stars(d.score)}<small>Family Score</small></div>` : ''}
     </div>
     <div class="fam-attrs">
-      <div class="fam-attr"><span class="fam-attr__k">Year groups</span><span class="fam-attr__v">${d.phases}</span></div>
-      <div class="fam-attr"><span class="fam-attr__k">Annual fees</span><span class="fam-attr__v">${d.fees}</span></div>
+      <div class="fam-attr"><span class="fam-attr__k">Age Phases</span><span class="fam-attr__v">${d.phases}</span></div>
+      <div class="fam-attr"><span class="fam-attr__k">Tuition Fees</span><span class="fam-attr__v">${d.fees}</span></div>
     </div>
     <p class="fam-card__desc">${d.desc}</p>
     <div class="fam-card__ft">
-      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">Visit school ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Website coming</span>'}
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">Visit School ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Website Coming</span>'}
       ${cityChip(d.city)}
     </div>
   </div>`;
 }
 
 function renderActivity(d) {
-  const indoorBadge = d.indoor
-    ? '<span class="fam-badge fam-badge--indoor">❄ Indoor · AC</span>'
-    : '<span class="fam-badge fam-badge--outdoor">☀ Outdoor</span>';
+  const climateBadge = d.indoor
+    ? '<span class="fam-badge fam-badge--indoor">❄ Indoor · AC Controlled</span>'
+    : '<span class="fam-badge fam-badge--outdoor">☀ Outdoor Venue</span>';
   return `
   <div class="fam-card">
     <div class="fam-card__hd">
@@ -606,16 +606,16 @@ function renderActivity(d) {
       <div class="fam-card__title-wrap">
         <div class="fam-card__name">${d.name}</div>
         <div class="fam-card__badges">
-          ${indoorBadge}
-          <span class="fam-badge fam-badge--age">Ages ${d.ageRange}</span>
-          ${d.prayer ? '<span class="fam-badge fam-badge--prayer">🕌 Prayer facility</span>' : ''}
+          ${climateBadge}
+          <span class="fam-badge fam-badge--age">👶 Target Ages: ${d.ageRange}</span>
+          ${d.prayer ? '<span class="fam-badge fam-badge--prayer">🕌 Prayer Facilities</span>' : ''}
         </div>
       </div>
       ${d.score ? `<div class="fam-score">${stars(d.score)}<small>Family Score</small></div>` : ''}
     </div>
     <p class="fam-card__desc">${d.desc}</p>
     <div class="fam-card__ft">
-      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">Visit website ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Website coming</span>'}
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">View Activity ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Details Coming</span>'}
       ${cityChip(d.city)}
     </div>
   </div>`;
@@ -629,25 +629,25 @@ function renderHealthcare(d) {
       <div class="fam-card__title-wrap">
         <div class="fam-card__name">${d.name}</div>
         <div class="fam-card__badges">
-          <span class="fam-badge fam-badge--spec">${d.specialty}</span>
-          <span class="fam-badge fam-badge--lang">🌐 ${d.languages}</span>
+          <span class="fam-badge fam-badge--spec">🩺 ${d.specialty}</span>
+          <span class="fam-badge fam-badge--lang">🌐 Fluent: ${d.languages}</span>
         </div>
       </div>
       ${d.score ? `<div class="fam-score">${stars(d.score)}<small>Family Score</small></div>` : ''}
     </div>
     <div class="fam-attrs">
-      <div class="fam-attr"><span class="fam-attr__k">Insurance</span><span class="fam-attr__v">${d.insurance}</span></div>
+      <div class="fam-attr"><span class="fam-attr__k">Insurance Network</span><span class="fam-attr__v">${d.insurance}</span></div>
     </div>
     <p class="fam-card__desc">${d.desc}</p>
     <div class="fam-card__ft">
-      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">Visit website ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Website coming</span>'}
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">Hospital Portal ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Portal Link Pending</span>'}
       ${cityChip(d.city)}
     </div>
   </div>`;
 }
 
 function renderSettling(d) {
-  const points = (d.points || []).map(p => `<li>${p}</li>`).join('');
+  const checklistItems = (d.points || []).map(p => `<li>${p}</li>`).join('');
   return `
   <div class="fam-card">
     <div class="fam-card__hd">
@@ -656,12 +656,11 @@ function renderSettling(d) {
         <div class="fam-card__name">${d.name}</div>
         <div class="fam-card__badges">
           <span class="fam-badge fam-badge--tip">💡 ${d.tip}</span>
-          <span class="fam-badge fam-badge--curr">All Cities</span>
         </div>
       </div>
     </div>
-    <p class="fam-card__desc">${d.desc}</p>
-    ${points ? `<ul class="fam-kp">${points}</ul>` : ''}
+    <p class="fam-card__desc" style="font-weight:600;color:var(--navy,#1B2A4A);">${d.desc}</p>
+    ${checklistItems ? `<div class="fam-tip-bar" style="margin-bottom:.5rem;">Action Checklist:</div><ul class="fam-kp">${checklistItems}</ul>` : ''}
   </div>`;
 }
 
