@@ -283,64 +283,40 @@ const FAM_DATA = [
   //  SETTLING IN (3 Records)
   // ─────────────────────────────────────────────────────────────
   {
-    id: 'school-timeline',
-    type: 'settling',
-    city: 'all',
-    section: 'settling',
-    subcat: 'admin',
-    name: 'School Admission Timeline',
-    logo: 'TL',
-    lc: '#1B2A4A',
-    tip: 'Apply 12–18 months before your target intake',
-    score: null,
-    desc: 'International schools in Saudi Arabia open admissions 12–18 months before the September intake. Apply to several schools at the same time — waiting lists of 1–3 years are common in Riyadh, though Jeddah and the Eastern Province have more flexibility. Get your documents together before you start applying.',
+    id: 'academic-timeline', type: 'settling', city: 'all', section: 'settling', subcat: 'admin',
+    name: '2030 International Academic Intake & Attestation Master Timeline', logo: 'TL', lc: '#0F1C33',
+    tip: 'Critical Action: Initiate home-country document legalizations 6–9 months before arrival.',
+    desc: 'The school seat market across premium British, American, and IB tracks in the Kingdom is highly competitive due to massive expat inflows. Navigating the modern Ministry of Education portal requires absolute document compliance before a permanent seat can be unlocked.',
     points: [
-      'Academic year runs September to June',
-      'Application window: typically October to February for the following September intake',
-      'Most top schools require a visit day before issuing an offer',
-      'Bring: Iqama copies, previous school reports, immunisation records, and a corporate assignment letter if applicable'
-    ],
-    url: null
+      'The formal Saudi academic year for international tracks kicks off in late August or early September.',
+      'You must have all past school reports formally stamped and legalised by the Saudi Embassy in your home country.',
+      'Most tier-1 academies require an in-person or remote cognitive entry evaluation test (such as CAT4 testing).',
+      'Schools utilize the centralized Ministry portal to approve bridging placements if your relocation happens mid-term.'
+    ]
   },
   {
-    id: 'dependent-iqama',
-    type: 'settling',
-    city: 'all',
-    section: 'settling',
-    subcat: 'admin',
-    name: 'Dependent Iqama for Children',
-    logo: 'DI',
-    lc: '#2A5A3A',
-    tip: 'Complete within 90 days of arrival',
-    score: null,
-    desc: 'Children must be registered as dependents on your Iqama within 90 days of arrival. You (the sponsor) apply through Absher. Schools will not confirm enrolment without seeing the dependent Iqama — so sort this in your first two weeks, not your first three months.',
+    id: 'iqama-insurance', type: 'settling', city: 'all', section: 'settling', subcat: 'admin',
+    name: 'Dependent Iqama & Premium Residency Health Insurance Sync', logo: 'IQ', lc: '#1B5E20',
+    tip: 'Legal Mandate: Complete dependent tracking steps within 90 days of arriving.',
+    desc: 'Your children cannot legally be registered in any local school database, and cannot access permanent private medical insurance networks, until they are formally issued dependent residency cards under your main corporate sponsorship footprint.',
     points: [
-      'Apply through Absher → Individuals → Family Visa Services',
-      'Birth certificates must be officially translated into Arabic and notarised or apostilled',
-      'Children aged 18 or over need their own independent Iqama',
-      'Check with your company\'s HR team — many handle this as part of the onboarding process'
-    ],
-    url: null
+      'The entire registration sequence is monitored directly through your company sponsor HR and the Absher portal.',
+      'Attested birth certificates with certified official Arabic translations are strictly mandatory for file submission.',
+      'Children under 6 do not require local medical center tests; older kids must visit an authorized medical city clinic.',
+      'Once the Iqama is active, your HR must instantly upload the numbers to the Council of Cooperative Health Insurance.'
+    ]
   },
   {
-    id: 'child-insurance',
-    type: 'settling',
-    city: 'all',
-    section: 'settling',
-    subcat: 'admin',
-    name: 'Child Health Insurance in KSA',
-    logo: 'CI',
-    lc: '#6A2A1A',
-    tip: 'Mandatory — confirm dependents are on your policy',
-    score: null,
-    desc: 'Health insurance for dependents is mandatory in Saudi Arabia. Most employer policies cover a spouse and up to 3–4 children, but coverage levels vary significantly. Check whether your plan covers paediatric specialists, vaccinations, dental, and orthodontics — and arrange a top-up plan if needed.',
+    id: 'arabic-grid', type: 'settling', city: 'all', section: 'settling', subcat: 'admin',
+    name: 'The 2030 Learning Arabic Pathways Grid (Age-Phased Framework)', logo: 'AR', lc: '#E65100',
+    tip: 'Pro Tip: Focus initial kids training on conversational Levant or local Gulf dialects for daily social ease.',
+    desc: 'Helping your children acquire basic Arabic builds incredible cultural affinity and unlocks a deeply rewarding experience living in the Kingdom. Our editorial team structures the language journey into three distinct developmental stages:',
     points: [
-      'Confirm with HR that all children are named on your policy before their first appointment',
-      'Insurer must be CCHI-approved — not all international plans qualify automatically',
-      'Schools typically ask for proof of insurance at enrolment',
-      'The Saudi vaccination schedule may differ from your home country — ask your paediatrician on the first visit'
-    ],
-    url: null
+      'AGES 0–5 (Early Exposure): Focus entirely on immersive playgroups and interactive visual apps like Kamkoum for natural phonetics.',
+      'AGES 6–12 (Structural Foundation): Deploy private native-speaking home tutors focusing heavily on functional, daily social phrases.',
+      'AGES 13–18 (Academic Integration): Enroll teens in structured online language academies or introductory school cultural clubs.',
+      'FOR PARENTS: Use the standardized Madinah Arabic textbook series to stay aligned with what your children are picking up.'
+    ]
   }
 
 ];
