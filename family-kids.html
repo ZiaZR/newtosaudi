@@ -734,14 +734,44 @@ function renderAll() {
   const secTxt  = activeSec === 'all' ? 'All Categories' : SEC_INFO[activeSec].title;
   label.textContent = `${cityTxt} · ${secTxt}`;
 
-  // Empty state
+  // ─── UPGRADED SMART EMPTY STATE & INTENTIONAL FALLBACK LAYER ───────────────
   if (filtered.length === 0) {
+    // Isolate global settling guides as an active value-add fallback array
+    const globalGuides = FAM_DATA.filter(d => d.section === 'settling');
+
+    let fallbackCardsHTML = globalGuides.map(d => renderSettling(d)).join('');
+
     grid.innerHTML = `
-      <div class="fam-empty">
-        <div class="fam-empty__icon">🔍</div>
-        <h3>No results found</h3>
-        <p>Try a different city or category combination.</p>
-      </div>`;
+      <div class="fam-empty" style="grid-column:1/-1;background:#fff;border:1.5px solid #E8E4DC;border-radius:20px;padding:3.5rem 2rem;margin-bottom:1.5rem;text-align:center;">
+        <div class="fam-empty__icon" style="font-size:2.5rem;margin-bottom:0.5rem;">🔍</div>
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--navy,#1B2A4A);margin-bottom:0.5rem;">
+          Vetting Active for ${CITY_LABELS[activeCity]} Options
+        </h3>
+        <p style="font-size:0.85rem;color:#666;max-width:480px;margin:0 auto 1.5rem;line-height:1.6;">
+          We are currently inspecting and verifying premium entries matching this exact filter group. Our editorial team manually audits every institution to protect our relocation data standards.
+        </p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+          <button class="fam-btn fam-sub-btn active" onclick="activeSub='all'; document.getElementById('subFilterRow').querySelectorAll('.fam-sub-btn').forEach(b=>b.classList.toggle('active', b.dataset.sub==='all')); renderAll();" style="font-family:inherit;">
+            Reset Refinement Filters
+          </button>
+          <a href="/business/start-a-company#kam" class="fam-link" style="display:inline-flex;align-items:center;background:var(--cream,#F2EEE5);border-color:#D0CCC4;">
+            Ask a Key Account Manager (KAM) &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div style="grid-column:1/-1;margin-top:1rem;margin-bottom:0.5rem;">
+        <h4 style="font-size:0.9rem;font-weight:800;color:var(--navy,#1B2A4A);letter-spacing:0.02em;text-transform:uppercase;display:flex;align-items:center;gap:0.5rem;">
+          📋 Critical Relocation Checklists For Your Move:
+        </h4>
+      </div>
+      ${fallbackCardsHTML}
+    `;
+
+    // Smoothly reveal fallback components
+    grid.querySelectorAll('.fam-card').forEach((el, i) => {
+      setTimeout(() => el.classList.add('vis'), i * 45);
+    });
     return;
   }
 
