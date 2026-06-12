@@ -460,280 +460,8 @@
   </div>
 </footer>
 
+<script src="/assets/js/family-data.js"></script>
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-const FAM_DATA = [
-
-  // ── SCHOOLS · RIYADH ──
-  { id:'bisr', type:'school', city:'riyadh', section:'education',
-    name:'British International School Riyadh (BISR)',
-    logo:'BI', lc:'#1B3A7A',
-    curriculum:'British — IGCSE & A-Level',
-    phases:'FS1 – Year 13',
-    fees:'SAR 48,000 – 87,000 / year',
-    waitStatus:'long', waitLabel:'2+ year waiting list',
-    iqama:true, score:4.8,
-    desc:'One of Riyadh\'s most established British-curriculum schools. Consistent IGCSE and A-Level results, strong pastoral care, and an extensive extra-curricular programme. Apply the moment you confirm your move — the waiting list is substantial.',
-    url:'https://bisr.edu.sa/' },
-
-  { id:'aisr', type:'school', city:'riyadh', section:'education',
-    name:'American International School Riyadh (AISR)',
-    logo:'AI', lc:'#1A3A6A',
-    curriculum:'American — US Diploma & AP',
-    phases:'KG – Grade 12',
-    fees:'SAR 42,000 – 78,000 / year',
-    waitStatus:'short', waitLabel:'6–12 month wait',
-    iqama:true, score:4.6,
-    desc:'A well-regarded American-curriculum school with AP courses in senior years, a strong STEM programme, and a diverse student body from 40+ nationalities. Shorter wait than BISR but still apply early.',
-    url:'https://www.aisr.edu.sa/' },
-
-  { id:'manarat', type:'school', city:'riyadh', section:'education',
-    name:'Manarat Riyadh International School',
-    logo:'MN', lc:'#2A5A3A',
-    curriculum:'IB — MYP & IB Diploma',
-    phases:'KG – Grade 12',
-    fees:'SAR 38,000 – 72,000 / year',
-    waitStatus:'none', waitLabel:'Places available',
-    iqama:true, score:4.4,
-    desc:'An IB World School offering the Middle Years Programme and IB Diploma in a bilingual Arabic/English environment. Competitive fees for an international curriculum school and a strong community feel.',
-    url:'https://www.manarat.com/' },
-
-  // ── SCHOOLS · JEDDAH ──
-  { id:'jis', type:'school', city:'jeddah', section:'education',
-    name:'Jeddah International School (JIS)',
-    logo:'JI', lc:'#3A1A7A',
-    curriculum:'American — US Diploma & AP',
-    phases:'PK – Grade 12',
-    fees:'SAR 36,000 – 70,000 / year',
-    waitStatus:'short', waitLabel:'3–6 month wait',
-    iqama:true, score:4.5,
-    desc:'Jeddah\'s oldest international school, established 1956. American curriculum with AP courses, a strong arts and athletics programme, and a loyal alumni network across the expat community.',
-    url:'https://www.jis.edu.sa/' },
-
-  { id:'csj', type:'school', city:'jeddah', section:'education',
-    name:'Continental School Jeddah',
-    logo:'CS', lc:'#7A2A1A',
-    curriculum:'British — IGCSE & A-Level',
-    phases:'FS1 – Year 13',
-    fees:'SAR 32,000 – 65,000 / year',
-    waitStatus:'none', waitLabel:'Places available',
-    iqama:true, score:4.3,
-    desc:'A British-curriculum school with a strong reputation in Jeddah. More affordable than comparable Riyadh schools with equivalent IGCSE outcomes — a practical choice for families on a moderate education budget.',
-    url:'https://www.csj.edu.sa/' },
-
-  { id:'iisj', type:'school', city:'jeddah', section:'education',
-    name:'International Indian School Jeddah',
-    logo:'II', lc:'#1A6A4A',
-    curriculum:'CBSE — Indian Board',
-    phases:'KG – Grade 12',
-    fees:'SAR 12,000 – 28,000 / year',
-    waitStatus:'long', waitLabel:'1–2 year waiting list',
-    iqama:true, score:4.2,
-    desc:'The largest Indian-curriculum school in Jeddah and one of the most sought-after in Saudi Arabia. CBSE syllabus, highly competitive fees, and strong academic results. Very high demand — register as early as possible.',
-    url:'https://iisj.edu.sa/' },
-
-  // ── SCHOOLS · EASTERN PROVINCE ──
-  { id:'dbgs', type:'school', city:'eastern', section:'education',
-    name:'Dhahran British Grammar School (DBGS)',
-    logo:'DB', lc:'#1A3A8A',
-    curriculum:'British — IGCSE & A-Level',
-    phases:'FS1 – Year 13',
-    fees:'SAR 40,000 – 75,000 / year',
-    waitStatus:'short', waitLabel:'6–12 month wait',
-    iqama:true, score:4.7,
-    desc:'A highly regarded British-curriculum school in Dhahran serving oil & gas sector families and the broader Eastern Province expat community. Close-knit, community feel with strong IGCSE and A-Level results.',
-    url:'https://www.dbgs.com.sa/' },
-
-  { id:'isg', type:'school', city:'eastern', section:'education',
-    name:'International Schools Group (ISG)',
-    logo:'IS', lc:'#3A5A1A',
-    curriculum:'American — US Diploma & AP',
-    phases:'PK – Grade 12',
-    fees:'SAR 38,000 – 72,000 / year',
-    waitStatus:'none', waitLabel:'Places available',
-    iqama:true, score:4.5,
-    desc:'ISG operates campuses across Dhahran, Dammam, and Al-Khobar. American curriculum with AP and university counselling support. Serves one of the largest and most diverse expat communities in the Eastern Province.',
-    url:'https://www.isg.edu.sa/' },
-
-  { id:'safar', type:'school', city:'eastern', section:'education',
-    name:'Safar International School',
-    logo:'SF', lc:'#5A2A7A',
-    curriculum:'British — IGCSE',
-    phases:'FS1 – Year 11',
-    fees:'SAR 28,000 – 52,000 / year',
-    waitStatus:'none', waitLabel:'Places available',
-    iqama:true, score:4.1,
-    desc:'A growing British-curriculum school in the Eastern Province offering competitive fees and improving results year on year. A practical option for families seeking a British education at a significantly lower cost than the established names.',
-    url:'#' },
-
-  // ── ACTIVITIES · RIYADH ──
-  { id:'kidzania', type:'activity', city:'riyadh', section:'activities',
-    name:'KidZania Riyadh',
-    logo:'KZ', lc:'#C04040',
-    indoor:true, ageRange:'4 – 14 years', prayer:true, score:4.8,
-    desc:'Saudi Arabia\'s flagship KidZania — a 12,000m² interactive city inside Riyadh Park Mall where children role-play 80+ real-world professions. Highly recommended for first-time visits. Book in advance during school holidays and weekends.',
-    url:'https://riyadh.kidzania.com/' },
-
-  { id:'bounce-ryd', type:'activity', city:'riyadh', section:'activities',
-    name:'Bounce Riyadh',
-    logo:'BR', lc:'#C08020',
-    indoor:true, ageRange:'4 – 16 years', prayer:true, score:4.5,
-    desc:'Large indoor trampoline and adventure park with foam pits, dodgeball courts, climbing walls, and ninja obstacle courses. Air-conditioned. Family sessions available on weekends. Non-slip socks required; available to purchase on site.',
-    url:'https://www.bounceksa.com/' },
-
-  { id:'spark-ryd', type:'activity', city:'riyadh', section:'activities',
-    name:'Spark Science Centre',
-    logo:'SC', lc:'#2A6A8A',
-    indoor:true, ageRange:'5 – 15 years', prayer:true, score:4.6,
-    desc:'An interactive science and technology museum designed for school-age children. Hands-on exhibits covering physics, chemistry, robotics, and space exploration. Bilingual Arabic/English displays with strong school-holiday programming.',
-    url:'#' },
-
-  // ── ACTIVITIES · JEDDAH ──
-  { id:'corniche', type:'activity', city:'jeddah', section:'activities',
-    name:'Jeddah Corniche',
-    logo:'JC', lc:'#1A6A7A',
-    indoor:false, ageRange:'All ages', prayer:true, score:4.7,
-    desc:'A 30km coastal promenade along the Red Sea — the social heart of Jeddah family life. Cycling, skating, playgrounds, outdoor gyms, waterfront cafes, and the iconic King Fahd Fountain. Best visited after 5pm during summer months.',
-    url:'https://jeddah.gov.sa/' },
-
-  { id:'alshallal', type:'activity', city:'jeddah', section:'activities',
-    name:'Al Shallal Theme Park',
-    logo:'AS', lc:'#8A2A5A',
-    indoor:false, ageRange:'3 – 16 years', prayer:true, score:4.4,
-    desc:'Jeddah\'s largest family entertainment complex. Roller coasters, ice rink, bowling, go-karts, arcade, and a seasonal waterpark. Family-friendly layout with shaded rest areas throughout. Book weekend visits in advance.',
-    url:'https://www.alshallal.com/' },
-
-  { id:'fakieh', type:'activity', city:'jeddah', section:'activities',
-    name:'Fakieh Aquarium',
-    logo:'FA', lc:'#1A4A8A',
-    indoor:true, ageRange:'2 – 14 years', prayer:true, score:4.3,
-    desc:'One of the largest aquariums in the Middle East with 200+ species of Red Sea marine life. Dolphin and sea lion shows, a reptile section, and an adjacent amusement park. Particularly popular with children under 10.',
-    url:'https://www.fakiehaquarium.com/' },
-
-  // ── ACTIVITIES · EASTERN PROVINCE ──
-  { id:'halfmoon', type:'activity', city:'eastern', section:'activities',
-    name:'Half Moon Bay',
-    logo:'HM', lc:'#1A7A5A',
-    indoor:false, ageRange:'All ages', prayer:true, score:4.6,
-    desc:'A sheltered beach on the Arabian Gulf, 45 minutes from Dammam. Shallow crystal-clear water, sand dunes, kayak and jet-ski hire, beach chalets, and a water park on site. The go-to family beach for Eastern Province expats.',
-    url:'#' },
-
-  { id:'scitech', type:'activity', city:'eastern', section:'activities',
-    name:'SciTech Museum Al-Khobar',
-    logo:'ST', lc:'#3A4A8A',
-    indoor:true, ageRange:'5 – 16 years', prayer:true, score:4.4,
-    desc:'An interactive science museum in Al-Khobar with 100+ hands-on exhibits. Planetarium, energy and environment zones, and regular school-holiday workshops. Well maintained, bilingual staff, and ample car parking.',
-    url:'#' },
-
-  { id:'aljawharah', type:'activity', city:'eastern', section:'activities',
-    name:'Al Jawharah Family Centre',
-    logo:'AJ', lc:'#7A3A1A',
-    indoor:true, ageRange:'3 – 12 years', prayer:true, score:4.2,
-    desc:'A family entertainment centre in Dammam featuring soft play zones, laser tag, mini bowling, arcade games, and a dedicated toddler area. Air-conditioned throughout. Birthday party packages available for groups.',
-    url:'#' },
-
-  // ── HEALTHCARE · RIYADH ──
-  { id:'hmg-ryd', type:'healthcare', city:'riyadh', section:'healthcare',
-    name:'Dr. Sulaiman Al-Habib — Riyadh',
-    logo:'SH', lc:'#1A5A4A',
-    specialty:'Paediatrics & Child Health',
-    languages:'Arabic, English',
-    insurance:'Most major plans accepted',
-    score:4.8,
-    desc:'One of Saudi Arabia\'s leading private hospital groups. Riyadh branches have dedicated paediatric departments with English-speaking consultants, neonatal units, and 24/7 A&E for children. Consistently top-rated by the expat community.',
-    url:'https://www.hmg.com/' },
-
-  { id:'sgh-ryd', type:'healthcare', city:'riyadh', section:'healthcare',
-    name:'Saudi German Hospital Riyadh',
-    logo:'SG', lc:'#2A3A8A',
-    specialty:'General Family & Paediatric Care',
-    languages:'Arabic, English, German',
-    insurance:'Most major plans accepted',
-    score:4.5,
-    desc:'A large multi-specialty private hospital with a strong paediatrics department, family-friendly environment, and international medical staff. Efficient insurance billing. Multiple Riyadh branches including Olaya and Hittin.',
-    url:'https://saudigerman.com/' },
-
-  // ── HEALTHCARE · JEDDAH ──
-  { id:'hmg-jed', type:'healthcare', city:'jeddah', section:'healthcare',
-    name:'Dr. Sulaiman Al-Habib — Jeddah',
-    logo:'SH', lc:'#1A5A4A',
-    specialty:'Paediatrics & Child Health',
-    languages:'Arabic, English',
-    insurance:'Most major plans accepted',
-    score:4.7,
-    desc:'HMG Jeddah hospitals offer the same high standard of paediatric care as Riyadh — child-friendly consultation rooms, vaccine clinics, and a 24/7 paediatric emergency department. One of the first calls for Jeddah expat parents.',
-    url:'https://www.hmg.com/' },
-
-  { id:'alhammadi-jed', type:'healthcare', city:'jeddah', section:'healthcare',
-    name:'Al Hammadi Hospital Jeddah',
-    logo:'AH', lc:'#7A1A3A',
-    specialty:'Family Medicine & Paediatrics',
-    languages:'Arabic, English',
-    insurance:'Bupa, AXA, Tawuniya & others',
-    score:4.3,
-    desc:'A well-established private hospital in Jeddah with a reliable paediatric department. Shorter wait times than the larger hospitals, competent multilingual staff, and efficient appointment booking via app or phone.',
-    url:'#' },
-
-  // ── HEALTHCARE · EASTERN PROVINCE ──
-  { id:'mouwasat', type:'healthcare', city:'eastern', section:'healthcare',
-    name:'Mouwasat Hospital — Eastern Province',
-    logo:'MW', lc:'#3A6A2A',
-    specialty:'Paediatrics & Family Medicine',
-    languages:'Arabic, English',
-    insurance:'Most major plans accepted',
-    score:4.6,
-    desc:'A leading private hospital group in the Eastern Province with branches in Dammam and Al-Khobar. Strong paediatric team, neonatal care, and school health documentation services — popular with oil & gas sector expat families.',
-    url:'https://www.mouwasat.com/' },
-
-  { id:'ibnhayyan', type:'healthcare', city:'eastern', section:'healthcare',
-    name:'Ibn Hayyan Medical Complex',
-    logo:'IH', lc:'#5A3A7A',
-    specialty:'General & Paediatric Care',
-    languages:'Arabic, English',
-    insurance:'Selected major plans',
-    score:4.2,
-    desc:'A reputable mid-size hospital in Dammam. More affordable than the large chains with solid paediatric consultants. Good for routine child health checks, vaccinations, and non-emergency family healthcare throughout the year.',
-    url:'#' },
-
-  // ── SETTLING IN (all cities) ──
-  { id:'school-timeline', type:'settling', city:'all', section:'settling',
-    name:'School Admission Timeline',
-    logo:'ST', lc:'#1B2A4A',
-    tip:'Apply 12–18 months before your target intake',
-    desc:'International schools in Saudi Arabia open admissions 12–18 months before the academic year (September intake). Apply to multiple schools simultaneously. Waiting lists for British, American, and IB schools can run 1–3 years in Riyadh. Jeddah and Eastern Province have more flexibility.',
-    points:[
-      'Academic year runs September – June',
-      'Application window: October – February for the following September',
-      'A visit day is mandatory before most schools issue an offer',
-      'Documents needed: Iqama copies, previous school reports, immunisation records'
-    ] },
-
-  { id:'dependent-iqama', type:'settling', city:'all', section:'settling',
-    name:'Dependent Iqama for Children',
-    logo:'DI', lc:'#2A5A3A',
-    tip:'Complete within 90 days of arrival',
-    desc:'Children must be registered as dependents on your Iqama within 90 days of arrival. The sponsor applies through Absher. You will need: the child\'s passport, birth certificate (officially translated and notarised if non-Arabic), and the sponsor\'s Iqama number.',
-    points:[
-      'Apply via Absher → Individuals → Family Visa Services',
-      'Birth certificate must be translated and notarised into Arabic',
-      'Children aged 18+ require their own independent Iqama',
-      'Schools require a dependent Iqama copy before confirming enrolment'
-    ] },
-
-  { id:'child-insurance', type:'settling', city:'all', section:'settling',
-    name:'Child Health Insurance in KSA',
-    logo:'CI', lc:'#6A2A1A',
-    tip:'Mandatory — confirm dependents are covered',
-    desc:'Health insurance for dependents is mandatory in Saudi Arabia. Most employer policies extend to a spouse and up to 3–4 children, but coverage levels vary significantly. Check whether your plan covers: paediatric specialists, vaccinations, dental, and orthodontics. Top-up plans are available through Tawuniya, Bupa Arabia, and AXA.',
-    points:[
-      'Confirm with HR that all children are listed on the employer policy',
-      'Insurer must be CCHI-approved — not all international plans qualify',
-      'Schools typically request proof of insurance at enrolment',
-      'Saudi vaccination schedule may differ from your home country — check with your paediatrician'
-    ] }
-
-];
-
 // ─── STATE ──────────────────────────────────────────────────────────────────
 let activeCity = 'all';
 let activeSec  = 'all';
@@ -743,11 +471,62 @@ const SEC_INFO = {
   all:        { icon:'🗂', title:'All Family Resources', desc:'Schools, activities, healthcare and settling-in guides across Riyadh, Jeddah and the Eastern Province.' },
   education:  { icon:'🎓', title:'International Schools', desc:'Saudi Arabia\'s international schools are heavily oversubscribed. Apply to multiple schools 12–18 months before your target intake. Waiting lists of 1–3 years are common in Riyadh.' },
   activities: { icon:'🎯', title:'Family Activities', desc:'Saudi Arabia\'s family entertainment scene has transformed under Vision 2030. Outdoor activities are best September–April; indoor venues are essential during the summer months (May–September when temperatures exceed 45°C).' },
-  healthcare: { icon:'🏥', title:'Paediatric Healthcare', desc:'Private healthcare is the standard for expat families. Confirm your children are registered as dependents on your employer\'s insurance policy before your first appointment.' },
+  healthcare: { icon:'🏥', title:'Paediatric Healthcare', desc:'Private healthcare is the standard for expat families. Confirm your children are registered as dependents on your employer\'s insurance policy before their first appointment.' },
   settling:   { icon:'🏡', title:'Settling In Guides', desc:'Practical timelines and checklists for the administrative steps that matter most when arriving in Saudi Arabia with children.' }
 };
 
 const CITY_LABELS = { all:'All Cities', riyadh:'Riyadh', jeddah:'Jeddah', eastern:'Eastern Province' };
+
+// ─── SEO AUTOMATION ─────────────────────────────────────────────────────────
+function updateSEO() {
+  const CITY_TITLE = {
+    all:     'Saudi Arabia',
+    riyadh:  'Riyadh',
+    jeddah:  'Jeddah',
+    eastern: 'the Eastern Province'
+  };
+  const CITY_DESC = {
+    all:     'across Saudi Arabia',
+    riyadh:  'in Riyadh, Saudi Arabia',
+    jeddah:  'in Jeddah, Saudi Arabia',
+    eastern: 'in the Eastern Province, Saudi Arabia'
+  };
+  const SEC_TITLE = {
+    all:        'Family & Kids',
+    education:  'International Schools',
+    activities: 'Family Activities',
+    healthcare: 'Paediatric Healthcare',
+    settling:   'Settling-In Guides'
+  };
+  const SEC_DESC = {
+    all:        'family resources',
+    education:  'international schools',
+    activities: 'family activities',
+    healthcare: 'paediatric healthcare providers',
+    settling:   'settling-in guidance'
+  };
+
+  const isDefault = activeCity === 'all' && activeSec === 'all';
+
+  const newTitle = isDefault
+    ? 'Family & Kids in Saudi Arabia — Expat Family Guide | NewToSaudi'
+    : `${SEC_TITLE[activeSec]} in ${CITY_TITLE[activeCity]} — Expat Family Guide | NewToSaudi`;
+
+  const newDesc = isDefault
+    ? 'Everything expat families need in Saudi Arabia — schools, activities, healthcare and settling-in guides across Riyadh, Jeddah and the Eastern Province.'
+    : `Discover top-rated ${SEC_DESC[activeSec]} ${CITY_DESC[activeCity]}. Verified fee listings, waitlists, and real-world advice for expat families.`;
+
+  document.title = newTitle;
+
+  const md = document.querySelector('meta[name="description"]');
+  if (md) md.setAttribute('content', newDesc);
+
+  const ogT = document.querySelector('meta[property="og:title"]');
+  if (ogT) ogT.setAttribute('content', newTitle);
+
+  const ogD = document.querySelector('meta[property="og:description"]');
+  if (ogD) ogD.setAttribute('content', newDesc);
+}
 
 // ─── RENDER HELPERS ─────────────────────────────────────────────────────────
 function stars(n) {
@@ -881,6 +660,8 @@ function getFiltered() {
 }
 
 function renderAll() {
+  updateSEO();
+
   const filtered = getFiltered();
   const grid     = document.getElementById('famGrid');
   const count    = document.getElementById('famCount');
