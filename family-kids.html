@@ -656,26 +656,53 @@ function renderSchool(d) {
 }
 
 function renderActivity(d) {
+  // 1. Compute Climate Heat Shield Indicators
   const climateBadge = d.indoor
-    ? '<span class="fam-badge fam-badge--indoor">❄ Indoor · AC Controlled</span>'
-    : '<span class="fam-badge fam-badge--outdoor">☀ Outdoor Venue</span>';
+    ? '<span class="fam-badge" style="background:#E3F2FD;color:#0D47A1;border:1px solid #BBDEFB;">❄ 100% AC Controlled</span>'
+    : '<span class="fam-badge" style="background:#FFF3E0;color:#E65100;border:1px solid #FFE0B2;">☀ Outdoor Venue (Best After 5PM)</span>';
+
+  // 2. Compute Crowd Meter Color Coding
+  let crowdColor = '#2E7D32';
+  if (d.crowd && (d.crowd.includes('Severe') || d.crowd.includes('Busy'))) crowdColor = '#C62828';
+  if (d.crowd && d.crowd.includes('Moderate')) crowdColor = '#EF6C00';
+
   return `
-  <div class="fam-card">
-    <div class="fam-card__hd">
-      <div class="fam-logo" style="--lc:${d.lc}" aria-hidden="true">${d.logo}</div>
-      <div class="fam-card__title-wrap">
-        <div class="fam-card__name">${d.name}</div>
-        <div class="fam-card__badges">
-          ${climateBadge}
-          <span class="fam-badge fam-badge--age">👶 Target Ages: ${d.ageRange}</span>
-          ${d.prayer ? '<span class="fam-badge fam-badge--prayer">🕌 Prayer Facilities</span>' : ''}
+  <div class="fam-card" style="display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:2px solid #E8E4DC;box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div>
+      <div class="fam-card__hd" style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;">
+        <div class="fam-logo" style="--lc:${d.lc};width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.1rem;flex-shrink:0;">${d.logo}</div>
+        <div class="fam-card__title-wrap" style="flex-grow:1;">
+          <div class="fam-card__name" style="font-size:1.05rem;font-weight:800;color:var(--navy,#1B2A4A);line-height:1.3;margin-bottom:0.3rem;">${d.name}</div>
+          <div class="fam-card__badges" style="display:flex;flex-wrap:wrap;gap:0.3rem;">
+            ${climateBadge}
+            <span class="fam-badge" style="background:#F3E5F5;color:#4A148C;border:1px solid #E1BEE7;">👶 Ages: ${d.ageRange}</span>
+          </div>
+        </div>
+        ${d.score ? `<div class="fam-score" style="text-align:right;background:var(--cream,#F2EEE5);padding:0.3rem 0.6rem;border-radius:8px;"><div style="color:var(--gold,#D4A853);font-weight:800;font-size:1rem;">★ ${d.score}</div><small style="font-size:0.58rem;color:#777;font-weight:700;text-transform:uppercase;">Score</small></div>` : ''}
+      </div>
+
+      <div style="background:#FAF9F5;border-radius:10px;padding:0.6rem 0.8rem;margin-bottom:1rem;border:1px solid #EAE6DF;display:flex;flex-direction:column;gap:0.4rem;">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;align-items:center;">
+          <span style="color:#666;font-weight:600;">⚠️ Attendance Peak:</span>
+          <span style="color:${crowdColor};font-weight:700;font-size:0.72rem;text-transform:uppercase;background:#fff;padding:0.15rem 0.4rem;border-radius:4px;border:1px solid #EAE6DF;">${d.crowd || '—'}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;align-items:center;">
+          <span style="color:#666;font-weight:600;">🚗 Parking Status:</span>
+          <span style="color:var(--navy,#1B2A4A);font-weight:600;">${d.parking || '—'}</span>
         </div>
       </div>
-      ${d.score ? `<div class="fam-score">${stars(d.score)}<small>Family Score</small></div>` : ''}
+
+      <p class="fam-card__desc" style="font-size:0.82rem;color:#444;line-height:1.5;margin-bottom:1.2rem;">${d.desc}</p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;padding-top:0.8rem;margin-bottom:1.2rem;border-top:1px dashed #E5E1D8;font-size:0.7rem;font-weight:700;color:#555;">
+        <span style="display:inline-flex;align-items:center;gap:0.2rem;background:#fff;padding:0.2rem 0.4rem;border-radius:6px;border:1px solid #E8E4DC;opacity:${d.stroller ? '1' : '0.35'}">🛒 Stroller Access</span>
+        <span style="display:inline-flex;align-items:center;gap:0.2rem;background:#fff;padding:0.2rem 0.4rem;border-radius:6px;border:1px solid #E8E4DC;opacity:${d.prayer ? '1' : '0.35'}">🕌 Prayer Room</span>
+        <span style="display:inline-flex;align-items:center;gap:0.2rem;background:#fff;padding:0.2rem 0.4rem;border-radius:6px;border:1px solid #E8E4DC;opacity:${d.dining ? '1' : '0.35'}">🍕 ${d.dining || 'Dining / Cafe'}</span>
+      </div>
     </div>
-    <p class="fam-card__desc">${d.desc}</p>
-    <div class="fam-card__ft">
-      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer">View Activity ↗</a>` : '<span class="fam-link" style="opacity:.4;cursor:default">Details Coming</span>'}
+
+    <div class="fam-card__ft" style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:0.8rem;border-top:1px solid #E8E4DC;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:var(--navy,#1B2A4A);text-decoration:none;font-size:0.78rem;">Official Website ↗</a>` : '<span class="fam-link" style="opacity:0.4;cursor:default;font-size:0.78rem;">Details Pending</span>'}
       ${cityChip(d.city)}
     </div>
   </div>`;
