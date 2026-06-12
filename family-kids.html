@@ -950,24 +950,35 @@ document.getElementById('subFilterRow').addEventListener('click', e => {
   renderAll();
 });
 
-// ─── URL PARAMS ON LOAD ─────────────────────────────────────────────────────
+// ─── SAFE RUNTIME INITIALIZATION GATE ───────────────────────────────────────
+function initializeFamilyHub() {
+  // Verify that the external asset array has fully loaded into global window space
+  if (typeof FAM_DATA !== 'undefined' && Array.isArray(FAM_DATA)) {
+    syncButtons();
+    renderAll();
+  } else {
+    // If asset parsing is delayed, poll safely until available
+    setTimeout(initializeFamilyHub, 30);
+  }
+}
+
+// Read URL parameters on initial document compilation
 (function readParams() {
-  const p    = new URLSearchParams(location.search);
+  const p = new URLSearchParams(location.search);
   const city = p.get('city');
   const sec  = p.get('sec');
   const sub  = p.get('sub');
+
   const validCities = ['riyadh','jeddah','eastern'];
   const validSecs   = ['education','activities','healthcare','settling'];
+
   if (city && validCities.includes(city)) activeCity = city;
   if (sec  && validSecs.includes(sec))    activeSec  = sec;
-  if (sub  && activeSec !== 'all') {
-    const cats = SUB_CATS[activeSec] || [];
-    if (cats.find(c => c.id === sub)) activeSub = sub;
-  }
+  if (sub) activeSub = sub;
 })();
 
-syncButtons();
-renderAll();
+// Fire initialization safely
+document.addEventListener('DOMContentLoaded', initializeFamilyHub);
 
 // ─── BROWSER BACK/FORWARD ────────────────────────────────────────────────────
 window.addEventListener('popstate', () => {
