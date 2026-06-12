@@ -486,6 +486,14 @@ let activeSec    = 'all';
 let activeSub    = 'all';
 let searchQuery  = '';
 
+function debounce(func, delay) {
+  let timeoutId;
+  return function (...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
+
 // ─── SECTION CONFIG ─────────────────────────────────────────────────────────
 const SEC_INFO = {
   all:        { icon:'🗂', title:'All Family Resources', desc:'Schools, activities, healthcare and settling-in guides across Riyadh, Jeddah and the Eastern Province.' },
@@ -964,11 +972,15 @@ document.getElementById('subFilterRow').addEventListener('click', e => {
   renderAll();
 });
 
-const famSearchInput = document.getElementById('famSearchInput');
-if (famSearchInput) {
-  famSearchInput.addEventListener('input', e => {
-    searchQuery = e.target.value.toLowerCase().trim();
+const searchInput = document.getElementById('famSearchInput');
+if (searchInput) {
+  const processSearch = debounce((val) => {
+    searchQuery = val.toLowerCase().trim();
     renderAll();
+  }, 150);
+
+  searchInput.addEventListener('input', e => {
+    processSearch(e.target.value);
   });
 }
 
