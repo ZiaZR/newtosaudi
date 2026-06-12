@@ -125,6 +125,14 @@
 .fam-btt.vis{opacity:1;pointer-events:auto}
 .fam-btt:hover{background:var(--gold,#D4A853);transform:translateY(-2px)}
 
+/* ── Context-Aware Sub-Category Navigation ── */
+.fam-sub-filter-row{display:none;align-items:center;gap:.45rem;background:#fff;padding:.5rem .75rem;border-radius:12px;border:1.5px solid #E0DDD6;margin-top:.45rem;animation:famSlideIn .22s ease-out forwards}
+.fam-sub-filter-row.active{display:flex}
+.fam-sub-btn{display:inline-flex;align-items:center;gap:.25rem;font-size:.68rem;font-weight:700;color:#777;background:#F7F5F0;border:1px solid #E0DDD6;border-radius:100px;padding:.25rem .75rem;cursor:pointer;transition:all .2s;font-family:inherit}
+.fam-sub-btn:hover{color:var(--navy,#1B2A4A);border-color:var(--navy,#1B2A4A)}
+.fam-sub-btn.active{background:var(--navy,#1B2A4A);color:#fff;border-color:var(--navy,#1B2A4A)}
+@keyframes famSlideIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
 /* ── Responsive ── */
 @media(max-width:1024px){.fam-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){
@@ -352,6 +360,10 @@
           <button class="fam-btn fam-sec-btn" data-sec="settling">🏡 Settling In</button>
         </div>
       </div>
+      <div class="fam-sub-filter-row" id="subFilterRow">
+        <span class="fam-filter__label">Refine</span>
+        <div class="fam-pills" id="subPills"></div>
+      </div>
     </div>
   </div>
 </div>
@@ -467,6 +479,7 @@
 // ─── STATE ──────────────────────────────────────────────────────────────────
 let activeCity = 'all';
 let activeSec  = 'all';
+let activeSub  = 'all';
 
 // ─── SECTION CONFIG ─────────────────────────────────────────────────────────
 const SEC_INFO = {
@@ -478,6 +491,14 @@ const SEC_INFO = {
 };
 
 const CITY_LABELS = { all:'All Cities', riyadh:'Riyadh', jeddah:'Jeddah', eastern:'Eastern Province' };
+
+// ─── SUB-CATEGORY CONFIG ─────────────────────────────────────────────────────
+const SUB_CATS = {
+  education:  [ { id:'all', label:'All Schools' }, { id:'british', label:'🇬🇧 British' }, { id:'american', label:'🇺🇸 American' }, { id:'ib', label:'🌍 IB World' } ],
+  activities: [ { id:'all', label:'All Activities' }, { id:'fun', label:'🎢 Theme Parks & Play' }, { id:'sports', label:'⚽ Sports & Clubs' }, { id:'teen', label:'🧗 Teen Zone' }, { id:'camp', label:'🏕️ Summer Camps' } ],
+  healthcare: [ { id:'all', label:'All Healthcare' }, { id:'paed', label:'🩺 Paediatric ER & Care' }, { id:'special', label:'🧬 Special Needs & Therapy' } ],
+  settling:   [ { id:'all', label:'All Guides' }, { id:'admin', label:'📜 Relocation Checklist' } ]
+};
 
 // ─── SEO AUTOMATION ─────────────────────────────────────────────────────────
 function updateSEO() {
@@ -657,12 +678,39 @@ function getFiltered() {
   return FAM_DATA.filter(d => {
     const cityOk = activeCity === 'all' || d.city === activeCity || d.city === 'all';
     const secOk  = activeSec  === 'all' || d.section === activeSec;
-    return cityOk && secOk;
+    const subOk  = activeSub  === 'all' || d.subcat  === activeSub;
+    return cityOk && secOk && subOk;
   });
+}
+
+function renderSubBar() {
+  const row   = document.getElementById('subFilterRow');
+  const pills = document.getElementById('subPills');
+  const cats  = SUB_CATS[activeSec];
+
+  if (!cats) {
+    row.classList.remove('active');
+    pills.innerHTML = '';
+    return;
+  }
+
+  // Force activeSub back to 'all' when switching sections
+  if (!cats.find(c => c.id === activeSub)) activeSub = 'all';
+
+  pills.innerHTML = cats.map(c => `
+    <button class="fam-sub-btn${activeSub === c.id ? ' active' : ''}" data-sub="${c.id}">${c.label}</button>
+  `).join('');
+
+  // Animate row in fresh each time section changes
+  row.classList.remove('active');
+  // Force reflow so animation re-triggers
+  void row.offsetWidth;
+  row.classList.add('active');
 }
 
 function renderAll() {
   updateSEO();
+  renderSubBar();
 
   const filtered = getFiltered();
   const grid     = document.getElementById('famGrid');
@@ -721,6 +769,7 @@ function pushURL() {
   const p = new URLSearchParams();
   if (activeCity !== 'all') p.set('city', activeCity);
   if (activeSec  !== 'all') p.set('sec',  activeSec);
+  if (activeSub  !== 'all') p.set('sub',  activeSub);
   const qs = p.toString();
   history.pushState({}, '', qs ? `?${qs}` : location.pathname);
 }
@@ -738,7 +787,20 @@ document.getElementById('secPills').addEventListener('click', e => {
   const btn = e.target.closest('.fam-sec-btn');
   if (!btn) return;
   activeSec = btn.dataset.sec;
+  activeSub = 'all';
   syncButtons();
+  pushURL();
+  renderAll();
+});
+
+document.getElementById('subFilterRow').addEventListener('click', e => {
+  const btn = e.target.closest('.fam-sub-btn');
+  if (!btn) return;
+  activeSub = btn.dataset.sub;
+  // Sync sub-button active states
+  document.querySelectorAll('.fam-sub-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sub === activeSub);
+  });
   pushURL();
   renderAll();
 });
@@ -748,10 +810,15 @@ document.getElementById('secPills').addEventListener('click', e => {
   const p    = new URLSearchParams(location.search);
   const city = p.get('city');
   const sec  = p.get('sec');
+  const sub  = p.get('sub');
   const validCities = ['riyadh','jeddah','eastern'];
   const validSecs   = ['education','activities','healthcare','settling'];
   if (city && validCities.includes(city)) activeCity = city;
-  if (sec  && validSecs.includes(sec))   activeSec  = sec;
+  if (sec  && validSecs.includes(sec))    activeSec  = sec;
+  if (sub  && activeSec !== 'all') {
+    const cats = SUB_CATS[activeSec] || [];
+    if (cats.find(c => c.id === sub)) activeSub = sub;
+  }
 })();
 
 syncButtons();
@@ -762,6 +829,12 @@ window.addEventListener('popstate', () => {
   const p = new URLSearchParams(location.search);
   activeCity = p.get('city') || 'all';
   activeSec  = p.get('sec')  || 'all';
+  activeSub  = 'all';
+  const sub  = p.get('sub');
+  if (sub && activeSec !== 'all') {
+    const cats = SUB_CATS[activeSec] || [];
+    if (cats.find(c => c.id === sub)) activeSub = sub;
+  }
   syncButtons();
   renderAll();
 });
