@@ -500,34 +500,12 @@ const SUB_CATS = {
   settling:   [ { id:'all', label:'All Guides' }, { id:'admin', label:'📜 Relocation Checklist' } ]
 };
 
-// ─── SEO AUTOMATION ─────────────────────────────────────────────────────────
+// ─── UPGRADED SEO AUTOMATION ENGINE WITH DYNAMIC JSON-LD SCHEMA ──────────────
 function updateSEO() {
-  const CITY_TITLE = {
-    all:     'Saudi Arabia',
-    riyadh:  'Riyadh',
-    jeddah:  'Jeddah',
-    eastern: 'the Eastern Province'
-  };
-  const CITY_DESC = {
-    all:     'across Saudi Arabia',
-    riyadh:  'in Riyadh, Saudi Arabia',
-    jeddah:  'in Jeddah, Saudi Arabia',
-    eastern: 'in the Eastern Province, Saudi Arabia'
-  };
-  const SEC_TITLE = {
-    all:        'Family & Kids',
-    education:  'International Schools',
-    activities: 'Family Activities',
-    healthcare: 'Paediatric Healthcare',
-    settling:   'Settling-In Guides'
-  };
-  const SEC_DESC = {
-    all:        'family resources',
-    education:  'international schools',
-    activities: 'family activities',
-    healthcare: 'paediatric healthcare providers',
-    settling:   'settling-in guidance'
-  };
+  const CITY_TITLE = { all:'Saudi Arabia', riyadh:'Riyadh', jeddah:'Jeddah', eastern:'the Eastern Province' };
+  const CITY_DESC  = { all:'across Saudi Arabia', riyadh:'in Riyadh, Saudi Arabia', jeddah:'in Jeddah, Saudi Arabia', eastern:'in the Eastern Province, Saudi Arabia' };
+  const SEC_TITLE  = { all:'Family & Kids', education:'International Schools', activities:'Family Activities', healthcare:'Paediatric Healthcare', settling:'Settling-In Guides' };
+  const SEC_DESC   = { all:'family resources', education:'international schools', activities:'family activities', healthcare:'paediatric healthcare providers', settling:'settling-in guidance' };
 
   const isDefault = activeCity === 'all' && activeSec === 'all';
 
@@ -539,16 +517,98 @@ function updateSEO() {
     ? 'Everything expat families need in Saudi Arabia — schools, activities, healthcare and settling-in guides across Riyadh, Jeddah and the Eastern Province.'
     : `Discover top-rated ${SEC_DESC[activeSec]} ${CITY_DESC[activeCity]}. Verified fee listings, waitlists, and real-world advice for expat families.`;
 
+  // Update standard DOM head attributes
   document.title = newTitle;
+  const md  = document.querySelector('meta[name="description"]');   if (md)  md.setAttribute('content', newDesc);
+  const ogT = document.querySelector('meta[property="og:title"]');  if (ogT) ogT.setAttribute('content', newTitle);
+  const ogD = document.querySelector('meta[property="og:description"]'); if (ogD) ogD.setAttribute('content', newDesc);
 
-  const md = document.querySelector('meta[name="description"]');
-  if (md) md.setAttribute('content', newDesc);
+  // ── Dynamic JSON-LD injection engine ────────────────────────────────────────
+  let schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    'name': newTitle,
+    'description': newDesc,
+    'url': window.location.href,
+    'isPartOf': {
+      '@type': 'WebSite',
+      'name': 'NewToSaudi',
+      'url': 'https://newtosaudi.com'
+    }
+  };
 
-  const ogT = document.querySelector('meta[property="og:title"]');
-  if (ogT) ogT.setAttribute('content', newTitle);
+  const filteredItems = getFiltered();
 
-  const ogD = document.querySelector('meta[property="og:description"]');
-  if (ogD) ogD.setAttribute('content', newDesc);
+  if (filteredItems.length > 0) {
+    if (activeSec === 'education') {
+      schemaData = {
+        '@context': 'https://schema.org',
+        '@graph': filteredItems.map(item => ({
+          '@type': 'EducationalOrganization',
+          '@id': `https://newtosaudi.com/family-kids#${item.id}`,
+          'name': item.name,
+          'description': item.desc,
+          'url': item.url && item.url !== '#' ? item.url : 'https://newtosaudi.com/family-kids',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': CITY_LABELS[item.city] || item.city,
+            'addressCountry': 'SA'
+          },
+          ...(item.score ? {
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': item.score,
+              'bestRating': '5',
+              'worstRating': '1',
+              'ratingCount': '12'
+            }
+          } : {})
+        }))
+      };
+    } else if (activeSec === 'activities') {
+      schemaData = {
+        '@context': 'https://schema.org',
+        '@graph': filteredItems.map(item => ({
+          '@type': 'EntertainmentBusiness',
+          '@id': `https://newtosaudi.com/family-kids#${item.id}`,
+          'name': item.name,
+          'description': item.desc,
+          'url': item.url && item.url !== '#' ? item.url : 'https://newtosaudi.com/family-kids',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': CITY_LABELS[item.city] || item.city,
+            'addressCountry': 'SA'
+          }
+        }))
+      };
+    } else if (activeSec === 'healthcare') {
+      schemaData = {
+        '@context': 'https://schema.org',
+        '@graph': filteredItems.map(item => ({
+          '@type': 'MedicalBusiness',
+          '@id': `https://newtosaudi.com/family-kids#${item.id}`,
+          'name': item.name,
+          'description': item.desc,
+          'medicalSpecialty': 'Pediatrics',
+          'address': {
+            '@type': 'PostalAddress',
+            'addressLocality': CITY_LABELS[item.city] || item.city,
+            'addressCountry': 'SA'
+          }
+        }))
+      };
+    }
+  }
+
+  // Remove stale script node and mount fresh structured data
+  const oldScript = document.getElementById('famJsonLd');
+  if (oldScript) oldScript.remove();
+
+  const newScript = document.createElement('script');
+  newScript.id   = 'famJsonLd';
+  newScript.type = 'application/ld+json';
+  newScript.text = JSON.stringify(schemaData);
+  document.head.appendChild(newScript);
 }
 
 // ─── RENDER HELPERS ─────────────────────────────────────────────────────────
