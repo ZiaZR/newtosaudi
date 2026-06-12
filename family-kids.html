@@ -333,6 +333,10 @@
         <span class="fam-hero__stat">6 paediatric providers</span>
         <span class="fam-hero__stat">Riyadh · Jeddah · Eastern Province</span>
       </div>
+      <div style="margin-top:1.4rem;max-width:520px;position:relative;">
+        <input id="famSearchInput" type="search" placeholder='Search "IB", "Autism", "Mall", "Cafe" …' autocomplete="off" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.18);border-radius:100px;padding:.65rem 1.1rem .65rem 2.6rem;font-size:.85rem;color:#fff;font-family:inherit;outline:none;transition:border-color .2s,background .2s;" onfocus="this.style.background='rgba(255,255,255,0.13)';this.style.borderColor='rgba(212,168,83,0.7)';" onblur="this.style.background='rgba(255,255,255,0.08)';this.style.borderColor='rgba(255,255,255,0.18)';">
+        <svg style="position:absolute;left:.85rem;top:50%;transform:translateY(-50%);opacity:.5;pointer-events:none;" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -477,9 +481,10 @@
 <script src="/assets/js/family-data.js"></script>
 <script>
 // ─── STATE ──────────────────────────────────────────────────────────────────
-let activeCity = 'all';
-let activeSec  = 'all';
-let activeSub  = 'all';
+let activeCity   = 'all';
+let activeSec    = 'all';
+let activeSub    = 'all';
+let searchQuery  = '';
 
 // ─── SECTION CONFIG ─────────────────────────────────────────────────────────
 const SEC_INFO = {
@@ -794,7 +799,16 @@ function getFiltered() {
     const cityOk = activeCity === 'all' || d.city === activeCity || d.city === 'all';
     const secOk  = activeSec  === 'all' || d.section === activeSec;
     const subOk  = activeSub  === 'all' || d.subcat  === activeSub;
-    return cityOk && secOk && subOk;
+
+    // Evaluate text input query match against title or description strings
+    let searchOk = true;
+    if (searchQuery !== '') {
+      const nameMatch = d.name ? d.name.toLowerCase().includes(searchQuery) : false;
+      const descMatch = d.desc ? d.desc.toLowerCase().includes(searchQuery) : false;
+      searchOk = nameMatch || descMatch;
+    }
+
+    return cityOk && secOk && subOk && searchOk;
   });
 }
 
@@ -949,6 +963,14 @@ document.getElementById('subFilterRow').addEventListener('click', e => {
   pushURL();
   renderAll();
 });
+
+const famSearchInput = document.getElementById('famSearchInput');
+if (famSearchInput) {
+  famSearchInput.addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase().trim();
+    renderAll();
+  });
+}
 
 // ─── SAFE RUNTIME INITIALIZATION GATE ───────────────────────────────────────
 function initializeFamilyHub() {
