@@ -188,21 +188,22 @@
     .atm-fact__num { font-size:1.8rem; font-weight:800; color:var(--gold); line-height:1; margin-bottom:.4rem; }
     .atm-fact__label { font-size:.76rem; color:rgba(255,255,255,.6); line-height:1.4; }
 
-    /* ── FAQ accordion ── */
-    .faq-list { list-style:none; padding:0; margin:0; }
-    .faq-item { border-bottom:1px solid rgba(255,255,255,.1) !important; background:none !important; box-shadow:none !important; border-radius:0 !important; }
-    .faq-item:last-child { border:none !important; }
-    .faq-q {
+    /* ── Banking FAQ (isolated classes, no conflict with site.css) ── */
+    .bfaq-list { list-style:none; padding:0; margin:0; }
+    .bfaq-item { border-bottom:1px solid rgba(255,255,255,.12); }
+    .bfaq-item:last-child { border:none; }
+    .bfaq-q {
       width:100%; background:none; border:none; text-align:left; cursor:pointer;
       padding:1.35rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem;
-      font-size:.95rem; font-weight:700; color:#fff !important; font-family:inherit;
+      font-size:.95rem; font-weight:700; color:#fff; font-family:inherit; transition:color .25s;
     }
-    .faq-q:hover { color:var(--gold) !important; }
-    .faq-q svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform .3s; }
-    .faq-a { font-size:.86rem !important; color:rgba(255,255,255,.85) !important; line-height:1.75; padding:.25rem 0 1.25rem !important; max-height:0; overflow:hidden; transition:max-height .35s ease; }
-    .faq-a-inner, .faq-a p { color:rgba(255,255,255,.85) !important; padding:0 !important; font-size:.86rem !important; }
-    .faq-item.open .faq-q svg { transform:rotate(45deg); stroke:var(--gold); }
-    .faq-item.open .faq-a { max-height:2000px; }
+    .bfaq-q:hover { color:var(--gold); }
+    .bfaq-q svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform .3s,stroke .25s; }
+    .bfaq-item.open .bfaq-q { color:var(--gold); }
+    .bfaq-item.open .bfaq-q svg { transform:rotate(45deg); stroke:var(--gold); }
+    .bfaq-a { font-size:.875rem; color:rgba(255,255,255,.82); line-height:1.75; max-height:0; overflow:hidden; transition:max-height .4s ease; }
+    .bfaq-item.open .bfaq-a { max-height:2000px; }
+    .bfaq-a-inner { padding-bottom:1.25rem; }
 
     /* ── Newsletter ── */
     .newsletter-dark { text-align:center; }
@@ -271,6 +272,25 @@
       .app-badge { width:40px; height:40px }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.bfaq-q').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var item = btn.closest('.bfaq-item');
+          var isOpen = item.classList.contains('open');
+          document.querySelectorAll('.bfaq-item.open').forEach(function(i) {
+            i.classList.remove('open');
+            i.querySelector('.bfaq-a').style.maxHeight = null;
+          });
+          if (!isOpen) {
+            item.classList.add('open');
+            var ans = item.querySelector('.bfaq-a');
+            ans.style.maxHeight = ans.scrollHeight + 'px';
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1021,78 +1041,78 @@
     </div>
 
     <div style="max-width:760px;">
-      <ul class="faq-list reveal">
+      <ul class="bfaq-list reveal">
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Can I open a bank account before my Iqama arrives?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">No — all Saudi banks require a valid Iqama to open a personal account. You cannot open an account on a visit visa, work visa alone, or with a pending Iqama. If you need cash before your Iqama arrives, ask your employer for a cash advance or carry enough from your home country to cover the first 2–4 weeks.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">No — all Saudi banks require a valid Iqama to open a personal account. You cannot open an account on a visit visa, work visa alone, or with a pending Iqama. If you need cash before your Iqama arrives, ask your employer for a cash advance or carry enough from your home country to cover the first 2–4 weeks.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             How long does it take to get a bank account open?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">For in-branch visits: the account is typically activated within the same day. For digital applications (Al Rajhi, Alinma): the account is live within 24 hours and a physical debit card arrives within 3–5 business days. Complex cases (self-employed, unusual visa types) may take 3–5 business days for additional verification.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">For in-branch visits: the account is typically activated within the same day. For digital applications (Al Rajhi, Alinma): the account is live within 24 hours and a physical debit card arrives within 3–5 business days. Complex cases (self-employed, unusual visa types) may take 3–5 business days for additional verification.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Do Saudi banks charge monthly fees?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">Standard current accounts at most Saudi banks carry zero monthly maintenance fees. This is one of the notable benefits compared to many Western banking markets. Some premium accounts (Gold, Platinum tiers) have monthly fees in exchange for additional benefits like lounge access or higher transfer limits. Always confirm fee structure when opening your account.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">Standard current accounts at most Saudi banks carry zero monthly maintenance fees. This is one of the notable benefits compared to many Western banking markets. Some premium accounts (Gold, Platinum tiers) have monthly fees in exchange for additional benefits like lounge access or higher transfer limits. Always confirm fee structure when opening your account.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Can I keep my account if I leave Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">In practice, most expats close or drain their Saudi bank accounts when leaving permanently. Saudi banks require an active Iqama to maintain an account — when your Iqama expires and is not renewed, the bank may freeze or close the account. Best practice: transfer remaining funds before your departure date and formally close the account to avoid any issues with dormancy fees or compliance flags.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">In practice, most expats close or drain their Saudi bank accounts when leaving permanently. Saudi banks require an active Iqama to maintain an account — when your Iqama expires and is not renewed, the bank may freeze or close the account. Best practice: transfer remaining funds before your departure date and formally close the account to avoid any issues with dormancy fees or compliance flags.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Is there a limit on how much I can send abroad?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">There is no statutory annual limit on remittances for employed expats earning legitimate income. Large single transfers (above SAR 60,000) may trigger documentation requirements from your bank's compliance team — typically a salary certificate and source of funds letter. Banks will ask for this proactively; simply comply and the transfer proceeds. The 6% remittance levy applies to transfers by non-Saudi nationals to foreign accounts.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">There is no statutory annual limit on remittances for employed expats earning legitimate income. Large single transfers (above SAR 60,000) may trigger documentation requirements from your bank's compliance team — typically a salary certificate and source of funds letter. Banks will ask for this proactively; simply comply and the transfer proceeds. The 6% remittance levy applies to transfers by non-Saudi nationals to foreign accounts.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             What is Absher and do I need it for banking?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">Absher is the Saudi government's digital identity and services portal. While you don't technically need Absher to open a basic bank account, it dramatically speeds up the process. Banks use Nafath (the digital identity verification service) which is linked to Absher — with Absher registered, your identity can be verified in seconds during account opening. Absher is also needed for Iqama renewal and most government transactions, so register immediately after getting your Iqama.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">Absher is the Saudi government's digital identity and services portal. While you don't technically need Absher to open a basic bank account, it dramatically speeds up the process. Banks use Nafath (the digital identity verification service) which is linked to Absher — with Absher registered, your identity can be verified in seconds during account opening. Absher is also needed for Iqama renewal and most government transactions, so register immediately after getting your Iqama.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Can I use Wise or Revolut as my main bank in Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">No — these cannot replace a Saudi local bank account. Your employer's payroll system requires a Saudi IBAN (bank account number) to process your salary. Wise does not have a Saudi banking license and cannot receive SAR salary payments. Use a Saudi bank for salary receipt and bill payments, and use Wise/Revolut as a supplementary tool for international transfers and travel spending.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">No — these cannot replace a Saudi local bank account. Your employer's payroll system requires a Saudi IBAN (bank account number) to process your salary. Wise does not have a Saudi banking license and cannot receive SAR salary payments. Use a Saudi bank for salary receipt and bill payments, and use Wise/Revolut as a supplementary tool for international transfers and travel spending.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Are there banks specifically designed for expats?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">There are no banks exclusively for expats in Saudi Arabia — all SAMA-licensed banks serve both nationals and expatriates. However, SABB (HSBC affiliate) and Riyad Bank have the strongest reputation for expat service specifically. Several banks also operate dedicated expat service desks at their major city branches — Al Rajhi and SNB in Riyadh's Olaya district are well-regarded for this.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">There are no banks exclusively for expats in Saudi Arabia — all SAMA-licensed banks serve both nationals and expatriates. However, SABB (HSBC affiliate) and Riyad Bank have the strongest reputation for expat service specifically. Several banks also operate dedicated expat service desks at their major city branches — Al Rajhi and SNB in Riyadh's Olaya district are well-regarded for this.</div></div>
         </li>
 
-        <li class="faq-item">
-          <button class="faq-q">
+        <li class="bfaq-item">
+          <button class="bfaq-q">
             Do I pay tax on bank account earnings in Saudi Arabia?
             <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
-          <div class="faq-a">Saudi Arabia has no personal income tax and no withholding tax on savings account profit distributions for individuals. The profit you earn on a Mudaraba savings account is paid to you in full. However, depending on your home country's tax treaty with Saudi Arabia, you may still be required to declare foreign income on your home country tax return — this varies by nationality. Consult a tax advisor in your home country.</div>
+          <div class="bfaq-a"><div class="bfaq-a-inner">Saudi Arabia has no personal income tax and no withholding tax on savings account profit distributions for individuals. The profit you earn on a Mudaraba savings account is paid to you in full. However, depending on your home country's tax treaty with Saudi Arabia, you may still be required to declare foreign income on your home country tax return — this varies by nationality. Consult a tax advisor in your home country.</div></div>
         </li>
       </ul>
     </div>
