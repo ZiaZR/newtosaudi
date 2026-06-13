@@ -25,6 +25,11 @@ import sys
 import argparse
 from pathlib import Path
 
+# Force UTF-8 output on Windows consoles
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # ── Configuration ──────────────────────────────────────────────────────────────
 
 ROOT        = Path(__file__).parent          # project root = script location

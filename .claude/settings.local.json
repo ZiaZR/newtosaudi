@@ -37,7 +37,9 @@
       "PowerShell(npx serve --version 2>&1)",
       "PowerShell(Start-Process -NoNewWindow -FilePath \"npx\" -ArgumentList \"serve -p 5501 .\" -PassThru | ForEach-Object { $_.Id }; Start-Sleep 3; try { \\(Invoke-WebRequest -Uri \"http://localhost:5501/family-kids.html\" -TimeoutSec 4\\).StatusCode } catch { $_.Exception.Message })",
       "Bash(node -e \"const FAM_DATA = require\\('./assets/js/family-data.js'.replace\\('const FAM_DATA','module.exports'\\)\\); console.log\\('parse error'\\)\")",
-      "Bash(node -e \"eval\\(require\\('fs'\\).readFileSync\\('assets/js/family-data.js','utf8'\\)\\); console.log\\('Records:', FAM_DATA.length\\); const subcats=[...new Set\\(FAM_DATA.map\\(d=>d.subcat\\)\\)].sort\\(\\); console.log\\('Subcats:', subcats.join\\(', '\\)\\); const types=[...new Set\\(FAM_DATA.map\\(d=>d.type\\)\\)].sort\\(\\); console.log\\('Types:', types.join\\(', '\\)\\); const mdUrls=FAM_DATA.filter\\(d=>d.url&&d.url.includes\\('['\\)\\); console.log\\('Markdown URLs remaining:', mdUrls.length\\);\")"
+      "Bash(node -e \"eval\\(require\\('fs'\\).readFileSync\\('assets/js/family-data.js','utf8'\\)\\); console.log\\('Records:', FAM_DATA.length\\); const subcats=[...new Set\\(FAM_DATA.map\\(d=>d.subcat\\)\\)].sort\\(\\); console.log\\('Subcats:', subcats.join\\(', '\\)\\); const types=[...new Set\\(FAM_DATA.map\\(d=>d.type\\)\\)].sort\\(\\); console.log\\('Types:', types.join\\(', '\\)\\); const mdUrls=FAM_DATA.filter\\(d=>d.url&&d.url.includes\\('['\\)\\); console.log\\('Markdown URLs remaining:', mdUrls.length\\);\")",
+      "Bash(python build.py)",
+      "Bash(python build.py --write)"
     ]
   }
 }
