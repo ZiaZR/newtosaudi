@@ -317,6 +317,98 @@ const FAM_DATA = [
       'AGES 13–18 (Academic Integration): Enroll teens in structured online language academies or introductory school cultural clubs.',
       'FOR PARENTS: Use the standardized Madinah Arabic textbook series to stay aligned with what your children are picking up.'
     ]
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  //  OUTDOOR & ADVENTURE (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  // ── OUTDOORS · RIYADH ──
+  {
+    id: 'edge-world', type: 'outdoors', city: 'riyadh', section: 'outdoors', subcat: 'desert',
+    name: 'Edge of the World (Jebel Fihrayn)', logo: 'EW', lc: '#7B3F00',
+    terrain: 'Desert Cliffs', bestSeason: 'Oct – Apr', driveTime: '45–60 min from Riyadh',
+    difficulty: 'Moderate Family Hike', admission: 'Free · No Booking Required', score: 4.9,
+    desc: 'The single most jaw-dropping natural landmark accessible from Riyadh. A dramatic escarpment edge dropping 300 metres into the ancient Tuwaiq Valley — looks like the planet simply ends. The plateau walk is wide, flat, and manageable for kids aged 7+. Bring three times the water you think you need, sun hats, and absolutely do not attempt May–September.',
+    url: 'https://maps.app.goo.gl/edgeofworld'
+  },
+  {
+    id: 'wadi-hanifah', type: 'outdoors', city: 'riyadh', section: 'outdoors', subcat: 'urban',
+    name: 'Wadi Hanifah Greenway & Bike Trails', logo: 'WH', lc: '#2E7D32',
+    terrain: 'Urban Riverside Trail', bestSeason: 'Oct – Apr', driveTime: 'Within Riyadh',
+    difficulty: 'Easy — Fully Paved', admission: 'Free · Gear Rental On-Site', score: 4.6,
+    desc: 'A beautifully landscaped 85km urban wadi cutting through central Riyadh, transformed under Vision 2030 into a premier family cycling and jogging corridor. Wide shaded paths, family picnic zones, and bike rental kiosks. Completely flat and fully paved — perfect for kids on balance bikes and young cyclists learning on open terrain.',
+    url: 'https://www.arriyadh.com/'
+  },
+  {
+    id: 'diriyah-walk', type: 'outdoors', city: 'riyadh', section: 'outdoors', subcat: 'heritage',
+    name: 'Diriyah Al-Turaif UNESCO Heritage Walk', logo: 'DW', lc: '#A0522D',
+    terrain: 'Heritage Mudbrick Village', bestSeason: 'Year-Round (Evenings)', driveTime: '20 min from central Riyadh',
+    difficulty: 'Easy — Flat Paved Circuit', admission: 'SAR 95 Adults · SAR 50 Kids', score: 4.8,
+    desc: 'A UNESCO World Heritage site that opened its full visitor experience in 2024. Walk through the restored 15th-century mudbrick capital of the first Saudi state at golden hour when the lighting is extraordinary. Evening programming includes curated historical storytelling and open-air arts installations. Children genuinely connect with the fortress scale.',
+    url: 'https://www.diriyah.sa/'
+  },
+
+  // ── OUTDOORS · JEDDAH ──
+  {
+    id: 'obhur-creek', type: 'outdoors', city: 'jeddah', section: 'outdoors', subcat: 'beach',
+    name: 'Obhur Creek Beach Resorts Strip (North Jeddah)', logo: 'OC', lc: '#0277BD',
+    terrain: 'Red Sea Inlet · Beach Clubs', bestSeason: 'Oct – May', driveTime: '30 min north of Jeddah',
+    difficulty: 'Easy — Resort Day Access', admission: 'SAR 100–350 per family (varies by club)', score: 4.7,
+    desc: 'The premium beach club corridor for Jeddah\'s expat families. A 12km creek inlet lined with private beach resorts offering calm, wave-free Red Sea swimming, kayaking, and jet-ski hire. Entry fees typically include sunbed access and F&B credit. Water visibility is exceptional October through April. Multiple family-only sessions and ladies\' days weekly.',
+    url: '#'
+  },
+  {
+    id: 'taif-escape', type: 'outdoors', city: 'jeddah', section: 'outdoors', subcat: 'mountain',
+    name: 'Al Hada & Shafa Mountain Escape (Taif Highlands)', logo: 'TF', lc: '#4CAF50',
+    terrain: 'Mountain · Cable Car · Rose Fields', bestSeason: 'Mar – Nov', driveTime: '1.5 hr from Jeddah',
+    difficulty: 'Easy — Cable Car Accessible', admission: 'Free entry · Cable car SAR 40–60', score: 4.8,
+    desc: 'The premier family escape from Jeddah\'s coastal heat. The Al Hada cable car lifts you 2,500 metres up the Hejaz Mountains with staggering valley views. Shafa\'s rose farms bloom March–April producing the famous Taif rose oil. Cool temperatures year-round make this a genuine relief. Kids absolutely love the cable car crossing and mountain fruit markets.',
+    url: '#'
+  },
+  {
+    id: 'corniche-south', type: 'outdoors', city: 'jeddah', section: 'outdoors', subcat: 'urban',
+    name: 'Jeddah South Corniche Family Beach & Lagoons', logo: 'JC', lc: '#00838F',
+    terrain: 'Urban Waterfront · Public Beach', bestSeason: 'Oct – Apr', driveTime: 'In-City',
+    difficulty: 'Easy — Flat Promenade', admission: 'Free · Paid Parking Available', score: 4.5,
+    desc: 'The southern end of Jeddah\'s famous 30km Corniche hosts quieter family beach coves, children\'s playground clusters, and the iconic Floating Mosque viewpoint. Newly expanded beach access areas have been cleaned and reinforced under the city\'s Vision 2030 coastal masterplan. Best visited on weekday evenings when the famous King Fahd Fountain is lit.',
+    url: 'https://www.jeddah.gov.sa/'
+  },
+
+  // ── OUTDOORS · EASTERN PROVINCE ──
+  {
+    id: 'half-moon-bay', type: 'outdoors', city: 'eastern', section: 'outdoors', subcat: 'beach',
+    name: 'Half Moon Bay Beach (Al Khobar)', logo: 'HM', lc: '#0288D1',
+    terrain: 'Gulf Coastline · Sandy Beach', bestSeason: 'Oct – May', driveTime: '30 min from Khobar',
+    difficulty: 'Easy — Flat Beach Access', admission: 'Free public access · Resort entry separate', score: 4.8,
+    desc: 'The most iconic family beach destination in the Eastern Province and one of the finest in the Kingdom. A 5km crescent of white sand with gentle, shallow Gulf waters ideal for young children. Multiple beach resort clubs line the bay offering jet-ski hire, banana boats, and beachside dining. The calm, warm water makes this a genuine swimming beach — not just a viewpoint.',
+    url: '#'
+  },
+  {
+    id: 'uqair-coast', type: 'outdoors', city: 'eastern', section: 'outdoors', subcat: 'desert',
+    name: 'Uqair Historic Fort & Gulf Coastline', logo: 'UQ', lc: '#795548',
+    terrain: 'Remote Gulf Coast · Heritage Fort', bestSeason: 'Nov – Mar', driveTime: '1.5 hr from Khobar',
+    difficulty: 'Easy — Flat Ground', admission: 'Free · Self-Drive Required', score: 4.4,
+    desc: 'An extraordinary off-the-radar family day trip combining the Gulf\'s cleanest remote beach with a well-preserved Ottoman-era coastal fort. The shallow, crystal-clear waters here allow kids to wade hundreds of metres offshore safely. No facilities, no crowds — pack a full family picnic. The fort\'s coastal watch towers offer dramatic photography backdrops at low tide.',
+    url: '#'
+  },
+  {
+    id: 'khobar-corniche', type: 'outdoors', city: 'eastern', section: 'outdoors', subcat: 'urban',
+    name: 'Khobar Corniche & Al Aqrabiyah Island Park', logo: 'KC', lc: '#00695C',
+    terrain: 'Urban Gulf Waterfront', bestSeason: 'Oct – Apr (Evenings)', driveTime: 'In-City',
+    difficulty: 'Easy — Flat Paved Path', admission: 'Free', score: 4.6,
+    desc: 'Khobar\'s beautifully maintained 6km Corniche is one of the cleanest and most family-friendly urban waterfronts in the Gulf. Features a dedicated cycling and running track separated from foot traffic, children\'s themed play zones, fishing piers, and direct views across to Bahrain on clear evenings. The connected Al Aqrabiyah island park adds a bonus green space loop.',
+    url: '#'
+  },
+
+  // ── OUTDOORS · KINGDOM-WIDE ──
+  {
+    id: 'alula-discovery', type: 'outdoors', city: 'all', section: 'outdoors', subcat: 'desert',
+    name: 'AlUla Canyon Discovery & Hegra UNESCO Site', logo: 'AU', lc: '#BF360C',
+    terrain: 'Ancient Desert Canyons · UNESCO', bestSeason: 'Nov – Mar', driveTime: 'Flight or 10hr drive from Riyadh',
+    difficulty: 'Moderate — Canyon Walking Required', admission: 'SAR 95–195 per site · Book via Experience AlUla', score: 4.9,
+    desc: 'The single most spectacular family holiday destination inside the Kingdom. AlUla\'s rose-red sandstone canyons contain Hegra — Saudi Arabia\'s first UNESCO World Heritage site — alongside the breathtaking Elephant Rock and the Maraya concert mirror building. The Winter at Tantora festival (Dec–Mar) adds world-class family programming. Children are routinely awestruck. Book everything 4–6 weeks in advance.',
+    url: 'https://www.experiencealula.com/'
   }
 
 ];
