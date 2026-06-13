@@ -361,6 +361,11 @@
           <button class="fam-btn fam-sec-btn" data-sec="education">🎓 Education</button>
           <button class="fam-btn fam-sec-btn" data-sec="activities">🎯 Activities</button>
           <button class="fam-btn fam-sec-btn" data-sec="outdoors">🏕 Outdoors</button>
+          <button class="fam-btn fam-sec-btn" data-sec="vision2030">🚀 Vision 2030</button>
+          <button class="fam-btn fam-sec-btn" data-sec="leisure">🎬 Leisure</button>
+          <button class="fam-btn fam-sec-btn" data-sec="cultural">🏛 Cultural</button>
+          <button class="fam-btn fam-sec-btn" data-sec="camps">🏕️ Camps & Classes</button>
+          <button class="fam-btn fam-sec-btn" data-sec="dining">🍽 Dining & Malls</button>
           <button class="fam-btn fam-sec-btn" data-sec="healthcare">🏥 Healthcare</button>
           <button class="fam-btn fam-sec-btn" data-sec="settling">🏡 Settling In</button>
         </div>
@@ -502,7 +507,12 @@ const SEC_INFO = {
   activities: { icon:'🎯', title:'Family Activities', desc:'Saudi Arabia\'s family entertainment scene has transformed under Vision 2030. Outdoor activities are best September–April; indoor venues are essential during the summer months (May–September when temperatures exceed 45°C).' },
   healthcare: { icon:'🏥', title:'Paediatric Healthcare', desc:'Private healthcare is the standard for expat families. Confirm your children are registered as dependents on your employer\'s insurance policy before their first appointment.' },
   settling:   { icon:'🏡', title:'Settling In Guides', desc:'Practical timelines and checklists for the administrative steps that matter most when arriving in Saudi Arabia with children.' },
-  outdoors:   { icon:'🏕', title:'Outdoor & Adventure', desc:'Saudi Arabia\'s outdoor scene is one of the most underrated in the world. From Red Sea coastline to ancient desert canyons and cool mountain highlands — the window is October through April. Plan around the heat, not against it.' }
+  outdoors:   { icon:'🏕', title:'Outdoor & Adventure', desc:'Saudi Arabia\'s outdoor scene is one of the most underrated in the world. From Red Sea coastline to ancient desert canyons and cool mountain highlands — the window is October through April. Plan around the heat, not against it.' },
+  vision2030: { icon:'🚀', title:'Vision 2030 Mega Projects', desc:'Saudi Arabia is executing the most ambitious urban and cultural transformation in modern history. These developments will define your children\'s memories of growing up in the Kingdom — track them actively and book early access when registration opens.' },
+  leisure:    { icon:'🎬', title:'Leisure & Entertainment', desc:'The Kingdom\'s entertainment sector has undergone a complete transformation since 2017. Cinemas, live concerts, professional sports, and world-class performing arts are now permanent fixtures of expat family life — not exceptions.' },
+  cultural:   { icon:'🏛', title:'Cultural & Educational', desc:'Saudi Arabia\'s cultural depth is consistently underestimated by newly arriving families. From UNESCO World Heritage cities to world-class museums and international arts festivals — immersive cultural experiences are a defining advantage of raising children here.' },
+  camps:      { icon:'🏕️', title:'Camps & Classes', desc:'Structured enrichment programs are the fastest way to help children build social roots and maintain developmental pacing after a major international relocation. Programs run year-round across all three cities in every discipline.' },
+  dining:     { icon:'🍽', title:'Dining & Family Shopping', desc:'Saudi Arabia\'s food scene has undergone extraordinary growth under Vision 2030. From world-class international restaurants to community artisan markets and family megamalls — the options for expat families across all three cities are now genuinely excellent.' }
 };
 
 const CITY_LABELS = { all:'All Cities', riyadh:'Riyadh', jeddah:'Jeddah', eastern:'Eastern Province' };
@@ -513,15 +523,20 @@ const SUB_CATS = {
   activities: [ { id:'all', label:'All Activities' }, { id:'fun', label:'🎢 Theme Parks & Play' }, { id:'sports', label:'⚽ Sports & Clubs' }, { id:'teen', label:'🧗 Teen Zone' }, { id:'camp', label:'🏕️ Summer Camps' } ],
   healthcare: [ { id:'all', label:'All Healthcare' }, { id:'paed', label:'🩺 Paediatric ER & Care' }, { id:'special', label:'🧬 Special Needs & Therapy' } ],
   settling:   [ { id:'all', label:'All Guides' }, { id:'admin', label:'📜 Relocation Checklist' } ],
-  outdoors:   [ { id:'all', label:'All Outdoors' }, { id:'beach', label:'🏖 Beaches & Coast' }, { id:'desert', label:'🏜 Desert & Craters' }, { id:'mountain', label:'⛰ Mountains & Highlands' }, { id:'urban', label:'🌿 City Parks & Trails' }, { id:'heritage', label:'🏛 Heritage Sites' } ]
+  outdoors:   [ { id:'all', label:'All Outdoors' }, { id:'beach', label:'🏖 Beaches & Coast' }, { id:'desert', label:'🏜 Desert & Craters' }, { id:'mountain', label:'⛰ Mountains & Highlands' }, { id:'urban', label:'🌿 City Parks & Trails' }, { id:'heritage', label:'🏛 Heritage Sites' } ],
+  vision2030: [ { id:'all', label:'All Projects' }, { id:'mega', label:'🏗 Mega Projects' }, { id:'arts', label:'🎭 Arts & Culture' }, { id:'resort', label:'🏝 Resorts & Tourism' } ],
+  leisure:    [ { id:'all', label:'All Leisure' }, { id:'cinema', label:'🎬 Cinemas' }, { id:'events', label:'🎤 Live Events' }, { id:'sports', label:'⚽ Sports Venues' }, { id:'family', label:'🎮 Family Venues' } ],
+  cultural:   [ { id:'all', label:'All Cultural' }, { id:'museum', label:'🏛 Museums' }, { id:'festival', label:'🎉 Festivals' }, { id:'workshop', label:'🎨 Workshops' }, { id:'heritage', label:'🕌 Heritage Sites' } ],
+  camps:      [ { id:'all', label:'All Programs' }, { id:'stem', label:'🤖 STEM & Coding' }, { id:'arts', label:'🎨 Arts & Music' }, { id:'sports', label:'⚽ Sports Academies' }, { id:'language', label:'🗣 Languages' }, { id:'summer', label:'☀ Holiday Camps' } ],
+  dining:     [ { id:'all', label:'All Dining' }, { id:'mall', label:'🛍 Family Malls' }, { id:'restaurant', label:'🍽 Restaurants' }, { id:'brunch', label:'☕ Brunch Spots' }, { id:'market', label:'🥦 Markets & Pop-ups' } ]
 };
 
 // ─── UPGRADED SEO AUTOMATION ENGINE WITH DYNAMIC JSON-LD SCHEMA ──────────────
 function updateSEO() {
   const CITY_TITLE = { all:'Saudi Arabia', riyadh:'Riyadh', jeddah:'Jeddah', eastern:'the Eastern Province' };
   const CITY_DESC  = { all:'across Saudi Arabia', riyadh:'in Riyadh, Saudi Arabia', jeddah:'in Jeddah, Saudi Arabia', eastern:'in the Eastern Province, Saudi Arabia' };
-  const SEC_TITLE  = { all:'Family & Kids', education:'International Schools', activities:'Family Activities', healthcare:'Paediatric Healthcare', settling:'Settling-In Guides', outdoors:'Outdoor & Adventure' };
-  const SEC_DESC   = { all:'family resources', education:'international schools', activities:'family activities', healthcare:'paediatric healthcare providers', settling:'settling-in guidance', outdoors:'outdoor and adventure destinations' };
+  const SEC_TITLE  = { all:'Family & Kids', education:'International Schools', activities:'Family Activities', healthcare:'Paediatric Healthcare', settling:'Settling-In Guides', outdoors:'Outdoor & Adventure', vision2030:'Vision 2030 Projects', leisure:'Leisure & Entertainment', cultural:'Cultural & Educational', camps:'Camps & Classes', dining:'Dining & Family Shopping' };
+  const SEC_DESC   = { all:'family resources', education:'international schools', activities:'family activities', healthcare:'paediatric healthcare providers', settling:'settling-in guidance', outdoors:'outdoor and adventure destinations', vision2030:'Vision 2030 mega projects', leisure:'leisure and entertainment venues', cultural:'cultural and educational experiences', camps:'camps and classes', dining:'family dining and shopping destinations' };
 
   const isDefault = activeCity === 'all' && activeSec === 'all';
 
@@ -862,12 +877,211 @@ function renderOutdoors(d) {
   </div>`;
 }
 
+// ─── VISION 2030 RENDERER ────────────────────────────────────────────────────
+function renderV2030(d) {
+  const STATUS_MAP = {
+    'open':         { label:'✅ Open Now',           bg:'#E8F5E9', color:'#1B5E20', border:'#A5D6A7' },
+    'partial':      { label:'🔄 Partially Open',     bg:'#FFF8E1', color:'#E65100', border:'#FFE082' },
+    'coming-2025':  { label:'🏗 Opening 2025',       bg:'#E3F2FD', color:'#0D47A1', border:'#90CAF9' },
+    'coming-2026':  { label:'🏗 Opening 2026',       bg:'#E3F2FD', color:'#0D47A1', border:'#90CAF9' },
+    'coming-2030':  { label:'🎯 Expo 2030',          bg:'#F3E5F5', color:'#4A148C', border:'#CE93D8' },
+    'seasonal':     { label:'📅 Seasonal Annual',    bg:'#FBE9E7', color:'#BF360C', border:'#FFAB91' },
+    'development':  { label:'🔭 In Development',     bg:'#ECEFF1', color:'#37474F', border:'#CFD8DC' }
+  };
+  const st = STATUS_MAP[d.status] || STATUS_MAP['development'];
+
+  return `
+  <div class="fam-card" style="display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; border:2px solid #E8E4DC; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, ${d.lc}, ${d.lc}55);"></div>
+    <div>
+      <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; margin-top:0.4rem;">
+        <div class="fam-logo" style="--lc:${d.lc}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem; flex-shrink:0;">${d.logo}</div>
+        <div style="flex-grow:1;">
+          <div style="display:inline-flex; align-items:center; gap:0.4rem; margin-bottom:0.4rem; padding:0.2rem 0.6rem; border-radius:20px; font-size:0.68rem; font-weight:800; background:${st.bg}; color:${st.color}; border:1px solid ${st.border};">${st.label}</div>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--navy,#1B2A4A); line-height:1.3;">${d.name}</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
+        <span style="font-size:0.68rem; font-weight:700; color:#555; background:#F5F3EF; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid #E8E4DC;">📐 ${d.scale}</span>
+        <span style="font-size:0.68rem; font-weight:700; color:#555; background:#F5F3EF; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid #E8E4DC;">📅 ${d.openDate}</span>
+      </div>
+
+      <p style="font-size:0.82rem; color:#444; line-height:1.6; margin-bottom:1rem;">${d.desc}</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.8rem; border-top:1px solid #E8E4DC; margin-top:auto;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--navy,#1B2A4A); text-decoration:none; font-size:0.78rem;">Official Site ↗</a>` : '<span style="font-size:0.75rem; color:#999; font-style:italic;">Watch This Space</span>'}
+      ${cityChip(d.city)}
+    </div>
+  </div>`;
+}
+
+// ─── LEISURE RENDERER ─────────────────────────────────────────────────────────
+function renderLeisure(d) {
+  const typeColors = {
+    cinema: { bg:'#FCE4EC', color:'#880E4F', icon:'🎬' },
+    events: { bg:'#EDE7F6', color:'#4A148C', icon:'🎤' },
+    sports: { bg:'#E8F5E9', color:'#1B5E20', icon:'⚽' },
+    family: { bg:'#FFF3E0', color:'#E65100', icon:'🎮' }
+  };
+  const tc = typeColors[d.subcat] || { bg:'#E3F2FD', color:'#0D47A1', icon:'🎭' };
+
+  return `
+  <div class="fam-card" style="display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; border:2px solid #E8E4DC; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, ${d.lc}, ${d.lc}55);"></div>
+    <div>
+      <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; margin-top:0.4rem;">
+        <div class="fam-logo" style="--lc:${d.lc}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem; flex-shrink:0;">${d.logo}</div>
+        <div style="flex-grow:1;">
+          <span style="display:inline-flex; align-items:center; gap:0.3rem; font-size:0.68rem; font-weight:800; text-transform:uppercase; letter-spacing:0.05em; color:${tc.color}; background:${tc.bg}; padding:0.15rem 0.5rem; border-radius:20px; margin-bottom:0.3rem;">${tc.icon} ${d.venueType}</span>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--navy,#1B2A4A); line-height:1.3;">${d.name}</div>
+        </div>
+        ${d.score ? `<div style="text-align:right; background:var(--cream,#F2EEE5); padding:0.3rem 0.6rem; border-radius:8px; flex-shrink:0;"><div style="color:var(--gold,#D4A853); font-weight:800; font-size:1rem;">★ ${d.score}</div><small style="font-size:0.58rem; color:#777; font-weight:700; text-transform:uppercase;">Score</small></div>` : ''}
+      </div>
+
+      <div style="display:flex; align-items:center; gap:0.4rem; margin-bottom:1rem; font-size:0.72rem; font-weight:700; color:#555;">
+        <span style="background:#F5F3EF; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid #E8E4DC;">👤 Min Age: ${d.ageMin}</span>
+      </div>
+
+      <p style="font-size:0.82rem; color:#444; line-height:1.6; margin-bottom:1rem;">${d.desc}</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.8rem; border-top:1px solid #E8E4DC; margin-top:auto;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--navy,#1B2A4A); text-decoration:none; font-size:0.78rem;">Book Tickets ↗</a>` : '<span style="font-size:0.75rem; color:#999; font-style:italic;">Walk-In Available</span>'}
+      ${cityChip(d.city)}
+    </div>
+  </div>`;
+}
+
+// ─── CULTURAL RENDERER ───────────────────────────────────────────────────────
+function renderCultural(d) {
+  const catIcon = { museum:'🏛', festival:'🎉', workshop:'🎨', heritage:'🕌' };
+  const icon = catIcon[d.subcat] || '🎭';
+
+  return `
+  <div class="fam-card" style="display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; border:2px solid #E8E4DC; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, ${d.lc}, ${d.lc}55);"></div>
+    <div>
+      <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; margin-top:0.4rem;">
+        <div class="fam-logo" style="--lc:${d.lc}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1.1rem; flex-shrink:0;">${d.logo}</div>
+        <div style="flex-grow:1;">
+          <div style="font-size:1.05rem; font-weight:800; color:var(--navy,#1B2A4A); line-height:1.3; margin-bottom:0.3rem;">${d.name}</div>
+          <div style="font-size:0.68rem; font-weight:700; color:${d.lc}; text-transform:uppercase; letter-spacing:0.05em;">${icon} ${d.subcat.charAt(0).toUpperCase() + d.subcat.slice(1)}</div>
+        </div>
+        ${d.score ? `<div style="text-align:right; background:var(--cream,#F2EEE5); padding:0.3rem 0.6rem; border-radius:8px; flex-shrink:0;"><div style="color:var(--gold,#D4A853); font-weight:800; font-size:1rem;">★ ${d.score}</div><small style="font-size:0.58rem; color:#777; font-weight:700; text-transform:uppercase;">Score</small></div>` : ''}
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; background:#FAF9F5; border-radius:10px; padding:0.6rem 0.8rem; margin-bottom:1rem; border:1px solid #EAE6DF;">
+        <div>
+          <div style="font-size:0.6rem; font-weight:800; text-transform:uppercase; color:#888; margin-bottom:0.1rem;">👶 Ages</div>
+          <div style="font-size:0.75rem; font-weight:700; color:var(--navy,#1B2A4A);">${d.ageRange}</div>
+        </div>
+        <div>
+          <div style="font-size:0.6rem; font-weight:800; text-transform:uppercase; color:#888; margin-bottom:0.1rem;">🎟 Admission</div>
+          <div style="font-size:0.75rem; font-weight:700; color:var(--navy,#1B2A4A);">${d.admission}</div>
+        </div>
+        <div style="grid-column:1/-1;">
+          <div style="font-size:0.6rem; font-weight:800; text-transform:uppercase; color:#888; margin-bottom:0.1rem;">⏱ Duration</div>
+          <div style="font-size:0.75rem; font-weight:700; color:var(--navy,#1B2A4A);">${d.duration}</div>
+        </div>
+      </div>
+
+      <p style="font-size:0.82rem; color:#444; line-height:1.6; margin-bottom:1rem;">${d.desc}</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.8rem; border-top:1px solid #E8E4DC; margin-top:auto;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--navy,#1B2A4A); text-decoration:none; font-size:0.78rem;">Learn More ↗</a>` : '<span style="font-size:0.75rem; color:#999; font-style:italic;">City-Wide Event</span>'}
+      ${cityChip(d.city)}
+    </div>
+  </div>`;
+}
+
+// ─── CAMPS RENDERER ──────────────────────────────────────────────────────────
+function renderCamps(d) {
+  const seasonMap = {
+    'Year-Round':          { bg:'#E8F5E9', color:'#1B5E20', icon:'📅' },
+    'Summer & School Holidays': { bg:'#FFF8E1', color:'#F57F17', icon:'☀' },
+    'School Holidays':     { bg:'#FFF8E1', color:'#F57F17', icon:'☀' },
+    'Summer · Winter · Ramadan': { bg:'#E3F2FD', color:'#0D47A1', icon:'🗓' }
+  };
+  const sm = seasonMap[d.season] || { bg:'#F5F3EF', color:'#555', icon:'📅' };
+  const regColor = d.regStatus === 'Enrolling Now' ? '#1B5E20' : '#E65100';
+
+  return `
+  <div class="fam-card" style="display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; border:2px solid #E8E4DC; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, ${d.lc}, ${d.lc}55);"></div>
+    <div>
+      <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; margin-top:0.4rem;">
+        <div class="fam-logo" style="--lc:${d.lc}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem; flex-shrink:0;">${d.logo}</div>
+        <div style="flex-grow:1;">
+          <div style="font-size:1.05rem; font-weight:800; color:var(--navy,#1B2A4A); line-height:1.3; margin-bottom:0.3rem;">${d.name}</div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.3rem;">
+            <span style="font-size:0.65rem; font-weight:800; padding:0.15rem 0.45rem; border-radius:20px; background:${sm.bg}; color:${sm.color};">${sm.icon} ${d.season}</span>
+            <span style="font-size:0.65rem; font-weight:800; padding:0.15rem 0.45rem; border-radius:20px; background:#fff; color:${regColor}; border:1px solid ${regColor}33;">● ${d.regStatus}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#FAF9F5; border-radius:10px; padding:0.6rem 0.8rem; margin-bottom:1rem; border:1px solid #EAE6DF; display:flex; justify-content:space-between; font-size:0.72rem;">
+        <div><span style="color:#888; font-weight:600;">👶 Ages: </span><strong>${d.ageRange}</strong></div>
+        <div><span style="color:#888; font-weight:600;">⏱ </span><strong>${d.duration}</strong></div>
+      </div>
+
+      <p style="font-size:0.82rem; color:#444; line-height:1.6; margin-bottom:1rem;">${d.desc}</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.8rem; border-top:1px solid #E8E4DC; margin-top:auto;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--navy,#1B2A4A); text-decoration:none; font-size:0.78rem;">Enrol Now ↗</a>` : '<span style="font-size:0.75rem; color:#999; font-style:italic;">Contact Directly</span>'}
+      ${cityChip(d.city)}
+    </div>
+  </div>`;
+}
+
+// ─── DINING RENDERER ─────────────────────────────────────────────────────────
+function renderDining(d) {
+  const priceColor = d.priceRange.includes('£££') ? '#C62828' : d.priceRange === '££' ? '#EF6C00' : '#2E7D32';
+
+  return `
+  <div class="fam-card" style="display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; border:2px solid #E8E4DC; box-shadow:0 4px 12px rgba(0,0,0,0.02);">
+    <div style="position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg, ${d.lc}, ${d.lc}55);"></div>
+    <div>
+      <div style="display:flex; align-items:flex-start; gap:1rem; margin-bottom:1rem; margin-top:0.4rem;">
+        <div class="fam-logo" style="--lc:${d.lc}; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1rem; flex-shrink:0;">${d.logo}</div>
+        <div style="flex-grow:1;">
+          <div style="font-size:1.05rem; font-weight:800; color:var(--navy,#1B2A4A); line-height:1.3; margin-bottom:0.35rem;">${d.name}</div>
+          <div style="font-size:0.68rem; font-weight:700; color:#666; background:#F5F3EF; display:inline-block; padding:0.15rem 0.45rem; border-radius:6px; border:1px solid #E8E4DC;">🍴 ${d.cuisine}</div>
+        </div>
+        ${d.score ? `<div style="text-align:right; background:var(--cream,#F2EEE5); padding:0.3rem 0.6rem; border-radius:8px; flex-shrink:0;"><div style="color:var(--gold,#D4A853); font-weight:800; font-size:1rem;">★ ${d.score}</div><small style="font-size:0.58rem; color:#777; font-weight:700; text-transform:uppercase;">Score</small></div>` : ''}
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+        <span style="font-size:0.68rem; font-weight:800; color:${priceColor}; background:${priceColor}15; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid ${priceColor}33;">💰 ${d.priceRange}</span>
+        <span style="font-size:0.68rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid #E8E4DC; opacity:${d.kidsMenu ? '1' : '0.35'}; background:#fff;">👶 Kids Menu</span>
+        <span style="font-size:0.68rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:6px; border:1px solid #E8E4DC; opacity:${d.playArea ? '1' : '0.35'}; background:#fff;">🎠 Play Area</span>
+      </div>
+
+      <p style="font-size:0.82rem; color:#444; line-height:1.6; margin-bottom:1rem;">${d.desc}</p>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:center; padding-top:0.8rem; border-top:1px solid #E8E4DC; margin-top:auto;">
+      ${d.url && d.url !== '#' ? `<a href="${d.url}" class="fam-link" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:var(--navy,#1B2A4A); text-decoration:none; font-size:0.78rem;">Visit Site ↗</a>` : '<span style="font-size:0.75rem; color:#999; font-style:italic;">Walk-In Recommended</span>'}
+      ${cityChip(d.city)}
+    </div>
+  </div>`;
+}
+
 function renderCard(d) {
   if (d.type === 'school')     return renderSchool(d);
   if (d.type === 'activity')   return renderActivity(d);
   if (d.type === 'healthcare') return renderHealthcare(d);
   if (d.type === 'settling')   return renderSettling(d);
   if (d.type === 'outdoors')   return renderOutdoors(d);
+  if (d.type === 'v2030')      return renderV2030(d);
+  if (d.type === 'leisure')    return renderLeisure(d);
+  if (d.type === 'cultural')   return renderCultural(d);
+  if (d.type === 'camps')      return renderCamps(d);
+  if (d.type === 'dining')     return renderDining(d);
   return '';
 }
 

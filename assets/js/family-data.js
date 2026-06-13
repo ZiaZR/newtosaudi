@@ -409,6 +409,326 @@ const FAM_DATA = [
     difficulty: 'Moderate — Canyon Walking Required', admission: 'SAR 95–195 per site · Book via Experience AlUla', score: 4.9,
     desc: 'The single most spectacular family holiday destination inside the Kingdom. AlUla\'s rose-red sandstone canyons contain Hegra — Saudi Arabia\'s first UNESCO World Heritage site — alongside the breathtaking Elephant Rock and the Maraya concert mirror building. The Winter at Tantora festival (Dec–Mar) adds world-class family programming. Children are routinely awestruck. Book everything 4–6 weeks in advance.',
     url: 'https://www.experiencealula.com/'
-  }
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  //  VISION 2030 MEGA PROJECTS (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  { id: 'qiddiya', type: 'v2030', city: 'riyadh', section: 'vision2030', subcat: 'mega',
+    name: 'Qiddiya — Six Flags & Speed Park Gigaproject', logo: 'QD', lc: '#8B0000',
+    status: 'coming-2026', scale: '334 km² Entertainment Capital', openDate: 'Phased from 2026',
+    desc: 'The most anticipated family entertainment destination in the Arab world. A dedicated 334km² entertainment city southwest of Riyadh anchored by the world\'s fastest roller coaster, a Six Flags theme park, a motorsport circuit, aqua park, and an extreme sports hub. Everything is being designed with families at its core. Begin tracking the Webook app and official Qiddiya channels for early access booking updates.',
+    url: 'https://www.qiddiya.com/' },
+
+  { id: 'king-salman-park', type: 'v2030', city: 'riyadh', section: 'vision2030', subcat: 'arts',
+    name: 'King Salman Park — World\'s Largest Urban Park', logo: 'KS', lc: '#2E7D32',
+    status: 'partial', scale: '16 km² Urban Green Oasis', openDate: 'Rolling Openings 2024–2027',
+    desc: 'Planned as the largest urban park on Earth — larger than New York\'s Central Park and London\'s Hyde Park combined. Riyadh\'s entire central green and cultural corridor is being built here. Early landscape sections, walking trails, and play areas are already accessible. A Royal Opera House, museums, and an international mall open in stages through 2027.',
+    url: 'https://www.kingsalmanpark.sa/' },
+
+  { id: 'diriyah-bujairi', type: 'v2030', city: 'riyadh', section: 'vision2030', subcat: 'arts',
+    name: 'Diriyah Al-Bujairi Quarter — Heritage Dining & Culture', logo: 'BQ', lc: '#8D6E63',
+    status: 'open', scale: 'UNESCO World Heritage Dining Zone', openDate: 'Open Now — Expanding 2025',
+    desc: 'The most accessible Vision 2030 experience you can enjoy right now. Al-Bujairi is the beautifully restored dining and cultural quarter directly opposite the UNESCO-listed Al-Turaif mudbrick fortress. World-class restaurants, artisan boutiques, and curated heritage experiences set within extraordinary mud-brick architecture. Evening visits with children are magical — the lighting and atmosphere are unlike anything else in the Kingdom.',
+    url: 'https://www.diriyah.sa/' },
+
+  { id: 'the-rig', type: 'v2030', city: 'eastern', section: 'vision2030', subcat: 'resort',
+    name: 'The Rig — Offshore Theme Resort (Arabian Gulf)', logo: 'RG', lc: '#1A237E',
+    status: 'coming-2025', scale: 'Offshore Oil Platform Resort', openDate: 'Expected 2025',
+    desc: 'One of the most conceptually extraordinary hospitality projects in the world — a luxury theme park and hotel built on a decommissioned oil rig anchored in the Arabian Gulf off the Eastern Province coast. Plans include thrill rides, a helipad, underwater viewing corridors, and family resort suites. A genuine once-in-a-generation attraction positioned off the Khobar coastline.',
+    url: 'https://www.therig.sa/' },
+
+  { id: 'red-sea-project', type: 'v2030', city: 'all', section: 'vision2030', subcat: 'resort',
+    name: 'The Red Sea — Luxury Eco Family Island Resorts', logo: 'RR', lc: '#006064',
+    status: 'partial', scale: '28,000 km² Protected Conservation Zone', openDate: 'Phased — Open from 2024',
+    desc: 'Saudi Arabia\'s ultra-luxury, zero-impact tourism destination along a pristine 200km Red Sea coastline. Several island eco-resort properties opened in 2024 under the Six Senses and Shebara brands. Designed entirely around protecting 90 coral islands and pristine marine ecosystems. Exceptional for older children and families who value nature-immersive travel over theme park experiences.',
+    url: 'https://www.theredsea.sa/' },
+
+  { id: 'neom-sindalah', type: 'v2030', city: 'all', section: 'vision2030', subcat: 'resort',
+    name: 'NEOM Sindalah Island — Red Sea Yacht & Marina', logo: 'NM', lc: '#01579B',
+    status: 'partial', scale: 'NEOM Red Sea Island Development', openDate: 'Partially Open 2024',
+    desc: 'The first NEOM development to receive public visitors. Sindalah is a luxury island marina with a world-class yacht club, beach club, family coastal resort, and direct access to exceptional Red Sea snorkeling and diving waters. While still expanding, the island is already hosting domestic and international family guests and offers an extraordinarily unique experience for nautically inclined families.',
+    url: 'https://www.neom.com/' },
+
+  { id: 'soudah-peaks', type: 'v2030', city: 'all', section: 'vision2030', subcat: 'resort',
+    name: 'Soudah Peaks Mountain Resort (Aseer Highlands)', logo: 'SD', lc: '#33691E',
+    status: 'coming-2026', scale: '2,982m — Saudi Arabia\'s Highest Peak', openDate: 'Expected 2026',
+    desc: 'A dramatic mountain resort being developed at the summit of Saudi Arabia\'s highest accessible peak near Abha. Plans include cable car systems, mountain-edge glamping pods, adventure trails, and a cloud-level hotel. At 2,982 metres with year-round cool temperatures, this will become a completely unique domestic escape for families from all three cities who need relief from the summer heat.',
+    url: 'https://www.soudahpeaks.com/' },
+
+  { id: 'alula-rcua', type: 'v2030', city: 'all', section: 'vision2030', subcat: 'arts',
+    name: 'AlUla — Royal Commission Full Experience Hub', logo: 'AU', lc: '#BF360C',
+    status: 'open', scale: 'UNESCO — 200,000 Years of Human History', openDate: 'Open — Expanding 2025',
+    desc: 'The Royal Commission for AlUla has transformed this extraordinary ancient city into one of the world\'s premier cultural tourism destinations. Hegra, Elephant Rock, Maraya concert hall, and stunning canyon landscapes are all visitable now. The Winter at Tantora festival (December–March) brings world-class family programming. Direct flight connections operate from Riyadh, Jeddah, and Dammam — book accommodation 8 weeks ahead.',
+    url: 'https://www.experiencealula.com/' },
+
+  { id: 'expo-2030', type: 'v2030', city: 'riyadh', section: 'vision2030', subcat: 'mega',
+    name: 'Expo 2030 Riyadh — World Exposition', logo: 'EX', lc: '#6A1B9A',
+    status: 'coming-2030', scale: 'Global Exposition — 182 Nations Participating', openDate: 'October 2030',
+    desc: 'Riyadh won the right to host the World Expo 2030 under the theme "The Era of Change" — only the third time a non-Western nation has hosted since Japan in 1970. A six-month event bringing 182 national pavilions, cultural performances, and educational exhibitions to a purpose-built site in Riyadh. If your children will be school-age in 2030, this is a once-in-their-lifetime event happening in their own city.',
+    url: '#' },
+
+  { id: 'riyadh-season-hub', type: 'v2030', city: 'riyadh', section: 'vision2030', subcat: 'mega',
+    name: 'Riyadh Season — Annual Entertainment Megafestival', logo: 'SE', lc: '#C62828',
+    status: 'seasonal', scale: 'Oct – Mar · 14 Entertainment Zones', openDate: 'Annual — Oct through March',
+    desc: 'The world\'s largest city entertainment festival by attendance, running every year October through March across 14 dedicated zones in Riyadh. International concerts, world-class circus and theatrical performances, international food festivals, family comedy shows, massive sports events, and spectacular pop-up markets. Download the Webook app within your first week of arriving — it is the essential gateway to everything Riyadh Season offers.',
+    url: 'https://www.riyadhseason.sa/' },
+
+  // ─────────────────────────────────────────────────────────────
+  //  LEISURE & ENTERTAINMENT (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  { id: 'vox-ryd', type: 'leisure', city: 'riyadh', section: 'leisure', subcat: 'cinema',
+    name: 'VOX Cinemas Riyadh Park (Dolby Atmos)', logo: 'VO', lc: '#E53935',
+    venueType: 'Premium Multiplex Cinema', ageMin: 'All Ages', score: 4.7,
+    desc: 'The premier cinema experience in Riyadh, anchored at Riyadh Park Mall with a spectacular Dolby Atmos hall and a dedicated KIDS+E screen. The THEATRE by VOX delivers the highest quality in-screen dining experience in the Kingdom. Family ticket bundles are exceptional value. Book via the VOX app — family-friendly screenings fill up fast on Thursday and Friday afternoons.',
+    url: 'https://voxcinemas.com/' },
+
+  { id: 'amc-jed', type: 'leisure', city: 'jeddah', section: 'leisure', subcat: 'cinema',
+    name: 'AMC Cinemas Mall of Arabia (PRIME at AMC)', logo: 'AM', lc: '#1565C0',
+    venueType: 'Premium Multiplex Cinema', ageMin: 'All Ages', score: 4.6,
+    desc: 'AMC\'s flagship Western Saudi Arabia location features Saudi Arabia\'s first PRIME laser projection hall. Excellent for families seeking reliable international blockbuster programming with Arabic and English subtitle options. Highly accessible from central Jeddah and northern compounds with extensive adjacent parking and a complete family food court directly connected.',
+    url: 'https://www.amccinemas.com.sa/' },
+
+  { id: 'muvi-khobar', type: 'leisure', city: 'eastern', section: 'leisure', subcat: 'cinema',
+    name: 'Muvi Cinemas — Al Rashid Mall (Al Khobar)', logo: 'MV', lc: '#AD1457',
+    venueType: 'Saudi-Founded Premium Cinema', ageMin: 'All Ages', score: 4.5,
+    desc: 'The only fully Saudi-founded premium cinema chain — making Muvi an important cultural experience in itself. The Al Rashid Mall location features excellent family seating, a Saudi-curated film program that includes Arabic-language productions alongside international releases, and highly competitive family bundle pricing. An important local cultural institution to support.',
+    url: 'https://muvi.com/' },
+
+  { id: 'blvd-events', type: 'leisure', city: 'riyadh', section: 'leisure', subcat: 'events',
+    name: 'Boulevard City Live Events & Concert Strip', logo: 'BC', lc: '#4A148C',
+    venueType: 'Multi-Venue Entertainment District', ageMin: '5+', score: 4.8,
+    desc: 'The most concentrated live events corridor in the Gulf. Boulevard City hosts international headline concerts, comedy festivals, WWE events, esports championships, and family circus shows across multiple stages simultaneously. The pedestrianized district design makes navigating between shows with children genuinely manageable. All bookings via the Webook platform — download it before you arrive in the Kingdom.',
+    url: 'https://webook.com/' },
+
+  { id: 'jed-season', type: 'leisure', city: 'jeddah', section: 'leisure', subcat: 'events',
+    name: 'Jeddah Season — Red Sea Live Events Program', logo: 'JS', lc: '#00695C',
+    venueType: 'Seasonal City Entertainment Festival', ageMin: 'All Ages', score: 4.7,
+    desc: 'Jeddah\'s answer to Riyadh Season, running simultaneously across the winter months with a distinctly Hejazi and Red Sea coastal character. International concerts along the Corniche, traditional heritage markets, family water festivals, and spectacular fireworks displays over the water. The open sea breeze and relaxed pace make Jeddah Season events uniquely atmospheric for children and parents alike.',
+    url: 'https://webook.com/' },
+
+  { id: 'kasc-jeddah', type: 'leisure', city: 'jeddah', section: 'leisure', subcat: 'sports',
+    name: 'King Abdullah Sports City — The Jewel (Jeddah)', logo: 'KA', lc: '#1B5E20',
+    venueType: 'Premier League Football Stadium', ageMin: 'All Ages', score: 4.7,
+    desc: 'Known locally as "The Jewel" — an architecturally stunning 62,000-seat stadium hosting Al Ittihad and Al-Ahli Saudi FC in the Saudi Pro League. Attending a match is an extraordinary cultural experience. Family and female-section seating is properly designated and safe, tickets are genuinely affordable, and the level of football has dramatically improved with world-class talent acquisitions across the league.',
+    url: 'https://www.spl.com.sa/' },
+
+  { id: 'spl-matchday', type: 'leisure', city: 'all', section: 'leisure', subcat: 'sports',
+    name: 'Saudi Pro League Family Matchday Experience', logo: 'SL', lc: '#006400',
+    venueType: 'Professional Football — Family Sections', ageMin: 'All Ages', score: 4.7,
+    desc: 'Post-2023 investment has transformed the Saudi Pro League into one of the world\'s most entertaining football competitions. Al Nassr and Al Hilal (Riyadh), Al Ittihad and Al Ahli (Jeddah), and Al Qadsiah (Eastern Province) all feature global football names. Family stands are designated, safe, and energetic. Children who attend a Saudi Pro League match typically become lifelong fans — it is genuinely that compelling.',
+    url: 'https://www.spl.com.sa/' },
+
+  { id: 'mrsool-park', type: 'leisure', city: 'riyadh', section: 'leisure', subcat: 'sports',
+    name: 'Kingdom Arena & Mrsool Park (Riyadh Football)', logo: 'KR', lc: '#003087',
+    venueType: 'Premier Football Stadiums', ageMin: 'All Ages', score: 4.8,
+    desc: 'The twin crown jewels of Riyadh football — Kingdom Arena (Al Hilal) and Mrsool Park (Al Nassr) host the Saudi Pro League\'s most anticipated fixtures in front of sold-out crowds. The calibre of football is world-class. Family and female-section seating is well-managed. A Riyadh Derby matchday is one of the finest sporting experiences available to a family living in the Gulf.',
+    url: 'https://webook.com/' },
+
+  { id: 'ithra-forum', type: 'leisure', city: 'eastern', section: 'leisure', subcat: 'events',
+    name: 'Ithra Cultural Forum & Performing Arts Theater', logo: 'IF', lc: '#37474F',
+    venueType: 'World-Class Cultural Center', ageMin: '5+', score: 4.8,
+    desc: 'The Ithra center in Dhahran houses one of the Gulf\'s finest purpose-built performing arts theaters. World-class dance companies, orchestral performances, and children\'s theater productions are programmed year-round at genuinely subsidized ticket prices. The Snøhetta-designed building itself is an architectural marvel worth visiting independently. Check the Ithra events calendar monthly for family-appropriate cultural programming.',
+    url: 'https://ithra.com/' },
+
+  { id: 'nrg-bowl', type: 'leisure', city: 'riyadh', section: 'leisure', subcat: 'family',
+    name: 'NRG Bowl — Premium Bowling & Family Entertainment', logo: 'NR', lc: '#F57F17',
+    venueType: 'Bowling & Family Entertainment Hub', ageMin: '4+', score: 4.5,
+    desc: 'Riyadh\'s most premium boutique bowling experience with glow lanes, a well-stocked gaming arcade, private lane suite rental for family parties, and food service directly to your lane. A reliable option during summer months. They run excellent weekend birthday party packages that are well structured for larger groups of children and genuinely deliver on the premium positioning.',
+    url: '#' },
+
+  // ─────────────────────────────────────────────────────────────
+  //  CULTURAL & EDUCATIONAL (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  { id: 'natmus-ryd', type: 'cultural', city: 'riyadh', section: 'cultural', subcat: 'museum',
+    name: 'National Museum of Saudi Arabia (Riyadh)', logo: 'NM', lc: '#4E342E',
+    ageRange: '6 – Adult', admission: 'Free Entry', duration: '2 – 3 Hours', score: 4.6,
+    desc: 'The premier museum experience in the Kingdom — eight themed galleries tracing 14 billion years of history from the formation of the universe to modern Saudi Arabia. The Man and the Universe hall captivates children with its meteorite collection and scale model of the solar system. Completely free entry, fully bilingual, and meticulously curated. A foundational visit for any expat family in Riyadh — do this in your first month.',
+    url: 'https://www.nationalmuseum.org.sa/' },
+
+  { id: 'ithra-museum', type: 'cultural', city: 'eastern', section: 'cultural', subcat: 'museum',
+    name: 'Ithra — King Abdulaziz Center for World Culture', logo: 'IT', lc: '#37474F',
+    ageRange: '4 – Adult', admission: 'SAR 35 – 75 per exhibition', duration: 'Half Day', score: 4.9,
+    desc: 'The most architecturally extraordinary cultural institution in the Arab world, built over the original oil discovery well in Dhahran. Inside: a world-class library, children\'s museum, exhibition center hosting major international traveling shows, a cinema, a makerspace, and a performing arts theater. Ithra\'s programming for children rivals dedicated children\'s cultural centers in London and New York — it is that good.',
+    url: 'https://ithra.com/' },
+
+  { id: 'albalad-jed', type: 'cultural', city: 'jeddah', section: 'cultural', subcat: 'heritage',
+    name: 'Al-Balad — Jeddah Historic District (UNESCO)', logo: 'AB', lc: '#5D4037',
+    ageRange: 'All Ages', admission: 'Free · Guided Tours SAR 80 – 120', duration: '2 – 4 Hours', score: 4.7,
+    desc: 'Jeddah\'s UNESCO-listed ancient city of coral-stone architecture and intricately carved Rawasheen wooden balconies. A fascinating cultural geography lesson for children — this district served as a major pilgrimage gateway for Hajj travelers for over 1,400 years. Hire a certified local guide for the most engaging children\'s experience. Visit during cool morning hours October through April for the most comfortable exploration.',
+    url: 'https://www.jeddah.gov.sa/' },
+
+  { id: 'misk-art', type: 'cultural', city: 'riyadh', section: 'cultural', subcat: 'workshop',
+    name: 'Misk Art Institute — Youth Creative Programs', logo: 'MA', lc: '#880E4F',
+    ageRange: '10 – 25 Years', admission: 'Subsidized — Registration Required', duration: 'Semester Programs', score: 4.7,
+    desc: 'The premier arts and creative education institution in Saudi Arabia, established under the Misk Foundation. Programs covering visual arts, digital media, photography, and design are available to young people aged 10 to 25 at heavily subsidized rates. An extraordinary opportunity for artistically inclined teenagers to access world-class creative mentorship. Applications are competitive — apply as soon as your child is settled in school.',
+    url: 'https://misk.art/' },
+
+  { id: 'tantora-festival', type: 'cultural', city: 'all', section: 'cultural', subcat: 'festival',
+    name: 'Winter at Tantora — AlUla International Arts Festival', logo: 'WT', lc: '#BF360C',
+    ageRange: 'All Ages', admission: 'SAR 150 – 450 per event', duration: 'December – March (Annual)', score: 4.9,
+    desc: 'The crown jewel of Saudi Arabia\'s cultural festival calendar — a spectacular winter arts and music festival set against AlUla\'s ancient rose-red canyon landscape. World-class classical musicians, Arab heritage performers, and international headliners perform in open-air venues at sunrise and sunset. Family-friendly daytime programming includes heritage walks, children\'s craft workshops, and camel experiences. Book accommodation and shows 8–12 weeks ahead.',
+    url: 'https://www.experiencealula.com/' },
+
+  { id: 'national-day-exp', type: 'cultural', city: 'all', section: 'cultural', subcat: 'festival',
+    name: 'Saudi National Day Celebrations (23 September)', logo: 'ND', lc: '#006400',
+    ageRange: 'All Ages', admission: 'Free — City-Wide', duration: '23–24 September (Annual)', score: 4.8,
+    desc: 'One of the most exhilarating cultural experiences available to a newly arrived expat family. The entire Kingdom transforms for 48 hours — massive public fireworks, drone light shows, car parades, traditional folk music and dance, and every public space decorated in green and white. Your children will remember their first Saudi National Day for life. Wear green — the national dress code is embraced enthusiastically by families from every nationality.',
+    url: '#' },
+
+  { id: 'book-fair-ryd', type: 'cultural', city: 'riyadh', section: 'cultural', subcat: 'festival',
+    name: 'Riyadh International Book Fair (Annual — March)', logo: 'BF', lc: '#1A237E',
+    ageRange: '4 – Adult', admission: 'SAR 20 Adults · Free Under 12', duration: '10 Days — Annual', score: 4.6,
+    desc: 'One of the Arab world\'s largest and most prestigious book fairs, held annually at the Riyadh International Convention Center. Hundreds of international and Arabic publishers, dedicated children\'s reading pavilions, storytelling sessions, author events, and STEM education zones. A brilliant cultural anchor for instilling a love of reading in children during relocation transition — a familiar, comforting activity in a new country.',
+    url: '#' },
+
+  { id: 'ithra-kids', type: 'cultural', city: 'eastern', section: 'cultural', subcat: 'workshop',
+    name: 'Ithra Children\'s Museum & Makerspace Sessions', logo: 'IK', lc: '#00695C',
+    ageRange: '3 – 14 Years', admission: 'SAR 25 – 55 per session', duration: 'Drop-In & Booked Sessions', score: 4.8,
+    desc: 'The Children\'s Museum inside the Ithra complex is the finest dedicated children\'s learning space in Saudi Arabia. Interactive science, arts, and engineering exhibits designed for curious young minds, with dedicated maker programs running weekly through the academic year. The robotics and STEM workshop sessions for ages 8–12 are consistently excellent and hugely over-subscribed — book at least 2 weeks ahead.',
+    url: 'https://ithra.com/' },
+
+  { id: 'heritage-village', type: 'cultural', city: 'all', section: 'cultural', subcat: 'heritage',
+    name: 'Saudi Heritage Villages — National Festival Circuit', logo: 'HV', lc: '#795548',
+    ageRange: 'All Ages', admission: 'Free · Festival Ticketing Varies', duration: 'Festival Seasons', score: 4.5,
+    desc: 'Saudi Arabia\'s rich regional heritage comes alive through curated Heritage Villages hosted at Riyadh Season, Jeddah Season, and the Abha Summer Festival. Traditional crafts, regional food, folk music, camel racing, and falconry demonstrations — all set in beautifully recreated Arabian village environments. An invaluable cultural context for children who are growing up in the Kingdom and want to understand the traditions around them.',
+    url: '#' },
+
+  { id: 'dtvs-museum', type: 'cultural', city: 'eastern', section: 'cultural', subcat: 'museum',
+    name: 'Dhahran Science & Technology Discovery Museum', logo: 'DT', lc: '#01579B',
+    ageRange: '5 – Adult', admission: 'Minimal Entry Fee', duration: '1.5 – 2.5 Hours', score: 4.4,
+    desc: 'A practical, hands-on science and technology museum in the Dhahran area with a particular focus on the Arabian Gulf petroleum and energy discovery story — highly relevant context for families in the Eastern Province wanting to understand the region\'s industrial heritage. Features interactive engineering exhibits, a historical timeline of the Kingdom\'s energy development, and rotating educational exhibitions year-round.',
+    url: '#' },
+
+  // ─────────────────────────────────────────────────────────────
+  //  CAMPS & CLASSES (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  { id: 'icode-sa', type: 'camps', city: 'all', section: 'camps', subcat: 'stem',
+    name: 'iCode Saudi Arabia — STEM & Coding Academies', logo: 'IC', lc: '#1565C0',
+    season: 'Year-Round', ageRange: '5 – 18 Years', duration: 'Semester Courses & Holiday Camps', regStatus: 'Enrolling Now',
+    desc: 'The leading structured STEM and coding education provider for children in the Kingdom, with campuses in Riyadh, Jeddah, and Al Khobar. Courses covering Python, Minecraft engineering, Roblox game design, robotics, and AI fundamentals are structured into age-appropriate tracks. Summer intensives are particularly popular — 2-week coding camps for ages 8–16 that routinely produce functional apps and games by the final day.',
+    url: 'https://icode.sa/' },
+
+  { id: 'yamaha-ksa', type: 'camps', city: 'all', section: 'camps', subcat: 'arts',
+    name: 'Yamaha Music Schools (Riyadh · Jeddah · Khobar)', logo: 'YM', lc: '#C62828',
+    season: 'Year-Round', ageRange: '3 – 18 Years', duration: 'Monthly Terms — Weekly Lessons', regStatus: 'Enrolling Now',
+    desc: 'The gold standard for structured children\'s music education in the Kingdom. The Junior Music Course begins at age 3 and uses the globally proven Yamaha curriculum of ear training, keyboard technique, and ensemble play. Branches across all three major cities. Places fill quickly at September and January intakes — contact your nearest branch 6–8 weeks before your intended start. An invaluable creative constant for children during the relocation adjustment period.',
+    url: 'https://yamahamusic.sa/' },
+
+  { id: 'sipa-camps', type: 'camps', city: 'riyadh', section: 'camps', subcat: 'sports',
+    name: 'SIPA Athletic Development Camps (Riyadh)', logo: 'SI', lc: '#2E7D32',
+    season: 'Summer & School Holidays', ageRange: '6 – 16 Years', duration: '1–3 Week Day Camps', regStatus: 'Seasonal Registration',
+    desc: 'The Saudi Institute for Physical Activity runs Kingdom-certified athletic development camps across football, basketball, swimming, and athletics during school holiday periods. Strong coaching credentials, certified first aid on-site, and well-structured daily schedules make these the most trusted holiday sports camps in Riyadh. Excellent bilingual delivery — comfortable for children whose Arabic is minimal.',
+    url: '#' },
+
+  { id: 'bounce-academy', type: 'camps', city: 'jeddah', section: 'camps', subcat: 'sports',
+    name: 'Bounce Freestyle Trampoline Academy (Jeddah)', logo: 'BA', lc: '#F4511E',
+    season: 'Year-Round', ageRange: '4 – 17 Years', duration: 'Weekly Classes · Holiday Intensives', regStatus: 'Enrolling Now',
+    desc: 'Bounce\'s structured freestyle academy program runs properly graded coaching tracks — developing aerial skills, trampoline technique, and physical confidence from beginner through to competition level. Holiday intensive weeks (3 full days) are exceptional for productive energy-burning and genuine skill development. A brilliant social option for kids building friendships post-relocation in a structured, safe, and energetic environment.',
+    url: 'https://bounceksa.com/' },
+
+  { id: 'goethe-riyadh', type: 'camps', city: 'riyadh', section: 'camps', subcat: 'language',
+    name: 'International Language Centers — Riyadh & All Cities', logo: 'GI', lc: '#1A237E',
+    season: 'Year-Round', ageRange: '8 – Adult', duration: 'Term Courses · Summer Programs', regStatus: 'Enrolling Now',
+    desc: 'International language centers affiliated with the Goethe-Institut, Institut Français, and Berlitz operate across all three cities offering structured German, French, Mandarin, and Arabic courses for children and families. Particularly valuable for families maintaining a heritage language from their home country alongside adapting to a new school environment. Arabic immersion programs for expat children combine cultural activity with structured language acquisition.',
+    url: '#' },
+
+  { id: 'fakieh-camp', type: 'camps', city: 'jeddah', section: 'camps', subcat: 'summer',
+    name: 'Fakieh Aquarium Educational Holiday Camps', logo: 'FC', lc: '#0D47A1',
+    season: 'Summer · Winter · Ramadan', ageRange: '4 – 14 Years', duration: '1–2 Week Day Camps', regStatus: 'Seasonal Registration',
+    desc: 'The most unique themed holiday camp experience in Jeddah — structured inside the Fakieh Aquarium complex with hands-on marine biology education, dolphin interaction sessions, Red Sea ecosystem workshops, and planetarium visits built into the daily schedule. Supervised by qualified marine science educators. Camp size is kept intentionally small to maximize quality. Fills within 48 hours of registration opening — set a calendar reminder.',
+    url: 'https://www.fakiehaquarium.com/' },
+
+  { id: 'stem-village', type: 'camps', city: 'riyadh', section: 'camps', subcat: 'stem',
+    name: 'STEM Village Riyadh — Innovation Holiday Camps', logo: 'SV', lc: '#00695C',
+    season: 'School Holidays', ageRange: '7 – 15 Years', duration: 'Week-Long Immersive Programs', regStatus: 'Seasonal Registration',
+    desc: 'STEM Village runs the most well-resourced innovation and maker camps in Riyadh, with dedicated equipment budgets allowing children to build functioning drones, water filtration systems, and basic circuit boards. The curriculum is aligned to international NGSS science standards — useful for maintaining academic pacing with home-country school programs. Fully bilingual delivery with specialist educators in every science discipline.',
+    url: '#' },
+
+  { id: 'safwa-swim', type: 'camps', city: 'all', section: 'camps', subcat: 'sports',
+    name: 'Al Safwa & Elite Swimming Academies (All Cities)', logo: 'SW', lc: '#0277BD',
+    season: 'Year-Round', ageRange: '6 Months – 18 Years', duration: 'Weekly 30–45 Min Lessons', regStatus: 'Enrolling Now',
+    desc: 'Structured swimming lessons are a fundamental quality-of-life investment for families in the Kingdom where pool access is essentially year-round. Al Safwa and ISG-affiliated swimming programs across all three cities offer RSSA-aligned progressive curricula from baby water familiarization (6 months+) through to competitive squad development for teenagers. Non-negotiable for Eastern Province families given the beach access and water sports culture that defines life there.',
+    url: '#' },
+
+  { id: 'arabic-kids-tutor', type: 'camps', city: 'all', section: 'camps', subcat: 'language',
+    name: 'Arabic for Kids — Private Tutor & Online Academy Network', logo: 'AK', lc: '#E65100',
+    season: 'Year-Round', ageRange: '4 – 18 Years', duration: 'Flexible — 1:1 & Group Sessions', regStatus: 'Enrolling Now',
+    desc: 'A curated network of certified Arabic language educators offering private 1:1 tuition and structured group sessions for expat children across all three cities. The most effective approach for children arriving with zero Arabic is two 45-minute conversational sessions weekly for the first year, focused exclusively on social vocabulary — school, friends, shopping, food. Coordination with school Arabic teachers dramatically accelerates the pace of results.',
+    url: '#' },
+
+  { id: 'riyadh-art-studio', type: 'camps', city: 'riyadh', section: 'camps', subcat: 'arts',
+    name: 'Riyadh Children\'s Art Studios & Creative Ateliers', logo: 'RA', lc: '#880E4F',
+    season: 'Year-Round', ageRange: '3 – 16 Years', duration: 'Weekly Classes & Holiday Intensives', regStatus: 'Enrolling Now',
+    desc: 'A growing ecosystem of premium children\'s art studios across north and west Riyadh offering structured drawing, painting, sculpting, and mixed-media classes in deliberately small group settings. Increasingly popular among expat communities as a social anchor — children build consistent friendships with peers from across the international school network. Look for studios affiliated with trained fine arts graduates for the highest quality creative instruction.',
+    url: '#' },
+
+  // ─────────────────────────────────────────────────────────────
+  //  DINING & FAMILY SHOPPING (10 Records)
+  // ─────────────────────────────────────────────────────────────
+
+  { id: 'nakheel-mall-ryd', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'mall',
+    name: 'Nakheel Mall — Premium Family Hub (North Riyadh)', logo: 'NK', lc: '#1B5E20',
+    cuisine: 'Mixed International', kidsMenu: true, playArea: true, priceRange: '££–£££', score: 4.7,
+    desc: 'Riyadh\'s most refined family-friendly retail and dining destination in the upscale Al Nakheel district. Features a curated selection of international restaurant brands, an exceptional children\'s play center on the dedicated family floor, a premium supermarket, and outstanding modern architecture. Significantly less crowded than the Riyadh mega-malls — genuinely enjoyable with children under 6. Excellent covered parking directly connected to the building.',
+    url: '#' },
+
+  { id: 'riyadh-park-mall', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'mall',
+    name: 'Riyadh Park Mall — Complete Family Day Circuit', logo: 'RP', lc: '#283593',
+    cuisine: 'Mixed International', kidsMenu: true, playArea: true, priceRange: '££', score: 4.6,
+    desc: 'Home to VOX Cinemas, KidZania, and an extensive family dining and retail circuit — Riyadh Park is the most comprehensive single-destination family mall in the capital. Its internal temperature-controlled design means children can move freely between experiences without returning to the car. The international food court represents one of the most diverse dining selections in Riyadh, with genuine options from over 15 cuisines in one connected space.',
+    url: '#' },
+
+  { id: 'moa-jeddah', type: 'dining', city: 'jeddah', section: 'dining', subcat: 'mall',
+    name: 'Mall of Arabia Jeddah — Mega Family Destination', logo: 'MJ', lc: '#0D47A1',
+    cuisine: 'Mixed International', kidsMenu: true, playArea: true, priceRange: '£–£££', score: 4.7,
+    desc: 'Jeddah\'s largest and most visited retail and family entertainment complex, featuring over 400 stores, AMC Cinemas, dedicated family entertainment zones, an ice rink, and a remarkable restaurant collection spanning premium Saudi dining to accessible family options. The parking infrastructure is excellent and the mall\'s layout is more navigable than many competitors. A complete family day out without needing to go anywhere else.',
+    url: '#' },
+
+  { id: 'al-rashid-east', type: 'dining', city: 'eastern', section: 'dining', subcat: 'mall',
+    name: 'Al Rashid Mall — Eastern Province Family Anchor', logo: 'AR', lc: '#4A148C',
+    cuisine: 'Mixed International', kidsMenu: true, playArea: true, priceRange: '£–££', score: 4.5,
+    desc: 'The dominant family mall of the Eastern Province, housing Tekzone, Muvi Cinemas, an extensive international food court, and a well-equipped children\'s entertainment zone. Highly accessible from Khobar, Dhahran, and Dammam. The food court quality has substantially improved — solid Lebanese, Indian, American, and Saudi options at family-appropriate price points. Validated parking is reliable and free for the first two hours.',
+    url: '#' },
+
+  { id: 'alchemy-ryd', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'restaurant',
+    name: 'Alchemy Restaurant & Social Kitchen (Riyadh)', logo: 'AL', lc: '#BF360C',
+    cuisine: 'Contemporary International', kidsMenu: true, playArea: false, priceRange: '£££', score: 4.8,
+    desc: 'The most celebrated family-friendly fine dining destination in Riyadh among the expat community. Alchemy strikes a genuinely rare balance between excellent cuisine and a child-welcoming atmosphere. A dedicated children\'s menu that goes far beyond standard options — actual flavour-forward dishes designed by the kitchen. Weekend brunch is the definitive social event for international families in Riyadh. Book at least 5 days ahead for Thursday and Friday morning reservations.',
+    url: '#' },
+
+  { id: 'corniche-seafood', type: 'dining', city: 'jeddah', section: 'dining', subcat: 'restaurant',
+    name: 'Jeddah Corniche Seafood Restaurants Strip', logo: 'CS', lc: '#006064',
+    cuisine: 'Fresh Red Sea Seafood', kidsMenu: true, playArea: false, priceRange: '££–£££', score: 4.6,
+    desc: 'The most culturally authentic dining experience Jeddah offers a newly arriving family — a stretch of excellent seafood restaurants along the Corniche serving genuinely fresh Red Sea catch. Many operate on a choose-your-fish model where children can point to their selection before it is cooked to order. The evening Corniche breeze, Fountain views, and informal outdoor seating create a uniquely Saudi dining atmosphere that money cannot replicate elsewhere.',
+    url: '#' },
+
+  { id: 'the-zone-dining', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'restaurant',
+    name: 'The Zone — Kids Play & Family Dining Complex', logo: 'TZ', lc: '#F57F17',
+    cuisine: 'American & International', kidsMenu: true, playArea: true, priceRange: '££', score: 4.5,
+    desc: 'Riyadh\'s most practical family dining-and-play combination — parents eat a proper meal at a comfortable table while children are in a fully supervised, enclosed indoor play zone within line of sight. A format that barely exists well anywhere else in the city. The food quality sits above typical play-center dining — actual thoughtful menu options with nutritional consideration. Weekday afternoon sessions are significantly less crowded than weekends.',
+    url: '#' },
+
+  { id: 'friday-market-ryd', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'market',
+    name: 'Riyadh Community Farmer\'s & Artisan Weekend Markets', logo: 'FM', lc: '#2E7D32',
+    cuisine: 'Artisan · Local Produce · International Street Food', kidsMenu: false, playArea: false, priceRange: '£', score: 4.6,
+    desc: 'A growing ecosystem of weekend farmer\'s and artisan markets across Riyadh\'s north (Al Nakheel, Al Yasmin) running October through March during the cool season. Fresh produce, Saudi artisan crafts, international street food stalls, plants, and community pop-up brands. An excellent social anchor for newly arrived families — these markets are where the expat community genuinely gathers informally. Follow Al Diriyah Farmer\'s Market on Instagram for weekly dates.',
+    url: '#' },
+
+  { id: 'tahlia-cafe', type: 'dining', city: 'riyadh', section: 'dining', subcat: 'brunch',
+    name: 'Tahlia & Urubah Street Brunch & Cafe Circuit', logo: 'TC', lc: '#8D6E63',
+    cuisine: 'Specialty Coffee · Premium Brunch · International', kidsMenu: true, playArea: false, priceRange: '££', score: 4.7,
+    desc: 'Riyadh\'s most celebrated dining corridor — Tahlia Street and the adjacent Urubah Street strip house the Kingdom\'s finest concentration of independent specialty cafes, premium brunch spots, and boutique restaurant concepts. The Saturday morning brunch circuit is a Riyadh expat institution. Strollers are broadly welcome, children are catered for without condescension, and the specialty coffee from Saudi roasters is genuinely world class.',
+    url: '#' },
+
+  { id: 'al-hamra-jed', type: 'dining', city: 'jeddah', section: 'dining', subcat: 'brunch',
+    name: 'Al Hamra Waterfront — Jeddah Weekend Brunch Scene', logo: 'AH', lc: '#0277BD',
+    cuisine: 'International · Waterfront Dining', kidsMenu: true, playArea: false, priceRange: '££–£££', score: 4.6,
+    desc: 'Jeddah\'s premium residential and dining district concentrated around the Al Hamra waterfront offers the most relaxed and sophisticated weekend family dining experience in the Western Province. A cluster of excellent cafe and restaurant options within walking distance — Lebanese, Italian, Persian, and Saudi concepts sit side by side. The proximity to the Corniche means post-brunch walks and Red Sea views become a natural part of the rhythm.',
+    url: '#' }
 
 ];
