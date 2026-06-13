@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block crawling of URL-param variants — canonical on /family-kids handles consolidation
+Disallow: /family-kids?
+
+# Not publicly linked / not ready for indexing
 Disallow: /services/consultant-profile.html
 Disallow: /blog/index.html
 
