@@ -56,7 +56,11 @@
 .fam-active-label{font-size:.75rem;font-weight:700;color:var(--navy,#1B2A4A);background:rgba(27,42,74,.07);padding:.25rem .75rem;border-radius:100px}
 
 /* ── Card grid ── */
+/* CLS prevention — reserve vertical space before JS populates cards */
+#famGrid:empty{min-height:900px}
 .fam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+/* Paint optimisation — browser skips off-screen card rendering */
+.fam-card{content-visibility:auto;contain-intrinsic-size:0 340px}
 
 /* ── Base card ── */
 .fam-card{background:#fff;border:1.5px solid #E8E4DC;border-radius:20px;padding:1.4rem;display:flex;flex-direction:column;gap:.85rem;opacity:0;transform:translateY(18px);transition:opacity .38s ease,transform .38s ease,border-color .25s,box-shadow .25s;min-width:0}
@@ -143,6 +147,55 @@
   .fam-intro-strip{flex-wrap:wrap}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Family & Kids Hub — Expat Family Guide Saudi Arabia",
+      "description": "87 verified records covering international schools, paediatric healthcare, family activities, outdoor venues, camps, and settling-in guides for expat families across Riyadh, Jeddah and the Eastern Province of Saudi Arabia.",
+      "url": "https://newtosaudi.com/family-kids",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NewToSaudi",
+        "url": "https://newtosaudi.com",
+        "logo": { "@type": "ImageObject", "url": "https://newtosaudi.com/Logos/logo-primary.svg" }
+      },
+      "about": [
+        { "@type": "Thing", "name": "International Schools Saudi Arabia" },
+        { "@type": "Thing", "name": "Paediatric Healthcare Saudi Arabia" },
+        { "@type": "Thing", "name": "Family Activities Riyadh" },
+        { "@type": "Thing", "name": "Kids Activities Jeddah" },
+        { "@type": "Thing", "name": "Expat Family Guide Saudi Arabia" },
+        { "@type": "Thing", "name": "ABA Therapy Saudi Arabia" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://newtosaudi.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Family & Kids Hub", "item": "https://newtosaudi.com/family-kids" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Expat Family Resources in Saudi Arabia",
+      "description": "Curated list of international schools, paediatric providers, family activities and settling-in resources for expats in Saudi Arabia",
+      "numberOfItems": 87,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "International Schools — Riyadh, Jeddah & Eastern Province", "url": "https://newtosaudi.com/family-kids?sec=education" },
+        { "@type": "ListItem", "position": 2, "name": "Family Activities & Entertainment Venues", "url": "https://newtosaudi.com/family-kids?sec=activities" },
+        { "@type": "ListItem", "position": 3, "name": "Paediatric Healthcare Providers", "url": "https://newtosaudi.com/family-kids?sec=healthcare" },
+        { "@type": "ListItem", "position": 4, "name": "Settling-In Guides for Families", "url": "https://newtosaudi.com/family-kids?sec=settling" },
+        { "@type": "ListItem", "position": 5, "name": "Outdoor & Adventure Destinations", "url": "https://newtosaudi.com/family-kids?sec=outdoors" },
+        { "@type": "ListItem", "position": 6, "name": "Camps & Classes for Kids", "url": "https://newtosaudi.com/family-kids?sec=camps" },
+        { "@type": "ListItem", "position": 7, "name": "Family Dining & Shopping", "url": "https://newtosaudi.com/family-kids?sec=dining" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#fam-main">Skip to main content</a>
@@ -1236,7 +1289,7 @@ document.getElementById('cityPills').addEventListener('click', e => {
   activeCity = btn.dataset.city;
   syncButtons();
   pushURL();
-  renderAll();
+  requestAnimationFrame(() => renderAll());
 });
 
 document.getElementById('secPills').addEventListener('click', e => {
@@ -1246,7 +1299,7 @@ document.getElementById('secPills').addEventListener('click', e => {
   activeSub = 'all';
   syncButtons();
   pushURL();
-  renderAll();
+  requestAnimationFrame(() => renderAll());
 });
 
 document.getElementById('subFilterRow').addEventListener('click', e => {
