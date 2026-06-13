@@ -102,8 +102,9 @@ p  { line-height:1.75; color:var(--text-body) }
 .section--off-white{ background:var(--off-white) }
 .section--cream    { background-color:var(--cream) }
 .section--navy {
-  background:linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%);
+  background-color:#060E1E;
   background-image:
+    linear-gradient(140deg,#060E1E 0%,#0B1422 40%,#0F1C33 70%,#0A1020 100%),
     repeating-linear-gradient(58deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 0,transparent 72px),
     repeating-linear-gradient(-58deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 0,transparent 72px)
 }
