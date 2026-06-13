@@ -189,18 +189,20 @@
     .atm-fact__label { font-size:.76rem; color:rgba(255,255,255,.6); line-height:1.4; }
 
     /* ── FAQ accordion ── */
-    .faq-list { list-style:none; }
-    .faq-item { border-bottom:1px solid rgba(255,255,255,.1); }
-    .faq-item:last-child { border:none; }
+    .faq-list { list-style:none; padding:0; margin:0; }
+    .faq-item { border-bottom:1px solid rgba(255,255,255,.1) !important; background:none !important; box-shadow:none !important; border-radius:0 !important; }
+    .faq-item:last-child { border:none !important; }
     .faq-q {
       width:100%; background:none; border:none; text-align:left; cursor:pointer;
       padding:1.35rem 0; display:flex; align-items:center; justify-content:space-between; gap:1rem;
-      font-size:.95rem; font-weight:700; color:#fff; font-family:inherit;
+      font-size:.95rem; font-weight:700; color:#fff !important; font-family:inherit;
     }
+    .faq-q:hover { color:var(--gold) !important; }
     .faq-q svg { width:18px; height:18px; stroke:#fff; fill:none; stroke-width:2.5; flex-shrink:0; transition:transform .3s; }
-    .faq-a { font-size:.86rem; color:rgba(255,255,255,.85); line-height:1.75; padding-bottom:1.25rem; display:none; }
-    .faq-item.open .faq-q svg { transform:rotate(45deg); }
-    .faq-item.open .faq-a { display:block; }
+    .faq-a { font-size:.86rem !important; color:rgba(255,255,255,.85) !important; line-height:1.75; padding:.25rem 0 1.25rem !important; max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    .faq-a-inner, .faq-a p { color:rgba(255,255,255,.85) !important; padding:0 !important; font-size:.86rem !important; }
+    .faq-item.open .faq-q svg { transform:rotate(45deg); stroke:var(--gold); }
+    .faq-item.open .faq-a { max-height:2000px; }
 
     /* ── Newsletter ── */
     .newsletter-dark { text-align:center; }
