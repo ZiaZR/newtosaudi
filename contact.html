@@ -305,10 +305,17 @@
           <h2 class="contact-form-inner__title">Send Us a Message</h2>
           <p class="contact-form-inner__sub">Fill in your details below and a member of our team will respond within one business day.</p>
 
-          <form action="https://formspree.io/f/REPLACE_WITH_CONTACT_FORM_ID" method="POST" novalidate>
+          <!-- ── ALERT BOXES ── -->
+          <div id="contact-success" style="display:none;margin-bottom:1.5rem;padding:1.1rem 1.4rem;background:rgba(16,185,129,.08);border:1.5px solid rgba(16,185,129,.35);border-radius:12px;color:#065F46;font-size:.88rem;line-height:1.65;font-weight:500;">
+            🔒 Request Transmitted Securely — Your executive brief has been routed to our Northwest onboarding team. A dedicated Key Account Manager will establish contact within 2 business hours.
+          </div>
+          <div id="contact-error" style="display:none;margin-bottom:1.5rem;padding:1.1rem 1.4rem;background:rgba(239,68,68,.07);border:1.5px solid rgba(239,68,68,.3);border-radius:12px;color:#991B1B;font-size:.88rem;line-height:1.65;font-weight:500;">
+            System Notice: Submission could not be completed. Please check your network connection and try again.
+          </div>
+
+          <form id="ntsa-contact-form" novalidate>
             <input type="hidden" name="_subject" value="New contact message — NewToSaudi">
-            <input type="hidden" name="_next" value="https://newtosaudi.com/contact?sent=true">
-            <input type="hidden" name="_gotcha" style="display:none">
+            <input type="text" name="_gotcha" style="display:none" />
 
             <div class="cform-row">
               <div class="cform-group">
@@ -355,7 +362,7 @@
 
             <button type="submit" class="cform-submit">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Message
+              Submit Request
             </button>
           </form>
         </div>
@@ -460,11 +467,53 @@
 <!-- END GLOBAL FOOTER -->
 
 <script>
+  // Reveal observer
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   revealEls.forEach(el => io.observe(el));
+
+  // Secure AJAX contact form interceptor
+  document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("ntsa-contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const button = form.querySelector("button[type='submit']");
+        const successBox = document.getElementById("contact-success");
+        const errorBox = document.getElementById("contact-error");
+
+        // Split ID assembly to blind public scrapers
+        const p1 = "xoj";
+        const p2 = "zynpn";
+        const secureUrl = `https://formspree.io/f/${p1}${p2}`;
+
+        if (button) { button.disabled = true; button.innerText = "Transmitting..."; }
+        if (successBox) successBox.style.display = "none";
+        if (errorBox) errorBox.style.display = "none";
+
+        try {
+          const response = await fetch(secureUrl, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            form.reset();
+            form.style.display = "none";
+            if (successBox) { successBox.style.display = "block"; successBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          } else {
+            throw new Error("Submission rejected by gateway.");
+          }
+        } catch (err) {
+          if (button) { button.disabled = false; button.innerText = "Submit Request"; }
+          if (errorBox) errorBox.style.display = "block";
+        }
+      });
+    }
+  });
 </script>
 </body>
 </html>
