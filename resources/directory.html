@@ -1321,7 +1321,9 @@
           <div style="font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">Free · Weekly · Independent</div>
           <h3 style="color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:.4rem">Join the Briefing</h3>
           <p style="color:rgba(255,255,255,.5);font-size:.84rem;line-height:1.6;margin-bottom:1.5rem">Enter your email and get your first issue this Thursday.</p>
-          <form action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST" style="display:flex;flex-direction:column;gap:.85rem">
+          <div id="inner-inline-success" style="display:none;margin:.75rem auto 1.25rem;max-width:460px;padding:.85rem 1.25rem;background:rgba(16,185,129,.12);border:1.5px solid rgba(16,185,129,.35);border-radius:10px;color:#065F46;font-size:.84rem;font-weight:600;line-height:1.6;text-align:center;">✨ Welcome to the Weekly Briefing. Your executive briefing link has been dispatched to your inbox.</div>
+          <form id="ntsa-inner-inline-form" style="display:flex;flex-direction:column;gap:.85rem">
+            <input type="text" name="_gotcha" style="display:none" />
             <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required style="width:100%;padding:.9rem 1.1rem;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.14);border-radius:10px;font-family:inherit;font-size:.9rem;color:#fff;outline:none;box-sizing:border-box">
             <button type="submit" style="width:100%;padding:1rem;background:var(--gold);color:#1B2A4A;font-family:inherit;font-size:.95rem;font-weight:800;border:none;border-radius:10px;cursor:pointer">Subscribe Free &rarr;</button>
           </form>
@@ -1478,6 +1480,40 @@ sections.forEach(s => tabObs.observe(s));
   const target = document.getElementById(p);
   if(target) setTimeout(() => target.scrollIntoView({behavior:'smooth',block:'start'}), 400);
 })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inlineForm = document.getElementById("ntsa-inner-inline-form");
+  if (inlineForm) {
+    inlineForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var button = form.querySelector("button[type='submit']");
+      var successBox = document.getElementById("inner-inline-success");
+      var p1 = "xoj";
+      var p2 = "zynpn";
+      var secureUrl = "https://formspree.io/f/" + p1 + p2;
+      if (button) { button.disabled = true; button.style.opacity = "0.6"; }
+      try {
+        var response = await fetch(secureUrl, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          if (successBox) successBox.style.display = "block";
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        if (button) { button.disabled = false; button.style.opacity = "1"; }
+        alert("Subscription temporarily unavailable. Please try again shortly.");
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

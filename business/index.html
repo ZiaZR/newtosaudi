@@ -592,7 +592,9 @@
       <div class="section-eyebrow" style="display:inline-flex">Stay up to date</div>
       <h2>The Saudi Business Briefing</h2>
       <p>Monthly digest of regulatory changes, new sector opportunities, tax updates, and Vision 2030 milestones — written for foreign business owners in the Kingdom.</p>
-      <form class="newsletter-form" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST">
+      <div id="inner-inline-success" style="display:none;margin:.75rem auto 1.25rem;max-width:460px;padding:.85rem 1.25rem;background:rgba(16,185,129,.12);border:1.5px solid rgba(16,185,129,.35);border-radius:10px;color:#065F46;font-size:.84rem;font-weight:600;line-height:1.6;text-align:center;">✨ Welcome to the Weekly Briefing. Your executive briefing link has been dispatched to your inbox.</div>
+      <form class="newsletter-form" id="ntsa-inner-inline-form">
+        <input type="text" name="_gotcha" style="display:none" />
         <input type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
         <button type="submit">Subscribe free</button>
               <p class="newsletter__consent" style="font-size:.78rem;opacity:.7;margin:.6rem 0 0;text-align:center">By subscribing you agree to our <a href="/privacy" style="color:inherit;text-decoration:underline">Privacy Policy</a>. We never sell your data.</p>
@@ -758,6 +760,40 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   reveals.forEach(el => io.observe(el));
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inlineForm = document.getElementById("ntsa-inner-inline-form");
+  if (inlineForm) {
+    inlineForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var button = form.querySelector("button[type='submit']");
+      var successBox = document.getElementById("inner-inline-success");
+      var p1 = "xoj";
+      var p2 = "zynpn";
+      var secureUrl = "https://formspree.io/f/" + p1 + p2;
+      if (button) { button.disabled = true; button.style.opacity = "0.6"; }
+      try {
+        var response = await fetch(secureUrl, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          if (successBox) successBox.style.display = "block";
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        if (button) { button.disabled = false; button.style.opacity = "1"; }
+        alert("Subscription temporarily unavailable. Please try again shortly.");
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

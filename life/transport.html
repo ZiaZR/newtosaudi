@@ -387,7 +387,9 @@
     <div style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.5rem;">Weekly Briefing</div>
     <h2 style="font-size:1.8rem;font-weight:800;color:var(--navy,#1B2A4A);margin:0 0 .75rem;">Saudi relocation updates, free weekly</h2>
     <p style="color:#555;margin:0 0 1.5rem;line-height:1.6;">Checklists, visa timelines, housing prep — every Thursday, before you land.</p>
-    <form style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;" action="https://formspree.io/f/REPLACE_WITH_NEWSLETTER_FORM_ID" method="POST">
+    <div id="inner-inline-success" style="display:none;margin:.75rem auto 1.25rem;max-width:460px;padding:.85rem 1.25rem;background:rgba(16,185,129,.12);border:1.5px solid rgba(16,185,129,.35);border-radius:10px;color:#065F46;font-size:.84rem;font-weight:600;line-height:1.6;text-align:center;">✨ Welcome to the Weekly Briefing. Your executive briefing link has been dispatched to your inbox.</div>
+    <form style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;" id="ntsa-inner-inline-form">
+      <input type="text" name="_gotcha" style="display:none" />
       <input type="email" name="email" placeholder="your@email.com" style="flex:1;min-width:220px;padding:.75rem 1rem;border:1.5px solid #ccc;border-radius:6px;font-size:.95rem;">
       <button type="submit" style="background:var(--navy,#1B2A4A);color:#fff;padding:.75rem 1.5rem;border:none;border-radius:6px;font-weight:700;cursor:pointer;">Subscribe</button>
     </form>
@@ -511,6 +513,40 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <!-- END GLOBAL FOOTER -->
 <script src="/assets/js/site.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var inlineForm = document.getElementById("ntsa-inner-inline-form");
+  if (inlineForm) {
+    inlineForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var button = form.querySelector("button[type='submit']");
+      var successBox = document.getElementById("inner-inline-success");
+      var p1 = "xoj";
+      var p2 = "zynpn";
+      var secureUrl = "https://formspree.io/f/" + p1 + p2;
+      if (button) { button.disabled = true; button.style.opacity = "0.6"; }
+      try {
+        var response = await fetch(secureUrl, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          if (successBox) successBox.style.display = "block";
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        if (button) { button.disabled = false; button.style.opacity = "1"; }
+        alert("Subscription temporarily unavailable. Please try again shortly.");
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
 
