@@ -1309,10 +1309,14 @@ p{line-height:1.75;color:var(--text-body)}
             <li>Jobs &amp; salary insights</li>
             <li>Local tips &amp; culture</li>
           </ul>
-          <div class="footer__nl-form">
-            <input type="email" class="footer__nl-input" placeholder="your@email.com">
-            <button class="footer__nl-btn">Join</button>
+          <div id="newsletter-success" style="display:none;margin-bottom:.85rem;padding:.8rem 1rem;background:rgba(16,185,129,.1);border:1.5px solid rgba(16,185,129,.3);border-radius:10px;color:#065F46;font-size:.78rem;font-weight:600;line-height:1.55;">
+            ✨ Welcome to the Weekly Briefing. Your executive briefing link has been dispatched to your inbox.
           </div>
+          <form id="ntsa-newsletter-form" class="footer__nl-form">
+            <input type="text" name="_gotcha" style="display:none" />
+            <input type="email" name="email" class="footer__nl-input" placeholder="your@email.com" required>
+            <button type="submit" class="footer__nl-btn">Join</button>
+          </form>
           <div class="footer__nl-note">No spam &middot; Unsubscribe anytime</div>
         </div>
       </div>
@@ -1366,6 +1370,40 @@ p{line-height:1.75;color:var(--text-body)}
     </div>
   </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var newsletterForm = document.getElementById("ntsa-newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      var form = e.target;
+      var button = form.querySelector("button[type='submit']");
+      var successBox = document.getElementById("newsletter-success");
+      var p1 = "xoj";
+      var p2 = "zynpn";
+      var secureUrl = "https://formspree.io/f/" + p1 + p2;
+      if (button) { button.disabled = true; button.style.opacity = "0.6"; }
+      try {
+        var response = await fetch(secureUrl, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        if (response.ok) {
+          form.reset();
+          form.style.display = "none";
+          if (successBox) successBox.style.display = "block";
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        if (button) { button.disabled = false; button.style.opacity = "1"; }
+        alert("Newsletter subscription temporarily unavailable. Please try again shortly.");
+      }
+    });
+  }
+});
+</script>
 <!-- END GLOBAL FOOTER -->
 
 <script src="/assets/js/site.js" defer></script>

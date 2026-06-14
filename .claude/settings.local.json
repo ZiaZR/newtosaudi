@@ -39,7 +39,23 @@
       "Bash(node -e \"const FAM_DATA = require\\('./assets/js/family-data.js'.replace\\('const FAM_DATA','module.exports'\\)\\); console.log\\('parse error'\\)\")",
       "Bash(node -e \"eval\\(require\\('fs'\\).readFileSync\\('assets/js/family-data.js','utf8'\\)\\); console.log\\('Records:', FAM_DATA.length\\); const subcats=[...new Set\\(FAM_DATA.map\\(d=>d.subcat\\)\\)].sort\\(\\); console.log\\('Subcats:', subcats.join\\(', '\\)\\); const types=[...new Set\\(FAM_DATA.map\\(d=>d.type\\)\\)].sort\\(\\); console.log\\('Types:', types.join\\(', '\\)\\); const mdUrls=FAM_DATA.filter\\(d=>d.url&&d.url.includes\\('['\\)\\); console.log\\('Markdown URLs remaining:', mdUrls.length\\);\")",
       "Bash(python build.py)",
-      "Bash(python build.py --write)"
+      "Bash(python build.py --write)",
+      "Bash(git pull *)",
+      "Bash(ls css/)",
+      "Bash(ls *.css)",
+      "WebSearch",
+      "Bash(sed -n '1630,1660p' business/start-a-company.html)",
+      "Bash(sed -n '415,450p' business/investment-guide.html)",
+      "Bash(sed -n '725,745p' work/iqama-guide.html)",
+      "Bash(sed -n '832,845p' work/iqama-guide.html)",
+      "Bash(python build.py --force)",
+      "mcp__Claude_in_Chrome__navigate",
+      "WebFetch(domain:images.unsplash.com)",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(python3 _fix_cities.py)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\" -Recurse -Directory)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(dir _components /b)"
     ]
   }
 }
