@@ -22,14 +22,47 @@
   <link rel="canonical" href="https://newtosaudi.com/cities/alula">
   <link rel="stylesheet" href="/assets/css/site.css?v=2">
   <style>
-    .page-hero{background:linear-gradient(140deg,#140A02 0%,#281408 40%,#3C2410 70%,#281408 100%);
+    .page-hero{background:#080D18;
       padding:calc(var(--nav-h) + 4.5rem) 0 5.5rem;position:relative;overflow:hidden}
-    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;
-      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 0,transparent 70px),
-      repeating-linear-gradient(-60deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 0,transparent 70px)}
+    /* Full-colour photo layer */
     .page-hero__img{position:absolute;inset:0;z-index:0}
-    .page-hero__img img{width:100%;height:100%;object-fit:cover;opacity:.25;mix-blend-mode:luminosity}
+    .page-hero__img img{width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:.62}
+    /* Protective gradient overlay — keeps white text readable over bright sand */
+    .page-hero::before{content:'';position:absolute;inset:0;z-index:1;
+      background:linear-gradient(180deg,rgba(8,13,24,.80) 0%,rgba(8,13,24,.38) 52%,rgba(8,13,24,.76) 100%)}
+    /* Subtle crosshatch texture on top */
+    .page-hero::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 0,transparent 70px),
+      repeating-linear-gradient(-60deg,rgba(255,255,255,.008) 0,rgba(255,255,255,.008) 1px,transparent 0,transparent 70px)}
     .page-hero .container{position:relative;z-index:2}
+
+    /* Geo matrix */
+    .geo-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+    @media(max-width:768px){.geo-matrix{grid-template-columns:1fr}}
+    .geo-card{background:#fff;border:1.5px solid rgba(27,42,74,.1);border-radius:18px;padding:1.75rem 1.5rem;
+      position:relative;overflow:hidden;transition:box-shadow .3s,transform .3s}
+    .geo-card:hover{box-shadow:0 12px 40px rgba(27,42,74,.12);transform:translateY(-3px)}
+    .geo-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+    .geo-card__from{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--gold);margin-bottom:.5rem}
+    .geo-card__dist{font-size:2rem;font-weight:800;color:var(--navy);line-height:1;margin-bottom:.25rem}
+    .geo-card__unit{font-size:.78rem;color:rgba(27,42,74,.5);font-weight:500;margin-bottom:1rem}
+    .geo-card__mode{display:flex;flex-direction:column;gap:.5rem}
+    .geo-card__row{display:flex;align-items:flex-start;gap:.6rem;font-size:.85rem;color:#444;line-height:1.45}
+    .geo-card__icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+    .geo-map-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--gold);display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem}
+    .geo-map-eyebrow::before,.geo-map-eyebrow::after{content:'';flex:1;max-width:36px;height:1.5px;background:rgba(212,168,83,.5)}
+
+    /* Workforce section */
+    .workforce-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin:2rem 0}
+    @media(max-width:768px){.workforce-grid{grid-template-columns:1fr}}
+    .wf-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+      border-radius:16px;padding:1.75rem;transition:all .3s}
+    .wf-card:hover{background:rgba(212,168,83,.08);border-color:rgba(212,168,83,.25);transform:translateY(-2px)}
+    .wf-card__icon{font-size:1.6rem;margin-bottom:.9rem}
+    .wf-card__title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+    .wf-card__desc{font-size:.84rem;color:rgba(255,255,255,.6);line-height:1.65}
     .hero-label{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,168,83,.12);
       border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.45rem 1.2rem;
       font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:1.5rem}
@@ -271,7 +304,7 @@
 
 <!-- HERO -->
 <section class="page-hero" id="main-content">
-  <div class="page-hero__img"><img src="https://images.unsplash.com/photo-1608783608755-a2e0a19b9e77?w=800&auto=format&fit=crop" alt="AlUla Hegra Nabataean desert"></div>
+  <div class="page-hero__img"><img src="https://images.unsplash.com/photo-1677061172823-ee4bdfb50669?auto=format&fit=crop&w=1920&q=80" alt="AlUla Hegra Nabataean rock tombs desert landscape"></div>
   <div class="container">
     <div class="hero-label">🏺 UNESCO World Heritage Site · Medina Region</div>
     <h1 class="hero-title">AlUla — The World's<br><span>Largest Open-Air Museum</span></h1>
@@ -290,6 +323,54 @@
         <div class="hero-stat__num">2026–30</div>
         <div class="hero-stat__lbl">Major Development Phase</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GEOGRAPHIC MATRIX -->
+<section style="background:var(--cream,#F2EEE5);padding:4rem 0;border-bottom:1px solid rgba(27,42,74,.08);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="geo-map-eyebrow" style="justify-content:center;">📍 Navigating to AlUla</div>
+      <h2 style="font-size:1.75rem;font-weight:800;color:var(--navy,#1B2A4A);margin:0 0 .5rem;">Distance &amp; Connectivity</h2>
+      <p style="color:rgba(27,42,74,.6);font-size:.95rem;max-width:540px;margin:0 auto;">AlUla sits in Saudi Arabia's northwest corner. Understanding travel times and gateways is essential before you relocate.</p>
+    </div>
+    <div class="geo-matrix">
+
+      <div class="geo-card reveal">
+        <div class="geo-card__from">From Medina</div>
+        <div class="geo-card__dist">~330<span style="font-size:1.1rem;font-weight:600;"> km</span></div>
+        <div class="geo-card__unit">Closest major city gateway</div>
+        <div class="geo-card__mode">
+          <div class="geo-card__row"><span class="geo-card__icon">🚗</span><span>Approx. <strong>3.5 hours</strong> drive via scenic Al Hijaz Highway — route passes through dramatic volcanic terrain</span></div>
+          <div class="geo-card__row"><span class="geo-card__icon">✈️</span><span>No direct flight needed — Medina is the preferred land gateway for most expat arrivals</span></div>
+        </div>
+      </div>
+
+      <div class="geo-card reveal reveal-delay-1">
+        <div class="geo-card__from">From Jeddah</div>
+        <div class="geo-card__dist">~680<span style="font-size:1.1rem;font-weight:600;"> km</span></div>
+        <div class="geo-card__unit">Red Sea commercial hub</div>
+        <div class="geo-card__mode">
+          <div class="geo-card__row"><span class="geo-card__icon">🚗</span><span>Approx. <strong>7 hours</strong> drive via Highway 15 — scenic but long; recommended only if combining stops</span></div>
+          <div class="geo-card__row"><span class="geo-card__icon">✈️</span><span><strong>1h 15m</strong> direct flight to AlUla International Airport <strong>(ULX)</strong> — Saudia and flynas operate this route</span></div>
+        </div>
+      </div>
+
+      <div class="geo-card reveal reveal-delay-2">
+        <div class="geo-card__from">From Riyadh</div>
+        <div class="geo-card__dist">~1,000<span style="font-size:1.1rem;font-weight:600;"> km</span></div>
+        <div class="geo-card__unit">Capital — RCU headquarters city</div>
+        <div class="geo-card__mode">
+          <div class="geo-card__row"><span class="geo-card__icon">✈️</span><span><strong>1h 40m</strong> direct flight to AlUla International Airport <strong>(ULX)</strong> — multiple daily departures from KKIA</span></div>
+          <div class="geo-card__row"><span class="geo-card__icon">💼</span><span>Most RCU executives commute Riyadh–AlUla weekly; project accommodation provided on-site</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div style="margin-top:1.75rem;padding:1.1rem 1.5rem;background:#fff;border-radius:12px;border:1.5px solid rgba(27,42,74,.08);display:flex;align-items:center;gap:.85rem;">
+      <span style="font-size:1.2rem;">🛬</span>
+      <p style="margin:0;font-size:.85rem;color:rgba(27,42,74,.7);line-height:1.6;"><strong style="color:var(--navy,#1B2A4A);">AlUla International Airport (ULX / OEAO)</strong> — Opened in 2021, fully modernised and handling seasonal international charters for Winter at Tantora. Saudia, flynas, and Riyadh Air operate scheduled domestic services. Most project staff fly in directly from Riyadh or Jeddah.</p>
     </div>
   </div>
 </section>
@@ -431,6 +512,60 @@
         </div>
       </aside>
     </div>
+  </div>
+</section>
+
+<!-- WHO WORKS IN ALULA -->
+<section style="background:linear-gradient(140deg,#060E1E 0%,#0B1422 45%,#0F1C33 75%,#080D18 100%);padding:5rem 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(60deg,var(--gold,#D4A853) 0,var(--gold,#D4A853) 1px,transparent 1px,transparent 80px),repeating-linear-gradient(-60deg,var(--gold,#D4A853) 0,var(--gold,#D4A853) 1px,transparent 1px,transparent 80px);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+
+    <div class="reveal" style="max-width:680px;margin:0 auto 3rem;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:1rem;">
+        <span style="width:28px;height:1px;background:rgba(212,168,83,.5);display:inline-block;"></span>
+        Professional Ecosystem
+        <span style="width:28px;height:1px;background:rgba(212,168,83,.5);display:inline-block;"></span>
+      </div>
+      <h2 style="color:#fff;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;margin:0 0 .85rem;letter-spacing:-.025em;">💡 Who Works in the Ancient Oasis?</h2>
+      <p style="color:rgba(255,255,255,.55);font-size:1rem;line-height:1.75;">AlUla's workforce is unlike anywhere else in Saudi Arabia — internationally credentialed, culturally driven, and operating at the intersection of heritage, luxury, and Vision 2030 capital.</p>
+    </div>
+
+    <div class="workforce-grid reveal">
+
+      <div class="wf-card">
+        <div class="wf-card__icon">🏛️</div>
+        <div class="wf-card__title">Royal Commission for AlUla (RCU) — Consultants &amp; Executives</div>
+        <div class="wf-card__desc">Strategy directors, project executives, procurement leads, legal counsel, and senior advisors embedded directly within RCU departments. These roles carry significant authority and budget. Packages are competitive: typically SAR 35,000–90,000/month + furnished accommodation + annual flights home.</div>
+      </div>
+
+      <div class="wf-card">
+        <div class="wf-card__icon">🏨</div>
+        <div class="wf-card__title">Luxury Hospitality Development Teams</div>
+        <div class="wf-card__desc">General managers, F&amp;B directors, pre-opening project directors, and design consultants for Aman AlUla, Banyan Tree AlUla, The Chedi AlUla, and Habitas. These are world-class properties requiring world-class operators — typically recruited from the Maldives, Switzerland, and UAE luxury circuits.</div>
+      </div>
+
+      <div class="wf-card">
+        <div class="wf-card__icon">🏺</div>
+        <div class="wf-card__title">Archaeological Research &amp; Cultural Heritage Specialists</div>
+        <div class="wf-card__desc">French, British, and Saudi-led archaeological teams working under multi-year RCU research mandates at Hegra, Dadan, and Jabal Ikmah. Roles include field archaeologists, conservation architects, epigraphy specialists, and digital heritage documentation engineers.</div>
+      </div>
+
+      <div class="wf-card">
+        <div class="wf-card__icon">🌐</div>
+        <div class="wf-card__title">Elite Remote Professionals &amp; HNW Creatives</div>
+        <div class="wf-card__desc">A small but growing segment: architects, documentary filmmakers, brand strategists, and sustainability consultants operating under premium business frameworks or freelance licences. AlUla's unique landscape and international profile makes it attractive for high-value independent professionals on short and medium-term project engagements.</div>
+      </div>
+
+    </div>
+
+    <!-- KAM CTA -->
+    <div class="reveal" style="margin-top:3rem;background:rgba(212,168,83,.07);border:1.5px solid rgba(212,168,83,.22);border-radius:20px;padding:2.5rem;max-width:820px;margin-left:auto;margin-right:auto;text-align:center;">
+      <div style="font-size:.65rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.85rem;">Northwest KSA · Executive Onboarding</div>
+      <h3 style="color:#fff;font-size:1.35rem;font-weight:800;margin-bottom:.85rem;line-height:1.4;">Bypass local administrative and logistical friction in the Northwest.</h3>
+      <p style="color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.8;max-width:620px;margin:0 auto 1.75rem;">Secure a dedicated Key Account Manager for flawless executive housing, licensing, and white-glove onboarding. We coordinate across RCU contractor networks, Muqeem, GOSI, and Arabic-only government interfaces — so you arrive operational, not buried in paperwork.</p>
+      <a href="/services/index" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--gold,#D4A853);color:var(--navy,#1B2A4A);font-weight:800;font-size:.92rem;padding:1rem 2rem;border-radius:100px;text-decoration:none;transition:all .3s;box-shadow:0 4px 24px rgba(212,168,83,.3);">Deploy Enterprise Operations via Flawless Nordic-Standard Onboarding →</a>
+    </div>
+
   </div>
 </section>
 
