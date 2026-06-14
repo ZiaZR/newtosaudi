@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google Analytics GA4 — replace G-FJ55450PS2 with your Measurement ID from analytics.google.com -->
@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/assets/css/site.css?v=2">
   <script src="/assets/js/site.js" defer></script>
   <style>
+    /* ── Hero ── */
     .page-hero{background:linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);padding:calc(var(--nav-h,80px) + 4.5rem) 0 3.5rem;position:relative;overflow:hidden}
     .page-hero::before{content:'';position:absolute;inset:0;z-index:1;opacity:.055;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
     .page-hero .container{position:relative;z-index:2}
@@ -28,58 +29,115 @@
     .page-hero__eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px}
     .page-hero h1{color:#fff;margin-bottom:.9rem}
     .page-hero p{color:rgba(255,255,255,.65);max-width:580px;line-height:1.75}
-    .s-cream{background:var(--cream,#F2EEE5);padding:5.5rem 0}
-    .s-white{background:#fff;padding:5.5rem 0}
-    .s-dark{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
-    .s-dark::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
-    .s-dark .container{position:relative;z-index:2}
-    .sec-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
-    .sec-eyebrow::before{content:'';width:22px;height:1.5px;background:var(--gold);border-radius:1px}
-    .sec-title{font-size:2rem;color:var(--navy,#1B2A4A);margin-bottom:.85rem}
-    .sec-lead{font-size:1.05rem;color:var(--text-gray,#666);line-height:1.75;max-width:620px;margin-bottom:2.5rem}
-    .guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
-    .guide-card{background:#fff;border:1.5px solid #E8E4DC;border-radius:18px;padding:2rem;display:flex;flex-direction:column;transition:all .3s}
-    .guide-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 36px rgba(27,42,74,.1)}
-    .guide-card__category{font-size:.65rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-    .guide-card h3{font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:.65rem}
-    .guide-card p{font-size:.84rem;color:#555;line-height:1.65;flex:1;margin-bottom:1.5rem}
-    .guide-card__pages{font-size:.75rem;color:#888;margin-bottom:1rem}
-    .guide-card__btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:700;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:100px;padding:.55rem 1.1rem;transition:all .2s}
-    .guide-card__btn:hover{background:var(--navy);color:#fff}
-    .guide-card__btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
-    .coming-badge{background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.3);color:var(--gold);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:100px;letter-spacing:.08em}
-    .guide-card__tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;background:rgba(212,168,83,.12);color:var(--gold);border:1px solid rgba(212,168,83,.25);margin-bottom:.5rem}
-    /* Procedure deep-dive section */
-    .s-navy{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
-    .s-navy::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
-    .s-navy .container{position:relative;z-index:2}
-    .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
-    .proc-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.09);border-radius:20px;padding:2rem;transition:border-color .3s}
-    .proc-card:hover{border-color:rgba(212,168,83,.35)}
-    .proc-card__eyebrow{font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.75rem}
-    .proc-card h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:1.25rem;line-height:1.3}
-    .proc-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0}
-    .proc-step{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
-    .proc-step:last-child{border-bottom:none}
-    .proc-step__num{min-width:24px;height:24px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.3);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--gold,#D4A853);flex-shrink:0;margin-top:.1rem}
-    .proc-step__body{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6}
-    .proc-step__body strong{color:#fff;display:block;font-size:.85rem;margin-bottom:.15rem}
-    .proc-card__cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;font-size:.8rem;font-weight:700;color:var(--gold,#D4A853);text-decoration:none}
-    .proc-card__cta:hover{opacity:.8}
-    .proc-card__alert{background:rgba(234,88,12,.08);border:1px solid rgba(234,88,12,.2);border-radius:10px;padding:.75rem 1rem;margin-top:1rem;font-size:.78rem;color:#FBBF7A;line-height:1.55}
-    @media(max-width:960px){.proc-grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.proc-grid{grid-template-columns:1fr}.s-navy{padding:3.5rem 0}}
+
+    /* ── Breadcrumb ── */
     .breadcrumb{background:var(--cream);border-bottom:1px solid #E8E4DC}
     .breadcrumb__inner{padding:.85rem 0;font-size:.78rem;color:#888}
     .breadcrumb__inner a{color:#888;text-decoration:none}
     .breadcrumb__sep{margin:0 .5rem;opacity:.5}
+
+    /* ── Section scaffolding ── */
+    .sec-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+    .sec-eyebrow::before{content:'';width:22px;height:1.5px;background:var(--gold);border-radius:1px}
+    .sec-title{font-size:2rem;color:var(--navy,#1B2A4A);margin-bottom:.85rem}
+    .sec-lead{font-size:1.05rem;color:var(--text-gray,#666);line-height:1.75;max-width:640px;margin-bottom:2.75rem}
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
+
+    /* ── Newsletter form (cream NL section) ── */
     .newsletter-form{display:flex;gap:.75rem;max-width:440px;margin:0 auto}
     .newsletter-form input{flex:1;padding:.95rem 1.3rem;border:1.5px solid rgba(255,255,255,.15);border-radius:100px;font-family:inherit;font-size:.9rem;background:rgba(255,255,255,.07);color:#fff;outline:none}
     .newsletter-form input::placeholder{color:rgba(255,255,255,.4)}
-    @media(max-width:860px){.guide-grid{grid-template-columns:1fr 1fr}.s-cream,.s-white,.s-dark{padding:3.5rem 0}}
-    @media(max-width:640px){.guide-grid{grid-template-columns:1fr}.sec-title{font-size:1.55rem}.newsletter-form{flex-direction:column}}
+
+    /* ── Shared card atoms ── */
+    .guide-card__pages{font-size:.74rem;color:#888;margin-bottom:1rem;line-height:1.5}
+    .guide-card__btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.81rem;font-weight:700;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:100px;padding:.5rem 1.05rem;transition:all .2s;align-self:flex-start;margin-top:auto}
+    .guide-card__btn:hover{background:var(--navy);color:#fff}
+    .guide-card__btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+    /* ── Category colour tags ── */
+    .cat-tag{display:inline-block;font-size:.59rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.23rem .68rem;border-radius:100px;margin-bottom:.6rem}
+    .ct-relocation{background:rgba(5,150,105,.09);color:#065F46;border:1px solid rgba(5,150,105,.2)}
+    .ct-budgeting{background:rgba(124,58,237,.08);color:#5B21B6;border:1px solid rgba(124,58,237,.18)}
+    .ct-work{background:rgba(29,78,216,.08);color:#1E40AF;border:1px solid rgba(29,78,216,.18)}
+    .ct-legal{background:rgba(55,65,81,.09);color:#374151;border:1px solid rgba(55,65,81,.22)}
+    .ct-visa{background:rgba(67,56,202,.08);color:#3730A3;border:1px solid rgba(67,56,202,.18)}
+    .ct-business{background:rgba(212,168,83,.14);color:#92640A;border:1px solid rgba(212,168,83,.3)}
+    .ct-freelance{background:rgba(217,119,6,.09);color:#92400E;border:1px solid rgba(217,119,6,.2)}
+    .ct-schools{background:rgba(219,39,119,.07);color:#9D174D;border:1px solid rgba(219,39,119,.18)}
+    .ct-cities{background:rgba(8,145,178,.08);color:#0E7490;border:1px solid rgba(8,145,178,.18)}
+    .ct-banking{background:rgba(6,95,70,.08);color:#065F46;border:1px solid rgba(6,95,70,.18)}
+    .ct-healthcare{background:rgba(220,38,38,.07);color:#991B1B;border:1px solid rgba(220,38,38,.18)}
+    .ct-transport{background:rgba(234,88,12,.08);color:#9A3412;border:1px solid rgba(234,88,12,.18)}
+    .new-badge{display:inline-block;font-size:.55rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .52rem;border-radius:100px;background:rgba(16,185,129,.12);color:#065F46;border:1px solid rgba(16,185,129,.28);margin-left:.45rem;vertical-align:middle}
+
+    /* ── GUIDE SECTION ── */
+    .s-guides{background:var(--cream,#F2EEE5);padding:5.5rem 0}
+
+    /* Row 1 — Hero Duo */
+    .guide-row-hero{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;margin-bottom:1.75rem}
+    .guide-hero-card{background:#1B2A4A;border:1px solid #D4A853;border-radius:20px;padding:2.5rem;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+    .guide-hero-card:hover{transform:translateY(-6px);box-shadow:0 28px 70px rgba(27,42,74,.5),0 8px 24px rgba(212,168,83,.18)}
+    .guide-hero-card .cat-tag{background:rgba(212,168,83,.18);color:#D4A853;border:1px solid rgba(212,168,83,.35)}
+    .guide-hero-card h3{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:.7rem;line-height:1.35}
+    .guide-hero-card p{font-size:.84rem;color:rgba(255,255,255,.68);line-height:1.7;flex:1;margin-bottom:1.25rem}
+    .guide-hero-card .guide-card__pages{color:rgba(255,255,255,.35)}
+    .guide-hero-card .guide-card__btn{color:#D4A853;border-color:rgba(212,168,83,.45)}
+    .guide-hero-card .guide-card__btn:hover{background:#D4A853;color:#1B2A4A;border-color:#D4A853}
+
+    /* Rows 2-4 — Executive Trios */
+    .guide-row-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-bottom:1.75rem}
+    .guide-trio-card{border-radius:18px;padding:2rem;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+    .guide-trio-card h3{font-size:.98rem;font-weight:800;color:var(--navy);margin-bottom:.6rem;line-height:1.35}
+    .guide-trio-card p{font-size:.82rem;color:#484848;line-height:1.65;flex:1;margin-bottom:1.1rem}
+    .guide-trio-card--a{background:#fff;border:1.5px solid #D8D4CC}
+    .guide-trio-card--b{background:#FAF8F5;border:1.5px solid #DDD8CF}
+    .guide-trio-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(27,42,74,.1)}
+
+    /* Row 5 — Closer Duo */
+    .guide-row-closer{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+    .guide-closer-card{background:#fff;border-top:1px solid #E2DDD6;border-right:1px solid #E2DDD6;border-bottom:1px solid #E2DDD6;border-left:4px solid #1B2A4A;border-radius:0 18px 18px 0;padding:2rem;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+    .guide-closer-card h3{font-size:.98rem;font-weight:800;color:var(--navy);margin-bottom:.6rem;line-height:1.35}
+    .guide-closer-card p{font-size:.82rem;color:#484848;line-height:1.65;flex:1;margin-bottom:1.1rem}
+    .guide-closer-card:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(27,42,74,.1)}
+
+    /* ── PROCEDURE TIMELINE SECTION ── */
+    .s-proc-timeline{background:#fff;padding:5.5rem 0;border-top:1px solid #ECEAE4}
+    .proc-tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.25rem;margin-top:2.75rem;align-items:start}
+    .proc-tl-col:nth-child(2){padding-top:3.5rem}
+
+    .proc-tl-card{border-left:4px solid #006C35;border-radius:0 18px 18px 0;padding:2rem 2rem 1.75rem;margin-bottom:2rem;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+    .proc-tl-card:last-child{margin-bottom:0}
+    .proc-tl-card:hover{transform:scale(1.02);box-shadow:0 16px 48px rgba(0,108,53,.12)}
+    .proc-tl-card--white{background:#fff;border-top:1px solid #E0E6E1;border-right:1px solid #E0E6E1;border-bottom:1px solid #E0E6E1}
+    .proc-tl-card--sage{background:#F4F7F5;border-top:1px solid #D4E2D9;border-right:1px solid #D4E2D9;border-bottom:1px solid #D4E2D9}
+    .proc-tl-card__eyebrow{font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#006C35;margin-bottom:.6rem}
+    .proc-tl-card h3{font-size:.98rem;font-weight:800;color:var(--navy,#1B2A4A);margin-bottom:1rem;line-height:1.3}
+    .proc-tl-steps{list-style:none;padding:0;margin:0}
+    .proc-tl-step{display:flex;gap:.8rem;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+    .proc-tl-step:last-child{border-bottom:none}
+    .proc-tl-num{min-width:24px;height:24px;border-radius:50%;background:rgba(0,108,53,.11);border:1.5px solid rgba(0,108,53,.24);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;color:#006C35;flex-shrink:0;margin-top:.1rem}
+    .proc-tl-body{font-size:.81rem;color:#444;line-height:1.6}
+    .proc-tl-body strong{color:var(--navy,#1B2A4A);display:block;font-size:.84rem;margin-bottom:.12rem}
+    .proc-tl-cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.2rem;font-size:.79rem;font-weight:700;color:#006C35;text-decoration:none}
+    .proc-tl-cta:hover{opacity:.75}
+    .proc-tl-alert{background:rgba(234,88,12,.07);border:1px solid rgba(234,88,12,.18);border-radius:10px;padding:.7rem .95rem;margin-top:1rem;font-size:.76rem;color:#92400E;line-height:1.55}
+
+    /* ── Responsive ── */
+    @media(max-width:1024px){
+      .guide-row-trio{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:768px){
+      .guide-row-hero,.guide-row-trio,.guide-row-closer,.proc-tl-grid{grid-template-columns:1fr}
+      .proc-tl-col:nth-child(2){padding-top:0}
+      .s-guides,.s-proc-timeline{padding:3.5rem 0}
+    }
+    @media(max-width:640px){
+      .sec-title{font-size:1.55rem}
+      .guide-hero-card{padding:1.75rem}
+      .guide-trio-card,.guide-closer-card,.proc-tl-card{padding:1.5rem}
+      .newsletter-form{flex-direction:column}
+    }
   </style>
 </head>
 <body>
@@ -260,7 +318,7 @@
   <div class="container">
     <div class="page-hero__eyebrow">Resources · Guides</div>
     <h1>Downloadable Guides &amp; Resources</h1>
-      <p class="article-byline" style="font-size:.76rem;color:rgba(255,255,255,.45);margin:.55rem 0 0;letter-spacing:.02em;font-weight:500">By <strong style="color:rgba(255,255,255,.65)">NewToSaudi Editorial Team</strong></p>
+    <p class="article-byline" style="font-size:.76rem;color:rgba(255,255,255,.45);margin:.55rem 0 0;letter-spacing:.02em;font-weight:500">By <strong style="color:rgba(255,255,255,.65)">NewToSaudi Editorial Team</strong></p>
     <p>Free reference guides covering every aspect of moving to and living in Saudi Arabia. Built for expats, by expats.</p>
   </div>
 </section>
@@ -273,78 +331,23 @@
   </div>
 </div>
 
-<section class="s-cream">
+<!-- ═══════════════════════════════════════════
+     GUIDE LIBRARY — ASYMMETRIC 5-ROW GRID
+════════════════════════════════════════════ -->
+<section class="s-guides">
   <div class="container">
     <div class="reveal">
       <div class="sec-eyebrow">Complete Guides</div>
       <h2 class="sec-title">All Guides &amp; Reference Resources</h2>
       <p class="sec-lead">13 guides covering every dimension of expat life in Saudi Arabia — from Iqama and labour law to healthcare, housing, driving, and taxation. Each guide distils the full depth of the corresponding site section into a scannable reference. Print-friendly and shareable with HR or family.</p>
     </div>
-    <div class="guide-grid reveal">
 
-      <!-- 1 RELOCATION CHECKLIST -->
-      <div class="guide-card">
-        <div class="guide-card__category">Relocation</div>
-        <h3>The Complete Saudi Arabia Relocation Checklist</h3>
-        <p>Every document, every step, from job acceptance to your first 30 days. Covers GAMCA pre-arrival medical screening (SAR 200–400, TB/HIV/HepB, 3-month validity), apostille + Saudi Embassy attestation chain (6–14 weeks total), UK PCC via ACRO (4–6 weeks), US FBI background check (8–12 weeks), SFDA drug registry for medications, pet transport (6–8 weeks min, $500–2,000+), and the STC/Mobily/Zain SIM card setup on arrival.</p>
-        <div class="guide-card__pages">Covers: GAMCA, apostille chain, Iqama process, SFDA drugs, pet transport, telecoms</div>
-        <a href="/relocate/documents-checklist" class="guide-card__btn">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          View Checklist
-        </a>
-      </div>
+    <!-- ── ROW 1: HERO DUO — MISA / Investor guides ── -->
+    <div class="guide-row-hero reveal">
 
-      <!-- 2 COST OF LIVING -->
-      <div class="guide-card">
-        <div class="guide-card__category">Budgeting</div>
-        <h3>Saudi Arabia Cost of Living Guide</h3>
-        <p>City-by-city budget breakdowns in SAR. Studio apartments: Riyadh SAR 1,800–2,800/mo, Jeddah SAR 2,000–3,200/mo, Dammam SAR 1,500–2,500/mo. Petrol at SAR 0.91/litre (91 octane). Internet fibre 200Mbps: SAR 199–249/month. Domestic helper: SAR 1,200–2,500/month. The critical hidden cost: a 6% remittance levy on all international transfers by non-Saudi residents. SAR is pegged to USD at 3.75 — no currency risk on the Saudi side.</p>
-        <div class="guide-card__pages">Covers: housing by city, petrol, internet, remittance levy, domestic help, SAR/USD peg</div>
-        <a href="/relocate/cost-of-living" class="guide-card__btn">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-          View Guide
-        </a>
-      </div>
-
-      <!-- 3 SALARY GUIDE -->
-      <div class="guide-card">
-        <div class="guide-card__category">Work</div>
-        <h3>Saudi Arabia Salary &amp; Package Guide</h3>
-        <p>Benchmarks across 12 sectors: Oil &amp; Gas engineer SAR 18k–80k+/mo, IT engineer SAR 12k–60k, physician SAR 22k–90k+, teacher SAR 8k–38k, construction PM SAR 15k–65k. Packages include 25% housing allowance, 15% transport, 2x annual flights, mandatory health insurance, and up to SAR 120k/yr per child in school allowance. 0% income tax — but factor in the 6% expat remittance levy when comparing with home-country salary.</p>
-        <div class="guide-card__pages">Covers: 12 industry benchmarks, allowances, school allowance, remittance levy, UK/US comparison</div>
-        <a href="/work/salary-guide" class="guide-card__btn">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          View Guide
-        </a>
-      </div>
-
-      <!-- 4 LABOUR LAW -->
-      <div class="guide-card">
-        <div class="guide-card__category">Legal</div>
-        <h3>Saudi Labour Law for Expats</h3>
-        <p>Your rights under Royal Decree M/51. Probation max 90 days (extendable to 180 by written agreement). Annual leave: 21 days/yr, 30 days after 5 years. Sick leave: 30 days full pay, 60 days at 75%, 30 days unpaid. Overtime: 150% of hourly rate. End-of-service gratuity (EOSG): 0.5 month/yr for years 2–5, 1 month/yr thereafter — calculated on basic salary only. If a fixed-term contract is renewed twice it automatically becomes indefinite. Wage Protection System (WPS): delayed salary triggers an instant MHRSD flag and work-permit freeze.</p>
-        <div class="guide-card__pages">Covers: probation, leave, sick pay, overtime 150%, EOSG, WPS, 4-step dispute resolution</div>
-        <a href="/work/labour-law" class="guide-card__btn">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          View Guide
-        </a>
-      </div>
-
-      <!-- 5 VISA TYPES -->
-      <div class="guide-card">
-        <div class="guide-card__category">Visa</div>
-        <h3>Saudi Arabia Visa &amp; Residency Guide</h3>
-        <p>Post-2021 Kafala reforms changed everything: most workers can transfer employers freely after 12 months via Qiwa, and exit/re-entry visas are no longer required for most employees. Dependent Iqama costs SAR 100–400/person/year; sponsoring dependents requires min SAR 4,000/month salary. Premium Residency: SAR 800,000 permanent or SAR 100,000/year. Investor Visa via MISA renewable alongside Commercial Registration (CR). 100% foreign-owned companies now permitted in most sectors.</p>
-        <div class="guide-card__pages">Covers: Kafala reforms, job transfer, dependent costs, Premium Residency, Investor Visa, 100% foreign ownership</div>
-        <a href="/work/work-visa" class="guide-card__btn">
-          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          View Guide
-        </a>
-      </div>
-
-      <!-- 6 BUSINESS SETUP -->
-      <div class="guide-card">
-        <div class="guide-card__category">Business</div>
+      <!-- CARD 6: Starting a Business -->
+      <div class="guide-hero-card">
+        <span class="cat-tag">Business &amp; Investment</span>
         <h3>Starting a Business in Saudi Arabia</h3>
         <p>MISA investment licence → Commercial Registration (CR) → LLC, branch, or Regional HQ (RHQ) structure. Corporate income tax: 20% on foreign-entity share; Saudi-owned portion pays 2.5% Zakat instead. Withholding tax: 5% dividends/interest, 15% royalties, 20% management fees. Real Estate Transaction Tax (RETT): 5%. Saudi Arabia has 50+ double-tax treaties. Nitaqat/Saudisation: construction 6% Saudi minimum, retail/hospitality 20–30%, tech/professional 15–25%. GOSI mandatory; WPS salary system enforced.</p>
         <div class="guide-card__pages">Covers: MISA, CR, RHQ, CIT 20%, Zakat 2.5%, WHT, RETT 5%, Nitaqat, GOSI, ZATCA/VAT</div>
@@ -354,9 +357,79 @@
         </a>
       </div>
 
-      <!-- 7 IQAMA GUIDE -->
-      <div class="guide-card">
-        <div class="guide-card__category">Work</div>
+      <!-- CARD 5: Visa & Residency -->
+      <div class="guide-hero-card">
+        <span class="cat-tag">Visa &amp; Residency</span>
+        <h3>Saudi Arabia Visa &amp; Residency Guide</h3>
+        <p>Post-2021 Kafala reforms changed everything: most workers can transfer employers freely after 12 months via Qiwa, and exit/re-entry visas are no longer required for most employees. Dependent Iqama costs SAR 100–400/person/year; sponsoring dependents requires min SAR 4,000/month salary. Premium Residency: SAR 800,000 permanent or SAR 100,000/year. Investor Visa via MISA renewable alongside Commercial Registration (CR). 100% foreign-owned companies now permitted in most sectors.</p>
+        <div class="guide-card__pages">Covers: Kafala reforms, job transfer, dependent costs, Premium Residency, Investor Visa, 100% foreign ownership</div>
+        <a href="/work/work-visa" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          View Guide
+        </a>
+      </div>
+
+    </div><!-- /guide-row-hero -->
+
+    <!-- ── ROW 2: TRIO A (white) — Relocation, Budget, Salary ── -->
+    <div class="guide-row-trio reveal">
+
+      <!-- CARD 1: Relocation Checklist -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-relocation">Relocation</span>
+        <h3>The Complete Saudi Arabia Relocation Checklist</h3>
+        <p>Every document, every step, from job acceptance to your first 30 days. Covers GAMCA pre-arrival medical screening (SAR 200–400, TB/HIV/HepB, 3-month validity), apostille + Saudi Embassy attestation chain (6–14 weeks total), UK PCC via ACRO (4–6 weeks), US FBI background check (8–12 weeks), SFDA drug registry for medications, pet transport (6–8 weeks min, $500–2,000+), and the STC/Mobily/Zain SIM card setup on arrival.</p>
+        <div class="guide-card__pages">Covers: GAMCA, apostille chain, Iqama process, SFDA drugs, pet transport, telecoms</div>
+        <a href="/relocate/documents-checklist" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          View Checklist
+        </a>
+      </div>
+
+      <!-- CARD 2: Cost of Living -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-budgeting">Budgeting</span>
+        <h3>Saudi Arabia Cost of Living Guide</h3>
+        <p>City-by-city budget breakdowns in SAR. Studio apartments: Riyadh SAR 1,800–2,800/mo, Jeddah SAR 2,000–3,200/mo, Dammam SAR 1,500–2,500/mo. Petrol at SAR 0.91/litre (91 octane). Internet fibre 200Mbps: SAR 199–249/month. Domestic helper: SAR 1,200–2,500/month. The critical hidden cost: a 6% remittance levy on all international transfers by non-Saudi residents. SAR is pegged to USD at 3.75 — no currency risk on the Saudi side.</p>
+        <div class="guide-card__pages">Covers: housing by city, petrol, internet, remittance levy, domestic help, SAR/USD peg</div>
+        <a href="/relocate/cost-of-living" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          View Guide
+        </a>
+      </div>
+
+      <!-- CARD 3: Salary Guide -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-work">Work</span>
+        <h3>Saudi Arabia Salary &amp; Package Guide</h3>
+        <p>Benchmarks across 12 sectors: Oil &amp; Gas engineer SAR 18k–80k+/mo, IT engineer SAR 12k–60k, physician SAR 22k–90k+, teacher SAR 8k–38k, construction PM SAR 15k–65k. Packages include 25% housing allowance, 15% transport, 2x annual flights, mandatory health insurance, and up to SAR 120k/yr per child in school allowance. 0% income tax — but factor in the 6% expat remittance levy when comparing with home-country salary.</p>
+        <div class="guide-card__pages">Covers: 12 industry benchmarks, allowances, school allowance, remittance levy, UK/US comparison</div>
+        <a href="/work/salary-guide" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          View Guide
+        </a>
+      </div>
+
+    </div><!-- /guide-row-trio row2 -->
+
+    <!-- ── ROW 3: TRIO B (warm sand) — Legal, Iqama, Freelance ── -->
+    <div class="guide-row-trio reveal">
+
+      <!-- CARD 4: Labour Law -->
+      <div class="guide-trio-card guide-trio-card--b">
+        <span class="cat-tag ct-legal">Legal</span>
+        <h3>Saudi Labour Law for Expats</h3>
+        <p>Your rights under Royal Decree M/51. Probation max 90 days (extendable to 180 by written agreement). Annual leave: 21 days/yr, 30 days after 5 years. Sick leave: 30 days full pay, 60 days at 75%, 30 days unpaid. Overtime: 150% of hourly rate. End-of-service gratuity (EOSG): 0.5 month/yr for years 2–5, 1 month/yr thereafter — calculated on basic salary only. If a fixed-term contract is renewed twice it automatically becomes indefinite. Wage Protection System (WPS): delayed salary triggers an instant MHRSD flag and work-permit freeze.</p>
+        <div class="guide-card__pages">Covers: probation, leave, sick pay, overtime 150%, EOSG, WPS, 4-step dispute resolution</div>
+        <a href="/work/labour-law" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Guide
+        </a>
+      </div>
+
+      <!-- CARD 7: Iqama Guide -->
+      <div class="guide-trio-card guide-trio-card--b">
+        <span class="cat-tag ct-work">Work</span>
         <h3>The Complete Iqama Guide</h3>
         <p>You enter Saudi Arabia on a 90-day work visa — the clock starts immediately. Employer applies for Iqama within that window; GAMCA medical screening (blood + chest X-ray) required first. Annual Iqama renewal fee: SAR 650 paid by employer. Overstay fine: SAR 100/day — track via Absher app. Link your Iqama to Absher immediately to unlock Nafath digital ID, exit permits, and dependent Iqama applications. Kafala 2021: free job transfer via Qiwa after 12 months. Premium Residency upgrade from SAR 100,000/year.</p>
         <div class="guide-card__pages">Covers: 90-day entry clock, GAMCA, Iqama issuance, renewal SAR 650, fines, Kafala, Absher/Nafath</div>
@@ -366,9 +439,9 @@
         </a>
       </div>
 
-      <!-- 8 FREELANCE -->
-      <div class="guide-card">
-        <div class="guide-card__category">Freelance</div>
+      <!-- CARD 8: Freelancing -->
+      <div class="guide-trio-card guide-trio-card--b">
+        <span class="cat-tag ct-freelance">Freelance</span>
         <h3>Freelancing &amp; Independent Business in KSA</h3>
         <p>Qiwa freelance permit (Tasaheel) via MHRSD — requires a valid Iqama and an approved NEC (National Employment Code) category (40+ sectors: IT, consulting, creative, education). Fee: SAR 400–2,000/yr by sector, permit issued instantly. Sole proprietorship (Muassasa) available as next step. VAT: mandatory registration at SAR 375,000 annual turnover (voluntary from SAR 187,500). All invoices must be Fatoorah-compliant e-invoices. Remote Work Visa: USD 650/year — alternative for non-residents. Dependent visa holders working without a permit risk deportation.</p>
         <div class="guide-card__pages">Covers: Qiwa/Tasaheel permit, NEC codes, Muassasa, VAT threshold, Fatoorah, Remote Work Visa</div>
@@ -378,9 +451,14 @@
         </a>
       </div>
 
-      <!-- 9 SCHOOLS -->
-      <div class="guide-card">
-        <div class="guide-card__category">Schools</div>
+    </div><!-- /guide-row-trio row3 -->
+
+    <!-- ── ROW 4: TRIO A (white) — Schools, Cities, Banking ── -->
+    <div class="guide-row-trio reveal">
+
+      <!-- CARD 9: Schools -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-schools">Schools</span>
         <h3>International Schools in Saudi Arabia</h3>
         <p>Annual fee ranges: British SAR 55–85k, American SAR 50–80k, IB SAR 45–75k, French SAR 35–55k, CBSE/ICSE SAR 12–35k. Top schools (BISR, AISR, Dhahran Academy) have 2+ year waitlists — apply the moment your job offer is confirmed. CAT4 cognitive test via GL Education required by most British and IB schools. Full attestation pipeline: Notary → MoFA → Saudi Embassy → Saudi MOFA → Noor portal (5-document submission). Vision 2030: 40+ new licences and 35,000 new seats being added. RCRC corporate pathways for employer-sponsored placements.</p>
         <div class="guide-card__pages">Covers: British/American/IB/French/CBSE fees, CAT4, 6-step attestation pipeline, Noor, RCRC, Vision 2030</div>
@@ -390,9 +468,9 @@
         </a>
       </div>
 
-      <!-- 10 CITIES -->
-      <div class="guide-card">
-        <div class="guide-card__category">Cities</div>
+      <!-- CARD 10: Cities -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-cities">Cities</span>
         <h3>Saudi Arabia City Guides for Expats</h3>
         <p>Six cities covered in depth. Riyadh: Diplomatic Quarter + Al Hamra compounds, Riyadh Metro (6 lines, 85 stations, opened 2024). Jeddah: Red Sea lifestyle, Al-Andalus and Obhur compounds, liberal social atmosphere. Dammam/Eastern Province: oil &amp; gas hub, King Fahad Children's Hospital. Abha: Asir Highlands, 15–25°C year-round, Saudi Arabia's coolest expat posting. AlUla: heritage tourism, Hegra UNESCO site. NEOM: futuristic megacity, Hisma Desert — the Kingdom's boldest infrastructure project.</p>
         <div class="guide-card__pages">Covers: Riyadh Metro, Jeddah Red Sea, Dammam Eastern Province, Abha highlands, AlUla Hegra, NEOM</div>
@@ -402,9 +480,9 @@
         </a>
       </div>
 
-      <!-- 11 BANKING -->
-      <div class="guide-card">
-        <div class="guide-card__category">Banking</div>
+      <!-- CARD 11: Banking -->
+      <div class="guide-trio-card guide-trio-card--a">
+        <span class="cat-tag ct-banking">Banking</span>
         <h3>Banking for Expats in Saudi Arabia</h3>
         <p>Top banks for expats: Al Rajhi (largest Islamic bank), Saudi National Bank (SNB), and Riyad Bank — all offer English-language apps and expat onboarding. Before your Iqama arrives, use STC Pay prepaid card as a functional alternative for day-to-day spending. Mada (debit) and Apple Pay accepted almost universally. Key cost: 6% remittance levy on international transfers made by non-Saudi residents — factor this into your package negotiation. SAMA-regulated sector means strong consumer protections.</p>
         <div class="guide-card__pages">Covers: Al Rajhi/SNB/Riyad Bank, STC Pay prepaid, Mada/Apple Pay, 6% remittance levy, SAMA</div>
@@ -414,10 +492,14 @@
         </a>
       </div>
 
-      <!-- 12 HEALTHCARE — NEW -->
-      <div class="guide-card">
-        <div class="guide-card__tag">New</div>
-        <div class="guide-card__category">Healthcare</div>
+    </div><!-- /guide-row-trio row4 -->
+
+    <!-- ── ROW 5: CLOSER DUO — Healthcare & Transport (lifestyle/mobility) ── -->
+    <div class="guide-row-closer reveal">
+
+      <!-- CARD 12: Healthcare -->
+      <div class="guide-closer-card">
+        <span class="cat-tag ct-healthcare">Healthcare <span class="new-badge">New</span></span>
         <h3>Healthcare &amp; Medical Insurance in KSA</h3>
         <p>CCHI-mandated private health insurance is compulsory from day one — negotiate family coverage before signing your contract. Class A insurers: Bupa Arabia and Tawuniya (widely accepted at both public and private hospitals). Pre-authorisation for specialist referrals typically takes 1–3 weeks. Pediatric emergency: HMG Olaya Medical Complex offers 24/7 English-speaking care. For autism and ABA therapy, Canopy ABA (Riyadh) and Hope Center (Riyadh + Jeddah) have waitlists of 6–14 weeks — apply immediately on arrival. Healthcare professionals need Dataflow credential verification before licensing.</p>
         <div class="guide-card__pages">Covers: CCHI, Bupa Arabia, Tawuniya, HMG Olaya, pediatric ER, ABA therapy, Dataflow, SFDA</div>
@@ -427,10 +509,9 @@
         </a>
       </div>
 
-      <!-- 13 TRANSPORT — NEW -->
-      <div class="guide-card">
-        <div class="guide-card__tag">New</div>
-        <div class="guide-card__category">Transport</div>
+      <!-- CARD 13: Transport -->
+      <div class="guide-closer-card">
+        <span class="cat-tag ct-transport">Transport <span class="new-badge">New</span></span>
         <h3>Driving &amp; Getting Around Saudi Arabia</h3>
         <p>Saudi Arabia is car-centric — most expats buy or lease within the first month. Convert your foreign licence at a Muroor service centre via Absher (UK, US, EU, GCC, India, Pakistan accepted; no driving test required; fee SAR 250–450; valid 5 years). Do not drive on a foreign licence once your Iqama is issued — it invalidates insurance. Riyadh Metro: 6 lines, 85 stations, SAR 4–16/journey (opened 2024). Uber &amp; Careem: excellent coverage across all major cities. Domestic flights from SAR 69. Haramain High Speed Rail: Jeddah to Mecca in 30 minutes. Car insurance comprehensive: SAR 2,500–6,000/year.</p>
         <div class="guide-card__pages">Covers: licence conversion, Riyadh Metro, Uber/Careem, Haramain Rail, domestic flights, car insurance</div>
@@ -440,199 +521,214 @@
         </a>
       </div>
 
-    </div>
+    </div><!-- /guide-row-closer -->
+
   </div>
 </section>
 
-<section class="s-navy">
+<!-- ═══════════════════════════════════════════
+     PROCEDURE TIMELINE — STAGGERED 2-COLUMN
+════════════════════════════════════════════ -->
+<section class="s-proc-timeline">
   <div class="container">
     <div class="reveal">
-      <div class="sec-eyebrow" style="color:var(--gold);">Procedure Deep-Dives</div>
-      <h2 class="sec-title" style="color:#fff;">Step-by-Step Process Guides</h2>
-      <p class="sec-lead" style="color:rgba(255,255,255,.55);">Six of the most operationally complex processes in Saudi expat life — from Iqama application and school enrollment to labour disputes, tax compliance, and housing setup — broken into clear, sequenced steps so nothing falls through the cracks.</p>
+      <div class="sec-eyebrow">Procedure Deep-Dives</div>
+      <h2 class="sec-title">Step-by-Step Process Guides</h2>
+      <p class="sec-lead">Six of the most operationally complex processes in Saudi expat life — from Iqama application and school enrollment to labour disputes, tax compliance, and housing setup — broken into clear, sequenced steps so nothing falls through the cracks.</p>
     </div>
-    <div class="proc-grid reveal">
 
-      <!-- IQAMA PROCESS -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Residency · Work</div>
-        <h3>Iqama Application &amp; Annual Renewal</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>90-Day Work Visa Entry</strong>Employer applies for a block visa from MHRSD. You enter on a work visa — the 90-day Iqama clock starts from the date of entry. Do not miss this window.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>GAMCA Medical &amp; Biometrics</strong>Mandatory screening (blood panel, chest X-ray) at a MOH/GAMCA-approved clinic — SAR 200–400, valid 3 months. Fingerprints captured via Jawazat. TB, HIV, and Hepatitis B results affect eligibility.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Iqama Issued — SAR 650/yr</strong>Employer pays the annual fee. Card issued within 2–4 weeks. Your Iqama number is your civil ID across all Saudi government portals, banks, and utilities.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>Link to Absher + Nafath</strong>Register at absher.sa immediately — unlocks Nafath digital ID, exit/re-entry permits, dependent Iqama applications, and traffic fine payment.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">5</div>
-            <div class="proc-step__body"><strong>Annual Renewal</strong>Overstay fine: SAR 100/day. Employer typically handles — but confirm with HR 60 days before expiry. Track renewal status in the Absher app.</div>
-          </li>
-        </ul>
-        <div class="proc-card__alert">⚠ Kafala 2021 reform: free job transfer without employer consent after 12 months. Initiate via Qiwa platform — no paper process required.</div>
-        <a href="/work/iqama-guide" class="proc-card__cta">Full Iqama Guide →</a>
-      </div>
+    <div class="proc-tl-grid reveal">
 
-      <!-- SCHOOL ATTESTATION PIPELINE -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Education · Families</div>
-        <h3>International School Enrollment — Attestation Pipeline</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>Apply Early — 6–18 Months Ahead</strong>BISR, AISR, Dhahran Academy have 2+ year waitlists. Apply the moment your job offer is signed. Fee ranges: British SAR 55–85k/yr, American SAR 50–80k, IB SAR 45–75k, CBSE/ICSE SAR 12–35k.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>CAT4 Assessment</strong>Most British and IB schools require the CAT4 cognitive abilities test via GL Education. Some administer on-campus; others accept results from licensed centres in your home country.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Notarise Documents</strong>Birth certificate + last 2 years' school reports notarised by a certified notary in your home country. Start at least 3 months before the intended school start date.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>MoFA Apostille (4–8 weeks)</strong>Your home country's Ministry of Foreign Affairs stamps the Apostille (Hague Convention) or equivalent for non-Hague countries. Non-Hague documents need full legalisation — add 4–6 weeks.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">5</div>
-            <div class="proc-step__body"><strong>Saudi Embassy Counter-Stamp (2–6 weeks)</strong>Final legalisation at the Saudi Embassy/Consulate in your home country. Without this, schools cannot register in Noor. Total apostille-to-embassy timeline: 6–14 weeks.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">6</div>
-            <div class="proc-step__body"><strong>Noor Portal Registration</strong>School submits: attested birth certificate, parent Iqama, Saudi EPI vaccination record, and placement letter. Missing any single document delays enrollment by 4–8 weeks.</div>
-          </li>
-        </ul>
-        <a href="/life/schools-education" class="proc-card__cta">Full Schools Guide →</a>
-      </div>
+      <!-- LEFT COLUMN: Iqama → Qiwa Freelance → Housing -->
+      <div class="proc-tl-col">
 
-      <!-- QIWA FREELANCE PERMIT -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Freelance · Business</div>
-        <h3>Qiwa Freelance Permit — Step-by-Step</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>Confirm Eligibility</strong>Must hold a valid Iqama. Your profession must appear in an approved NEC (National Employment Code) category on qiwa.sa — 40+ sectors including IT, consulting, design, education, translation.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>Log into Qiwa via Absher</strong>Access qiwa.sa with your Absher credentials. Navigate to "Freelance Work." Select the exact NEC code matching your profession — wrong selection causes rejection and requires re-application.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Pay Annual Fee</strong>SAR 400–2,000 depending on sector. Paid via Mada or credit card. Permit number issued instantly on successful payment — save this for all invoices.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>VAT Registration via ZATCA</strong>Mandatory if annual turnover exceeds SAR 375,000. Voluntary registration available from SAR 187,500. Register at zatca.gov.sa — you'll need CR or freelance permit number.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">5</div>
-            <div class="proc-step__body"><strong>Issue Fatoorah-Compliant Invoices</strong>All invoices must include your permit number and VAT number (if registered). Use ZATCA-certified e-invoicing software. Renew permit annually — lapsed permit blocks all government services.</div>
-          </li>
-        </ul>
-        <div class="proc-card__alert">⚠ Dependent visa holders risk deportation if working without a permit. Remote Work Visa (USD 650/yr) is the legal path for non-resident remote workers.</div>
-        <a href="/work/freelance-business" class="proc-card__cta">Full Freelance Guide →</a>
-      </div>
+        <!-- Iqama — white -->
+        <div class="proc-tl-card proc-tl-card--white">
+          <div class="proc-tl-card__eyebrow">Residency · Work</div>
+          <h3>Iqama Application &amp; Annual Renewal</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>90-Day Work Visa Entry</strong>Employer applies for a block visa from MHRSD. You enter on a work visa — the 90-day Iqama clock starts from the date of entry. Do not miss this window.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>GAMCA Medical &amp; Biometrics</strong>Mandatory screening (blood panel, chest X-ray) at a MOH/GAMCA-approved clinic — SAR 200–400, valid 3 months. Fingerprints captured via Jawazat. TB, HIV, and Hepatitis B results affect eligibility.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Iqama Issued — SAR 650/yr</strong>Employer pays the annual fee. Card issued within 2–4 weeks. Your Iqama number is your civil ID across all Saudi government portals, banks, and utilities.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>Link to Absher + Nafath</strong>Register at absher.sa immediately — unlocks Nafath digital ID, exit/re-entry permits, dependent Iqama applications, and traffic fine payment.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">5</div>
+              <div class="proc-tl-body"><strong>Annual Renewal</strong>Overstay fine: SAR 100/day. Employer typically handles — but confirm with HR 60 days before expiry. Track renewal status in the Absher app.</div>
+            </li>
+          </ul>
+          <div class="proc-tl-alert">⚠ Kafala 2021 reform: free job transfer without employer consent after 12 months. Initiate via Qiwa platform — no paper process required.</div>
+          <a href="/work/iqama-guide" class="proc-tl-cta">Full Iqama Guide →</a>
+        </div>
 
-      <!-- LABOUR DISPUTE RESOLUTION -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Legal · Rights</div>
-        <h3>Resolving a Labour Dispute in Saudi Arabia</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>File a Qiwa Complaint</strong>Submit your complaint at qiwa.sa. Your employer has 21 days to respond through the platform. Most salary disputes are flagged automatically by the Wage Protection System (WPS).</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>MHRSD Mediation (21 days)</strong>If the Qiwa complaint is unresolved, the Ministry of Human Resources schedules a mediation session within 21 days. The majority of disputes settle here — attendance is mandatory for both parties.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Labour Court</strong>Failed mediation escalates to the Labour Courts. Proceedings are in Arabic — retain a licensed legal representative. Keep all employment contracts, payslips, and written communications as evidence.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>Court of Appeals</strong>Labour Court decisions can be appealed within 30 days of judgment. Arbitrary dismissal compensation: 2 months' salary per year of service, over and above EOSG. Employees cannot be dismissed during sick leave or maternity leave.</div>
-          </li>
-        </ul>
-        <div class="proc-card__alert">⚠ WPS creates an automatic salary payment record. MHRSD can access WPS data directly — unpaid salary is among the easiest claims to prove. Keep digital copies of everything.</div>
-        <a href="/work/labour-law" class="proc-card__cta">Full Labour Law Guide →</a>
-      </div>
+        <!-- Qiwa Freelance — sage -->
+        <div class="proc-tl-card proc-tl-card--sage">
+          <div class="proc-tl-card__eyebrow">Freelance · Business</div>
+          <h3>Qiwa Freelance Permit — Step-by-Step</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>Confirm Eligibility</strong>Must hold a valid Iqama. Your profession must appear in an approved NEC (National Employment Code) category on qiwa.sa — 40+ sectors including IT, consulting, design, education, translation.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>Log into Qiwa via Absher</strong>Access qiwa.sa with your Absher credentials. Navigate to "Freelance Work." Select the exact NEC code matching your profession — wrong selection causes rejection and requires re-application.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Pay Annual Fee</strong>SAR 400–2,000 depending on sector. Paid via Mada or credit card. Permit number issued instantly on successful payment — save this for all invoices.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>VAT Registration via ZATCA</strong>Mandatory if annual turnover exceeds SAR 375,000. Voluntary registration available from SAR 187,500. Register at zatca.gov.sa — you'll need CR or freelance permit number.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">5</div>
+              <div class="proc-tl-body"><strong>Issue Fatoorah-Compliant Invoices</strong>All invoices must include your permit number and VAT number (if registered). Use ZATCA-certified e-invoicing software. Renew permit annually — lapsed permit blocks all government services.</div>
+            </li>
+          </ul>
+          <div class="proc-tl-alert">⚠ Dependent visa holders risk deportation if working without a permit. Remote Work Visa (USD 650/yr) is the legal path for non-resident remote workers.</div>
+          <a href="/work/freelance-business" class="proc-tl-cta">Full Freelance Guide →</a>
+        </div>
 
-      <!-- TAX & VAT COMPLIANCE -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Business · Taxation</div>
-        <h3>Saudi Arabia Tax &amp; VAT Compliance Pipeline</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>Establish Your Tax Exposure</strong>Individuals: 0% income tax. Foreign-owned companies: 20% Corporate Income Tax (CIT). Saudi-owned portion: 2.5% Zakat. Real estate transactions: 5% RETT. Check if your home country has a DTAA with Saudi Arabia — 50+ countries covered.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>VAT Registration via ZATCA</strong>VAT at 15% (raised from 5% in July 2020). Mandatory registration when taxable supplies exceed SAR 375,000/yr; voluntary from SAR 187,500. Register at zatca.gov.sa with your CR or freelance permit.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Fatoorah E-Invoicing</strong>All B2B invoices must be issued via ZATCA-certified e-invoicing software (Fatoorah). Phase 1 (generation) is live; Phase 2 (real-time ZATCA integration) is rolling out by sector. Non-compliant invoices are not deductible.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>Withholding Tax (WHT) Filing</strong>When your Saudi entity pays a non-resident: deduct WHT at source (dividends 5%, royalties 15%, management fees 20%) and remit to ZATCA within 10 days of the payment month-end.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">5</div>
-            <div class="proc-step__body"><strong>Remittance Levy — Plan Ahead</strong>Non-Saudi individuals sending money abroad pay a 6% levy on transfer value. Some employers gross up salaries to offset this. Negotiate a remittance allowance or structure more spending in-country (rent, schools) to reduce the taxable transfer amount.</div>
-          </li>
-        </ul>
-        <div class="proc-card__alert">⚠ US citizens must file annual US tax returns regardless of Saudi residence. The Foreign Earned Income Exclusion (FEIE) applies — up to ~$126,500 in 2024. Take specialist cross-border tax advice.</div>
-        <a href="/business/tax-guide" class="proc-card__cta">Full Tax Guide →</a>
-      </div>
+        <!-- Housing — white -->
+        <div class="proc-tl-card proc-tl-card--white">
+          <div class="proc-tl-card__eyebrow">Life · Housing</div>
+          <h3>Finding &amp; Setting Up Housing in Saudi Arabia</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>Set Your Budget</strong>Compound villa: SAR 7,000–15,000/mo (most expats prefer compounds for community and amenities). 2-bed apartment: SAR 4,000–8,000/mo. Standalone villa: SAR 10,000–25,000/mo. Most landlords require 1–4 post-dated cheques covering the full year — negotiate with your employer to front this.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>Search Online + Expat Networks</strong>Bayut.sa and Propertyfinder.com.sa for listed properties. Expat Facebook groups (Riyadh Expats, Jeddah Expats) for off-market compounds. Request a compound viewing before signing — check pool, gym, school-bus stops, and gate security.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Sign Lease &amp; Register</strong>Leases are typically 1 year. Your Iqama number is required to register the contract. Register your address on Absher immediately — required for utility accounts, bank updates, and postal delivery (Aramex/Smsa).</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>Connect Utilities</strong>Electricity: Saudi Electricity Company (SEC) via mysec.com.sa. Water: SWCC. Both require your Iqama and lease contract. Most compounds include utilities in rent — confirm before signing.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">5</div>
+              <div class="proc-tl-body"><strong>Set Up Internet</strong>STC, Mobily, or Zain offer fibre packages. 200Mbps: SAR 199–249/month; 1Gbps: SAR 349+/month. STC has the widest coverage — recommended for newer compounds and suburban areas.</div>
+            </li>
+          </ul>
+          <div class="proc-tl-alert">⚠ Most Saudi landlords require a full year's rent paid upfront in 1–4 post-dated cheques. Negotiate with your employer to include a housing advance or direct-pay-to-landlord arrangement in your contract.</div>
+          <a href="/life/housing" class="proc-tl-cta">Full Housing Guide →</a>
+        </div>
 
-      <!-- HOUSING SETUP -->
-      <div class="proc-card">
-        <div class="proc-card__eyebrow">Life · Housing</div>
-        <h3>Finding &amp; Setting Up Housing in Saudi Arabia</h3>
-        <ul class="proc-steps">
-          <li class="proc-step">
-            <div class="proc-step__num">1</div>
-            <div class="proc-step__body"><strong>Set Your Budget</strong>Compound villa: SAR 7,000–15,000/mo (most expats prefer compounds for community and amenities). 2-bed apartment: SAR 4,000–8,000/mo. Standalone villa: SAR 10,000–25,000/mo. Most landlords require 1–4 post-dated cheques covering the full year — negotiate with your employer to front this.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">2</div>
-            <div class="proc-step__body"><strong>Search Online + Expat Networks</strong>Bayut.sa and Propertyfinder.com.sa for listed properties. Expat Facebook groups (Riyadh Expats, Jeddah Expats) for off-market compounds. Request a compound viewing before signing — check pool, gym, school-bus stops, and gate security.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">3</div>
-            <div class="proc-step__body"><strong>Sign Lease &amp; Register</strong>Leases are typically 1 year. Your Iqama number is required to register the contract. Register your address on Absher immediately — required for utility accounts, bank updates, and postal delivery (Aramex/Smsa).</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">4</div>
-            <div class="proc-step__body"><strong>Connect Utilities</strong>Electricity: Saudi Electricity Company (SEC) via mysec.com.sa. Water: SWCC. Both require your Iqama and lease contract. Most compounds include utilities in rent — confirm before signing.</div>
-          </li>
-          <li class="proc-step">
-            <div class="proc-step__num">5</div>
-            <div class="proc-step__body"><strong>Set Up Internet</strong>STC, Mobily, or Zain offer fibre packages. 200Mbps: SAR 199–249/month; 1Gbps: SAR 349+/month. STC has the widest coverage — recommended for newer compounds and suburban areas.</div>
-          </li>
-        </ul>
-        <div class="proc-card__alert">⚠ Most Saudi landlords require a full year's rent paid upfront in 1–4 post-dated cheques. Negotiate with your employer to include a housing advance or direct-pay-to-landlord arrangement in your contract.</div>
-        <a href="/life/housing" class="proc-card__cta">Full Housing Guide →</a>
-      </div>
+      </div><!-- /proc-tl-col left -->
 
-    </div>
+      <!-- RIGHT COLUMN (offset): School Attestation → Labour Dispute → Tax & VAT -->
+      <div class="proc-tl-col">
+
+        <!-- School Attestation — sage -->
+        <div class="proc-tl-card proc-tl-card--sage">
+          <div class="proc-tl-card__eyebrow">Education · Families</div>
+          <h3>International School Enrollment — Attestation Pipeline</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>Apply Early — 6–18 Months Ahead</strong>BISR, AISR, Dhahran Academy have 2+ year waitlists. Apply the moment your job offer is signed. Fee ranges: British SAR 55–85k/yr, American SAR 50–80k, IB SAR 45–75k, CBSE/ICSE SAR 12–35k.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>CAT4 Assessment</strong>Most British and IB schools require the CAT4 cognitive abilities test via GL Education. Some administer on-campus; others accept results from licensed centres in your home country.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Notarise Documents</strong>Birth certificate + last 2 years' school reports notarised by a certified notary in your home country. Start at least 3 months before the intended school start date.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>MoFA Apostille (4–8 weeks)</strong>Your home country's Ministry of Foreign Affairs stamps the Apostille (Hague Convention) or equivalent for non-Hague countries. Non-Hague documents need full legalisation — add 4–6 weeks.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">5</div>
+              <div class="proc-tl-body"><strong>Saudi Embassy Counter-Stamp (2–6 weeks)</strong>Final legalisation at the Saudi Embassy/Consulate in your home country. Without this, schools cannot register in Noor. Total apostille-to-embassy timeline: 6–14 weeks.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">6</div>
+              <div class="proc-tl-body"><strong>Noor Portal Registration</strong>School submits: attested birth certificate, parent Iqama, Saudi EPI vaccination record, and placement letter. Missing any single document delays enrollment by 4–8 weeks.</div>
+            </li>
+          </ul>
+          <a href="/life/schools-education" class="proc-tl-cta">Full Schools Guide →</a>
+        </div>
+
+        <!-- Labour Dispute — white -->
+        <div class="proc-tl-card proc-tl-card--white">
+          <div class="proc-tl-card__eyebrow">Legal · Rights</div>
+          <h3>Resolving a Labour Dispute in Saudi Arabia</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>File a Qiwa Complaint</strong>Submit your complaint at qiwa.sa. Your employer has 21 days to respond through the platform. Most salary disputes are flagged automatically by the Wage Protection System (WPS).</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>MHRSD Mediation (21 days)</strong>If the Qiwa complaint is unresolved, the Ministry of Human Resources schedules a mediation session within 21 days. The majority of disputes settle here — attendance is mandatory for both parties.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Labour Court</strong>Failed mediation escalates to the Labour Courts. Proceedings are in Arabic — retain a licensed legal representative. Keep all employment contracts, payslips, and written communications as evidence.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>Court of Appeals</strong>Labour Court decisions can be appealed within 30 days of judgment. Arbitrary dismissal compensation: 2 months' salary per year of service, over and above EOSG. Employees cannot be dismissed during sick leave or maternity leave.</div>
+            </li>
+          </ul>
+          <div class="proc-tl-alert">⚠ WPS creates an automatic salary payment record. MHRSD can access WPS data directly — unpaid salary is among the easiest claims to prove. Keep digital copies of everything.</div>
+          <a href="/work/labour-law" class="proc-tl-cta">Full Labour Law Guide →</a>
+        </div>
+
+        <!-- Tax & VAT — sage -->
+        <div class="proc-tl-card proc-tl-card--sage">
+          <div class="proc-tl-card__eyebrow">Business · Taxation</div>
+          <h3>Saudi Arabia Tax &amp; VAT Compliance Pipeline</h3>
+          <ul class="proc-tl-steps">
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">1</div>
+              <div class="proc-tl-body"><strong>Establish Your Tax Exposure</strong>Individuals: 0% income tax. Foreign-owned companies: 20% Corporate Income Tax (CIT). Saudi-owned portion: 2.5% Zakat. Real estate transactions: 5% RETT. Check if your home country has a DTAA with Saudi Arabia — 50+ countries covered.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">2</div>
+              <div class="proc-tl-body"><strong>VAT Registration via ZATCA</strong>VAT at 15% (raised from 5% in July 2020). Mandatory registration when taxable supplies exceed SAR 375,000/yr; voluntary from SAR 187,500. Register at zatca.gov.sa with your CR or freelance permit.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">3</div>
+              <div class="proc-tl-body"><strong>Fatoorah E-Invoicing</strong>All B2B invoices must be issued via ZATCA-certified e-invoicing software (Fatoorah). Phase 1 (generation) is live; Phase 2 (real-time ZATCA integration) is rolling out by sector. Non-compliant invoices are not deductible.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">4</div>
+              <div class="proc-tl-body"><strong>Withholding Tax (WHT) Filing</strong>When your Saudi entity pays a non-resident: deduct WHT at source (dividends 5%, royalties 15%, management fees 20%) and remit to ZATCA within 10 days of the payment month-end.</div>
+            </li>
+            <li class="proc-tl-step">
+              <div class="proc-tl-num">5</div>
+              <div class="proc-tl-body"><strong>Remittance Levy — Plan Ahead</strong>Non-Saudi individuals sending money abroad pay a 6% levy on transfer value. Some employers gross up salaries to offset this. Negotiate a remittance allowance or structure more spending in-country (rent, schools) to reduce the taxable transfer amount.</div>
+            </li>
+          </ul>
+          <div class="proc-tl-alert">⚠ US citizens must file annual US tax returns regardless of Saudi residence. The Foreign Earned Income Exclusion (FEIE) applies — up to ~$126,500 in 2024. Take specialist cross-border tax advice.</div>
+          <a href="/business/tax-guide" class="proc-tl-cta">Full Tax Guide →</a>
+        </div>
+
+      </div><!-- /proc-tl-col right -->
+
+    </div><!-- /proc-tl-grid -->
   </div>
 </section>
 
@@ -811,4 +907,3 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
-
