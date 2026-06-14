@@ -21,8 +21,10 @@
   <link rel="stylesheet" href="/assets/css/site.css?v=2">
   <script src="/assets/js/site.js" defer></script>
   <style>
-    .page-hero { background: linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020); padding: calc(var(--nav-h,80px) + 4.5rem) 0 0; position: relative; overflow: hidden; }
-    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; opacity:.055; background-image: repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px), repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px); background-size:70px 70px; }
+    .page-hero { background:#060E1E; padding: calc(var(--nav-h,80px) + 4.5rem) 0 5.5rem; position: relative; overflow: hidden; }
+    .page-hero__img { position:absolute; inset:0; z-index:0; }
+    .page-hero__img img { width:100%; height:100%; object-fit:cover; object-position:center 40%; opacity:.62; }
+    .page-hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg,rgba(6,14,30,.80) 0%,rgba(6,14,30,.38) 52%,rgba(6,14,30,.76) 100%); }
     .page-hero .container { position:relative; z-index:2; }
     .page-hero__text { padding-bottom:3.5rem; max-width:740px; }
     .page-hero__eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:.85rem; }
@@ -308,6 +310,7 @@
 <!-- END GLOBAL NAV -->
 
 <section class="page-hero" id="main-content">
+  <div class="page-hero__img"><img src="https://images.unsplash.com/photo-1585085952480-811ff8859fa1?auto=format&fit=crop&w=1920&q=85" alt="Jeddah Red Sea Corniche waterfront Saudi Arabia" loading="eager"></div>
   <div class="container">
     <div class="page-hero__text">
       <div class="page-hero__eyebrow">Cities · Jeddah</div>
@@ -318,6 +321,30 @@
         <span class="hero-stat"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 4.5M population</span>
         <span class="hero-stat"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg> Red Sea coastline</span>
         <span class="hero-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Western Province</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL IMAGE STRIP -->
+<section style="background:var(--cream,#F2EEE5);padding:2.5rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;height:380px;">
+      <div style="overflow:hidden;position:relative;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1586715065342-98d1f6016fd1?auto=format&fit=crop&w=960&q=85" alt="Jeddah Al-Balad UNESCO historic district architecture" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,13,24,.78) 100%);"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.75rem;">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.3rem;">Jeddah - Western Province</div>
+          <div style="font-size:.95rem;font-weight:700;color:#fff;">Al-Balad - UNESCO Heritage District</div>
+        </div>
+      </div>
+      <div style="overflow:hidden;position:relative;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1591054457135-3e2c2e51c5bc?auto=format&fit=crop&w=960&q=85" alt="Jeddah Red Sea Corniche waterfront promenade" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,13,24,.78) 100%);"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.75rem;">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.3rem;">Red Sea Gateway</div>
+          <div style="font-size:.95rem;font-weight:700;color:#fff;">Jeddah Corniche & Waterfront</div>
+        </div>
       </div>
     </div>
   </div>

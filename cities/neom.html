@@ -25,10 +25,9 @@
     .page-hero{background:linear-gradient(140deg,#020812 0%,#040E20 40%,#082040 70%,#040E20 100%);
       padding:calc(var(--nav-h) + 4.5rem) 0 5.5rem;position:relative;overflow:hidden}
     .page-hero::before{content:'';position:absolute;inset:0;z-index:1;
-      background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 0,transparent 70px),
-      repeating-linear-gradient(-60deg,rgba(255,255,255,.012) 0,rgba(255,255,255,.012) 1px,transparent 0,transparent 70px)}
+      background:linear-gradient(180deg,rgba(2,8,18,.84) 0%,rgba(2,8,18,.42) 52%,rgba(2,8,18,.80) 100%)}
     .page-hero__img{position:absolute;inset:0;z-index:0}
-    .page-hero__img img{width:100%;height:100%;object-fit:cover;opacity:.22;mix-blend-mode:luminosity}
+    .page-hero__img img{width:100%;height:100%;object-fit:cover;object-position:center 50%;opacity:.62;}
     .page-hero .container{position:relative;z-index:2}
     .hero-label{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,168,83,.12);
       border:1px solid rgba(212,168,83,.2);border-radius:100px;padding:.45rem 1.2rem;
@@ -340,7 +339,7 @@
 
 <!-- HERO -->
 <section class="page-hero" id="main-content">
-  <div class="page-hero__img"><img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="NEOM The Line futuristic megacity Tabuk desert"></div>
+  <div class="page-hero__img"><img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=1920&q=85" alt="NEOM The Line futuristic megacity Tabuk desert"></div>
   <div class="container">
     <div class="hero-label">Vision 2030 Giga-Projects · Tabuk &amp; Northwest Region</div>
     <h1 class="hero-title">NEOM &amp; the<br><span>Northwest Mega-Region</span></h1>
@@ -358,6 +357,30 @@
       <div>
         <div class="hero-stat__num">4 Regions</div>
         <div class="hero-stat__lbl">Active Projects Nearby</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL IMAGE STRIP -->
+<section style="background:var(--cream,#F2EEE5);padding:2.5rem 0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;height:380px;">
+      <div style="overflow:hidden;position:relative;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1682687220499-d9c06b872eee?auto=format&fit=crop&w=960&q=85" alt="NEOM Tabuk region desert landscape Saudi Arabia northwest" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,13,24,.78) 100%);"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.75rem;">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.3rem;">NEOM - Tabuk Region</div>
+          <div style="font-size:.95rem;font-weight:700;color:#fff;">The NEOM Mega-Region - Tabuk Desert</div>
+        </div>
+      </div>
+      <div style="overflow:hidden;position:relative;border-radius:16px;">
+        <img src="https://images.unsplash.com/photo-1682687218608-5e2522b04673?auto=format&fit=crop&w=960&q=85" alt="Saudi Arabia northwest desert landscape Tabuk NEOM region" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(8,13,24,.78) 100%);"></div>
+        <div style="position:absolute;bottom:1.5rem;left:1.75rem;">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.3rem;">Northwest Saudi Arabia</div>
+          <div style="font-size:.95rem;font-weight:700;color:#fff;">The Line & Tabuk Landscape</div>
+        </div>
       </div>
     </div>
   </div>
