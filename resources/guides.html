@@ -11,10 +11,10 @@
 </script>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Downloadable Guides &amp; Resources | NewToSaudi</title>
-  <meta name="description" content="Free downloadable guides for expats in Saudi Arabia. Relocation checklists, Iqama process guides, cost of living summaries, and more.">
-  <meta property="og:title" content="Downloadable Guides &amp; Resources | NewToSaudi">
-  <meta property="og:description" content="Free downloadable guides for expats in Saudi Arabia. Relocation checklists, Iqama process guides, cost of living summaries, and more.">
+  <title>Expat Guides &amp; Resources — Iqama, Schools, MISA, Qiwa, Freelance &amp; More | NewToSaudi</title>
+  <meta name="description" content="Complete expat guides for Saudi Arabia: Iqama process, international school attestation pipeline, CAT4 admissions, MISA business registration, Qiwa freelance permit, labour law, banking, and more. Free reference, updated 2026.">
+  <meta property="og:title" content="Expat Guides &amp; Resources | NewToSaudi">
+  <meta property="og:description" content="Complete expat guides for Saudi Arabia: Iqama, schools with CAT4 &amp; Noor portal, MISA business setup, Qiwa freelance permit, labour law, banking, and cost of living. Updated 2026.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://newtosaudi.com/Logos/logo-primary.svg">
   <link rel="canonical" href="https://newtosaudi.com/resources/guides">
@@ -48,6 +48,27 @@
     .guide-card__btn:hover{background:var(--navy);color:#fff}
     .guide-card__btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
     .coming-badge{background:rgba(212,168,83,.12);border:1px solid rgba(212,168,83,.3);color:var(--gold);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:100px;letter-spacing:.08em}
+    .guide-card__tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px;background:rgba(212,168,83,.12);color:var(--gold);border:1px solid rgba(212,168,83,.25);margin-bottom:.5rem}
+    /* Procedure deep-dive section */
+    .s-navy{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
+    .s-navy::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
+    .s-navy .container{position:relative;z-index:2}
+    .proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+    .proc-card{background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.09);border-radius:20px;padding:2rem;transition:border-color .3s}
+    .proc-card:hover{border-color:rgba(212,168,83,.35)}
+    .proc-card__eyebrow{font-size:.6rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold,#D4A853);margin-bottom:.75rem}
+    .proc-card h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:1.25rem;line-height:1.3}
+    .proc-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0}
+    .proc-step{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+    .proc-step:last-child{border-bottom:none}
+    .proc-step__num{min-width:24px;height:24px;border-radius:50%;background:rgba(212,168,83,.15);border:1.5px solid rgba(212,168,83,.3);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;color:var(--gold,#D4A853);flex-shrink:0;margin-top:.1rem}
+    .proc-step__body{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.6}
+    .proc-step__body strong{color:#fff;display:block;font-size:.85rem;margin-bottom:.15rem}
+    .proc-card__cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem;font-size:.8rem;font-weight:700;color:var(--gold,#D4A853);text-decoration:none}
+    .proc-card__cta:hover{opacity:.8}
+    .proc-card__alert{background:rgba(234,88,12,.08);border:1px solid rgba(234,88,12,.2);border-radius:10px;padding:.75rem 1rem;margin-top:1rem;font-size:.78rem;color:#FBBF7A;line-height:1.55}
+    @media(max-width:960px){.proc-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.proc-grid{grid-template-columns:1fr}.s-navy{padding:3.5rem 0}}
     .breadcrumb{background:var(--cream);border-bottom:1px solid #E8E4DC}
     .breadcrumb__inner{padding:.85rem 0;font-size:.78rem;color:#888}
     .breadcrumb__inner a{color:#888;text-decoration:none}
@@ -313,18 +334,38 @@
       <div class="guide-card">
         <div class="guide-card__category">Business</div>
         <h3>Starting a Business in Saudi Arabia</h3>
-        <p>MISA licensing, company structures, free zones, tax guide, and Saudisation requirements for foreign business owners.</p>
-        <div class="guide-card__pages">Covers: MISA, company types, VAT, Nitaqat, free zones</div>
+        <p>MISA investment licence, Commercial Registration (CR), LLC vs branch vs Regional HQ (RHQ) structures, Qiwa labour compliance portal, Nitaqat/Saudisation band thresholds, 15% VAT rules, and Special Economic Zone options.</p>
+        <div class="guide-card__pages">Covers: MISA, CR, RHQ mandate, Qiwa, Nitaqat, free zones, VAT</div>
         <a href="/business/start-a-company" class="guide-card__btn">
           <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
           View Guide
         </a>
       </div>
       <div class="guide-card">
+        <div class="guide-card__category">Work</div>
+        <h3>The Complete Iqama Guide</h3>
+        <p>Step-by-step Iqama application process, renewal timeline (annual, SAR 650 fee), SAR 100/day overstay fine, employer vs employee responsibilities, Kafala 2021 free-transfer reform, Premium Residency upgrade path, and Absher/Jawazat portal navigation.</p>
+        <div class="guide-card__pages">Covers: application, renewal, fines, Kafala, Premium Residency, Absher</div>
+        <a href="/work/iqama-guide" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          View Guide
+        </a>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card__category">Freelance</div>
+        <h3>Freelancing &amp; Independent Business in KSA</h3>
+        <p>Qiwa freelance permit (Tasaheel) via MHRSD, eligible NEC code categories, SAR 375k VAT registration threshold, Fatoorah e-invoicing compliance, Remote Work Visa (USD 650/yr), dependent visa restrictions, and sole proprietorship (Muassasa) setup.</p>
+        <div class="guide-card__pages">Covers: Qiwa permit, NEC codes, VAT, Fatoorah, Remote Work Visa</div>
+        <a href="/work/freelance-business" class="guide-card__btn">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          View Guide
+        </a>
+      </div>
+      <div class="guide-card">
         <div class="guide-card__category">Schools</div>
         <h3>International Schools in Saudi Arabia</h3>
-        <p>Curriculum comparison (British/American/IB/French), fee ranges, top schools by city, admission timeline, and what to negotiate with your employer.</p>
-        <div class="guide-card__pages">Covers: all curricula, fees by school, admission tips</div>
+        <p>Curriculum comparison (British/American/IB/French), fee ranges, top schools by city, CAT4 admissions test via GL Education, the MoFA → Saudi Embassy attestation pipeline, Noor portal enrollment requirements, and RCRC corporate relocation pathways.</p>
+        <div class="guide-card__pages">Covers: curricula, fees, CAT4, MoFA attestation, Noor portal, RCRC</div>
         <a href="/life/schools-education" class="guide-card__btn">
           <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           View Guide
@@ -350,6 +391,112 @@
           View Guide
         </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-navy">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-eyebrow" style="color:var(--gold);">Procedure Deep-Dives</div>
+      <h2 class="sec-title" style="color:#fff;">Step-by-Step Process Guides</h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.55);">The three most operationally complex processes in Saudi expat life — broken into clear, sequenced steps so nothing falls through the cracks.</p>
+    </div>
+    <div class="proc-grid reveal">
+
+      <!-- IQAMA PROCESS -->
+      <div class="proc-card">
+        <div class="proc-card__eyebrow">Residency · Work</div>
+        <h3>Iqama Application &amp; Annual Renewal</h3>
+        <ul class="proc-steps">
+          <li class="proc-step">
+            <div class="proc-step__num">1</div>
+            <div class="proc-step__body"><strong>Entry Visa Issued</strong>Employer applies for a block visa from MHRSD. You enter on a work visa — valid 90 days.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">2</div>
+            <div class="proc-step__body"><strong>Medical &amp; Biometrics</strong>Mandatory medical screening (blood, chest X-ray) at a MOH-approved centre. Fingerprints captured via Jawazat.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">3</div>
+            <div class="proc-step__body"><strong>Iqama Issued — SAR 650</strong>Employer pays annual Iqama fee. Card issued within 2–4 weeks. Number becomes your civil/tax ID across all government portals.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">4</div>
+            <div class="proc-step__body"><strong>Link to Absher</strong>Register your Iqama on absher.sa immediately — required for renewing, dependant Iqamas, exit/re-entry permits, and Nafath digital ID.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">5</div>
+            <div class="proc-step__body"><strong>Annual Renewal</strong>Renew before expiry. Fines: SAR 100/day. Track via Absher app. Employer typically handles — confirm with HR 60 days before expiry.</div>
+          </li>
+        </ul>
+        <div class="proc-card__alert">⚠ Since 2021: Kafala reform allows free job transfer without employer consent after 1 year. Use Qiwa to initiate.</div>
+        <a href="/work/iqama-guide" class="proc-card__cta">Full Iqama Guide →</a>
+      </div>
+
+      <!-- SCHOOL ATTESTATION PIPELINE -->
+      <div class="proc-card">
+        <div class="proc-card__eyebrow">Education · Families</div>
+        <h3>International School Enrollment — Attestation Pipeline</h3>
+        <ul class="proc-steps">
+          <li class="proc-step">
+            <div class="proc-step__num">1</div>
+            <div class="proc-step__body"><strong>Apply to School (6–18 months ahead)</strong>Submit application before arrival. BISR, AISR, Dhahran Academy have 2+ year waitlists. Apply the moment your job is confirmed.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">2</div>
+            <div class="proc-step__body"><strong>CAT4 Assessment</strong>British/IB schools (and many American schools) require the CAT4 cognitive abilities test via GL Education. Some administer on campus; others accept results from licensed home-country centres.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">3</div>
+            <div class="proc-step__body"><strong>Notarise Documents</strong>Birth certificate + last 2 years' school reports notarised by a certified notary in your home country. Start this 3 months before intended school start date.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">4</div>
+            <div class="proc-step__body"><strong>MoFA Authentication (Apostille)</strong>Authenticated by your home country's Ministry of Foreign Affairs — Apostille stamp (Hague) or equivalent for non-Hague countries.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">5</div>
+            <div class="proc-step__body"><strong>Saudi Embassy Counter-Stamp</strong>Final legalisation at the Saudi Embassy/Consulate in your home country. Without this, schools cannot register in Noor.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">6</div>
+            <div class="proc-step__body"><strong>Noor Portal Registration</strong>School submits: attested birth certificate, parent Iqama, vaccination record (Saudi EPI schedule), placement letter. Missing one item delays enrollment 4–8 weeks.</div>
+          </li>
+        </ul>
+        <a href="/life/schools-education" class="proc-card__cta">Full Schools Guide →</a>
+      </div>
+
+      <!-- QIWA FREELANCE PERMIT -->
+      <div class="proc-card">
+        <div class="proc-card__eyebrow">Freelance · Business</div>
+        <h3>Qiwa Freelance Permit — Step-by-Step</h3>
+        <ul class="proc-steps">
+          <li class="proc-step">
+            <div class="proc-step__num">1</div>
+            <div class="proc-step__body"><strong>Confirm Eligibility</strong>You must hold a valid Iqama. Check your profession is in an approved NEC (National Employment Code) category on qiwa.sa — 40+ sectors including IT, consulting, creative, education.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">2</div>
+            <div class="proc-step__body"><strong>Log into Qiwa via Absher</strong>Access qiwa.sa using your Absher credentials. Navigate to "Freelance Work" section. Select your correct NEC code — wrong selection causes rejection.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">3</div>
+            <div class="proc-step__body"><strong>Pay Annual Fee</strong>SAR 400–2,000 depending on sector. Paid via Mada or credit card. Permit issued instantly on successful payment.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">4</div>
+            <div class="proc-step__body"><strong>VAT Registration (if required)</strong>If annual turnover exceeds SAR 375,000, register with ZATCA at zatca.gov.sa. Voluntary registration available from SAR 187,500.</div>
+          </li>
+          <li class="proc-step">
+            <div class="proc-step__num">5</div>
+            <div class="proc-step__body"><strong>Issue Fatoorah-Compliant Invoices</strong>All invoices must include permit number + VAT number (if registered). Use ZATCA-approved e-invoicing software. Renew permit annually — missed renewals block all government services.</div>
+          </li>
+        </ul>
+        <div class="proc-card__alert">⚠ Dependent visa holders face significant restrictions. Working freelance on a dependent visa without a permit risks Iqama cancellation and deportation.</div>
+        <a href="/work/freelance-business" class="proc-card__cta">Full Freelance Guide →</a>
+      </div>
+
     </div>
   </div>
 </section>
