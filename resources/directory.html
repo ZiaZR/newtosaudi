@@ -102,12 +102,14 @@
 .kam-cta-primary:hover{background:var(--gold-dark);box-shadow:0 6px 28px rgba(212,168,83,.4);transform:translateY(-2px)}
 .kam-cta-secondary{display:inline-flex;align-items:center;gap:.5rem;font-size:.88rem;font-weight:700;padding:.95rem 1.9rem;border-radius:100px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);text-decoration:none;transition:all .2s}
 .kam-cta-secondary:hover{border-color:var(--gold);color:var(--gold)}
-.kam-divider{display:flex;align-items:center;gap:1.5rem;margin:1.75rem auto;max-width:560px}
-.kam-divider::before,.kam-divider::after{content:'';flex:1;height:1px;background:rgba(212,168,83,.2)}
-.kam-divider span{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
-.kam-proof{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
-.kam-proof__item{font-size:.75rem;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:.4rem}
-.kam-proof__item::before{content:'✓';color:var(--gold);font-weight:800}
+.kam-cta-wrap{margin:1.75rem 0 2rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.kam-cta-subnote{font-size:.84rem;color:rgba(255,255,255,.42);max-width:500px;text-align:center;line-height:1.65}
+.kam-divider{display:flex;align-items:center;gap:1.25rem;margin:2rem auto 0;max-width:560px}
+.kam-divider::before,.kam-divider::after{content:'';flex:1;height:1px;background:rgba(212,168,83,.18)}
+.kam-divider span{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.32);white-space:nowrap}
+.kam-proof{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;max-width:660px;margin:1.25rem auto 0;text-align:left}
+.kam-proof__item{font-size:.81rem;color:rgba(255,255,255,.75);display:flex;align-items:flex-start;gap:.65rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:.75rem 1rem;line-height:1.5}
+.kam-proof__item::before{content:'✓';color:var(--gold);font-weight:800;flex-shrink:0;font-size:.85rem;margin-top:.05rem}
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
 .reveal.visible{opacity:1;transform:none}
@@ -729,7 +731,10 @@
       <div class="kam-eyebrow">Elite Onboarding Infrastructure</div>
       <h3 class="kam-title" style="color:#fff;">A directory lists schools. A KAM secures the place.</h3>
       <p class="kam-body" style="color:rgba(255,255,255,.62);">BISR, King's College Riyadh, and AISR operate waitlists measured in years. Self-service applications join the queue. Corporate enrollment pathways through RCRC and employer-sponsored channels require active professional intervention — identifying the correct intake cycle, submitting complete attestation packages, and managing the Noor portal registration in parallel. This is what a dedicated Key Account Manager executes as a matter of course.</p>
-      <a href="/services/index" class="kam-cta-primary">Bypass Local Administrative Friction — Secure Elite End-to-End Enterprise Setup via Dedicated KAM →</a>
+      <div class="kam-cta-wrap">
+        <p class="kam-cta-subnote">Bypass local administrative friction — single-point coordination across every pillar of your Saudi market entry.</p>
+        <a href="/services/index" class="kam-cta-primary">Engage a Dedicated KAM →</a>
+      </div>
       <div class="kam-divider"><span>What KAM handles</span></div>
       <div class="kam-proof">
         <span class="kam-proof__item">RCRC corporate enrollment pathway management</span>
@@ -1284,8 +1289,9 @@
       <div class="kam-eyebrow">Beyond the Directory</div>
       <h2 style="color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;margin-bottom:.9rem;">A directory gives you 98 names.<br>A KAM gives you executed outcomes.</h2>
       <p class="kam-body" style="color:rgba(255,255,255,.62);">Every provider listed here represents the best available starting point for independent sourcing. But coordinating a law firm, a PRO agent, a school application pipeline, a paediatric therapy waitlist registration, a private healthcare registration, a compound lease execution, a bank account opening, and a vehicle acquisition — simultaneously, in Arabic, across a new country — is where self-service compounds into weeks of delay and missed windows. Senior executives and enterprise relocators engage a dedicated Key Account Management service precisely because single-point coordination is the only model that delivers a clean, on-time, zero-friction market entry.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2.5rem">
-        <a href="/services/index" class="kam-cta-primary">Bypass Local Administrative Friction — Secure Elite End-to-End Enterprise Setup via Dedicated KAM →</a>
+      <div class="kam-cta-wrap">
+        <p class="kam-cta-subnote">Bypass local administrative friction — single-point coordination across every pillar of your Saudi market entry.</p>
+        <a href="/services/index" class="kam-cta-primary">Engage a Dedicated KAM →</a>
       </div>
       <div class="kam-divider"><span>What elite onboarding covers</span></div>
       <div class="kam-proof">
