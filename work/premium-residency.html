@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/assets/css/site.css?v=2">
 <script src="/assets/js/site.js" defer></script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
 /* ═══════════════════════════════════════════════════════════
    2050 ULTRA-LUXURY CINEMATIC ENGINE
    PREMIUM RESIDENCY — FULL DESIGN OVERHAUL
@@ -37,7 +38,9 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--void);color:var(--silk);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--void);color:var(--silk);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-title,.tier-index,.pr-hero__eyebrow,.murabaha__heading,.rejection-wrap__title,.pr-refs__label,.success-title,.zone-label{font-family:'Cinzel',serif}
+.roi-table td:nth-child(2),.roi-table td:nth-child(3),.roi-table .roi-even td:nth-child(2),.roi-table .roi-even td:nth-child(3),.pr-stat__num,.tier-index,.process-step__n{font-family:'JetBrains Mono',monospace}
 
 /* ── Breadcrumb ── */
 .pr-breadcrumb{background:rgba(223,186,115,.04);border-bottom:var(--rule);padding:.9rem 0}
@@ -97,18 +100,18 @@ body{background:var(--void);color:var(--silk);font-family:system-ui,-apple-syste
 }
 .pr-hero__eyebrow{
   display:flex;align-items:center;gap:1rem;
-  font-size:.72rem;font-weight:800;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:2rem;
+  font-size:.58rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.25rem;
 }
 .pr-hero__eyebrow::before{content:'';width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
 .pr-hero h1{
-  font-size:clamp(2.4rem,4.5vw,4rem);
+  font-size:clamp(2rem,3.8vw,3.2rem);
   font-weight:900;
   letter-spacing:.08em;
-  line-height:1.05;
+  line-height:1.15;
   text-transform:uppercase;
   color:var(--silk);
-  margin-bottom:1.75rem;
+  margin-bottom:1.5rem;
   background:linear-gradient(135deg,#DFBA73 0%,#F0D898 40%,#DFBA73 70%,#C9A54A 100%);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -261,7 +264,7 @@ body{background:var(--void);color:var(--silk);font-family:system-ui,-apple-syste
   width:35%;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
   color:var(--gold);padding-right:1.5rem;opacity:.85;
 }
-.tier-dt td:last-child{color:#F8FAFC;font-size:1.15rem;line-height:1.9}
+.tier-dt td:last-child{color:#F8FAFC;font-size:1.15rem;line-height:1.9;font-family:'Inter',sans-serif}
 .tier-dt td:last-child strong{color:var(--silk);font-weight:700}
 .tier-advisory-note{
   margin-top:1.5rem;padding:1.4rem 1.6rem;
