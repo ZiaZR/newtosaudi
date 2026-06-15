@@ -153,10 +153,17 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
   background:linear-gradient(to top,rgba(3,6,10,.65) 0%,transparent 22%);
   z-index:2;
 }
+.pr-hero .pr-container{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  width:100%;
+}
 .pr-hero-inner{
   position:relative;
   z-index:10;
-  max-width:480px;
+  max-width:660px;
+  padding:3rem 0;
 }
 .pr-hero__eyebrow{
   display:flex;align-items:center;gap:1rem;
