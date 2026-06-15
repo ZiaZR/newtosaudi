@@ -409,10 +409,10 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .murabaha-row:last-child{border-bottom:none}
 .murabaha-row__bank{color:var(--silk);font-weight:600}
 .murabaha-row__note{font-size:.82rem;color:var(--silver-dim)}
-.pr-villa-col{position:relative}
+.pr-villa-col{position:relative;display:flex;flex-direction:column;gap:1.5rem}
 .pr-villa-frame{
   border-radius:4px;overflow:hidden;position:relative;
-  min-height:650px;
+  flex:1;min-height:280px;
   background:linear-gradient(160deg,var(--surface),var(--surface2));
   border:1px solid rgba(223,186,115,.3);
   box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(223,186,115,.08);
@@ -1363,11 +1363,18 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
         </div>
       </div>
       <div class="pr-villa-col">
-        <div class="pr-villa-frame">
+        <div class="pr-villa-frame" style="flex:1.65">
           <img src="https://images.unsplash.com/photo-1758192838598-a1de4da5dcaf?w=1200&auto=format&fit=crop&q=80" alt="Luxury villa North Riyadh" onerror="this.parentElement.style.background='var(--surface2)'" />
           <div class="pr-villa-glass">
             <div class="pr-villa-glass__title">North Riyadh Premium Residential</div>
-            <div class="pr-villa-glass__sub">Freehold acquisition available to Premium Residency holders across all major Saudi cities</div>
+            <div class="pr-villa-glass__sub">Freehold acquisition across all permitted zones — residential and commercial</div>
+          </div>
+        </div>
+        <div class="pr-villa-frame" style="flex:1">
+          <img src="https://images.unsplash.com/photo-1694018359679-49465b4c0d61?w=1200&auto=format&fit=crop&q=80" alt="Kingdom Tower Riyadh" onerror="this.parentElement.style.background='var(--surface2)'" />
+          <div class="pr-villa-glass">
+            <div class="pr-villa-glass__title">Sharia-Compliant Finance Access</div>
+            <div class="pr-villa-glass__sub">Murabaha mortgage products available to PR holders via Al Rajhi, SNB &amp; Riyad Bank</div>
           </div>
         </div>
       </div>
