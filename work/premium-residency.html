@@ -49,18 +49,16 @@ body{background:var(--royal-navy);color:var(--silk);font-family:'Plus Jakarta Sa
 h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-title,.pr-hero__eyebrow,.murabaha__heading,.rejection-wrap__title,.pr-refs__label,.success-title,.zone-label{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:.05em}
 .roi-table td:nth-child(2),.roi-table td:nth-child(3),.roi-table .roi-even td:nth-child(2),.roi-table .roi-even td:nth-child(3),.pr-stat__num,.tier-index,.process-step__n{font-family:'JetBrains Mono',monospace}
 
-/* ── Royal Arabesque Lattice Watermark ── */
-.pr-watermark-canvas{position:relative;--wm-color:rgba(223,186,115,.02)}
+/* ── Mathematical Hairline Watermark ── */
+.pr-watermark-canvas{position:relative;--wm-color:rgba(223,186,115,.035)}
 .pr-watermark-canvas::before{
   content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:
-    linear-gradient(45deg,var(--wm-color) 25%,transparent 25%),
-    linear-gradient(-45deg,var(--wm-color) 25%,transparent 25%),
-    linear-gradient(135deg,var(--wm-color) 25%,transparent 25%),
-    linear-gradient(-135deg,var(--wm-color) 25%,transparent 25%);
-  background-size:60px 60px;
-  background-position:0 0,0 30px,30px -30px,-30px 0;
-  opacity:1;
+    linear-gradient(to right,var(--wm-color) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--wm-color) 1px,transparent 1px),
+    radial-gradient(circle,var(--wm-color) 1px,transparent 1.5px);
+  background-size:40px 40px,40px 40px,40px 40px;
+  background-position:0 0,0 0,20px 20px;
 }
 
 /* ── Breadcrumb ── */
@@ -82,7 +80,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
   display:flex;
   align-items:center;
   overflow:hidden;
-  background:linear-gradient(160deg,#03060A 0%,#0A1128 60%,#0D1A3A 100%);
+  background:linear-gradient(180deg,#0A1128 0%,#0D1530 70%,#101F42 100%);
   padding-top:calc(var(--nav-h,80px) + 3rem);
   padding-bottom:5rem;
 }
@@ -494,9 +492,9 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 
 /* ROI + TIERS — Light Contrast Sweep */
 #roi,#tiers{
-  background:linear-gradient(175deg,#1A2A50 0%,#e8edf5 8%,#F4F6F9 100%);
-  border-top:1px solid rgba(30,41,59,.1);
-  --wm-color:rgba(10,17,40,.015);
+  background:linear-gradient(180deg,#101F42 0%,#c8d4e8 5%,#F4F6F9 18%,#F4F6F9 100%);
+  border-top:none;
+  --wm-color:rgba(10,17,40,.018);
 }
 #roi .pr-s-title,#tiers .pr-s-title{color:var(--royal-navy)}
 #roi .pr-s-eyebrow,#tiers .pr-s-eyebrow{color:var(--champagne-gold)}
@@ -539,12 +537,12 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 #tiers .tier-highlight{background:rgba(10,17,40,.07);border-color:rgba(10,17,40,.2);color:var(--royal-navy)}
 
 /* AUTONOMY — Dark Royal Re-emergence */
-#autonomy{background:linear-gradient(175deg,#F4F6F9 0%,#1a2a50 6%,#101F42 100%);--wm-color:rgba(223,186,115,.02)}
+#autonomy{background:linear-gradient(180deg,#F4F6F9 0%,#c8d4e8 4%,#101F42 14%,#101F42 100%);--wm-color:rgba(223,186,115,.02)}
 .pr-autonomy{background:transparent}
 .pr-autonomy__bg::after{background:radial-gradient(ellipse at center,transparent 30%,#101F42 85%)}
 
 /* BENEFITS + PROCESS — Alabaster Light */
-#benefits,#process{background:linear-gradient(175deg,#101F42 0%,#e8edf5 6%,#F4F6F9 100%);border-top:1px solid rgba(30,41,59,.1);--wm-color:rgba(10,17,40,.015)}
+#benefits,#process{background:linear-gradient(180deg,#101F42 0%,#c8d4e8 5%,#F4F6F9 18%,#F4F6F9 100%);border-top:none;--wm-color:rgba(10,17,40,.018)}
 #benefits .pr-s-title,#process .pr-s-title{color:var(--royal-navy)}
 #benefits .pr-s-eyebrow,#process .pr-s-eyebrow{color:var(--champagne-gold)}
 #benefits .pr-s-desc,#process .pr-s-desc{color:var(--charcoal-text)}
@@ -563,7 +561,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .rejection-list li{color:var(--charcoal-text)}
 
 /* PROPERTY — Light Contrast Sweep */
-#property{background:linear-gradient(175deg,#101F42 0%,#e8edf5 6%,#F4F6F9 100%);border-top:1px solid rgba(30,41,59,.1);--wm-color:rgba(10,17,40,.015)}
+#property{background:linear-gradient(180deg,#101F42 0%,#c8d4e8 5%,#F4F6F9 18%,#F4F6F9 100%);border-top:none;--wm-color:rgba(10,17,40,.018)}
 #property .pr-s-title{color:var(--royal-navy)}
 #property .pr-s-eyebrow{color:var(--champagne-gold)}
 #property>div>div>p{color:var(--charcoal-text)}
@@ -578,21 +576,52 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .murabaha-row__bank{color:var(--royal-navy)}
 .murabaha-row__note{color:#64748B}
 
-/* ADVISORY — Dark Volcanic Enclave */
-#advisory{background:linear-gradient(175deg,#F4F6F9 0%,#0d1a3a 6%,#03060A 100%);--wm-color:rgba(223,186,115,.025)}
+/* ADVISORY — Dark Volcanic Descent */
+#advisory{background:linear-gradient(180deg,#F4F6F9 0%,#c8d4e8 4%,#0A1128 14%,#03060A 100%);--wm-color:rgba(223,186,115,.025)}
 .pr-form-section{background:transparent}
 #ntsa-pr-advisory-form{background:var(--royal-navy);border:2px solid var(--champagne-gold)}
 .vault-header__title{color:var(--champagne-gold)}
 .vault-header__sub{color:var(--silver-dim)}
 
 /* REFS — Navy */
-.pr-refs{background:var(--royal-navy);border-top:var(--rule)}
+.pr-refs{background:linear-gradient(180deg,#03060A 0%,#0A1128 100%);border-top:var(--rule)}
 .pr-ref{background:rgba(255,255,255,.04);border-color:rgba(223,186,115,.15)}
 
 /* ══════════════════════════════════════
-   BREADCRUMB light update
+   BREADCRUMB
 ══════════════════════════════════════ */
 .pr-breadcrumb{background:rgba(10,17,40,.95);border-bottom:var(--rule)}
+
+/* ══════════════════════════════════════
+   UNIVERSAL TEXT CLARITY — LIGHT PANELS
+══════════════════════════════════════ */
+#roi *:not(.pr-s-eyebrow):not(.pr-s-eyebrow *):not(.roi-tag):not(.roi-table th:nth-child(3)):not(a),
+#tiers *:not(.tier-chevron):not(.tier-badge):not(.tier-advisory-note a):not(.tier-highlight):not(.tier-verify):not(.pr-s-eyebrow):not(.pr-s-eyebrow *){
+  -webkit-text-fill-color:initial;
+}
+#roi .pr-s-desc,#roi .roi-advisory__text,#roi p{color:#1E293B;font-size:1.1rem;line-height:1.9}
+#roi .roi-table td{font-size:1rem}
+#tiers .tier-sub{color:#475569}
+#tiers .tier-dt td:last-child{color:#1E293B;font-size:1.1rem;line-height:1.9}
+#tiers .tier-advisory-note{color:#1E293B;font-size:1.05rem;line-height:1.9}
+#tiers .tier-advisory-note strong{color:#0A1128}
+#benefits .benefit-text{color:#1E293B;font-size:1.1rem;line-height:1.9}
+#process .process-step__desc{color:#1E293B;font-size:1rem;line-height:1.85}
+#process .process-step__title{color:#0A1128}
+#property>div>div>p,#property .zone-desc,#property .murabaha-row__note{color:#1E293B;font-size:1rem;line-height:1.85}
+#property .zone-title{color:#0A1128}
+#property .murabaha-row__bank{color:#0A1128}
+
+/* Light panel section titles & eyebrows */
+#roi .pr-s-title,#tiers .pr-s-title,#benefits .pr-s-title,#process .pr-s-title,#property .pr-s-title{color:#0A1128}
+#roi .pr-s-eyebrow,#tiers .pr-s-eyebrow,#benefits .pr-s-eyebrow,#process .pr-s-eyebrow,#property .pr-s-eyebrow{color:var(--champagne-gold)}
+
+/* Dark panel text — cream */
+#autonomy .pr-s-title,#autonomy .pr-s-desc,#autonomy .pr-autonomy-quote,
+#advisory .pr-s-title,#advisory .pr-s-desc,#advisory .pr-form-cred{color:#F8FAFC}
+#autonomy .freedom-card__body{color:#CBD5E1;font-size:1.05rem;line-height:1.85}
+#autonomy .freedom-card__title{color:#F8FAFC}
+.pr-form-lede .pr-s-desc{color:#CBD5E1;font-size:1.05rem;line-height:1.85}
 
 /* ══════════════════════════════════════
    RESPONSIVE ═══ */
