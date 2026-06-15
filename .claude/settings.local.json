@@ -55,7 +55,9 @@
       "Bash(python3 _fix_cities.py)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Zia ZR\\\\Desktop\\\\NewtoSaudi.com\\\\NewToSaudiCursor\" -Recurse -Directory)",
       "Bash(Select-Object -ExpandProperty FullName)",
-      "Bash(dir _components /b)"
+      "Bash(dir _components /b)",
+      "Bash(python _patch_forms.py)",
+      "Bash(Remove-Item _patch_forms.py)"
     ]
   }
 }
