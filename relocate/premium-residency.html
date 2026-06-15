@@ -393,7 +393,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 /* ══════════════════════════════════════
    PROPERTY RIGHTS
 ══════════════════════════════════════ */
-.pr-property-grid{display:grid;grid-template-columns:1fr 460px;gap:5.5rem;align-items:start}
+.pr-property-grid{display:grid;grid-template-columns:1fr 420px;gap:2.5rem 5rem;align-items:center}
 .zone-matrix{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:2.25rem 0}
 .zone-card{border:var(--rule);border-radius:4px;padding:1.5rem 1.6rem}
 .zone-card--open{border-color:rgba(223,186,115,.3);background:rgba(223,186,115,.04)}
@@ -409,10 +409,10 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .murabaha-row:last-child{border-bottom:none}
 .murabaha-row__bank{color:var(--silk);font-weight:600}
 .murabaha-row__note{font-size:.82rem;color:var(--silver-dim)}
-.pr-villa-col{position:relative;display:flex;flex-direction:column;gap:1.5rem}
+.pr-villa-col{display:contents}
 .pr-villa-frame{
   border-radius:4px;overflow:hidden;position:relative;
-  flex:1;min-height:280px;
+  min-height:380px;
   background:linear-gradient(160deg,var(--surface),var(--surface2));
   border:1px solid rgba(223,186,115,.3);
   box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(223,186,115,.08);
@@ -1330,6 +1330,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
     <div class="pr-s-eyebrow">Freehold Rights &amp; Property Framework</div>
     <h2 class="pr-s-title">What property ownership actually means after Premium Residency.</h2>
     <div class="pr-property-grid">
+      <!-- Row 1: zone cards ↔ Riyadh cityscape -->
       <div>
         <p style="font-size:1.1rem;color:var(--silver);line-height:1.9;margin-bottom:2.25rem">Premium Residency holders carry the broadest property rights of any foreign national category in the Kingdom. Understanding the geographic scope, the mortgage framework, the title registration system, and the VAT treatment is critical before structuring any acquisition.</p>
         <div class="zone-matrix">
@@ -1354,28 +1355,30 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
             <div class="zone-desc">Prohibited for all foreign nationals including PR holders — military exclusion zones, border security corridors, and designated strategic areas. No acquisition is permissible regardless of tier or residency status.</div>
           </div>
         </div>
-        <div class="murabaha">
-          <div class="murabaha__heading">Sharia-Compliant Home Finance — Murabaha Mortgage Access</div>
-          <div class="murabaha-row"><span class="murabaha-row__bank">Al Rajhi Bank</span><span class="murabaha-row__note">Market leader in Murabaha home finance — competitive LTV ratios for PR holders</span></div>
-          <div class="murabaha-row"><span class="murabaha-row__bank">Saudi National Bank (SNB)</span><span class="murabaha-row__note">SNB Home Finance — multi-currency structuring available for international profiles</span></div>
-          <div class="murabaha-row"><span class="murabaha-row__bank">Riyad Bank</span><span class="murabaha-row__note">Riyad Real Estate Finance — strong for C-suite executive mortgage products</span></div>
-          <p style="font-size:.88rem;color:var(--silver-dim);margin-top:1.25rem;line-height:1.75">Note: If Murabaha financing is used to acquire a property, that asset <strong style="color:var(--silk)">cannot simultaneously qualify</strong> for the Tier 3 Real Estate Owner Resident threshold — which requires a fully mortgage-free asset. 15% VAT applies to new residential purchases. Title deed issuance is via the Watheeq platform (Ministry of Justice). Always structure with a licensed Saudi legal advisor.</p>
+      </div>
+      <!-- Image 1: aligned with zone cards -->
+      <div class="pr-villa-frame">
+        <img src="https://images.unsplash.com/photo-1757774698963-b23f4b273adc?w=1200&auto=format&fit=crop&q=80" alt="Riyadh modern skyline" onerror="this.parentElement.style.background='var(--surface2)'" />
+        <div class="pr-villa-glass">
+          <div class="pr-villa-glass__title">Riyadh — Premium Freehold Zones</div>
+          <div class="pr-villa-glass__sub">Residential and commercial freehold available to PR holders across all major districts</div>
         </div>
       </div>
-      <div class="pr-villa-col">
-        <div class="pr-villa-frame" style="flex:1.65">
-          <img src="https://images.unsplash.com/photo-1758192838598-a1de4da5dcaf?w=1200&auto=format&fit=crop&q=80" alt="Luxury villa North Riyadh" onerror="this.parentElement.style.background='var(--surface2)'" />
-          <div class="pr-villa-glass">
-            <div class="pr-villa-glass__title">North Riyadh Premium Residential</div>
-            <div class="pr-villa-glass__sub">Freehold acquisition across all permitted zones — residential and commercial</div>
-          </div>
-        </div>
-        <div class="pr-villa-frame" style="flex:1">
-          <img src="https://images.unsplash.com/photo-1694018359679-49465b4c0d61?w=1200&auto=format&fit=crop&q=80" alt="Kingdom Tower Riyadh" onerror="this.parentElement.style.background='var(--surface2)'" />
-          <div class="pr-villa-glass">
-            <div class="pr-villa-glass__title">Sharia-Compliant Finance Access</div>
-            <div class="pr-villa-glass__sub">Murabaha mortgage products available to PR holders via Al Rajhi, SNB &amp; Riyad Bank</div>
-          </div>
+
+      <!-- Row 2: murabaha ↔ Faisaliah Tower -->
+      <div class="murabaha">
+        <div class="murabaha__heading">Sharia-Compliant Home Finance — Murabaha Mortgage Access</div>
+        <div class="murabaha-row"><span class="murabaha-row__bank">Al Rajhi Bank</span><span class="murabaha-row__note">Market leader in Murabaha home finance — competitive LTV ratios for PR holders</span></div>
+        <div class="murabaha-row"><span class="murabaha-row__bank">Saudi National Bank (SNB)</span><span class="murabaha-row__note">SNB Home Finance — multi-currency structuring available for international profiles</span></div>
+        <div class="murabaha-row"><span class="murabaha-row__bank">Riyad Bank</span><span class="murabaha-row__note">Riyad Real Estate Finance — strong for C-suite executive mortgage products</span></div>
+        <p style="font-size:.88rem;color:var(--silver-dim);margin-top:1.25rem;line-height:1.75">Note: If Murabaha financing is used to acquire a property, that asset <strong style="color:var(--silk)">cannot simultaneously qualify</strong> for the Tier 3 Real Estate Owner Resident threshold — which requires a fully mortgage-free asset. 15% VAT applies to new residential purchases. Title deed issuance is via the Watheeq platform (Ministry of Justice). Always structure with a licensed Saudi legal advisor.</p>
+      </div>
+      <!-- Image 2: aligned with murabaha -->
+      <div class="pr-villa-frame" style="min-height:280px">
+        <img src="https://images.unsplash.com/photo-1669101564304-1da32c23f8ec?w=1200&auto=format&fit=crop&q=80" alt="Faisaliah Tower Riyadh" onerror="this.parentElement.style.background='var(--surface2)'" />
+        <div class="pr-villa-glass">
+          <div class="pr-villa-glass__title">Faisaliah Tower · Riyadh CBD</div>
+          <div class="pr-villa-glass__sub">Murabaha finance available via Al Rajhi, SNB &amp; Riyad Bank for PR holders</div>
         </div>
       </div>
     </div>
