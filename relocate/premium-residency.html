@@ -292,67 +292,128 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 }
 
 /* ══════════════════════════════════════
-   7-TIER ACCORDION
+   7-TIER EMBASSY SPLIT PANEL
 ══════════════════════════════════════ */
-.pr-tiers-list{border:var(--rule);border-radius:4px;overflow:hidden}
-.tier-item{border-bottom:var(--rule)}
-.tier-item:last-child{border-bottom:none}
-.tier-hdr{
-  display:grid;grid-template-columns:4rem 1fr auto auto;gap:1.5rem;align-items:center;
-  padding:2rem 2.25rem;cursor:pointer;background:transparent;border:none;width:100%;
-  text-align:left;transition:background .25s;user-select:none;
-  min-height:90px;
+.em-wrap{
+  display:flex;border:1px solid rgba(223,186,115,.14);border-radius:6px;
+  overflow:hidden;height:600px;
+  box-shadow:0 32px 80px rgba(3,6,10,.55),0 0 0 1px rgba(223,186,115,.06);
 }
-.tier-hdr:hover{background:rgba(223,186,115,.03)}
-.tier-item.open>.tier-hdr{background:rgba(223,186,115,.05)}
-.tier-index{font-size:.72rem;font-weight:800;letter-spacing:.24em;color:var(--gold);font-variant-numeric:tabular-nums}
-.tier-name{font-size:.92rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--silk);line-height:1.25;margin-bottom:.3rem}
-.tier-sub{font-size:.82rem;color:var(--silver-dim);letter-spacing:.02em}
-.tier-badge{
-  font-size:.6rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  padding:.4rem 1rem;border-radius:2px;white-space:nowrap;
-  background:rgba(223,186,115,.08);border:1px solid rgba(223,186,115,.22);color:var(--gold);
+.em-nav{
+  width:340px;flex-shrink:0;background:#04080F;
+  border-right:1px solid rgba(223,186,115,.09);
+  overflow-y:auto;position:relative;
+  scrollbar-width:thin;scrollbar-color:rgba(223,186,115,.15) transparent;
 }
-.tier-chevron{width:22px;height:22px;color:var(--gold);transition:transform .45s cubic-bezier(.25,1,.5,1);flex-shrink:0}
-.tier-item.open .tier-chevron{transform:rotate(180deg)}
-.tier-body{max-height:0;overflow:hidden;transition:max-height .65s cubic-bezier(.25,1,.5,1)}
-.tier-body-inner{padding:2.75rem 2.25rem 3rem;border-top:var(--rule)}
-.tier-2col{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem}
-.tier-block-title{
-  font-size:.65rem;font-weight:800;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1rem;padding-bottom:.7rem;
-  border-bottom:1px solid rgba(223,186,115,.12);
+.em-nav::-webkit-scrollbar{width:3px}
+.em-nav::-webkit-scrollbar-track{background:transparent}
+.em-nav::-webkit-scrollbar-thumb{background:rgba(223,186,115,.2);border-radius:2px}
+.em-item{
+  padding:1.15rem 1.4rem;cursor:pointer;
+  display:flex;align-items:flex-start;gap:.85rem;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  transition:background .18s;position:relative;user-select:none;
 }
-.tier-dt{width:100%;border-collapse:collapse}
-.tier-dt tr{border-bottom:1px solid rgba(223,186,115,.07)}
-.tier-dt tr:last-child{border-bottom:none}
-.tier-dt td{padding:.95rem 0;vertical-align:top;line-height:1.9}
-.tier-dt td:first-child{
-  width:35%;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--gold);padding-right:1.5rem;opacity:.85;
+.em-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:#DFBA73;
+  transform:scaleY(0);
+  transition:transform .3s cubic-bezier(.25,1,.5,1);
+  transform-origin:center;
 }
-.tier-dt td:last-child{color:#F8FAFC;font-size:1.15rem;line-height:1.9;font-family:'Inter',sans-serif}
-.tier-dt td:last-child strong{color:var(--silk);font-weight:700}
-.tier-advisory-note{
-  margin-top:1.5rem;padding:1.4rem 1.6rem;
-  background:var(--gold-glow);border-left:3px solid var(--gold);
-  font-size:1.05rem;color:var(--silver);line-height:1.9;
+.em-item.active::before{transform:scaleY(1)}
+.em-item.active{background:rgba(223,186,115,.05)}
+.em-item:hover:not(.active){background:rgba(255,255,255,.025)}
+.em-idx{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  color:rgba(223,186,115,.25);flex-shrink:0;
+  margin-top:.2rem;letter-spacing:.15em;transition:color .2s;
 }
-.tier-advisory-note strong{color:var(--silk)}
-.tier-advisory-note a{color:var(--gold);text-decoration:none}
-.tier-verify{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-size:.75rem;color:var(--silver-dim);
-  background:rgba(223,186,115,.05);border:1px solid rgba(223,186,115,.12);
-  padding:.4rem 1rem;border-radius:2px;margin-top:1rem;
+.em-item.active .em-idx,.em-item:hover .em-idx{color:#DFBA73}
+.em-item-text{flex:1;min-width:0}
+.em-tier-name{
+  font-size:.82rem;font-weight:600;color:#334155;
+  line-height:1.3;transition:color .22s;
 }
-.tier-verify::before{content:'⚠';font-size:.65rem}
-.tier-highlight{
-  display:inline-block;background:rgba(223,186,115,.12);
-  border:1px solid rgba(223,186,115,.3);color:var(--gold);
-  font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-  padding:.3rem .8rem;border-radius:2px;margin-top:.25rem;
+.em-item.active .em-tier-name{color:#CBD5E1}
+.em-item:hover:not(.active) .em-tier-name{color:#475569}
+.em-tier-badge{
+  display:inline-block;font-size:.55rem;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(223,186,115,.55);border:1px solid rgba(223,186,115,.18);
+  padding:2px 7px;border-radius:2px;margin-top:.38rem;
 }
+.em-panel{flex:1;background:#06101E;overflow:hidden;}
+.em-panel-inner{
+  height:100%;overflow-y:auto;padding:2.25rem 2.5rem 2.5rem;
+  scrollbar-width:thin;scrollbar-color:rgba(223,186,115,.12) transparent;
+}
+.em-panel-inner::-webkit-scrollbar{width:3px}
+.em-panel-inner::-webkit-scrollbar-track{background:transparent}
+.em-panel-inner::-webkit-scrollbar-thumb{background:rgba(223,186,115,.15);border-radius:2px}
+@keyframes emIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+.em-content{display:none}
+.em-content.active{display:block;animation:emIn .32s cubic-bezier(.25,1,.5,1)}
+.em-stamp{
+  font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(223,186,115,.6);border:1px solid rgba(223,186,115,.18);
+  padding:3px 11px;border-radius:2px;display:inline-block;margin-bottom:1rem;
+}
+.em-title{
+  font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:800;
+  color:#F1F5F9;letter-spacing:.04em;line-height:1.2;margin-bottom:.3rem;
+}
+.em-sub{font-size:.88rem;color:#475569;font-style:italic;margin-bottom:1.25rem;line-height:1.5;}
+.em-rule{
+  height:1px;
+  background:linear-gradient(90deg,rgba(223,186,115,.4) 0%,rgba(223,186,115,.12) 60%,transparent 100%);
+  margin-bottom:1.5rem;
+}
+.em-fee-line{display:flex;align-items:baseline;gap:.85rem;margin-bottom:1.75rem;}
+.em-fee{
+  font-family:'JetBrains Mono',monospace;font-size:1.9rem;font-weight:700;
+  color:#DFBA73;letter-spacing:.03em;line-height:1;
+}
+.em-fee-note{font-size:.72rem;color:#334155;text-transform:uppercase;letter-spacing:.14em;}
+.em-2col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.em-col-head{
+  font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(223,186,115,.42);margin-bottom:.8rem;padding-bottom:.5rem;
+  border-bottom:1px solid rgba(223,186,115,.1);
+}
+.em-col-head2{
+  font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(223,186,115,.42);margin-top:1.5rem;margin-bottom:.8rem;padding-bottom:.5rem;
+  border-bottom:1px solid rgba(223,186,115,.1);
+}
+.em-dt{width:100%;border-collapse:collapse;}
+.em-dt tr{border-bottom:1px solid rgba(255,255,255,.04);}
+.em-dt tr:last-child{border-bottom:none;}
+.em-dt td{padding:.62rem 0;vertical-align:top;line-height:1.9;}
+.em-dt td:first-child{
+  width:28%;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(223,186,115,.42);padding-right:.85rem;
+}
+.em-dt td:last-child{font-size:1.05rem;color:#94A3B8;line-height:1.9;}
+.em-dt td:last-child strong{color:#CBD5E1;font-weight:600;}
+.em-note{
+  margin-top:1.25rem;padding:1.1rem 1.35rem;
+  background:rgba(223,186,115,.04);border-left:3px solid rgba(223,186,115,.28);
+  font-size:.95rem;color:#64748B;line-height:1.9;
+}
+.em-note strong{color:#94A3B8;}
+.em-note a{color:#DFBA73;text-decoration:none;}
+.em-highlight{
+  display:inline-block;background:rgba(223,186,115,.08);border:1px solid rgba(223,186,115,.25);
+  color:rgba(223,186,115,.8);font-size:.68rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:.28rem .75rem;border-radius:2px;margin:.2rem 0;
+}
+.em-verify{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.72rem;color:#475569;
+  background:rgba(223,186,115,.04);border:1px solid rgba(223,186,115,.1);
+  padding:.38rem 1rem;border-radius:2px;margin-top:.75rem;
+}
+.em-verify::before{content:'⚠';font-size:.6rem;color:rgba(223,186,115,.5);}
 
 /* ══════════════════════════════════════
    SOCIETY OF AUTONOMY
@@ -566,24 +627,8 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .roi-table .roi-even td:nth-child(2){background:rgba(30,41,59,.05)}
 .roi-table .roi-even td:nth-child(3){background:rgba(223,186,115,.08);color:var(--royal-navy)}
 
-/* Accordion — crisp white slates */
-#tiers .pr-tiers-list{border:1px solid rgba(30,41,59,.15);background:#fff}
-#tiers .tier-item{border-bottom:1px solid rgba(30,41,59,.1)}
-#tiers .tier-hdr:hover{background:rgba(30,41,59,.03)}
-#tiers .tier-item.open>.tier-hdr{background:rgba(223,186,115,.06)}
-#tiers .tier-name{color:var(--royal-navy)}
-#tiers .tier-sub{color:#64748B}
-#tiers .tier-body-inner{border-top:1px solid rgba(30,41,59,.1)}
-#tiers .tier-block-title{color:var(--champagne-gold);border-bottom:1px solid rgba(223,186,115,.18)}
-#tiers .tier-dt tr{border-bottom:1px solid rgba(30,41,59,.07)}
-#tiers .tier-dt td:first-child{color:var(--champagne-gold)}
-#tiers .tier-dt td:last-child{color:var(--charcoal-text)}
-#tiers .tier-dt td:last-child strong{color:var(--royal-navy)}
-#tiers .tier-advisory-note{background:rgba(223,186,115,.06);border-left:3px solid var(--champagne-gold);color:var(--charcoal-text)}
-#tiers .tier-advisory-note strong{color:var(--royal-navy)}
-#tiers .tier-advisory-note a{color:var(--champagne-gold)}
-#tiers .tier-verify{color:#64748B;background:rgba(223,186,115,.07);border-color:rgba(223,186,115,.25)}
-#tiers .tier-highlight{background:rgba(10,17,40,.07);border-color:rgba(10,17,40,.2);color:var(--royal-navy)}
+/* Embassy split panel sits as self-contained dark component on light section */
+#tiers .em-wrap{margin-top:0}
 
 /* AUTONOMY — Dark Royal Re-emergence */
 #autonomy{background:linear-gradient(180deg,#F4F6F9 0%,#c8d4e8 4%,#101F42 14%,#101F42 100%);--wm-color:rgba(223,186,115,.02)}
@@ -644,16 +689,11 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 /* ══════════════════════════════════════
    UNIVERSAL TEXT CLARITY — LIGHT PANELS
 ══════════════════════════════════════ */
-#roi *:not(.pr-s-eyebrow):not(.pr-s-eyebrow *):not(.roi-tag):not(.roi-table th:nth-child(3)):not(a),
-#tiers *:not(.tier-chevron):not(.tier-badge):not(.tier-advisory-note a):not(.tier-highlight):not(.tier-verify):not(.pr-s-eyebrow):not(.pr-s-eyebrow *){
+#roi *:not(.pr-s-eyebrow):not(.pr-s-eyebrow *):not(.roi-tag):not(.roi-table th:nth-child(3)):not(a){
   -webkit-text-fill-color:initial;
 }
 #roi .pr-s-desc,#roi .roi-advisory__text,#roi p{color:#1E293B;font-size:1.1rem;line-height:1.9}
 #roi .roi-table td{font-size:1rem}
-#tiers .tier-sub{color:#475569}
-#tiers .tier-dt td:last-child{color:#1E293B;font-size:1.1rem;line-height:1.9}
-#tiers .tier-advisory-note{color:#1E293B;font-size:1.05rem;line-height:1.9}
-#tiers .tier-advisory-note strong{color:#0A1128}
 #benefits .benefit-text{color:#1E293B;font-size:1.1rem;line-height:1.9}
 #process .process-step__desc{color:#1E293B;font-size:1rem;line-height:1.85}
 #process .process-step__title{color:#0A1128}
@@ -700,8 +740,12 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
   .rejection-list{grid-template-columns:1fr}
   .pr-stats{gap:0}
   .pr-stat:not(:last-child){border-right:none;padding-right:0;margin-right:0;padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:var(--rule)}
-  .tier-hdr{grid-template-columns:3.5rem 1fr auto}
-  .tier-badge{display:none}
+  .em-wrap{flex-direction:column;height:auto}
+  .em-nav{width:100%;border-right:none;border-bottom:1px solid rgba(223,186,115,.09);max-height:280px;overflow-y:auto}
+  .em-panel{height:auto}
+  .em-panel-inner{height:auto;max-height:none}
+  .em-2col{grid-template-columns:1fr}
+  .em-fee{font-size:1.55rem}
   .pr-s-title{font-size:1.65rem}
   .roi-intro{grid-template-columns:1fr}
   .pr-villa-frame{min-height:480px}
@@ -970,96 +1014,141 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 </section>
 
 <!-- ══════════════════════════════════════════════
-     7-TIER ACCORDION
+     7-TIER EMBASSY SPLIT PANEL
 ══════════════════════════════════════════════ -->
 <section class="pr-section pr-reveal pr-watermark-canvas" id="tiers">
   <div class="pr-container">
     <div class="pr-s-eyebrow">The Seven-Tier Regulatory Matrix</div>
     <h2 class="pr-s-title">All 7 Premium Residency categories — 2026 thresholds, conditions, and rights stacks.</h2>
-    <p class="pr-s-desc" style="margin-bottom:3rem">Expand any tier to access the full 2026 regulatory breakdown. Thresholds marked ⚠ are subject to ministerial update — verify at <a href="https://pr.gov.sa" target="_blank" rel="noopener" style="color:var(--gold)">pr.gov.sa</a> before structuring any application.</p>
+    <p class="pr-s-desc" style="margin-bottom:2.5rem">Select any tier to access the full 2026 regulatory breakdown. Thresholds marked ⚠ are subject to ministerial update — verify at <a href="https://pr.gov.sa" target="_blank" rel="noopener" style="color:#7C5209">pr.gov.sa</a> before structuring any application.</p>
 
-    <div class="pr-tiers-list">
+    <div class="em-wrap">
 
-      <!-- TIER 1 -->
-      <div class="tier-item" id="tier-1">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t1-body">
-          <span class="tier-index">01</span>
-          <div>
-            <div class="tier-name">Permanent Premium Residency</div>
-            <div class="tier-sub">Al-Iqama Al-Mumayaza Al-Da'ima · SAR 800,000 one-time fee</div>
+      <!-- LEFT NAV -->
+      <nav class="em-nav" aria-label="Tier selection">
+        <div class="em-item active" data-ec="ec1" role="button" tabindex="0" aria-selected="true">
+          <span class="em-idx">01</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Permanent Premium Residency</div>
+            <span class="em-tier-badge">Flagship Tier</span>
           </div>
-          <span class="tier-badge">Flagship Tier</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t1-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+        </div>
+        <div class="em-item" data-ec="ec2" role="button" tabindex="0">
+          <span class="em-idx">02</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Annual Premium Residency</div>
+            <span class="em-tier-badge">Cash-Flow Optimised</span>
+          </div>
+        </div>
+        <div class="em-item" data-ec="ec3" role="button" tabindex="0">
+          <span class="em-idx">03</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Real Estate Owner Resident</div>
+            <span class="em-tier-badge">Property Pathway</span>
+          </div>
+        </div>
+        <div class="em-item" data-ec="ec4" role="button" tabindex="0">
+          <span class="em-idx">04</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Investor Resident</div>
+            <span class="em-tier-badge">Business Capital</span>
+          </div>
+        </div>
+        <div class="em-item" data-ec="ec5" role="button" tabindex="0">
+          <span class="em-idx">05</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Entrepreneur Resident</div>
+            <span class="em-tier-badge">Startup Ecosystem</span>
+          </div>
+        </div>
+        <div class="em-item" data-ec="ec6" role="button" tabindex="0">
+          <span class="em-idx">06</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Special Talent Resident</div>
+            <span class="em-tier-badge">Professional Excellence</span>
+          </div>
+        </div>
+        <div class="em-item" data-ec="ec7" role="button" tabindex="0">
+          <span class="em-idx">07</span>
+          <div class="em-item-text">
+            <div class="em-tier-name">Gifted Resident</div>
+            <span class="em-tier-badge">Cultural &amp; Athletic</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- RIGHT PANEL -->
+      <div class="em-panel">
+        <div class="em-panel-inner">
+
+          <!-- ── EC1: Permanent Premium Residency ── -->
+          <div class="em-content active" id="ec1">
+            <div class="em-stamp">Flagship Tier · Permanent</div>
+            <div class="em-title">Permanent Premium Residency</div>
+            <div class="em-sub">Al-Iqama Al-Mumayaza Al-Da'ima · The definitive sponsor-free status</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">SAR 800,000</span>
+              <span class="em-fee-note">one-time · no expiry · no renewal</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Financial Terms</div>
-                <table class="tier-dt">
-                  <tr><td>Fee</td><td><strong>SAR 800,000</strong> (~USD 213,300) — one-time, non-refundable, no expiry</td></tr>
-                  <tr><td>Validity</td><td><strong>Permanent</strong> — no renewal fees, no annual commitment, no expiry date</td></tr>
-                  <tr><td>Eligibility</td><td>Open — no minimum income, sector, or nationality requirement beyond financial capacity to pay the fee</td></tr>
-                  <tr><td>ROI vs Annual</td><td>Year 8 breakeven — every year beyond Year 8 returns SAR 100,000 in compounding financial advantage</td></tr>
+                <div class="em-col-head">Financial Terms</div>
+                <table class="em-dt">
+                  <tr><td>Fee</td><td><strong>SAR 800,000</strong> (~USD 213,300) — one-time, non-refundable, no expiry date</td></tr>
+                  <tr><td>Validity</td><td><strong>Permanent</strong> — no renewal fees, no annual commitment, no expiry</td></tr>
+                  <tr><td>Eligibility</td><td>Open — no minimum income, sector, or nationality requirement beyond financial capacity</td></tr>
+                  <tr><td>ROI vs Annual</td><td>Year 8 breakeven — every year beyond Year 8 returns SAR 100,000 in compounding advantage</td></tr>
                 </table>
-                <div class="tier-block-title" style="margin-top:2rem">Rights Stack</div>
-                <table class="tier-dt">
-                  <tr><td>Employment</td><td>Sponsor-free — switch employers, launch companies, accept board seats without permission from any party</td></tr>
-                  <tr><td>Business</td><td>100% foreign ownership of Saudi LLCs — no Saudi partner, no silent shareholder required</td></tr>
-                  <tr><td>Exit / Re-entry</td><td>Completely free — no exit visa, no re-entry visa. Managed via Absher platform</td></tr>
-                  <tr><td>Gov. services</td><td>Access to most government services at citizen-equivalent rates</td></tr>
-                </table>
-              </div>
-              <div>
-                <div class="tier-block-title">Property &amp; Family Rights</div>
-                <table class="tier-dt">
-                  <tr><td>Property</td><td>Unrestricted freehold of residential and commercial property — excluding Mecca/Medina holy zones and strategic border areas</td></tr>
-                  <tr><td>Family sponsor</td><td>Sponsor spouse and all dependent children directly — no employer salary threshold, no PRO intermediary</td></tr>
-                  <tr><td>Domestic staff</td><td>Sponsorship rights available directly to the PR holder without routing through an employer</td></tr>
-                  <tr><td>Adult children</td><td>Extendable under specific conditions — confirm at PRC portal during application</td></tr>
-                </table>
-                <div class="tier-block-title" style="margin-top:2rem">Application Pathway</div>
-                <table class="tier-dt">
+                <div class="em-col-head2">Application Pathway</div>
+                <table class="em-dt">
                   <tr><td>Portal</td><td>pr.gov.sa — create account, complete profile, upload full document set</td></tr>
-                  <tr><td>Verification</td><td>Ministry of Interior background check, GAMCA-equivalent medical screening, financial verification — all run in parallel</td></tr>
+                  <tr><td>Verification</td><td>MOI background check, GAMCA-equivalent medical, financial verification — all parallel</td></tr>
                   <tr><td>Approval</td><td>30–60 days from complete submission</td></tr>
                   <tr><td>Card issuance</td><td>Within 14 days of confirmed payment — link to Absher immediately on receipt</td></tr>
                 </table>
-                <div class="tier-advisory-note"><strong>Strategic context:</strong> For any executive on SAR 80,000+/month, SAR 800,000 is 10 months of gross income in exchange for permanent operational autonomy in the Kingdom's largest economy. For anyone planning property acquisition, the right to purchase a SAR 4M+ villa freehold often makes this cost-neutral when evaluated as a bundled residential decision.</div>
+              </div>
+              <div>
+                <div class="em-col-head">Rights Stack</div>
+                <table class="em-dt">
+                  <tr><td>Employment</td><td>Sponsor-free — switch employers, launch companies, accept board seats without permission</td></tr>
+                  <tr><td>Business</td><td>100% foreign ownership of Saudi LLCs — no Saudi partner, no silent shareholder required</td></tr>
+                  <tr><td>Exit / Re-entry</td><td>Completely free — no exit visa, no re-entry visa. Managed via Absher platform</td></tr>
+                  <tr><td>Gov. services</td><td>Access to most government services at citizen-equivalent rates</td></tr>
+                  <tr><td>Property</td><td>Unrestricted freehold of residential and commercial property — excluding Mecca/Medina holy zones and strategic border areas</td></tr>
+                  <tr><td>Family sponsor</td><td>Sponsor spouse and all dependent children directly — no employer salary threshold, no PRO intermediary</td></tr>
+                  <tr><td>Domestic staff</td><td>Sponsorship rights available directly to the PR holder without routing through an employer</td></tr>
+                </table>
+                <div class="em-note"><strong>Strategic context:</strong> For any executive on SAR 80,000+/month, SAR 800,000 is 10 months of gross income in exchange for permanent operational autonomy in the Kingdom's largest economy. For anyone planning property acquisition, the right to purchase a SAR 4M+ villa freehold often makes this cost-neutral when evaluated as a bundled residential decision. <a href="#advisory">Request a personalised eligibility assessment →</a></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 2 -->
-      <div class="tier-item" id="tier-2">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t2-body">
-          <span class="tier-index">02</span>
-          <div>
-            <div class="tier-name">Annual Premium Residency</div>
-            <div class="tier-sub">Al-Iqama Al-Mumayaza Al-Sanawiya · SAR 100,000 / year</div>
-          </div>
-          <span class="tier-badge">Cash-Flow Optimised</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t2-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC2: Annual Premium Residency ── -->
+          <div class="em-content" id="ec2">
+            <div class="em-stamp">Cash-Flow Optimised · Annual</div>
+            <div class="em-title">Annual Premium Residency</div>
+            <div class="em-sub">Al-Iqama Al-Mumayaza Al-Sanawiya · Identical rights, annual commitment</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">SAR 100,000</span>
+              <span class="em-fee-note">per year · renewable indefinitely</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Financial Terms</div>
-                <table class="tier-dt">
-                  <tr><td>Fee</td><td><strong>SAR 100,000/year</strong> (~USD 26,700) — renewable, no fixed term or cap on renewal cycles</td></tr>
+                <div class="em-col-head">Financial Terms</div>
+                <table class="em-dt">
+                  <tr><td>Fee</td><td><strong>SAR 100,000/year</strong> (~USD 26,700) — renewable, no cap on renewal cycles</td></tr>
                   <tr><td>Validity</td><td>1 year, renewable indefinitely with no restrictions on the number of renewals</td></tr>
                   <tr><td>Eligibility</td><td>Open — identical eligibility criteria to the Permanent tier</td></tr>
-                  <tr><td>Conversion</td><td>Can upgrade to Permanent at any time — the full SAR 800,000 fee applies with zero credit for prior annual payments</td></tr>
-                  <tr><td>Conversion timing</td><td>Convert at Year 6 or 7 if the Saudi horizon extends — do not wait until Year 8, as PRC processing time must be factored in</td></tr>
+                  <tr><td>Conversion</td><td>Can upgrade to Permanent at any time — full SAR 800,000 fee applies, zero credit for prior annual payments</td></tr>
+                  <tr><td>Timing</td><td>Convert at Year 6 or 7 if Saudi horizon extends — factor in PRC processing time</td></tr>
                 </table>
-                <div class="tier-advisory-note">This is not a lite product. The rights are <strong>identical</strong> to the Permanent tier in every respect. The Annual pathway is a cash-flow decision, not a capability decision. Any Annual holder has exactly the same employment freedom, property rights, and family sponsorship authority as a Permanent holder.</div>
+                <div class="em-note">This is not a lite product. The rights are <strong>identical</strong> to the Permanent tier in every respect. The Annual pathway is a cash-flow decision, not a capability decision.</div>
               </div>
               <div>
-                <div class="tier-block-title">Identical Rights Stack to Tier 1</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Identical Rights Stack to Tier 1</div>
+                <table class="em-dt">
                   <tr><td>Employment</td><td>Sponsor-free — full employer switching rights, no exit visa requirement</td></tr>
                   <tr><td>Business</td><td>100% foreign-owned Saudi entity permitted in all MISA-approved sectors</td></tr>
                   <tr><td>Property</td><td>Unrestricted freehold ownership (same exclusions as Tier 1)</td></tr>
@@ -1067,114 +1156,98 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
                   <tr><td>Exit / Re-entry</td><td>Completely free — managed via Absher</td></tr>
                   <tr><td>Gov. services</td><td>Citizen-equivalent access rates across most government platforms</td></tr>
                 </table>
-                <div class="tier-block-title" style="margin-top:2rem">Ideal Profile</div>
-                <table class="tier-dt">
+                <div class="em-col-head2">Ideal Profile</div>
+                <table class="em-dt">
                   <tr><td>Best for</td><td>Executives with a confirmed 3–7 year Saudi horizon who need the full rights stack but are not yet ready to commit SAR 800,000 upfront</td></tr>
-                  <tr><td>Not suitable</td><td>Anyone with a Saudi horizon beyond 8 years — the total cost exceeds Permanent and the financial disadvantage compounds annually thereafter</td></tr>
+                  <tr><td>Not suitable</td><td>Anyone with a Saudi horizon beyond 8 years — total cost exceeds Permanent and the financial disadvantage compounds annually thereafter</td></tr>
                 </table>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 3 -->
-      <div class="tier-item" id="tier-3">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t3-body">
-          <span class="tier-index">03</span>
-          <div>
-            <div class="tier-name">Real Estate Owner Resident</div>
-            <div class="tier-sub">Property-secured residency · SAR 4,000,000+ freehold, completed and mortgage-free</div>
-          </div>
-          <span class="tier-badge">Property Pathway</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t3-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC3: Real Estate Owner Resident ── -->
+          <div class="em-content" id="ec3">
+            <div class="em-stamp">Property Pathway · Freehold</div>
+            <div class="em-title">Real Estate Owner Resident</div>
+            <div class="em-sub">Property-secured residency · SAR 4,000,000+ freehold, completed and mortgage-free</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">SAR 4,000,000+</span>
+              <span class="em-fee-note">minimum freehold value · no PRC fee</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Eligibility Conditions</div>
-                <table class="tier-dt">
-                  <tr><td>Minimum value</td><td><strong>SAR 4,000,000+</strong> in Saudi real estate — confirmed by REGA-accredited independent valuation</td></tr>
-                  <tr><td>Completion status</td><td><span class="tier-highlight">Mandatory: Fully Completed &amp; Handed Over</span><br/>Off-plan, under-construction, or shell-and-core assets do not qualify at any stage, regardless of contract value</td></tr>
-                  <tr><td>Encumbrance</td><td><span class="tier-highlight">Mandatory: Entirely Mortgage-Free</span><br/>Any Murabaha financing, Islamic mortgage, or conventional banking encumbrance disqualifies the asset. Bank clearance certificate is required</td></tr>
-                  <tr><td>Ownership type</td><td>Freehold registration only — long-term leasehold and usufruct structures do not qualify</td></tr>
+                <div class="em-col-head">Eligibility Conditions</div>
+                <table class="em-dt">
+                  <tr><td>Min value</td><td><strong>SAR 4,000,000+</strong> in Saudi real estate — confirmed by REGA-accredited independent valuation</td></tr>
+                  <tr><td>Completion</td><td><span class="em-highlight">Mandatory: Fully Completed &amp; Handed Over</span><br/>Off-plan, under-construction, or shell-and-core assets do not qualify at any stage</td></tr>
+                  <tr><td>Encumbrance</td><td><span class="em-highlight">Mandatory: Entirely Mortgage-Free</span><br/>Any Murabaha financing or banking encumbrance disqualifies the asset. Bank clearance certificate required</td></tr>
+                  <tr><td>Ownership</td><td>Freehold registration only — long-term leasehold and usufruct structures do not qualify</td></tr>
                   <tr><td>Location</td><td>Outside Mecca and Medina holy zones, strategic border areas, and military exclusion zones</td></tr>
                 </table>
-                <span class="tier-verify">Verify current threshold and additional conditions at pr.gov.sa before structuring acquisition</span>
+                <span class="em-verify">Verify current threshold and conditions at pr.gov.sa before structuring acquisition</span>
               </div>
               <div>
-                <div class="tier-block-title">Documentation Package</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Documentation Package</div>
+                <table class="em-dt">
                   <tr><td>Title deed</td><td>REGA-registered freehold title deed issued via the Watheeq digital property platform</td></tr>
                   <tr><td>Valuation</td><td>Independent REGA-accredited valuation report confirming SAR 4,000,000+ market value at time of application</td></tr>
-                  <tr><td>Mortgage clearance</td><td>Bank-issued clearance letter confirming zero encumbrance on the asset — must be dated within 90 days of submission</td></tr>
-                  <tr><td>Application route</td><td>PRC portal at pr.gov.sa with the complete REGA title documentation package</td></tr>
+                  <tr><td>Mortgage clearance</td><td>Bank-issued clearance letter confirming zero encumbrance — must be dated within 90 days of submission</td></tr>
+                  <tr><td>Application</td><td>PRC portal at pr.gov.sa with the complete REGA title documentation package</td></tr>
                 </table>
-                <div class="tier-block-title" style="margin-top:2rem">Strategic Context</div>
-                <div class="tier-advisory-note">At current North Riyadh prime residential pricing (SAR 2,000–4,500/sqm), SAR 4M represents a 2–3 bedroom villa in a premium compound or a full floor in a Grade-A residential tower. For family offices deploying capital into Vision 2030 residential zones — NEOM community parcels, Diriyah Gate adjacents, Red Sea coastal assets — this tier enables Premium Residency as a direct by-product of a capital allocation decision already being made.</div>
+                <div class="em-note">At current North Riyadh prime residential pricing (SAR 2,000–4,500/sqm), SAR 4M represents a 2–3 bedroom villa in a premium compound or a full floor in a Grade-A residential tower. For family offices deploying capital into Vision 2030 residential zones — NEOM community parcels, Diriyah Gate adjacents, Red Sea coastal assets — this tier enables Premium Residency as a direct by-product of a capital allocation decision already being made.</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 4 -->
-      <div class="tier-item" id="tier-4">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t4-body">
-          <span class="tier-index">04</span>
-          <div>
-            <div class="tier-name">Investor Resident</div>
-            <div class="tier-sub">MISA-linked active business capital deployment</div>
-          </div>
-          <span class="tier-badge">Business Capital</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t4-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC4: Investor Resident ── -->
+          <div class="em-content" id="ec4">
+            <div class="em-stamp">Business Capital · MISA-linked</div>
+            <div class="em-title">Investor Resident</div>
+            <div class="em-sub">MISA-linked active business capital deployment in the Kingdom</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">MISA-linked</span>
+              <span class="em-fee-note">sector-specific thresholds apply</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Entry Mechanism</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Entry Mechanism</div>
+                <table class="em-dt">
                   <tr><td>Gateway</td><td>Ministry of Investment Saudi Arabia (MISA) — active investment licence required prior to PRC application</td></tr>
                   <tr><td>Investment type</td><td>Active capital deployment in a Saudi-registered commercial entity or MISA-licensed foreign investment vehicle</td></tr>
                   <tr><td>Priority sectors</td><td>Technology, advanced manufacturing, logistics, healthcare, tourism, renewable energy, financial services, and other Vision 2030 strategic verticals</td></tr>
-                  <tr><td>Threshold</td><td>Sector-specific minimum investment levels — verify current requirements at misa.gov.sa and the PRC portal before structuring</td></tr>
+                  <tr><td>Threshold</td><td>Sector-specific minimum investment levels — verify current requirements at misa.gov.sa and the PRC portal</td></tr>
                   <tr><td>Endorsement</td><td>MISA endorsement letter required as part of the PRC application package</td></tr>
                 </table>
-                <span class="tier-verify">MISA investment thresholds are sector-specific and subject to ministerial update</span>
+                <span class="em-verify">MISA investment thresholds are sector-specific and subject to ministerial update</span>
               </div>
               <div>
-                <div class="tier-block-title">Rights &amp; Structure</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Rights &amp; Structure</div>
+                <table class="em-dt">
                   <tr><td>Rights delivered</td><td>Full Premium Residency rights stack — sponsor-free living, unrestricted property ownership, family sponsorship, and complete exit freedom</td></tr>
                   <tr><td>Business entity</td><td>100% foreign-owned Saudi LLC permitted in most MISA-approved sectors — no Saudi partner or nominee required</td></tr>
                   <tr><td>Renewal</td><td>Annual renewal contingent on the investment remaining active, compliant, and above the sector threshold</td></tr>
                 </table>
-                <div class="tier-advisory-note"><strong>Key distinction vs. standard MISA Investor Visa:</strong> A standard MISA visa is employment-class and confers no property rights, no family sponsorship autonomy, and no exit freedom. The Investor Resident pathway under this tier delivers the complete Premium Residency rights stack. The MISA licence is the qualifying gate; Premium Residency is what you receive on the other side of it. These are not interchangeable products.</div>
+                <div class="em-note"><strong>Key distinction vs. standard MISA Investor Visa:</strong> A standard MISA visa is employment-class and confers no property rights, no family sponsorship autonomy, and no exit freedom. The Investor Resident pathway delivers the complete Premium Residency rights stack. The MISA licence is the qualifying gate; Premium Residency is what you receive on the other side of it. These are not interchangeable products.</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 5 -->
-      <div class="tier-item" id="tier-5">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t5-body">
-          <span class="tier-index">05</span>
-          <div>
-            <div class="tier-name">Entrepreneur Resident</div>
-            <div class="tier-sub">Startup founders and venture capital investors — two sub-tiers</div>
-          </div>
-          <span class="tier-badge">Startup Ecosystem</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t5-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC5: Entrepreneur Resident ── -->
+          <div class="em-content" id="ec5">
+            <div class="em-stamp">Startup Ecosystem · Two Sub-Tiers</div>
+            <div class="em-title">Entrepreneur Resident</div>
+            <div class="em-sub">Startup founders and venture capital investors — two distinct pathways</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">Two pathways</span>
+              <span class="em-fee-note">founder track · VC investor track</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Sub-Tier A — Startup Founder</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Sub-Tier A — Startup Founder</div>
+                <table class="em-dt">
                   <tr><td>Qualification</td><td>Active licensed Saudi startup — registered via Monsha'at (SME Authority) or an approved Vision 2030-aligned incubator or accelerator programme</td></tr>
                   <tr><td>Endorsement</td><td>Confirmation from the relevant Saudi startup licensing body, Monsha'at, or a PRC-recognised incubator</td></tr>
                   <tr><td>Stage</td><td>Early-stage and growth-stage founders both eligible — specific revenue or valuation floors set by the PRC; verify at pr.gov.sa before application</td></tr>
@@ -1182,82 +1255,72 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
                 </table>
               </div>
               <div>
-                <div class="tier-block-title">Sub-Tier B — Venture Capital Investor</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Sub-Tier B — Venture Capital Investor</div>
+                <table class="em-dt">
                   <tr><td>Qualification</td><td>Active investor in Saudi-domiciled venture capital funds or direct startup portfolio companies registered in the Kingdom</td></tr>
                   <tr><td>Endorsement</td><td>PIF/SRMG ecosystem verification or documentation from a licensed Saudi VC fund confirming an active investment position</td></tr>
                   <tr><td>Ideal profile</td><td>General Partners, Limited Partners, and angel investors active in the Saudi venture ecosystem who require physical Riyadh presence to access Saudi corporate deal flow and government procurement</td></tr>
                 </table>
-                <div class="tier-advisory-note"><strong>Ecosystem context:</strong> Saudi Arabia's startup ecosystem is producing companies at unicorn-track valuations — Tamara, Foodics, Lean Technologies, Sary, Nana Direct. Foreign founders who want access to Saudi corporate procurement, Vision 2030 government contracts, and Saudi institutional capital pools need to be physically present and resident in Riyadh — not remotely operating from Dubai. This tier was designed for exactly that structural decision.</div>
+                <div class="em-note"><strong>Ecosystem context:</strong> Saudi Arabia's startup ecosystem is producing companies at unicorn-track valuations — Tamara, Foodics, Lean Technologies, Sary, Nana Direct. Foreign founders who want access to Saudi corporate procurement, Vision 2030 government contracts, and Saudi institutional capital pools need to be physically present and resident in Riyadh — not remotely operating from Dubai. This tier was designed for exactly that structural decision.</div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 6 -->
-      <div class="tier-item" id="tier-6">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t6-body">
-          <span class="tier-index">06</span>
-          <div>
-            <div class="tier-name">Special Talent Resident</div>
-            <div class="tier-sub">Healthcare · Science &amp; Research · Senior Executive Leadership</div>
-          </div>
-          <span class="tier-badge">Professional Excellence</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t6-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC6: Special Talent Resident ── -->
+          <div class="em-content" id="ec6">
+            <div class="em-stamp">Professional Excellence · Three Categories</div>
+            <div class="em-title">Special Talent Resident</div>
+            <div class="em-sub">Healthcare · Science &amp; Research · Senior Executive Leadership</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">Three categories</span>
+              <span class="em-fee-note">healthcare · research · C-suite executive</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Category I — Healthcare</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Category I — Healthcare</div>
+                <table class="em-dt">
                   <tr><td>Profile</td><td>Specialist physicians, senior surgeons, and healthcare administrators of significant seniority</td></tr>
-                  <tr><td>Priority disciplines</td><td>Oncology, neurosurgery, cardiac surgery, neonatology, and organ transplant surgery — specialties where Saudi demand structurally exceeds domestic physician supply</td></tr>
+                  <tr><td>Priority</td><td>Oncology, neurosurgery, cardiac surgery, neonatology, and organ transplant surgery — specialties where Saudi demand structurally exceeds domestic physician supply</td></tr>
                   <tr><td>Endorsement</td><td>Saudi Commission for Health Specialties (SCFHS) recognition — mandatory condition for application</td></tr>
                 </table>
-                <div class="tier-block-title" style="margin-top:2rem">Category II — Science &amp; Research</div>
-                <table class="tier-dt">
+                <div class="em-col-head2">Category II — Science &amp; Research</div>
+                <table class="em-dt">
                   <tr><td>Profile</td><td>Published researchers, university faculty at associate professor level and above, senior R&amp;D leads, and patent holders in strategic domains</td></tr>
-                  <tr><td>Salary threshold</td><td><span class="tier-highlight">SAR 14,000 / month minimum</span> — verify the current figure at pr.gov.sa before application</td></tr>
+                  <tr><td>Salary threshold</td><td><span class="em-highlight">SAR 14,000 / month minimum</span><br/>Verify the current figure at pr.gov.sa before application</td></tr>
                   <tr><td>Priority domains</td><td>Artificial intelligence, biotech, materials science, clean energy, quantum computing</td></tr>
-                  <tr><td>Endorsement</td><td>KACST (King Abdulaziz City for Science and Technology) or an accredited Saudi university faculty confirmation</td></tr>
+                  <tr><td>Endorsement</td><td>KACST or an accredited Saudi university faculty confirmation</td></tr>
                 </table>
-                <span class="tier-verify">Salary thresholds are subject to PRC ministerial update — verify before structuring</span>
+                <span class="em-verify">Salary thresholds are subject to PRC ministerial update — verify before structuring</span>
               </div>
               <div>
-                <div class="tier-block-title">Category III — Senior Executive Leadership</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Category III — Senior Executive Leadership</div>
+                <table class="em-dt">
                   <tr><td>Profile</td><td>C-suite and senior VP-level executives in major corporations with active Saudi operations</td></tr>
-                  <tr><td>Salary threshold</td><td><span class="tier-highlight">SAR 80,000 / month minimum</span> — verify current figure at pr.gov.sa before application</td></tr>
-                  <tr><td>Seniority level</td><td>Chief Executive Officer, Chief Financial Officer, Chief Operating Officer, Chief Technology Officer, Regional President, Managing Director, Senior Vice President, or functional head of a significant Saudi operation</td></tr>
+                  <tr><td>Salary threshold</td><td><span class="em-highlight">SAR 80,000 / month minimum</span><br/>Verify current figure at pr.gov.sa before application</td></tr>
+                  <tr><td>Seniority</td><td>CEO, CFO, COO, CTO, Regional President, Managing Director, Senior Vice President, or functional head of a significant Saudi operation</td></tr>
                   <tr><td>Endorsement</td><td>Employer confirmation letter or relevant industry body endorsement may be required by PRC at assessment stage</td></tr>
                 </table>
-                <span class="tier-verify">Salary thresholds are subject to PRC ministerial update — verify before structuring</span>
-                <div class="tier-advisory-note"><strong>The most underutilised tier in the programme.</strong> A Regional CFO or VP who has run a Saudi P&amp;L for five or more years holds the personal professional credentials to qualify for permanent residency in their own name — independent of any employer relationship. Their corporate PRO team processes a standard Iqama. Nobody tells them they already qualify for something permanent. This advisory gap is exactly what a KAM assessment closes. <a href="#advisory">Request an eligibility review →</a></div>
+                <span class="em-verify">Salary thresholds are subject to PRC ministerial update — verify before structuring</span>
+                <div class="em-note"><strong>The most underutilised tier in the programme.</strong> A Regional CFO or VP who has run a Saudi P&amp;L for five or more years holds the personal professional credentials to qualify for permanent residency in their own name — independent of any employer relationship. Their corporate PRO team processes a standard Iqama. Nobody tells them they already qualify for something permanent. This advisory gap is exactly what a KAM assessment closes. <a href="#advisory">Request an eligibility review →</a></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- TIER 7 -->
-      <div class="tier-item" id="tier-7">
-        <button class="tier-hdr" aria-expanded="false" aria-controls="t7-body">
-          <span class="tier-index">07</span>
-          <div>
-            <div class="tier-name">Gifted Resident</div>
-            <div class="tier-sub">Culture, Arts &amp; Sports — international recognition threshold</div>
-          </div>
-          <span class="tier-badge">Cultural &amp; Athletic</span>
-          <svg class="tier-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="tier-body" id="t7-body">
-          <div class="tier-body-inner">
-            <div class="tier-2col">
+          <!-- ── EC7: Gifted Resident ── -->
+          <div class="em-content" id="ec7">
+            <div class="em-stamp">Cultural &amp; Athletic · International Recognition</div>
+            <div class="em-title">Gifted Resident</div>
+            <div class="em-sub">Culture, Arts &amp; Sports — international recognition threshold required</div>
+            <div class="em-rule"></div>
+            <div class="em-fee-line">
+              <span class="em-fee">Two categories</span>
+              <span class="em-fee-note">sports · culture &amp; arts</span>
+            </div>
+            <div class="em-2col">
               <div>
-                <div class="tier-block-title">Category A — Sports</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Category A — Sports</div>
+                <table class="em-dt">
                   <tr><td>Profile</td><td>Professional athletes, national team coaches, elite performance directors, sports science specialists, and senior sports administrators</td></tr>
                   <tr><td>Endorsement</td><td>Saudi Arabian Olympic Committee or the relevant national sports federation governing the applicant's discipline</td></tr>
                   <tr><td>Standard</td><td>Achievement must be demonstrable at international competitive level — not domestic league participation alone</td></tr>
@@ -1265,22 +1328,23 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
                 </table>
               </div>
               <div>
-                <div class="tier-block-title">Category B — Culture &amp; Arts</div>
-                <table class="tier-dt">
+                <div class="em-col-head">Category B — Culture &amp; Arts</div>
+                <table class="em-dt">
                   <tr><td>Profile</td><td>Internationally recognised artists, writers, filmmakers, architects, musicians, curators, and creative directors</td></tr>
                   <tr><td>Endorsement</td><td>Ministry of Culture (Wizarat Al-Thaqafa) — direct ministry endorsement is mandatory</td></tr>
-                  <tr><td>Assessment basis</td><td>The most subjective of the seven tiers — achievement must be substantiated with published portfolio, international awards, institutional affiliations, or documented commissions of scale</td></tr>
+                  <tr><td>Assessment</td><td>The most subjective of the seven tiers — achievement must be substantiated with published portfolio, international awards, institutional affiliations, or documented commissions of scale</td></tr>
                   <tr><td>Active pipeline</td><td>Diriyah Art Futures, Noor Riyadh light festival, Saudi Film Commission output deals, MDisk music platform, and giga-project architectural commissions (NEOM, The Line, Diriyah) are all generating active Ministry of Culture endorsement flow</td></tr>
                 </table>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-    </div>
+        </div><!-- /.em-panel-inner -->
+      </div><!-- /.em-panel -->
+    </div><!-- /.em-wrap -->
   </div>
 </section>
+
 
 <!-- ══════════════════════════════════════════════
      SOCIETY OF AUTONOMY
@@ -1753,24 +1817,23 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- END GLOBAL FOOTER -->
 
 <script>
-/* ── Accordion ── */
+/* ── Embassy Split Panel ── */
 (function(){
-  document.querySelectorAll('.tier-hdr').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var item=btn.closest('.tier-item');
-      var body=item.querySelector('.tier-body');
-      var isOpen=item.classList.contains('open');
-      document.querySelectorAll('.tier-item').forEach(function(i){
-        i.classList.remove('open');
-        i.querySelector('.tier-body').style.maxHeight='';
-        i.querySelector('.tier-hdr').setAttribute('aria-expanded','false');
-      });
-      if(!isOpen){
-        item.classList.add('open');
-        body.style.maxHeight=body.scrollHeight+'px';
-        btn.setAttribute('aria-expanded','true');
-        setTimeout(function(){item.scrollIntoView({behavior:'smooth',block:'nearest'});},120);
-      }
+  var items=document.querySelectorAll('.em-item');
+  var contents=document.querySelectorAll('.em-content');
+  items.forEach(function(item){
+    function activate(){
+      var ec=item.dataset.ec;
+      items.forEach(function(i){i.classList.remove('active');i.setAttribute('aria-selected','false');});
+      contents.forEach(function(c){c.classList.remove('active');});
+      item.classList.add('active');
+      item.setAttribute('aria-selected','true');
+      var panel=document.getElementById(ec);
+      if(panel){panel.classList.add('active');}
+    }
+    item.addEventListener('click',activate);
+    item.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();activate();}
     });
   });
 })();
