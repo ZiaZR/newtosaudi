@@ -23,22 +23,39 @@
 ═══════════════════════════════════════════════════════════ */
 :root{
   --void:#03060A;
-  --surface:#0A0F18;
-  --surface2:#111827;
-  --surface3:#1A2335;
+  --royal-navy:#0A1128;
+  --royal-midnight:#101F42;
+  --alabaster-silk:#F4F6F9;
+  --charcoal-text:#1E293B;
+  --surface:#0A1128;
+  --surface2:#101F42;
+  --surface3:#1A2A50;
   --silk:#F3F4F6;
   --silver:#CBD5E1;
   --silver-dim:#64748B;
   --gold:#DFBA73;
+  --champagne-gold:#DFBA73;
   --gold-lo:rgba(223,186,115,.15);
   --gold-mid:rgba(223,186,115,.3);
   --gold-glow:rgba(223,186,115,.08);
+  --watermark-tint:rgba(223,186,115,.025);
   --rule:1px solid rgba(223,186,115,.18);
   --rule-hard:1px solid rgba(223,186,115,.4);
+  --rule-light:1px solid rgba(30,41,59,.12);
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--void);color:var(--silk);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--royal-navy);color:var(--silk);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ── Carpet Watermark ── */
+.pr-carpet-watermark{position:relative}
+.pr-carpet-watermark::before{
+  content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23DFBA73' stroke-width='0.5'%3E%3Crect x='10' y='10' width='60' height='60' rx='2'/%3E%3Crect x='20' y='20' width='40' height='40' rx='1'/%3E%3Cpath d='M40 10 L70 40 L40 70 L10 40 Z'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3Cpath d='M10 10 L20 20 M70 10 L60 20 M10 70 L20 60 M70 70 L60 60'/%3E%3Cpath d='M40 10 L40 20 M40 60 L40 70 M10 40 L20 40 M60 40 L70 40'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:80px 80px;
+  opacity:.018;
+  background-blend-mode:overlay;
+}
 h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-title,.tier-index,.pr-hero__eyebrow,.murabaha__heading,.rejection-wrap__title,.pr-refs__label,.success-title,.zone-label{font-family:'Cinzel',serif}
 .roi-table td:nth-child(2),.roi-table td:nth-child(3),.roi-table .roi-even td:nth-child(2),.roi-table .roi-even td:nth-child(3),.pr-stat__num,.tier-index,.process-step__n{font-family:'JetBrains Mono',monospace}
 
@@ -61,7 +78,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
   display:flex;
   align-items:center;
   overflow:hidden;
-  background-color:var(--void);
+  background-color:var(--royal-navy);
   padding-top:calc(var(--nav-h,80px) + 3rem);
   padding-bottom:5rem;
 }
@@ -467,7 +484,113 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 .pr-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .pr-reveal.visible{opacity:1;transform:none}
 
-/* ═══ RESPONSIVE ═══ */
+/* ══════════════════════════════════════
+   SECTION-BY-SECTION SOVEREIGN DYNAMICS
+══════════════════════════════════════ */
+
+/* ROI + TIERS — Alabaster Light Panels */
+#roi,#tiers{
+  background:var(--alabaster-silk);
+  border-top:1px solid rgba(30,41,59,.1);
+}
+#roi .pr-s-title,#tiers .pr-s-title{color:var(--royal-navy)}
+#roi .pr-s-eyebrow,#tiers .pr-s-eyebrow{color:var(--champagne-gold)}
+#roi .pr-s-desc,#tiers .pr-s-desc{color:var(--charcoal-text)}
+#roi p,#roi a{color:var(--charcoal-text)}
+#tiers>div>p{color:var(--charcoal-text)}
+.roi-advisory{background:#fff;border-color:rgba(30,41,59,.1);border-left:3px solid var(--champagne-gold)}
+.roi-advisory__label{color:var(--champagne-gold)}
+.roi-advisory__text{color:var(--charcoal-text)}
+.roi-advisory__text strong{color:var(--royal-navy)}
+.roi-wrap{border-color:rgba(30,41,59,.15)}
+.roi-table thead tr{background:#E8ECF2}
+.roi-table th{color:#64748B;border-bottom:1px solid rgba(30,41,59,.12)}
+.roi-table th:nth-child(3){background:#dde3ee;color:var(--royal-navy)}
+.roi-table td{color:var(--charcoal-text);border-bottom:1px solid rgba(30,41,59,.06)}
+.roi-table td:first-child{color:var(--royal-navy)}
+.roi-table td:nth-child(2){background:rgba(30,41,59,.03)}
+.roi-table td:nth-child(3){background:rgba(10,17,40,.05);color:var(--royal-navy);border-left:2px solid rgba(223,186,115,.5);border-right:2px solid rgba(223,186,115,.5)}
+.roi-table .roi-even td{background:rgba(30,41,59,.025)}
+.roi-table .roi-even td:nth-child(2){background:rgba(30,41,59,.05)}
+.roi-table .roi-even td:nth-child(3){background:rgba(223,186,115,.08);color:var(--royal-navy)}
+
+/* Accordion — crisp white slates */
+#tiers .pr-tiers-list{border:1px solid rgba(30,41,59,.15);background:#fff}
+#tiers .tier-item{border-bottom:1px solid rgba(30,41,59,.1)}
+#tiers .tier-hdr:hover{background:rgba(30,41,59,.03)}
+#tiers .tier-item.open>.tier-hdr{background:rgba(223,186,115,.06)}
+#tiers .tier-name{color:var(--royal-navy)}
+#tiers .tier-sub{color:#64748B}
+#tiers .tier-body-inner{border-top:1px solid rgba(30,41,59,.1)}
+#tiers .tier-block-title{color:var(--champagne-gold);border-bottom:1px solid rgba(223,186,115,.18)}
+#tiers .tier-dt tr{border-bottom:1px solid rgba(30,41,59,.07)}
+#tiers .tier-dt td:first-child{color:var(--champagne-gold)}
+#tiers .tier-dt td:last-child{color:var(--charcoal-text)}
+#tiers .tier-dt td:last-child strong{color:var(--royal-navy)}
+#tiers .tier-advisory-note{background:rgba(223,186,115,.06);border-left:3px solid var(--champagne-gold);color:var(--charcoal-text)}
+#tiers .tier-advisory-note strong{color:var(--royal-navy)}
+#tiers .tier-advisory-note a{color:var(--champagne-gold)}
+#tiers .tier-verify{color:#64748B;background:rgba(223,186,115,.07);border-color:rgba(223,186,115,.25)}
+#tiers .tier-highlight{background:rgba(10,17,40,.07);border-color:rgba(10,17,40,.2);color:var(--royal-navy)}
+
+/* AUTONOMY — Deep Royal Midnight */
+#autonomy{background:var(--royal-midnight)}
+.pr-autonomy{background:var(--royal-midnight)}
+.pr-autonomy__bg::after{background:radial-gradient(ellipse at center,transparent 30%,var(--royal-midnight) 85%)}
+
+/* BENEFITS + PROCESS — Alabaster */
+#benefits,#process{background:var(--alabaster-silk);border-top:1px solid rgba(30,41,59,.1)}
+#benefits .pr-s-title,#process .pr-s-title{color:var(--royal-navy)}
+#benefits .pr-s-eyebrow,#process .pr-s-eyebrow{color:var(--champagne-gold)}
+#benefits .pr-s-desc,#process .pr-s-desc{color:var(--charcoal-text)}
+.benefit-card{background:#fff;border:1px solid rgba(30,41,59,.1)}
+.benefit-card:hover{border-color:rgba(223,186,115,.5)}
+.benefit-num{color:var(--champagne-gold)}
+.benefit-text{color:var(--charcoal-text)}
+.process-step{background:#fff;border:1px solid rgba(30,41,59,.1)}
+.process-step:hover{border-color:rgba(223,186,115,.45);background:#fff}
+.process-step__title{color:var(--royal-navy)}
+.process-step__desc{color:var(--charcoal-text)}
+.process-step__n{color:rgba(10,17,40,.08)}
+#process .pr-s-desc a{color:var(--champagne-gold)}
+.rejection-wrap{background:rgba(220,80,80,.04);border-color:rgba(220,80,80,.18)}
+.rejection-wrap__title{color:#c0392b}
+.rejection-list li{color:var(--charcoal-text)}
+
+/* PROPERTY — Alabaster */
+#property{background:var(--alabaster-silk);border-top:1px solid rgba(30,41,59,.1)}
+#property .pr-s-title{color:var(--royal-navy)}
+#property .pr-s-eyebrow{color:var(--champagne-gold)}
+#property>div>div>p{color:var(--charcoal-text)}
+.zone-card{border-color:rgba(30,41,59,.12)}
+.zone-card--open{background:rgba(223,186,115,.05);border-color:rgba(223,186,115,.35)}
+.zone-card--restricted{background:rgba(220,80,80,.04);border-color:rgba(220,80,80,.2)}
+.zone-title{color:var(--royal-navy)}
+.zone-desc{color:var(--charcoal-text)}
+.murabaha{background:#fff;border:1px solid rgba(30,41,59,.12)}
+.murabaha__heading{color:var(--champagne-gold)}
+.murabaha-row{border-bottom:1px solid rgba(30,41,59,.07)}
+.murabaha-row__bank{color:var(--royal-navy)}
+.murabaha-row__note{color:#64748B}
+
+/* ADVISORY — Dark Royal Enclave */
+#advisory{background:var(--royal-navy)}
+.pr-form-section{background:var(--royal-navy)}
+#ntsa-pr-advisory-form{background:var(--royal-navy);border:2px solid var(--champagne-gold)}
+.vault-header__title{color:var(--champagne-gold)}
+.vault-header__sub{color:var(--silver-dim)}
+
+/* REFS — Navy */
+.pr-refs{background:var(--royal-navy);border-top:var(--rule)}
+.pr-ref{background:rgba(255,255,255,.04);border-color:rgba(223,186,115,.15)}
+
+/* ══════════════════════════════════════
+   BREADCRUMB light update
+══════════════════════════════════════ */
+.pr-breadcrumb{background:rgba(10,17,40,.95);border-bottom:var(--rule)}
+
+/* ══════════════════════════════════════
+   RESPONSIVE ═══ */
 @media(max-width:1200px){
   .pr-hero__bg img{width:65%}
   .roi-intro{grid-template-columns:1fr}
@@ -555,7 +678,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 <!-- ══════════════════════════════════════════════
      ROI MATRIX — INVESTMENT DASHBOARD
 ══════════════════════════════════════════════ -->
-<section class="pr-section pr-reveal" id="roi">
+<section class="pr-section pr-reveal pr-carpet-watermark" id="roi">
   <div class="pr-container">
     <div class="pr-s-eyebrow">Financial Decision Framework</div>
     <h2 class="pr-s-title">Annual or Permanent? The 8-Year ROI Inflection.</h2>
@@ -593,7 +716,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 <!-- ══════════════════════════════════════════════
      7-TIER ACCORDION
 ══════════════════════════════════════════════ -->
-<section class="pr-section pr-reveal" id="tiers">
+<section class="pr-section pr-reveal pr-carpet-watermark" id="tiers">
   <div class="pr-container">
     <div class="pr-s-eyebrow">The Seven-Tier Regulatory Matrix</div>
     <h2 class="pr-s-title">All 7 Premium Residency categories — 2026 thresholds, conditions, and rights stacks.</h2>
@@ -950,7 +1073,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 <!-- ══════════════════════════════════════════════
      PROPERTY RIGHTS — 50/50 DUAL COLUMN
 ══════════════════════════════════════════════ -->
-<section class="pr-section pr-reveal" id="property">
+<section class="pr-section pr-reveal pr-carpet-watermark" id="property">
   <div class="pr-container">
     <div class="pr-s-eyebrow">Freehold Rights &amp; Property Framework</div>
     <h2 class="pr-s-title">What property ownership actually means after Premium Residency.</h2>
@@ -1003,7 +1126,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 <!-- ══════════════════════════════════════════════
      PROCESS TIMELINE
 ══════════════════════════════════════════════ -->
-<section class="pr-section pr-reveal" id="process">
+<section class="pr-section pr-reveal pr-carpet-watermark" id="process">
   <div class="pr-container">
     <div class="pr-s-eyebrow">PRC Application Walkthrough</div>
     <h2 class="pr-s-title">From eligibility to card in hand — 9 stages, 30 to 60 days.</h2>
@@ -1085,7 +1208,7 @@ h1,h2,h3,.pr-s-title,.tier-name,.vault-header__title,.pr-s-eyebrow,.tier-block-t
 <!-- ══════════════════════════════════════════════
      GENERAL BENEFITS
 ══════════════════════════════════════════════ -->
-<section class="pr-section pr-reveal" id="benefits">
+<section class="pr-section pr-reveal pr-carpet-watermark" id="benefits">
   <div class="pr-container">
     <div class="pr-s-eyebrow">Programme Entitlements</div>
     <h2 class="pr-s-title">General Benefits</h2>
