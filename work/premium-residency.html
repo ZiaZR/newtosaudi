@@ -432,6 +432,22 @@ body{background:var(--void);color:var(--silk);font-family:system-ui,-apple-syste
 .success-title{font-size:.7rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .success-body{font-size:1.05rem;color:var(--silk);line-height:1.9}
 
+/* ── General Benefits ── */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.benefit-card{
+  background:var(--surface);border:var(--rule);border-radius:4px;
+  padding:2rem;position:relative;
+  transition:border-color .3s,transform .3s;
+}
+.benefit-card:hover{border-color:rgba(223,186,115,.45);transform:translateY(-4px)}
+.benefit-num{
+  font-size:.65rem;font-weight:800;letter-spacing:.2em;color:var(--gold);
+  margin-bottom:1rem;opacity:.65;
+}
+.benefit-text{font-size:1rem;color:var(--silver);line-height:1.85}
+@media(max-width:1000px){.benefits-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.benefits-grid{grid-template-columns:1fr}}
+
 /* ── References ── */
 .pr-refs{padding:4rem 0;border-top:var(--rule)}
 .pr-refs__label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--silver-dim);margin-bottom:1.5rem}
@@ -1059,6 +1075,55 @@ body{background:var(--void);color:var(--silk);font-family:system-ui,-apple-syste
         <li>Medical screening result below PRC-defined health eligibility standards</li>
         <li>Application submitted via an unauthorised third-party portal or agent</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GENERAL BENEFITS
+══════════════════════════════════════════════ -->
+<section class="pr-section pr-reveal" id="benefits">
+  <div class="pr-container">
+    <div class="pr-s-eyebrow">Programme Entitlements</div>
+    <h2 class="pr-s-title">General Benefits</h2>
+    <p class="pr-s-desc" style="margin-bottom:3rem">For more details about special benefits, please check product details at <a href="https://pr.gov.sa" target="_blank" rel="noopener" style="color:var(--gold)">pr.gov.sa</a>.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <div class="benefit-text">Reside in Saudi with family members, including parents, spouses, and children under 25.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <div class="benefit-text">Flexibility to move from one establishment to another without employer permission or a release letter.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <div class="benefit-text">Exemption from the fees imposed on expats and their dependents and companions.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">04</div>
+        <div class="benefit-text">Exit and return to Saudi for the Premium Residency holder and their family members without requiring a visa.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">05</div>
+        <div class="benefit-text">The entitlement to obtain visit visas for relatives wishing to travel to the Kingdom.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">06</div>
+        <div class="benefit-text">Use tracks dedicated to citizens and GCC nationals at all Saudi airports.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">07</div>
+        <div class="benefit-text">The entitlement to work in the private sector and move between establishments applies to the holder, their spouse, and all dependents.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">08</div>
+        <div class="benefit-text">Conducting business under the guidelines of The Investment Law — 100% foreign ownership permitted in most MISA-approved sectors.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">09</div>
+        <div class="benefit-text">Own and usufruct real estate across all permitted zones in the Kingdom, including residential and commercial freehold property.</div>
+      </div>
     </div>
   </div>
 </section>
