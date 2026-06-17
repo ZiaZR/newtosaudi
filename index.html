@@ -1412,6 +1412,138 @@ body{overflow-x:hidden}
 .persona-card:hover{
   border-left-color:rgba(212,168,83,.55);
 }
+
+/* ── Topic-hub cards: shared base ─────────────────────────────── */
+.topic-hub-card{
+  transition:transform .4s cubic-bezier(0.16,1,0.3,1),
+             box-shadow .4s cubic-bezier(0.16,1,0.3,1),
+             border-color .3s ease;
+  position:relative;
+}
+.topic-hub-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 28px 56px rgba(15,30,54,.35);
+}
+.th-img-wrap{position:relative;height:170px;overflow:hidden}
+.th-img-wrap img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform .6s cubic-bezier(0.16,1,0.3,1);
+}
+.topic-hub-card:hover .th-img-wrap img{transform:scale(1.06)}
+.th-overlay{position:absolute;inset:0}
+.th-icon-wrap{
+  width:48px;height:48px;border-radius:14px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  transition:transform .3s ease;
+}
+.topic-hub-card:hover .th-icon-wrap{transform:scale(1.1) rotate(-4deg)}
+.th-heading{
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:1.15rem;font-weight:400;
+  color:#fff;letter-spacing:-.01em;line-height:1.2;margin:0;
+}
+.th-sub{color:rgba(255,255,255,.48);font-size:.71rem;margin:.22rem 0 0}
+.thlink{
+  font-size:.84rem;color:rgba(255,255,255,.6);
+  padding:.5rem 0;display:flex;align-items:center;gap:.65rem;
+  text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s ease;
+}
+.thlink:last-child{border-bottom:none}
+.thlink:hover{color:rgba(255,255,255,.95)!important}
+.th-dot{
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
+}
+.thcta{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none;
+  transition:gap .2s ease,color .2s ease;
+}
+.thcta:hover{gap:.8rem!important;color:#E8C97A!important}
+
+/* ── Card 1 · Relocate — gold left border + fade gradient ───── */
+.thc-relocate{
+  border:1.5px solid rgba(255,255,255,.07)!important;
+  border-left:7px solid #D4A853!important;
+  border-radius:0 20px 20px 0!important;
+  background:linear-gradient(100deg,rgba(212,168,83,.1) 0%,rgba(255,255,255,.04) 42%)!important;
+}
+.thc-relocate:hover{border-left-color:#E8C97A!important}
+.thc-relocate .th-dot{background:#D4A853}
+
+/* ── Card 2 · Work — gold top bar (6px), warm amber tint ─────── */
+.thc-work{
+  border:1.5px solid rgba(212,168,83,.14)!important;
+  border-top:6px solid #D4A853!important;
+  border-radius:0 0 20px 20px!important;
+  background:rgba(255,255,255,.04)!important;
+}
+.thc-work:hover{border-top-color:#F0D080!important;box-shadow:0 28px 56px rgba(212,168,83,.1)}
+.thc-work .th-dot{background:#D4A853}
+
+/* ── Card 3 · Life — softer rounded, gold bottom edge ────────── */
+.thc-life{
+  border:1.5px solid rgba(255,255,255,.08)!important;
+  border-bottom:5px solid rgba(212,168,83,.6)!important;
+  border-radius:20px 20px 4px 4px!important;
+  background:rgba(255,255,255,.04)!important;
+}
+.thc-life:hover{border-bottom-color:#D4A853!important;box-shadow:0 32px 60px rgba(212,168,83,.12)}
+.thc-life .th-dot{background:#D4A853}
+
+/* ── Card 4 · Cities — dual gold borders top + bottom ─────────── */
+.thc-cities{
+  border:1.5px solid rgba(212,168,83,.12)!important;
+  border-top:4px solid #D4A853!important;
+  border-bottom:4px solid rgba(212,168,83,.45)!important;
+  border-radius:0!important;
+  background:rgba(255,255,255,.04)!important;
+}
+.thc-cities:hover{border-top-color:#E8C97A!important;border-bottom-color:#D4A853!important}
+.thc-cities .th-dot{background:#D4A853}
+
+/* ── Card 5 · Culture — left accent + diagonal top-right line ── */
+.thc-culture{
+  border:1.5px solid rgba(212,168,83,.1)!important;
+  border-left:7px solid rgba(212,168,83,.7)!important;
+  border-radius:0 20px 20px 0!important;
+  background:rgba(255,255,255,.04)!important;
+}
+.thc-culture::after{
+  content:'';position:absolute;top:0;right:0;
+  width:80px;height:4px;
+  background:linear-gradient(270deg,rgba(212,168,83,.55),transparent);
+  border-radius:0 20px 0 0;
+}
+.thc-culture:hover{border-left-color:#D4A853!important}
+.thc-culture .th-dot{background:#D4A853}
+
+/* ── Card 6 · Apps — gold-circle icon, tech-clean border ─────── */
+.thc-apps{
+  border:1.5px solid rgba(212,168,83,.18)!important;
+  border-radius:20px!important;
+  background:rgba(255,255,255,.04)!important;
+  position:relative;overflow:hidden;
+}
+.thc-apps::before{
+  content:'';position:absolute;
+  bottom:-30px;right:-30px;
+  width:130px;height:130px;border-radius:50%;
+  border:1.5px solid rgba(212,168,83,.1);
+  pointer-events:none;
+}
+.thc-apps .th-icon-wrap{
+  background:rgba(212,168,83,.2)!important;
+  border:1.5px solid rgba(212,168,83,.45)!important;
+}
+.thc-apps .th-dot{background:#D4A853}
+
+/* Grid responsive */
+@media(max-width:960px){#topic-hub-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:600px){
+  #topic-hub-grid{grid-template-columns:1fr!important}
+  .th-img-wrap{height:130px!important}
+}
 </style>
 
 <!-- ===== I AM A... PERSONA ROUTER ===== -->
@@ -1699,172 +1831,154 @@ body{overflow-x:hidden}
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" id="topic-hub-grid">
 
-      <!-- 1. RELOCATE & VISA -->
-      <div class="topic-hub-card reveal" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,14,30,.1) 0%,rgba(6,14,30,.9) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4A853,#E8C97A,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(212,168,83,.18);border:1px solid rgba(212,168,83,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">✈️</div>
+      <!-- 1. RELOCATE & VISA — gold left border + fade gradient -->
+      <div class="topic-hub-card thc-relocate reveal" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.4;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(6,14,30,.05) 0%,rgba(6,14,30,.88) 100%)"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(212,168,83,.12) 0%,transparent 55%);pointer-events:none"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="background:rgba(212,168,83,.2);border:1.5px solid rgba(212,168,83,.45)">✈️</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Relocate &amp; Visa</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">4 guides · Documents, arrival, family</p>
+              <h3 class="th-heading">Relocate &amp; Visa</h3>
+              <p class="th-sub">4 guides · Documents, arrival, family</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/relocate/before-you-arrive" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Before You Arrive</a>
-            <a href="/relocate/first-30-days" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>First 30 Days Action Plan</a>
-            <a href="/work/iqama-guide" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Complete Iqama Guide</a>
-            <a href="/relocate/families" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Relocating with Family</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/relocate/before-you-arrive" class="thlink"><span class="th-dot"></span>Before You Arrive</a>
+            <a href="/relocate/first-30-days" class="thlink"><span class="th-dot"></span>First 30 Days Action Plan</a>
+            <a href="/work/iqama-guide" class="thlink"><span class="th-dot"></span>Complete Iqama Guide</a>
+            <a href="/relocate/families" class="thlink"><span class="th-dot"></span>Relocating with Family</a>
           </div>
-          <a href="/relocate" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">All relocation guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/relocate" class="thcta">All relocation guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
-      <!-- 2. WORK & BUSINESS -->
-      <div class="topic-hub-card reveal reveal-delay-1" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,18,4,.1) 0%,rgba(26,18,4,.92) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#B8903F,#D4A853,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(184,144,63,.18);border:1px solid rgba(184,144,63,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">💼</div>
+      <!-- 2. WORK & BUSINESS — gold top bar (6px), structured -->
+      <div class="topic-hub-card thc-work reveal reveal-delay-1" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.38;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(20,14,4,.05) 0%,rgba(20,14,4,.9) 100%)"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="background:rgba(212,168,83,.2);border:1.5px solid rgba(212,168,83,.4);border-radius:50%">💼</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Work &amp; Business</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">5 guides · Visa, Iqama, company setup</p>
+              <h3 class="th-heading">Work &amp; Business</h3>
+              <p class="th-sub">5 guides · Visa, Iqama, company setup</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/work/iqama-guide" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#B8903F;flex-shrink:0"></span>Complete Iqama Guide 2026</a>
-            <a href="/business/start-a-company" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#B8903F;flex-shrink:0"></span>Start a Company in KSA</a>
-            <a href="/work" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#B8903F;flex-shrink:0"></span>Work Visa Hub</a>
-            <a href="/business" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#B8903F;flex-shrink:0"></span>Business Hub</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/work/iqama-guide" class="thlink"><span class="th-dot"></span>Complete Iqama Guide 2026</a>
+            <a href="/business/start-a-company" class="thlink"><span class="th-dot"></span>Start a Company in KSA</a>
+            <a href="/work" class="thlink"><span class="th-dot"></span>Work Visa Hub</a>
+            <a href="/business" class="thlink"><span class="th-dot"></span>Business Hub</a>
           </div>
-          <a href="/work" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">All work &amp; business guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/work" class="thcta">All work &amp; business guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
-      <!-- 3. LIFE IN KSA -->
-      <div class="topic-hub-card reveal reveal-delay-2" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,18,28,.1) 0%,rgba(6,18,28,.92) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#5A8898,#7AB0C8,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(90,136,152,.18);border:1px solid rgba(90,136,152,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🏡</div>
+      <!-- 3. LIFE IN KSA — gold bottom edge, softer rounded corners -->
+      <div class="topic-hub-card thc-life reveal reveal-delay-2" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.38;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(6,18,28,.05) 0%,rgba(6,18,28,.9) 100%)"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="background:rgba(212,168,83,.18);border:1.5px solid rgba(212,168,83,.35)">🏡</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Life in KSA</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">6 guides · Housing, health, banking, schools</p>
+              <h3 class="th-heading">Life in KSA</h3>
+              <p class="th-sub">6 guides · Housing, health, banking, schools</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/life/housing" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#5A8898;flex-shrink:0"></span>Housing &amp; Compounds</a>
-            <a href="/life/healthcare" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#5A8898;flex-shrink:0"></span>Healthcare &amp; Insurance</a>
-            <a href="/life/banking" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#5A8898;flex-shrink:0"></span>Banking &amp; Finance</a>
-            <a href="/life/schools-education" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#5A8898;flex-shrink:0"></span>Schools &amp; Education</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/life/housing" class="thlink"><span class="th-dot"></span>Housing &amp; Compounds</a>
+            <a href="/life/healthcare" class="thlink"><span class="th-dot"></span>Healthcare &amp; Insurance</a>
+            <a href="/life/banking" class="thlink"><span class="th-dot"></span>Banking &amp; Finance</a>
+            <a href="/life/schools-education" class="thlink"><span class="th-dot"></span>Schools &amp; Education</a>
           </div>
-          <a href="/life" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">All life in KSA guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/life" class="thcta">All life in KSA guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
-      <!-- 4. CITIES & NEIGHBOURHOODS -->
-      <div class="topic-hub-card reveal reveal-delay-1" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,14,.1) 0%,rgba(4,8,14,.92) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4A853,#F0C860,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(212,168,83,.18);border:1px solid rgba(212,168,83,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🏙️</div>
+      <!-- 4. CITIES — dual gold borders top + bottom, exploratory -->
+      <div class="topic-hub-card thc-cities reveal reveal-delay-1" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.42;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(4,8,14,.05) 0%,rgba(4,8,14,.88) 100%)"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="background:rgba(212,168,83,.2);border:1.5px solid rgba(212,168,83,.4)">🏙️</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Cities &amp; Neighbourhoods</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">6 city guides · Riyadh, Jeddah, NEOM &amp; more</p>
+              <h3 class="th-heading">Cities &amp; Neighbourhoods</h3>
+              <p class="th-sub">6 city guides · Riyadh, Jeddah, NEOM &amp; more</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/cities/riyadh" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Riyadh — Capital &amp; business hub</a>
-            <a href="/cities/jeddah" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Jeddah — Red Sea gateway city</a>
-            <a href="/cities/dammam-khobar" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Dammam &amp; Khobar — Eastern Province</a>
-            <a href="/cities" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#D4A853;flex-shrink:0"></span>Abha, AlUla &amp; NEOM</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/cities/riyadh" class="thlink"><span class="th-dot"></span>Riyadh — Capital &amp; business hub</a>
+            <a href="/cities/jeddah" class="thlink"><span class="th-dot"></span>Jeddah — Red Sea gateway city</a>
+            <a href="/cities/dammam-khobar" class="thlink"><span class="th-dot"></span>Dammam &amp; Khobar — Eastern Province</a>
+            <a href="/cities" class="thlink"><span class="th-dot"></span>Abha, AlUla &amp; NEOM</a>
           </div>
-          <a href="/cities" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">Explore all 6 cities <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/cities" class="thcta">Explore all 6 cities <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
-      <!-- 5. CULTURE & LIFESTYLE -->
-      <div class="topic-hub-card reveal reveal-delay-2" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,16,4,.1) 0%,rgba(24,16,4,.92) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C09840,#E0B858,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(192,152,64,.18);border:1px solid rgba(192,152,64,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">🕌</div>
+      <!-- 5. CULTURE & LIFESTYLE — left gold border + diagonal top-right accent -->
+      <div class="topic-hub-card thc-culture reveal reveal-delay-2" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.38;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(22,14,4,.05) 0%,rgba(22,14,4,.9) 100%)"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="background:rgba(212,168,83,.2);border:1.5px solid rgba(212,168,83,.4)">🕌</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Culture &amp; Lifestyle</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">Customs, food, driving, social life</p>
+              <h3 class="th-heading">Culture &amp; Lifestyle</h3>
+              <p class="th-sub">Customs, food, driving, social life</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/life/culture-etiquette" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#C09840;flex-shrink:0"></span>Culture &amp; Etiquette Guide</a>
-            <a href="/life/food-dining" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#C09840;flex-shrink:0"></span>Food, Dining &amp; Ramadan</a>
-            <a href="/life/driving-transport" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#C09840;flex-shrink:0"></span>Driving &amp; Transport</a>
-            <a href="/resources/faq" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#C09840;flex-shrink:0"></span>Common questions answered</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/life/culture-etiquette" class="thlink"><span class="th-dot"></span>Culture &amp; Etiquette Guide</a>
+            <a href="/life/food-dining" class="thlink"><span class="th-dot"></span>Food, Dining &amp; Ramadan</a>
+            <a href="/life/driving-transport" class="thlink"><span class="th-dot"></span>Driving &amp; Transport</a>
+            <a href="/resources/faq" class="thlink"><span class="th-dot"></span>Common questions answered</a>
           </div>
-          <a href="/life" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">Explore lifestyle guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/life" class="thcta">Explore lifestyle guides <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
-      <!-- 6. APPS & RESOURCES -->
-      <div class="topic-hub-card reveal reveal-delay-3" style="background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden">
-        <div style="position:relative;height:160px;overflow:hidden">
-          <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?w=800&auto=format&fit=crop" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35;mix-blend-mode:luminosity">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,6,16,.1) 0%,rgba(6,6,16,.92) 100%)"></div>
-          <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7A58A8,#9A78C8,transparent)"></div>
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;display:flex;align-items:flex-end;gap:.85rem">
-            <div style="width:42px;height:42px;border-radius:12px;background:rgba(122,88,168,.18);border:1px solid rgba(122,88,168,.3);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0">📱</div>
+      <!-- 6. APPS & RESOURCES — gold-circle icon, tech-clean, subtle orb -->
+      <div class="topic-hub-card thc-apps reveal reveal-delay-3" style="overflow:hidden">
+        <div class="th-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&auto=format&fit=crop" alt="" loading="lazy" style="opacity:.32;mix-blend-mode:luminosity">
+          <div class="th-overlay" style="background:linear-gradient(180deg,rgba(6,6,16,.05) 0%,rgba(6,6,16,.9) 100%)"></div>
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;display:flex;align-items:flex-end;gap:.85rem">
+            <div class="th-icon-wrap" style="border-radius:50%">📱</div>
             <div>
-              <h3 style="color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.015em;line-height:1.2;margin:0">Apps &amp; Resources</h3>
-              <p style="color:rgba(255,255,255,.45);font-size:.72rem;margin:.2rem 0 0">Absher, Tawakkalna, banking apps &amp; FAQ</p>
+              <h3 class="th-heading">Apps &amp; Resources</h3>
+              <p class="th-sub">Absher, Tawakkalna, banking apps &amp; FAQ</p>
             </div>
           </div>
         </div>
-        <div style="padding:1.5rem">
-          <div style="display:flex;flex-direction:column;gap:0;margin-bottom:1.25rem">
-            <a href="/resources/apps" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#7A58A8;flex-shrink:0"></span>Essential Apps Guide</a>
-            <a href="/resources/faq" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#7A58A8;flex-shrink:0"></span>45+ Question FAQ</a>
-            <a href="/resources/directory" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05)" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#7A58A8;flex-shrink:0"></span>Service Provider Directory</a>
-            <a href="/resources/guides" style="font-size:.84rem;color:rgba(255,255,255,.6);padding:.5rem 0;display:flex;align-items:center;gap:.65rem;text-decoration:none" class="thlink"><span style="width:6px;height:6px;border-radius:50%;background:#7A58A8;flex-shrink:0"></span>Downloadable Guides &amp; Checklists</a>
+        <div style="padding:1.4rem 1.5rem">
+          <div style="display:flex;flex-direction:column;margin-bottom:1.2rem">
+            <a href="/resources/apps" class="thlink"><span class="th-dot"></span>Essential Apps Guide</a>
+            <a href="/resources/faq" class="thlink"><span class="th-dot"></span>45+ Question FAQ</a>
+            <a href="/resources/directory" class="thlink"><span class="th-dot"></span>Service Provider Directory</a>
+            <a href="/resources/guides" class="thlink"><span class="th-dot"></span>Downloadable Guides &amp; Checklists</a>
           </div>
-          <a href="/resources/apps" style="display:inline-flex;align-items:center;gap:.45rem;font-size:.82rem;font-weight:700;color:#D4A853;text-decoration:none" class="thcta">View all apps &amp; resources <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/resources/apps" class="thcta">View all apps &amp; resources <svg viewBox="0 0 14 14" fill="none" width="13" height="13"><path d="M2.5 7h9M7.5 3.5l4 3.5-4 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-<style>
-.topic-hub-card{transition:all .45s var(--ease-out-expo,cubic-bezier(0.16,1,0.3,1))}
-.topic-hub-card:hover{border-color:rgba(212,168,83,.3)!important;transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.22)}
-.thlink:hover{color:rgba(255,255,255,.95)!important}
-.thcta:hover{gap:.75rem!important}
-@media(max-width:960px){#topic-hub-grid{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:600px){#topic-hub-grid{grid-template-columns:1fr!important}}
-@media(max-width:600px){
-  .topic-hub-card{padding:1.5rem!important}
-  /* Photo header inside hub cards shorter on mobile */
-  .topic-hub-card>div:first-child{height:120px!important}
-}
-</style>
 
 <!-- ===== CITY GUIDES ===== -->
 <section class="section">
