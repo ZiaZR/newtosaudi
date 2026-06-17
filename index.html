@@ -1404,6 +1404,60 @@ body{overflow-x:hidden}
 /* Global links — gold default where appropriate */
 .card-body__link,.view-all,.persona-card__cta{color:var(--gold)}
 
+/* ── Hero underline — widen + slide-in animation ─────────────── */
+.hero__title-underline{
+  width:120px;height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light),transparent);
+  border-radius:2px;
+  margin-top:1.2rem;margin-bottom:.3rem;
+  transform-origin:left center;
+  animation:thUnderlineIn .9s var(--ease-out-expo) .55s both;
+}
+@keyframes thUnderlineIn{
+  from{transform:scaleX(0);opacity:0}
+  to{transform:scaleX(1);opacity:1}
+}
+
+/* ── Hero primary button — bolder shadow + lift ───────────────── */
+.btn-primary{
+  font-weight:700;
+  letter-spacing:-.01em;
+  box-shadow:0 8px 22px rgba(212,168,83,.3);
+}
+.btn-primary:hover{
+  box-shadow:0 14px 36px rgba(212,168,83,.45);
+  transform:translateY(-4px)!important;
+}
+
+/* ── QS (First Steps) cards — stronger accent + icon circle ───── */
+.qs-card{
+  border-left-width:5px;
+  background:linear-gradient(120deg,rgba(212,168,83,.06) 0%,rgba(255,255,255,.02) 50%)!important;
+}
+.qs-card:hover{
+  transform:translateY(-10px)!important;
+  box-shadow:0 24px 56px rgba(0,0,0,.4),0 0 0 1px rgba(212,168,83,.25),0 0 30px rgba(212,168,83,.08)!important;
+}
+.qs-card__icon{
+  width:52px;height:52px;border-radius:14px;
+  background:rgba(212,168,83,.14);
+  border:1.5px solid rgba(212,168,83,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;line-height:1;
+  transition:transform .3s var(--ease-out-expo),background .25s;
+}
+.qs-card:hover .qs-card__icon{
+  background:rgba(212,168,83,.22);
+  transform:scale(1.08) rotate(-4deg);
+}
+.qs-card__title{
+  font-family:'DM Serif Display',Georgia,serif;
+  font-size:1.08rem;font-weight:400;letter-spacing:-.01em;
+}
+.qs-card__arrow{
+  font-weight:700;letter-spacing:.01em;opacity:.9;
+}
+
 /* Persona card default left gold bar */
 .persona-card{
   border-left:4px solid rgba(212,168,83,.3);
