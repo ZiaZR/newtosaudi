@@ -1357,6 +1357,263 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .cform-submit:active { transform: translateY(0); }
 
+/* --- Regional advisor cards ---------------------------------------------- */
+.contact-regions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 820px) {
+  .contact-regions { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+.contact-region {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1.5px solid #E8E4DC;
+  border-radius: 20px;
+  padding: 2rem 1.9rem 1.75rem;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+.contact-region::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold, #D4A853), rgba(212,168,83,0));
+}
+.contact-region:hover {
+  border-color: rgba(212,168,83,.5);
+  box-shadow: 0 10px 34px rgba(27,42,74,.09);
+  transform: translateY(-2px);
+}
+.contact-region__scope {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #7C5209;
+  margin-bottom: 1.15rem;
+}
+.contact-region__scope::before {
+  content: '';
+  width: 22px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: var(--gold, #D4A853);
+  display: inline-block;
+}
+.contact-region__person {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #EDECE9;
+}
+.contact-region__avatar {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--navy, #1B2A4A);
+  color: var(--gold, #D4A853);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.contact-region__name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--navy, #1B2A4A);
+  letter-spacing: -.01em;
+  line-height: 1.3;
+}
+.contact-region__role {
+  font-size: .78rem;
+  color: #64748B;
+  line-height: 1.5;
+  margin-top: .1rem;
+}
+.contact-region__lines {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-bottom: 1.25rem;
+}
+.contact-region__line {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .7rem .9rem;
+  background: #FBFAF7;
+  border: 1px solid #EDECE9;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.contact-region__line:hover {
+  border-color: rgba(212,168,83,.45);
+  background: rgba(212,168,83,.06);
+}
+.contact-region__line-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--navy, #1B2A4A);
+  opacity: .55;
+}
+.contact-region__line-tag {
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  min-width: 64px;
+}
+.contact-region__line-num {
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--navy, #1B2A4A);
+  letter-spacing: .01em;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+.contact-region__wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  width: 100%;
+  padding: .85rem 1.2rem;
+  background: #25D366;
+  color: #06301A;
+  border-radius: 10px;
+  font-size: .88rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+  text-decoration: none;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  box-shadow: 0 4px 14px rgba(37,211,102,.26);
+}
+.contact-region__wa:hover {
+  background: #1FBA59;
+  box-shadow: 0 6px 20px rgba(37,211,102,.34);
+  transform: translateY(-1px);
+}
+.contact-region__wa:active { transform: translateY(0); }
+.contact-region__hours {
+  margin-top: .9rem;
+  font-size: .74rem;
+  color: #64748B;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* --- Segment quick-pick cards -------------------------------------------- */
+.contact-segments {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 3.25rem;
+}
+@media (min-width: 720px) {
+  .contact-segments { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+}
+.contact-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .6rem;
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem 1.4rem;
+  background: #fff;
+  border: 1.5px solid #E8E4DC;
+  border-radius: 16px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color .22s, box-shadow .22s, transform .22s;
+}
+.contact-segment:hover {
+  border-color: rgba(212,168,83,.55);
+  box-shadow: 0 8px 26px rgba(27,42,74,.08);
+  transform: translateY(-2px);
+}
+.contact-segment.is-active {
+  border-color: var(--gold, #D4A853);
+  box-shadow: 0 0 0 3px rgba(212,168,83,.16);
+}
+.contact-segment__icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(212,168,83,.13);
+  color: #7C5209;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-segment__title {
+  font-size: .98rem;
+  font-weight: 800;
+  color: var(--navy, #1B2A4A);
+  letter-spacing: -.01em;
+  line-height: 1.35;
+}
+.contact-segment__meta {
+  font-size: .76rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+.contact-segment__cue {
+  margin-top: auto;
+  padding-top: .35rem;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #7C5209;
+}
+
+/* --- FAQ strip ------------------------------------------------------------ */
+.contact-faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 760px) {
+  .contact-faq { grid-template-columns: 1fr 1fr; gap: 1.5rem 2.5rem; }
+}
+.contact-faq__item {
+  padding: 1.4rem 1.5rem;
+  background: #FBFAF7;
+  border: 1px solid #EDECE9;
+  border-left: 3px solid var(--gold, #D4A853);
+  border-radius: 12px;
+}
+.contact-faq__q {
+  font-size: .95rem;
+  font-weight: 800;
+  color: var(--navy, #1B2A4A);
+  line-height: 1.45;
+  margin-bottom: .5rem;
+  letter-spacing: -.01em;
+}
+.contact-faq__a {
+  font-size: .86rem;
+  color: #1E293B;
+  line-height: 1.7;
+}
+.contact-faq__a a { color: #7C5209; text-decoration: underline; }
+
 /* ==========================================================================
    END OF CONTACT PAGE STYLES
    ========================================================================== */

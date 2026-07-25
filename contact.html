@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=3">
+  <link rel="stylesheet" href="assets/css/site.css?v=4">
   <script src="assets/js/site.js" defer></script>
   <style>
     .page-hero{background:linear-gradient(140deg,#060E1E,#0B1422 40%,#0F1C33 70%,#0A1020);padding:calc(var(--nav-h,80px) + 4.5rem) 0 3.5rem;position:relative;overflow:hidden}
@@ -29,9 +29,23 @@
     .page-hero .container{position:relative;z-index:2}
     .page-hero__eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
     .page-hero__eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);display:inline-block;border-radius:1px}
+    .page-hero__glow{position:absolute;width:900px;height:900px;border-radius:50%;z-index:1;pointer-events:none;right:-18%;top:-45%;
+      background:radial-gradient(circle,rgba(212,168,83,.13) 0%,rgba(212,168,83,.04) 42%,transparent 68%)}
+    .page-hero__badge{display:inline-flex;align-items:center;gap:.6rem;padding:.45rem 1rem .45rem .8rem;border-radius:100px;
+      background:rgba(212,168,83,.09);border:1px solid rgba(212,168,83,.24);margin-bottom:1.4rem}
+    .page-hero__badge-dot{width:8px;height:8px;border-radius:50%;background:var(--gold,#D4A853);position:relative;flex-shrink:0}
+    .page-hero__badge-dot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--gold,#D4A853);animation:cPing 2.5s ease infinite}
+    @keyframes cPing{0%{transform:scale(.75);opacity:1}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+    .page-hero__badge-text{font-size:.76rem;font-weight:600;color:rgba(212,168,83,.92);letter-spacing:.03em}
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
     .reveal.visible{opacity:1;transform:none}
     .s-cream{background:var(--cream,#F2EEE5);padding:5.5rem 0}
+    .s-white{background:#fff;padding:5.5rem 0}
+    .s-head{max-width:640px;margin-bottom:3rem}
+    .s-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#7C5209;margin-bottom:.85rem}
+    .s-eyebrow::before{content:'';width:24px;height:1.5px;background:var(--gold,#D4A853);border-radius:1px;display:inline-block}
+    .s-title{font-family:'Playfair Display','Georgia',serif;font-size:clamp(1.65rem,3vw,2.35rem);font-weight:800;color:var(--navy,#1B2A4A);letter-spacing:-.02em;line-height:1.22;margin-bottom:.9rem}
+    .s-lead{font-size:.95rem;color:#1E293B;line-height:1.75;max-width:580px}
     .s-dark{background:linear-gradient(140deg,#060E1E,#0B1422 50%,#0F1C33);padding:5.5rem 0;position:relative;overflow:hidden}
     .s-dark::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px),repeating-linear-gradient(-60deg,rgba(255,255,255,.5) 0,rgba(255,255,255,.5) 1px,transparent 0,transparent 70px);background-size:70px 70px}
     .s-dark .container{position:relative;z-index:2}
@@ -219,22 +233,136 @@
 
 <!-- HERO -->
 <section class="page-hero">
+  <div class="page-hero__glow"></div>
   <div class="container">
+    <div class="page-hero__badge">
+      <span class="page-hero__badge-dot"></span>
+      <span class="page-hero__badge-text">Answered by expats who made the move themselves</span>
+    </div>
     <div class="page-hero__eyebrow">Client Concierge</div>
     <h1 style="font-family:'Playfair Display','Georgia',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.15;margin-bottom:1.1rem;max-width:700px">Let's Accelerate Your Journey<br>to Saudi Arabia.</h1>
     <p style="font-size:1.05rem;color:rgba(255,255,255,.62);max-width:580px;line-height:1.75">Whether you are a global investor establishing a corporate footprint or an expat relocating your family, our editorial team and consultants are standing by.</p>
   </div>
 </section>
 
-<!-- MAIN CONTACT SECTION -->
-<section class="s-cream" id="main-content">
+<!-- REGIONAL ADVISORS -->
+<section class="s-white" id="main-content">
   <div class="container">
+    <div class="s-head reveal">
+      <div class="s-eyebrow">Talk to a human</div>
+      <h2 class="s-title">Two advisors. Two time zones.<br>One direct line into the Kingdom.</h2>
+      <p class="s-lead">Call the Saudi line, or the local number in your own region &mdash; whichever is cheaper for you. WhatsApp is usually the fastest way to reach us.</p>
+    </div>
+
+    <div class="contact-regions">
+
+      <!-- Europe & Asia -->
+      <div class="contact-region reveal">
+        <div class="contact-region__scope">Europe &amp; Asia</div>
+        <div class="contact-region__person">
+          <div class="contact-region__avatar">Z</div>
+          <div>
+            <div class="contact-region__name">Zia</div>
+            <div class="contact-region__role">Relocation Advisor &mdash; Europe &amp; Asia</div>
+          </div>
+        </div>
+        <div class="contact-region__lines">
+          <a class="contact-region__line" href="tel:+966510276061">
+            <svg class="contact-region__line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.6 10.81 19.79 19.79 0 01.5 2.18 2 2 0 012.48 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="contact-region__line-tag">Saudi</span>
+            <span class="contact-region__line-num">+966 510 27 6061</span>
+          </a>
+          <a class="contact-region__line" href="tel:+4560900500">
+            <svg class="contact-region__line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.6 10.81 19.79 19.79 0 01.5 2.18 2 2 0 012.48 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="contact-region__line-tag">Denmark</span>
+            <span class="contact-region__line-num">+45 60 90 05 00</span>
+          </a>
+        </div>
+        <a class="contact-region__wa" href="https://wa.me/966510276061" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.17h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.4c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 015.83 2.42 8.18 8.18 0 012.41 5.82c0 4.54-3.7 8.24-8.24 8.24z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <div class="contact-region__hours">Sunday &ndash; Thursday &middot; 08:00 &ndash; 17:00 (AST)<br>Callbacks available for European hours</div>
+      </div>
+
+      <!-- North America & Oceania -->
+      <div class="contact-region reveal" style="transition-delay:.1s">
+        <div class="contact-region__scope">North America &amp; Oceania</div>
+        <div class="contact-region__person">
+          <div class="contact-region__avatar">SH</div>
+          <div>
+            <div class="contact-region__name">Sazzad Hossain</div>
+            <div class="contact-region__role">Relocation Advisor &mdash; North America &amp; Oceania</div>
+          </div>
+        </div>
+        <div class="contact-region__lines">
+          <a class="contact-region__line" href="tel:+966592698010">
+            <svg class="contact-region__line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.6 10.81 19.79 19.79 0 01.5 2.18 2 2 0 012.48 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="contact-region__line-tag">Saudi</span>
+            <span class="contact-region__line-num">+966 59 269 8010</span>
+          </a>
+          <a class="contact-region__line" href="tel:+15105652623">
+            <svg class="contact-region__line-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.6 10.81 19.79 19.79 0 01.5 2.18 2 2 0 012.48 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span class="contact-region__line-tag">USA</span>
+            <span class="contact-region__line-num">+1 (510) 565 2623</span>
+          </a>
+        </div>
+        <a class="contact-region__wa" href="https://wa.me/966592698010" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.17h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 01-1.26-4.4c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 015.83 2.42 8.18 8.18 0 012.41 5.82c0 4.54-3.7 8.24-8.24 8.24z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <div class="contact-region__hours">Sunday &ndash; Thursday &middot; 08:00 &ndash; 17:00 (AST)<br>Callbacks available for North American hours</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENT PICKER + FORM -->
+<section class="s-cream">
+  <div class="container">
+
+    <div class="s-head reveal" style="margin-bottom:2.25rem">
+      <div class="s-eyebrow">Start here</div>
+      <h2 class="s-title">What brings you to Saudi Arabia?</h2>
+      <p class="s-lead">Pick the path that fits &mdash; we'll route your message to the right advisor and skip the back-and-forth.</p>
+    </div>
+
+    <div class="contact-segments reveal">
+      <button type="button" class="contact-segment" data-segment="family-relocation">
+        <span class="contact-segment__icon">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </span>
+        <span class="contact-segment__title">Relocating my family</span>
+        <span class="contact-segment__meta">Schools, housing, dependant visas and surviving the first 30 days.</span>
+        <span class="contact-segment__cue">Typical reply &middot; 4 hrs</span>
+      </button>
+
+      <button type="button" class="contact-segment" data-segment="entrepreneur-investor">
+        <span class="contact-segment__icon">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        </span>
+        <span class="contact-segment__title">Investing &amp; company setup</span>
+        <span class="contact-segment__meta">MISA licensing, free zones, tax exposure and hiring your first team.</span>
+        <span class="contact-segment__cue">Typical reply &middot; 4 hrs</span>
+      </button>
+
+      <button type="button" class="contact-segment" data-segment="iqama-visa">
+        <span class="contact-segment__icon">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8.5" cy="11" r="2.5"/><path d="M4.5 17c.6-1.8 2.1-2.8 4-2.8s3.4 1 4 2.8M15 9h4M15 13h4"/></svg>
+        </span>
+        <span class="contact-segment__title">Iqama &amp; visa help</span>
+        <span class="contact-segment__meta">Work visas, Iqama issuance, renewals, transfers and exit&nbsp;/&nbsp;re-entry.</span>
+        <span class="contact-segment__cue">Typical reply &middot; 4 hrs</span>
+      </button>
+    </div>
+
     <div class="contact-grid">
 
       <!-- LEFT: Trust & Identity -->
       <aside class="contact-trust reveal">
 
-        <h2 class="contact-trust__heading">How Can We<br>Help You Thrive?</h2>
+        <h2 class="contact-trust__heading">Other Ways<br>to Reach Us.</h2>
         <p class="contact-trust__lead">NewToSaudi.com is an independent, unsponsored resource built by expats who've navigated Saudi Arabia themselves. We answer every message personally.</p>
 
         <div class="contact-info-stack">
@@ -246,16 +374,6 @@
             <div>
               <div class="contact-info-card__label">General Queries</div>
               <div class="contact-info-card__value"><a href="mailto:hello@newtosaudi.com">hello@newtosaudi.com</a></div>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div class="contact-info-card__icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.6 10.81 19.79 19.79 0 01.5 2.18 2 2 0 012.48 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="contact-info-card__label">Phone</div>
-              <div class="contact-info-card__value"><a href="tel:+966510276061">+966 510 27 6061</a></div>
             </div>
           </div>
 
@@ -294,7 +412,14 @@
             <div class="contact-trust-badge__icon">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <span>100% Secure &amp; Private. Data is fully encrypted under Saudi personal data protection laws.</span>
+            <span>Your details stay private. We never sell or pass your data to third parties.</span>
+          </div>
+
+          <div class="contact-trust-badge">
+            <div class="contact-trust-badge__icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span>Independent &amp; unsponsored &mdash; our advice isn't steered by anyone's commission.</span>
           </div>
 
         </div>
@@ -309,7 +434,7 @@
 
           <!-- ── ALERT BOXES ── -->
           <div id="contact-success" style="display:none;margin-bottom:1.5rem;padding:1.1rem 1.4rem;background:rgba(16,185,129,.08);border:1.5px solid rgba(16,185,129,.35);border-radius:12px;color:#065F46;font-size:.88rem;line-height:1.65;font-weight:500;">
-            🔒 Request Transmitted Securely — Your executive brief has been routed to our Northwest onboarding team. A dedicated Key Account Manager will establish contact within 2 business hours.
+            🔒 Message received — it's been routed to the advisor for your region. Expect a personal reply within four business hours (Sunday–Thursday). If it's urgent, WhatsApp us using the numbers above.
           </div>
           <div id="contact-error" style="display:none;margin-bottom:1.5rem;padding:1.1rem 1.4rem;background:rgba(239,68,68,.07);border:1.5px solid rgba(239,68,68,.3);border-radius:12px;color:#991B1B;font-size:.88rem;line-height:1.65;font-weight:500;">
             System Notice: Submission could not be completed. Please check your network connection and try again.
@@ -344,8 +469,9 @@
               <label for="segment">How can we help you thrive in Saudi Arabia?</label>
               <select id="segment" name="segment" required aria-label="How can we help you thrive in Saudi Arabia?">
                 <option value="">Select the option that best describes you…</option>
+                <option value="family-relocation">I am relocating my family to Saudi Arabia</option>
+                <option value="iqama-visa">I need Iqama or visa assistance</option>
                 <option value="entrepreneur-investor">I am an Entrepreneur / Investor establishing a company</option>
-                <option value="expat-relocation">I am an Expat seeking relocation or Iqama assistance</option>
                 <option value="consultation">I want to schedule a premium consultation session</option>
                 <option value="correction">I want to report an inaccuracy on a guide</option>
                 <option value="general">General Inquiry</option>
@@ -368,6 +494,41 @@
             </button>
           </form>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ STRIP -->
+<section class="s-white">
+  <div class="container">
+    <div class="s-head reveal" style="margin-bottom:2.5rem">
+      <div class="s-eyebrow">Before you write</div>
+      <h2 class="s-title">Quick answers</h2>
+      <p class="s-lead">The four questions we get asked most often &mdash; answered here so you don't have to send an email to find out.</p>
+    </div>
+
+    <div class="contact-faq reveal">
+
+      <div class="contact-faq__item">
+        <div class="contact-faq__q">How fast will I hear back?</div>
+        <div class="contact-faq__a">Within four business hours, Sunday to Thursday. The Saudi weekend falls on Friday and Saturday, so anything sent then is answered first thing Sunday morning (AST).</div>
+      </div>
+
+      <div class="contact-faq__item">
+        <div class="contact-faq__q">Which number should I call?</div>
+        <div class="contact-faq__a">Whichever costs you least. Each advisor has a Saudi line and a local number in their own region &mdash; both reach the same person. WhatsApp works from anywhere and is usually fastest.</div>
+      </div>
+
+      <div class="contact-faq__item">
+        <div class="contact-faq__q">Is NewToSaudi sponsored by anyone?</div>
+        <div class="contact-faq__a">No. The site is independent and unsponsored &mdash; no government body, relocation agency or property developer pays for coverage here. That's the whole point of it.</div>
+      </div>
+
+      <div class="contact-faq__item">
+        <div class="contact-faq__q">I spotted something out of date in a guide.</div>
+        <div class="contact-faq__a">Please tell us &mdash; choose <em>&ldquo;report an inaccuracy&rdquo;</em> in the form above. Saudi rules change quickly, and reader corrections are a large part of how these guides stay accurate.</div>
       </div>
 
     </div>
@@ -516,6 +677,35 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   revealEls.forEach(el => io.observe(el));
+
+  // Segment quick-picks — preselect the dropdown and jump to the form
+  document.addEventListener("DOMContentLoaded", function () {
+    const segmentCards = document.querySelectorAll(".contact-segment");
+    const segmentSelect = document.getElementById("segment");
+    if (!segmentCards.length || !segmentSelect) return;
+
+    segmentCards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        segmentCards.forEach(c => c.classList.remove("is-active"));
+        card.classList.add("is-active");
+
+        segmentSelect.value = card.dataset.segment;
+        segmentSelect.dispatchEvent(new Event("change", { bubbles: true }));
+
+        const firstField = document.getElementById("first-name");
+        const target = document.querySelector(".contact-form-inner");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (firstField) setTimeout(() => firstField.focus({ preventScroll: true }), 450);
+      });
+    });
+
+    // Keep the cards in sync if the visitor edits the dropdown directly
+    segmentSelect.addEventListener("change", function () {
+      segmentCards.forEach(function (c) {
+        c.classList.toggle("is-active", c.dataset.segment === segmentSelect.value);
+      });
+    });
+  });
 
   // Secure AJAX contact form interceptor
   document.addEventListener("DOMContentLoaded", function () {
