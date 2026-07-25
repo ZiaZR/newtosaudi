@@ -1485,6 +1485,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   direction: ltr;
   unicode-bidi: embed;
 }
+.contact-region__line-num--email {
+  font-size: .82rem;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+/* Narrow phones: reclaim horizontal room so longer addresses stay on one line */
+@media (max-width: 420px) {
+  .contact-region { padding: 1.75rem 1.35rem 1.5rem; }
+  .contact-region__line { padding: .7rem .8rem; gap: .65rem; }
+  .contact-region__line-tag { min-width: 56px; }
+  .contact-region__line-num--email { font-size: .8rem; }
+}
 .contact-region__wa {
   display: flex;
   align-items: center;
